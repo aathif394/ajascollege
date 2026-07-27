@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticleShell from "../../components/ArticleShell.astro";
 
 export async function getStaticPaths() {
   const programmes = await getCollection("programmes", ({ data }) => !data.draft);
@@ -30,46 +31,28 @@ const levelLabel =
     { label: entry.data.title },
   ]}
 >
-  <div class="blog-single content-blog narrow-page">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-9">
-          <div class="site-content clearfix">
-            <article class="post post-blog-single">
-              <div class="content-blog-single-wrap migrate-content" data-pagefind-body>
-                <p><strong>Level:</strong> {levelLabel}</p>
-                {
-                  entry.data.department && (
-                    <p>
-                      <strong>Department:</strong> {entry.data.department}
-                    </p>
-                  )
-                }
-                {
-                  entry.data.duration && (
-                    <p>
-                      <strong>Duration:</strong> {entry.data.duration}
-                    </p>
-                  )
-                }
-                {
-                  entry.data.seats && (
-                    <p>
-                      <strong>Seats:</strong> {entry.data.seats}
-                    </p>
-                  )
-                }
-                <Content />
-                <p>
-                  <a href="/programmes/">← All programmes</a>
-                  {" · "}
-                  <a href="/admission/">Apply</a>
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <ArticleShell>
+    <p><strong>Level:</strong> {levelLabel}</p>
+    {entry.data.department && (
+      <p>
+        <strong>Department:</strong> {entry.data.department}
+      </p>
+    )}
+    {entry.data.duration && (
+      <p>
+        <strong>Duration:</strong> {entry.data.duration}
+      </p>
+    )}
+    {entry.data.seats && (
+      <p>
+        <strong>Seats:</strong> {entry.data.seats}
+      </p>
+    )}
+    <Content />
+    <p>
+      <a href="/programmes/">← All programmes</a>
+      {" · "}
+      <a href="/admission/">Apply</a>
+    </p>
+  </ArticleShell>
 </BaseLayout>

@@ -6,28 +6,41 @@ type: page
 image: "/assets/uploads/2024/05/Frame.svg"
 ---
 
-<div class="blog-single content-blog"><div class="container"><div class="row">
-<div class="col-lg-8"><div class="site-content clearfix"><article class="post post-blog-single"><div class="content-blog-single"><div class="content-blog-single-inner"><div class="content-blog-single-wrap migrate-content">
-<h2 id="about">About</h2>
-<p>The Department of Commerce and Management Studies at Al Jamia Arts and Science College, Perinthalmanna, is a vibrant centre of learning that integrates excellence in commerce and management education. Established in 2013, the department has grown steadily, and in 2024, the AICTE-approved BBA (Honours) program was introduced under the Four-Year Undergraduate Programme (FYUGP) of the University of Calicut. With a dedicated team of experienced faculty and a dynamic student community, the department offers quality undergraduate programs in B.Com and BBA (Honours). It focuses on academic rigor, practical exposure, leadership, and ethical values, while also encouraging participation in arts, sports, and community activities. The department remains committed to nurturing competent, confident, and socially responsible professionals ready to lead in the global business arena.</p>
-<h2 id="vision">Vision</h2>
-<p>To be a centre of excellence in commerce and management education that nurtures competent, innovative, and ethically responsible professionals.<br></br>
-The Department envisions empowering students with knowledge, skills, and values that foster critical thinking, entrepreneurship, and leadership — enabling them to contribute meaningfully to business, society, and the global economy with integrity and sustainability.</p>
-<h2 id="mission">Mission</h2>
-<ol><li><strong>To impart quality education</strong> in commerce and management through innovative teaching methods, practical exposure, and continuous learning.</li><li><strong>To cultivate entrepreneurial spirit and professional competence</strong> by integrating academic knowledge with real-world business practices.</li><li><strong>To instill ethical values, social responsibility, and environmental consciousness</strong> in future business leaders.</li><li><strong>To encourage research, creativity, and critical thinking</strong> that promote innovation and problem-solving skills among students.</li><li><strong>To prepare globally competent graduates</strong> capable of adapting to dynamic business environments and contributing to national and global development.</li></ol>
-<img src="/assets/uploads/2024/05/Frame.svg" alt="" class="img-fluid">
-<h2 id="head-of-department">Head Of Department</h2>
-<h2 id="farisa-abdul-azees">Farisa Abdul Azees</h2>
-<h2 id="phd-mcom-net">PhD , Mcom, NET</h2>
-<p>Head of Department</p>
-<table class="mig-roster"><tbody><tr><td class="rl">Faculty</td><td class="nm">Safarudheen M</td></tr><tr><td class="rl">Mcom, NET, SET, B.Ed</td><td class="nm">Amjed P</td></tr><tr><td class="rl">Mcom, NET</td><td class="nm">Asoora K</td></tr><tr><td class="rl">M.Phil , M. Com, MBA, NET</td><td class="nm">Aiswarya K R</td></tr><tr><td class="rl">MCom Finance, B.Ed. , SET, NET</td><td class="nm">Asif Zuhail P S</td></tr><tr><td class="rl">Mcom, NET</td><td class="nm">Farisa Abdul Azees</td></tr><tr><td class="rl">PhD , Mcom, NET</td><td class="nm">Rahees C</td></tr><tr><td class="rl">Mcom</td><td class="nm">Anitha P</td></tr><tr><td class="rl">Mcom</td><td class="nm">Gallery</td></tr></tbody></table>
-</div></div></div></article></div></div>
-<div class="col-lg-4"><div class="sidebar-sticky"><div class="sidebar"><div class="widget widget-toc"><h4 class="widget-title"><span>On this page</span></h4><ul class="toc-wrap"><li class="lv2"><a href="#about">About</a></li><li class="lv2"><a href="#vision">Vision</a></li><li class="lv2"><a href="#mission">Mission</a></li><li class="lv2"><a href="#head-of-department">Head Of Department</a></li><li class="lv2"><a href="#farisa-abdul-azees">Farisa Abdul Azees</a></li><li class="lv2"><a href="#phd-mcom-net">PhD , Mcom, NET</a></li></ul></div><div class="widget widget-categories"><h4 class="widget-title"><span>All Departments</span></h4><ul class="categories-wrap"><li><a href="/departments/arabic/">Department of Arabic</a></li><li><a href="/departments/department-of-commerce/">Department of Commerce &amp; Management Studies</a></li><li><a href="/departments/department-of-computer-application/">Department of Computer Application</a></li><li><a href="/departments/department-of-computer-science/">Department of Computer Science and Artificial Intelligence</a></li><li><a href="/departments/department-of-english/">Department of English</a></li><li><a href="/departments/department-of-food-technology/">Department of Food Technology</a></li><li><a href="/departments/department-of-geography/">Department of Geography</a></li><li><a href="/departments/department-of-islamic-finance/">Department of Islamic Finance</a></li><li><a href="/departments/department-of-islamic-studies/">Department of Islamic Studies</a></li><li><a href="/departments/department-of-languages/">Department of Languages</a></li><li><a href="/departments/department-of-micro-biology/">Department of Microbiology</a></li><li><a href="/departments/department-of-physical-education/">Department of Physical Education</a></li><li><a href="/departments/department-of-psychology/">PG Department of Psychology</a></li><li><a href="/departments/non-core-departments-economics/">Non Core Departments</a></li></ul></div><div class="widget widget-sent"><div class="apply-admission"><div class="apply-admission-wrap type1 bd-type1"><div class="apply-admission-inner">
-<h2 class="title text-center"><span>Apply for Admission</span></h2>
-<div class="caption text-center text-white">FYUGP &amp; PG programmes open</div>
-<div class="mig-cta-btn"><a href="/admission/" class="btn">Apply Now</a></div>
-</div></div></div></div><div class="widget widget-contact-info"><h4 class="widget-title"><span>Contact</span></h4>
-<ul class="mig-contact"><li><i class="fa fa-map-marker"></i> Poopalam, Valambur (P.O), Perinthalmanna, Malappuram, Kerala 679325</li>
-<li><i class="fa fa-phone"></i> <a href="tel:+917994188918">+91 7994 188918</a></li>
-<li><i class="fa fa-envelope"></i> <a href="mailto:mail@ajascollege.ac.in">mail@ajascollege.ac.in</a></li></ul></div></div></div></div>
-</div></div></div>
+## About
+
+The Department of Commerce and Management Studies at Al Jamia Arts and Science College, Perinthalmanna, is a vibrant centre of learning that integrates excellence in commerce and management education. Established in 2013, the department has grown steadily, and in 2024, the AICTE-approved BBA (Honours) program was introduced under the Four-Year Undergraduate Programme (FYUGP) of the University of Calicut. With a dedicated team of experienced faculty and a dynamic student community, the department offers quality undergraduate programs in B.Com and BBA (Honours). It focuses on academic rigor, practical exposure, leadership, and ethical values, while also encouraging participation in arts, sports, and community activities. The department remains committed to nurturing competent, confident, and socially responsible professionals ready to lead in the global business arena.
+
+## Vision
+
+To be a centre of excellence in commerce and management education that nurtures competent, innovative, and ethically responsible professionals.
+The Department envisions empowering students with knowledge, skills, and values that foster critical thinking, entrepreneurship, and leadership — enabling them to contribute meaningfully to business, society, and the global economy with integrity and sustainability.
+
+## Mission
+
+1. **To impart quality education** in commerce and management through innovative teaching methods, practical exposure, and continuous learning.
+2. **To cultivate entrepreneurial spirit and professional competence** by integrating academic knowledge with real-world business practices.
+3. **To instill ethical values, social responsibility, and environmental consciousness** in future business leaders.
+4. **To encourage research, creativity, and critical thinking** that promote innovation and problem-solving skills among students.
+5. **To prepare globally competent graduates** capable of adapting to dynamic business environments and contributing to national and global development.
+
+![](/assets/uploads/2024/05/Frame.svg)
+
+## Head Of Department
+
+## Farisa Abdul Azees
+
+## PhD , Mcom, NET
+
+Head of Department
+
+|  |  |
+| --- | --- |
+| Faculty | Safarudheen M |
+| Mcom, NET, SET, B.Ed | Amjed P |
+| Mcom, NET | Asoora K |
+| M.Phil , M. Com, MBA, NET | Aiswarya K R |
+| MCom Finance, B.Ed. , SET, NET | Asif Zuhail P S |
+| Mcom, NET | Farisa Abdul Azees |
+| PhD , Mcom, NET | Rahees C |
+| Mcom | Anitha P |
+| Mcom | Gallery |

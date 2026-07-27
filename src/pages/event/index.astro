@@ -1,0 +1,93 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const events = (await getCollection("events", ({ data }) => !data.draft)).sort((a, b) => {
+  const da = a.data.date ? +new Date(a.data.date) : 0;
+  const db = b.data.date ? +new Date(b.data.date) : 0;
+  return db - da || a.data.title.localeCompare(b.data.title);
+});
+---
+
+<BaseLayout
+  title="Events"
+  description="Events at Al Jamia Arts & Science College."
+  pageTitle="Events"
+>
+  <div class="blog-bl content-blog blog-single">
+    <div class="container">
+      <p class="listing-intro">
+        Upcoming and past campus events. Staff: publish under <strong>Events</strong> in the CMS.
+      </p>
+      <div class="row">
+        {
+          events.map((e) => (
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <article class="ajas-news-card">
+                <a class="ajas-news-thumb" href={e.data.permalink}>
+                  {e.data.image ? (
+                    <img src={e.data.image} alt="" />
+                  ) : (
+                    <div class="ajas-news-ph" />
+                  )}
+                </a>
+                <div class="ajas-news-body">
+                  {e.data.date && (
+                    <time datetime={new Date(e.data.date).toISOString()}>
+                      {new Date(e.data.date).toLocaleDateString("en-IN", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </time>
+                  )}
+                  <h2>
+                    <a href={e.data.permalink}>{e.data.title}</a>
+                  </h2>
+                  <a class="ajas-readmore" href={e.data.permalink}>
+                    Read more
+                  </a>
+                </div>
+              </article>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .ajas-news-card {
+    margin-bottom: 28px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(24, 50, 81, 0.08);
+  }
+  .ajas-news-thumb img,
+  .ajas-news-ph {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background: #e5e7eb;
+  }
+  .ajas-news-body {
+    padding: 14px 16px 18px;
+  }
+  .ajas-news-body time {
+    font-size: 0.8rem;
+    color: #64748b;
+  }
+  .ajas-news-body h2 {
+    font-size: 1.05rem;
+    margin: 6px 0 10px;
+    line-height: 1.35;
+  }
+  .ajas-readmore {
+    font-size: 0.9rem;
+    color: #ff5f60;
+    font-weight: 600;
+  }
+</style>

@@ -50,7 +50,7 @@ collections:
       - { label: Type, name: type, widget: hidden, default: article }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Date, name: date, widget: datetime, required: false }
-      - { label: Body, name: body, widget: markdown }
+      - { label: "Page content (visual editor)", name: body, widget: markdown, hint: "Edit like Word — headings, bold, lists, images. Never paste HTML code." }
 
   - name: events
     label: "2 · Events"
@@ -74,7 +74,7 @@ collections:
       - { label: Type, name: type, widget: hidden, default: article }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Date, name: date, widget: datetime, required: false }
-      - { label: Body, name: body, widget: markdown }
+      - { label: "Page content (visual editor)", name: body, widget: markdown, hint: "Edit like Word — headings, bold, lists, images. Never paste HTML code." }
 
   - name: notices
     label: "3 · Notices & downloads"
@@ -113,7 +113,7 @@ collections:
         media_folder: public/assets/uploads
         public_folder: /assets/uploads
       - { label: Draft, name: draft, widget: boolean, default: false }
-      - { label: Notes (optional body), name: body, widget: markdown, required: false }
+      - { label: "Notes (optional)", name: body, widget: markdown, required: false, hint: "Optional. Prefer title + PDF fields for notices." }
 
   - name: fees
     label: "4 · Fees & prospectus"
@@ -137,7 +137,7 @@ collections:
         media_folder: public/assets/uploads
         public_folder: /assets/uploads
       - { label: Draft, name: draft, widget: boolean, default: false }
-      - { label: Notes, name: body, widget: markdown, required: false }
+      - { label: "Notes (optional)", name: body, widget: markdown, required: false }
 
   - name: settings
     label: "5 · Site settings"
@@ -231,7 +231,7 @@ collections:
       - { label: Seats, name: seats, widget: string, required: false }
       - { label: Description (SEO), name: description, widget: text, required: false }
       - { label: Draft, name: draft, widget: boolean, default: false }
-      - { label: Details, name: body, widget: markdown }
+      - { label: "Programme details (visual editor)", name: body, widget: markdown, hint: "Edit like Word. No HTML." }
 
   - name: faculty
     label: "8 · Faculty"
@@ -254,7 +254,7 @@ collections:
       - { label: Permalink, name: permalink, widget: string, hint: "/faculties/your-slug/" }
       - { label: Type, name: type, widget: hidden, default: profile }
       - { label: Draft, name: draft, widget: boolean, default: false }
-      - { label: Bio / body, name: body, widget: markdown }
+      - { label: "Biography (visual editor)", name: body, widget: markdown, hint: "Write the bio like Word. No HTML." }
 
   - name: pages
     label: "9 · Other pages"
@@ -285,4 +285,4 @@ collections:
       - { label: Name (profiles), name: name, widget: string, required: false }
       - { label: Role (profiles), name: role, widget: string, required: false }
       - { label: Credentials, name: credentials, widget: string, required: false }
-      - { label: Body, name: body, widget: markdown }
+      - { label: "Page content (visual editor)", name: body, widget: markdown, hint: "Edit like Word — headings, bold, lists, images. Never paste HTML code." }

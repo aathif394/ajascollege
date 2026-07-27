@@ -5,17 +5,28 @@ permalink: /code-of-conduct-principal/
 type: page
 ---
 
-<div class="blog-single content-blog"><div class="container"><div class="row">
-<div class="col-lg-8"><div class="site-content clearfix"><article class="post post-blog-single"><div class="content-blog-single"><div class="content-blog-single-inner"><div class="content-blog-single-wrap migrate-content">
-<h1>Code of Conduct<br>Principal</h1>
-<ul><li>Principal is the academic and administrative head of the institute and works for the growth of the institute. </li><li>Shall implement the policies approved by the highest decision-making body of the college. </li><li>Principal is the spokesperson of the institution and shall take part in regional, national and international conventions in serving the cause of development of education in particular. </li><li>Shall monitor admissions, examinations for smooth functioning of the system. </li><li>Shall authorize to nominate Coordinators, Convener and other administration functionaries. </li><li>Shall coordinate and motivate the faculty, administrative authorities and the supporting staff, to play their respective roles more effectively. </li><li>Shall work for the common goal of providing effective technical education and guidance to enable the students to carve out promising careers and lifelong learning. </li><li>In matters of admissions, nodal officer of admission will assist the principal. </li><li>An integrated timetable of the entire institution shall be prepared and submitted to the principal. In this endeavor, conveners of timetables, along with the various heads of the departments, extend support to the principal. </li><li>Shall closely monitor the class work as per the timetables and the almanac with assistance of faculty in charge. </li><li>Shall closely observe various academic activities like conduct of technical and management fests, conferences, seminars, workshops etc. </li><li>Shall hold Academic meetings as per the norms. </li><li>Shall hold meetings of the Head of Departments to review the progress of the academic work and suggest effective measures to achieve desired academic outcome. </li><li>If necessary, shall instruct the Head of Department to conduct remedial classes to academically support the slow learners, in matters related to internal examinations, end semester examinations (both theory and practical), result analysis, and detained <br></br>candidates. </li><li>Principal shall also ensure quality assurance and should be assisted by the coordinator of IQAC. </li><li>Shall monitor and evaluate research, development and consultancy activities. Should advise faculty to get sponsored research projects from various funding agencies. </li><li>The Principal should promote industry institute interaction for better employability of the students. </li><li>Shall promote internal revenue generation activities with the help of staff and students. </li><li>Shall make efforts to look after the overall welfare of the staff and students. </li><li>The principal shall countersign all kinds of scholarship bills in respect of the students of the college. </li><li>Shall have powers to sanction the purchase of stationary, library books, periodicals, <br></br>consumables for laboratories, workshops etc. subject to the limit of powers delegated in respective areas and subject to the prescribed procedures, budget provisions under the respective heads of the budget.</li></ul>
-</div></div></div></article></div></div>
-<div class="col-lg-4"><div class="sidebar-sticky"><div class="sidebar"><div class="widget widget-categories"><h4 class="widget-title"><span>Quick Links</span></h4><ul class="categories-wrap"><li><a href="/overview/">Overview</a></li><li><a href="/vision-mission/">Vision &amp; Mission</a></li><li><a href="/admission/">Admission</a></li><li><a href="/departments/">Departments</a></li><li><a href="/faculties/">Faculties</a></li><li><a href="/library/">Library</a></li><li><a href="/examinations/">Examinations</a></li><li><a href="/contact/">Contact Us</a></li></ul></div><div class="widget widget-sent"><div class="apply-admission"><div class="apply-admission-wrap type1 bd-type1"><div class="apply-admission-inner">
-<h2 class="title text-center"><span>Apply for Admission</span></h2>
-<div class="caption text-center text-white">FYUGP &amp; PG programmes open</div>
-<div class="mig-cta-btn"><a href="/admission/" class="btn">Apply Now</a></div>
-</div></div></div></div><div class="widget widget-contact-info"><h4 class="widget-title"><span>Contact</span></h4>
-<ul class="mig-contact"><li><i class="fa fa-map-marker"></i> Poopalam, Valambur (P.O), Perinthalmanna, Malappuram, Kerala 679325</li>
-<li><i class="fa fa-phone"></i> <a href="tel:+917994188918">+91 7994 188918</a></li>
-<li><i class="fa fa-envelope"></i> <a href="mailto:mail@ajascollege.ac.in">mail@ajascollege.ac.in</a></li></ul></div></div></div></div>
-</div></div></div>
+# Code of Conduct Principal
+
+- Principal is the academic and administrative head of the institute and works for the growth of the institute.
+- Shall implement the policies approved by the highest decision-making body of the college.
+- Principal is the spokesperson of the institution and shall take part in regional, national and international conventions in serving the cause of development of education in particular.
+- Shall monitor admissions, examinations for smooth functioning of the system.
+- Shall authorize to nominate Coordinators, Convener and other administration functionaries.
+- Shall coordinate and motivate the faculty, administrative authorities and the supporting staff, to play their respective roles more effectively.
+- Shall work for the common goal of providing effective technical education and guidance to enable the students to carve out promising careers and lifelong learning.
+- In matters of admissions, nodal officer of admission will assist the principal.
+- An integrated timetable of the entire institution shall be prepared and submitted to the principal. In this endeavor, conveners of timetables, along with the various heads of the departments, extend support to the principal.
+- Shall closely monitor the class work as per the timetables and the almanac with assistance of faculty in charge.
+- Shall closely observe various academic activities like conduct of technical and management fests, conferences, seminars, workshops etc.
+- Shall hold Academic meetings as per the norms.
+- Shall hold meetings of the Head of Departments to review the progress of the academic work and suggest effective measures to achieve desired academic outcome.
+- If necessary, shall instruct the Head of Department to conduct remedial classes to academically support the slow learners, in matters related to internal examinations, end semester examinations (both theory and practical), result analysis, and detained
+  candidates.
+- Principal shall also ensure quality assurance and should be assisted by the coordinator of IQAC.
+- Shall monitor and evaluate research, development and consultancy activities. Should advise faculty to get sponsored research projects from various funding agencies.
+- The Principal should promote industry institute interaction for better employability of the students.
+- Shall promote internal revenue generation activities with the help of staff and students.
+- Shall make efforts to look after the overall welfare of the staff and students.
+- The principal shall countersign all kinds of scholarship bills in respect of the students of the college.
+- Shall have powers to sanction the purchase of stationary, library books, periodicals,
+  consumables for laboratories, workshops etc. subject to the limit of powers delegated in respective areas and subject to the prescribed procedures, budget provisions under the respective heads of the budget.

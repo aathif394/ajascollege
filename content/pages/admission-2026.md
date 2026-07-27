@@ -5,47 +5,64 @@ permalink: /admission-2026/
 type: page
 ---
 
-<div class="blog-single content-blog"><div class="container"><div class="row">
-<div class="col-lg-8"><div class="site-content clearfix"><article class="post post-blog-single"><div class="content-blog-single"><div class="content-blog-single-inner"><div class="content-blog-single-wrap migrate-content">
-<div class="embed-wrap"><iframe src="https://ajascollege.ac.in/wp-content/plugins/pdfjs-viewer-for-elementor//assets/js/pdfjs/web/viewer.html?file=https://ajascollege.ac.in/wp-content/uploads/2026/05/AJAS-Prospectus-26-27_20260505_071012_0000.pdf" loading="lazy"></iframe></div>
-<p><a href="https://ajasc.embase.in/online-admission/#/sign-in?utm_source=College%20" target="_blank">Apply now </a></p>
-<h2 id="the-eligibility-criteria-for-various-courses-in-the-college-">The eligibility criteria for various courses in the college are given below.</h2>
-<h2 id="1-b-com-honours-existing-specialisation-computer-application">1.	B.COM HONOURS (EXISTING SPECIALISATION COMPUTER APPLICATION)</h2>
-<p><strong>Eligibility :</strong> Candidates who have passed (Eligible for Higher Studies) the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognised as equivalent thereto with at least one commerce subject are eligible for admissions to the B.Com degree course. Candidates who have not studied commerce subject for Higher Secondary or an equivalent examination not less than 45% marks are also eligible. A concession of 5% will be given to OBC/OEC candidates. The SC/ST candidates need get only a pass. (U.O. No.GAI/A2/1658/2007 dated 28.02.2008).</p>
-<h2 id="2-bachelor-of-business-administration-honours">2.	BACHELOR OF BUSINESS ADMINISTRATION HONOURS</h2>
-<p><strong>Eligibility :</strong> Candidates who have passed (Eligible for Higher Studies)the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognised as equivalent thereto, with not less than 45% is eligible for admissions. A concession of 5% will be given to OBC/OEC candidates. The SC/ST candidates need get only a pass. (U.O.No. 5339/2021/Admn Dated, 17.05.2021)</p>
-<h2 id="3-bachelor-of-computer-application-honours">3.	BACHELOR OF COMPUTER APPLICATION HONOURS</h2>
-<p><strong>Eligibility :</strong> Candidates who have passed (Eligible for Higher Studies)the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognised as equivalent thereto with Mathematics/ Computer Science/Computer Application/ Information Technology/Informatics Practice/Informatics/ Additional Mathematics as one of the subjects are eligible for admissions (U.O. No.GAI/J1/2453/1997 dated 06.10.2000 and GA I/J1/1597/2005 dated 11.07.2005).</p>
-<h2 id="4-b-sc-computer-science-honours">4.	B.SC COMPUTER SCIENCE HONOURS</h2>
-<p><strong>Eligibility :</strong> Candidates who have passed (Eligible for Higher Studies) the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognized as equivalent thereto with Mathematics/ Computer Science/Computer Application/ Information Technology/Informatics Practice/Informatics/ Additional Mathematics are eligible for admission. (U.O.No.GAI/JI/4756/1999 dated 11.01.2002)</p>
-<h2 id="5-b-sc-food-technology-honours">5.	B.SC FOOD TECHNOLOGY HONOURS</h2>
-<p><strong>Eligibility :</strong> Candidates who have passed (Eligible for Higher Studies)the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognised as equivalent thereto with Science and Mathematics are eligible for admisson. (U.O. No.GA I/J1/7359/2003 dated 20.01.2010</p>
-<h2 id="6-b-sc-microbiology-honours">6.	B.SC MICROBIOLOGY HONOURS</h2>
-<p><strong>Eligibility :</strong> Candidates who have passed (Eligible for Higher Studies) the HSE of the Kerala State Board of Higher Secondary Examination or any other examination with Physics,Chemistry,Biology.</p>
-<h2 id="7-b-sc-geography-honours">7.	B.SC GEOGRAPHY HONOURS</h2>
-<p><strong>Eligibility :</strong> Candidates who have passed (Eligible for Higher Studies) the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognised as equivalent thereto are eligible for admission (U.O.No.GAI/B1/1690/2000 dated 27.05.2008)</p>
-<h2 id="8-b-sc-artificial-intelligence-honours">8.	B.SC ARTIFICIAL INTELLIGENCE HONOURS</h2>
-<p><strong>Eligibility :</strong> Candidates who have passed (Eligible for Higher Studies)the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognized as equivalent thereto with Mathematics/ Computer Science / Computer Application/Information Technology /Informatics Practice /Informatics /Additional Mathematics are eligible for admission. (UO Note No. 107590/GA – IV – J1/2023/ Admn, Dated: 11.05.2023)</p>
-<h2 id="9-b-sc-psychology-honours">9.	B.SC PSYCHOLOGY HONOURS</h2>
-<p><strong>Eligibility :</strong> Candidates who have passed (Eligible for Higher Studies) the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognised as equivalent thereto are eligible for admission (U.O. No.GAI/J1/628/2003 dated 15.05.2004)</p>
-<h2 id="10-ba-english-language-and-literature-honours">10.	BA ENGLISH LANGUAGE AND LITERATURE HONOURS</h2>
-<p><strong>Eligibility :</strong> Candidates who have passed (Eligible for Higher Studies) the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognized as equivalent thereto are eligible for admission.</p>
-<h2 id="11-ba-islamic-studies-honours">11.	BA ISLAMIC STUDIES HONOURS</h2>
-<p><strong>Eligibility :</strong> Candidates who have passed (Eligible for Higher Studies)the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognized as equivalent thereto are eligible for admission.</p>
-<h2 id="12-msc-psychology">12.	MSC PSYCHOLOGY</h2>
-<p><strong>Eligibility :</strong> A pass in BA/ BA (Honours)/ B.Sc degree with Psychology core (main) from University of Calicut or a recognised degree with Psychology core (main), in regular mode.</p>
-<h2 id="13-ma-arabic-language-and-literature">13.	MA ARABIC LANGUAGE AND LITERATURE</h2>
-<p><strong>Eligibility :</strong> BA Arabic/Afsal-ul-ulama/ Double Main with Arabic/ BA Functional Arabic (Core/Main) Degree or BA/BSc (excluding alternative pattern) Degree with Arabic as Common Course (Part II), of this University or an equivalent degree, with at least 50% aggregate marks or equivalent Overall CGPA. OBC/OEC candidates are eligible to relaxation up to 5%. SC/ST candidates need only to get a pass.</p>
-<h2 id="14-ma-islamic-finance">14.	MA Islamic Finance</h2>
-<p><strong>Eligibility :</strong> Any UG degree (10+2+3 or more years pattern including Professional degrees), of this University or a recognised degree, with at least 50% aggregate marks or equivalent Overall CGPA. OBC/OEC candidates are eligible to relaxation up to 5%. SC/ST candidates need only to get a pass.</p>
-<p><a href="https://ajasc.embase.in/online-admission/#/sign-in" target="_blank">Apply now </a></p>
-</div></div></div></article></div></div>
-<div class="col-lg-4"><div class="sidebar-sticky"><div class="sidebar"><div class="widget widget-toc"><h4 class="widget-title"><span>On this page</span></h4><ul class="toc-wrap"><li class="lv2"><a href="#the-eligibility-criteria-for-various-courses-in-the-college-">The eligibility criteria for various courses in the college are given below.</a></li><li class="lv2"><a href="#1-b-com-honours-existing-specialisation-computer-application">1. B.COM HONOURS (EXISTING SPECIALISATION COMPUTER APPLICATION)</a></li><li class="lv2"><a href="#2-bachelor-of-business-administration-honours">2. BACHELOR OF BUSINESS ADMINISTRATION HONOURS</a></li><li class="lv2"><a href="#3-bachelor-of-computer-application-honours">3. BACHELOR OF COMPUTER APPLICATION HONOURS</a></li><li class="lv2"><a href="#4-b-sc-computer-science-honours">4. B.SC COMPUTER SCIENCE HONOURS</a></li><li class="lv2"><a href="#5-b-sc-food-technology-honours">5. B.SC FOOD TECHNOLOGY HONOURS</a></li><li class="lv2"><a href="#6-b-sc-microbiology-honours">6. B.SC MICROBIOLOGY HONOURS</a></li><li class="lv2"><a href="#7-b-sc-geography-honours">7. B.SC GEOGRAPHY HONOURS</a></li><li class="lv2"><a href="#8-b-sc-artificial-intelligence-honours">8. B.SC ARTIFICIAL INTELLIGENCE HONOURS</a></li><li class="lv2"><a href="#9-b-sc-psychology-honours">9. B.SC PSYCHOLOGY HONOURS</a></li><li class="lv2"><a href="#10-ba-english-language-and-literature-honours">10. BA ENGLISH LANGUAGE AND LITERATURE HONOURS</a></li><li class="lv2"><a href="#11-ba-islamic-studies-honours">11. BA ISLAMIC STUDIES HONOURS</a></li><li class="lv2"><a href="#12-msc-psychology">12. MSC PSYCHOLOGY</a></li><li class="lv2"><a href="#13-ma-arabic-language-and-literature">13. MA ARABIC LANGUAGE AND LITERATURE</a></li></ul></div><div class="widget widget-categories"><h4 class="widget-title"><span>Quick Links</span></h4><ul class="categories-wrap"><li><a href="/overview/">Overview</a></li><li><a href="/vision-mission/">Vision &amp; Mission</a></li><li><a href="/admission/">Admission</a></li><li><a href="/departments/">Departments</a></li><li><a href="/faculties/">Faculties</a></li><li><a href="/library/">Library</a></li><li><a href="/examinations/">Examinations</a></li><li><a href="/contact/">Contact Us</a></li></ul></div><div class="widget widget-sent"><div class="apply-admission"><div class="apply-admission-wrap type1 bd-type1"><div class="apply-admission-inner">
-<h2 class="title text-center"><span>Apply for Admission</span></h2>
-<div class="caption text-center text-white">FYUGP &amp; PG programmes open</div>
-<div class="mig-cta-btn"><a href="/admission/" class="btn">Apply Now</a></div>
-</div></div></div></div><div class="widget widget-contact-info"><h4 class="widget-title"><span>Contact</span></h4>
-<ul class="mig-contact"><li><i class="fa fa-map-marker"></i> Poopalam, Valambur (P.O), Perinthalmanna, Malappuram, Kerala 679325</li>
-<li><i class="fa fa-phone"></i> <a href="tel:+917994188918">+91 7994 188918</a></li>
-<li><i class="fa fa-envelope"></i> <a href="mailto:mail@ajascollege.ac.in">mail@ajascollege.ac.in</a></li></ul></div></div></div></div>
-</div></div></div>
+[Apply now](https://ajasc.embase.in/online-admission/#/sign-in?utm_source=College%20)
+
+## The eligibility criteria for various courses in the college are given below.
+
+## 1. B.COM HONOURS (EXISTING SPECIALISATION COMPUTER APPLICATION)
+
+**Eligibility :** Candidates who have passed (Eligible for Higher Studies) the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognised as equivalent thereto with at least one commerce subject are eligible for admissions to the B.Com degree course. Candidates who have not studied commerce subject for Higher Secondary or an equivalent examination not less than 45% marks are also eligible. A concession of 5% will be given to OBC/OEC candidates. The SC/ST candidates need get only a pass. (U.O. No.GAI/A2/1658/2007 dated 28.02.2008).
+
+## 2. BACHELOR OF BUSINESS ADMINISTRATION HONOURS
+
+**Eligibility :** Candidates who have passed (Eligible for Higher Studies)the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognised as equivalent thereto, with not less than 45% is eligible for admissions. A concession of 5% will be given to OBC/OEC candidates. The SC/ST candidates need get only a pass. (U.O.No. 5339/2021/Admn Dated, 17.05.2021)
+
+## 3. BACHELOR OF COMPUTER APPLICATION HONOURS
+
+**Eligibility :** Candidates who have passed (Eligible for Higher Studies)the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognised as equivalent thereto with Mathematics/ Computer Science/Computer Application/ Information Technology/Informatics Practice/Informatics/ Additional Mathematics as one of the subjects are eligible for admissions (U.O. No.GAI/J1/2453/1997 dated 06.10.2000 and GA I/J1/1597/2005 dated 11.07.2005).
+
+## 4. B.SC COMPUTER SCIENCE HONOURS
+
+**Eligibility :** Candidates who have passed (Eligible for Higher Studies) the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognized as equivalent thereto with Mathematics/ Computer Science/Computer Application/ Information Technology/Informatics Practice/Informatics/ Additional Mathematics are eligible for admission. (U.O.No.GAI/JI/4756/1999 dated 11.01.2002)
+
+## 5. B.SC FOOD TECHNOLOGY HONOURS
+
+**Eligibility :** Candidates who have passed (Eligible for Higher Studies)the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognised as equivalent thereto with Science and Mathematics are eligible for admisson. (U.O. No.GA I/J1/7359/2003 dated 20.01.2010
+
+## 6. B.SC MICROBIOLOGY HONOURS
+
+**Eligibility :** Candidates who have passed (Eligible for Higher Studies) the HSE of the Kerala State Board of Higher Secondary Examination or any other examination with Physics,Chemistry,Biology.
+
+## 7. B.SC GEOGRAPHY HONOURS
+
+**Eligibility :** Candidates who have passed (Eligible for Higher Studies) the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognised as equivalent thereto are eligible for admission (U.O.No.GAI/B1/1690/2000 dated 27.05.2008)
+
+## 8. B.SC ARTIFICIAL INTELLIGENCE HONOURS
+
+**Eligibility :** Candidates who have passed (Eligible for Higher Studies)the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognized as equivalent thereto with Mathematics/ Computer Science / Computer Application/Information Technology /Informatics Practice /Informatics /Additional Mathematics are eligible for admission. (UO Note No. 107590/GA – IV – J1/2023/ Admn, Dated: 11.05.2023)
+
+## 9. B.SC PSYCHOLOGY HONOURS
+
+**Eligibility :** Candidates who have passed (Eligible for Higher Studies) the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognised as equivalent thereto are eligible for admission (U.O. No.GAI/J1/628/2003 dated 15.05.2004)
+
+## 10. BA ENGLISH LANGUAGE AND LITERATURE HONOURS
+
+**Eligibility :** Candidates who have passed (Eligible for Higher Studies) the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognized as equivalent thereto are eligible for admission.
+
+## 11. BA ISLAMIC STUDIES HONOURS
+
+**Eligibility :** Candidates who have passed (Eligible for Higher Studies)the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognized as equivalent thereto are eligible for admission.
+
+## 12. MSC PSYCHOLOGY
+
+**Eligibility :** A pass in BA/ BA (Honours)/ B.Sc degree with Psychology core (main) from University of Calicut or a recognised degree with Psychology core (main), in regular mode.
+
+## 13. MA ARABIC LANGUAGE AND LITERATURE
+
+**Eligibility :** BA Arabic/Afsal-ul-ulama/ Double Main with Arabic/ BA Functional Arabic (Core/Main) Degree or BA/BSc (excluding alternative pattern) Degree with Arabic as Common Course (Part II), of this University or an equivalent degree, with at least 50% aggregate marks or equivalent Overall CGPA. OBC/OEC candidates are eligible to relaxation up to 5%. SC/ST candidates need only to get a pass.
+
+## 14. MA Islamic Finance
+
+**Eligibility :** Any UG degree (10+2+3 or more years pattern including Professional degrees), of this University or a recognised degree, with at least 50% aggregate marks or equivalent Overall CGPA. OBC/OEC candidates are eligible to relaxation up to 5%. SC/ST candidates need only to get a pass.
+
+[Apply now](https://ajasc.embase.in/online-admission/#/sign-in)

@@ -9,15 +9,3 @@ credentials: Mcom, NET
 role: Assistant Professor
 ---
 
-<div class="blog-single content-blog profile-page"><div class="container">
-<div class="profile-card">
-<div class="profile-photo"><img src="/assets/uploads/2025/07/WhatsApp-Image-2025-10-17-at-3.25.18-PM-1.jpeg" alt="Asif Zuhail P S"></div>
-<div class="profile-head">
-
-<h1 class="profile-name">Asif Zuhail P S</h1>
-<ul class="profile-meta"><li>Mcom, NET</li><li>Assistant Professor</li></ul>
-<a class="profile-back" href="/faculties/"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to all faculty</a>
-</div>
-</div>
-
-</div></div>

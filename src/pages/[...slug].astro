@@ -1,6 +1,7 @@
 ---
 import { render } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ArticleShell from "../components/ArticleShell.astro";
 import {
   getAllEntries,
   normalizePermalink,
@@ -31,6 +32,22 @@ const { Content } = await render(entry);
 
 const crumbs: { label: string; href?: string }[] = [{ label: "Home", href: "/" }];
 const perm = normalizePermalink(entry.data.permalink);
+const t = "type" in entry.data ? (entry.data as { type?: string }).type : "page";
+const isProfile = t === "profile" || ("role" in entry.data && !!entry.data.role);
+const wide =
+  t === "listing" ||
+  perm === "/faculties/" ||
+  perm === "/departments/" ||
+  perm === "/college-news/" ||
+  perm === "/event/" ||
+  perm === "/labs/" ||
+  perm === "/clubs--cells/";
+
+const image = "image" in entry.data ? entry.data.image : undefined;
+const role = "role" in entry.data ? entry.data.role : undefined;
+const credentials = "credentials" in entry.data ? entry.data.credentials : undefined;
+const displayName =
+  "name" in entry.data && entry.data.name ? entry.data.name : entry.data.title;
 
 if (perm.startsWith("/college-news/") && perm !== "/college-news/") {
   crumbs.push({ label: "News", href: "/college-news/" });
@@ -62,5 +79,74 @@ if (perm.startsWith("/college-news/") && perm !== "/college-news/") {
   pageTitle={entry.data.title}
   breadcrumbs={crumbs}
 >
-  <Content />
+  <ArticleShell wide={wide}>
+    {
+      isProfile ? (
+        <div class="ajas-profile">
+          {image && (
+            <div class="ajas-profile-photo">
+              <img src={image} alt={displayName} />
+            </div>
+          )}
+          <div class="ajas-profile-meta">
+            <h1>{displayName}</h1>
+            {credentials && <p class="ajas-profile-cred">{credentials}</p>}
+            {role && <p class="ajas-profile-role">{role}</p>}
+            <a class="ajas-profile-back" href="/faculties/">
+              ← Back to all faculty
+            </a>
+          </div>
+          <div class="ajas-profile-bio">
+            <Content />
+          </div>
+        </div>
+      ) : (
+        <Content />
+      )
+    }
+  </ArticleShell>
 </BaseLayout>
+
+<style>
+  .ajas-profile {
+    display: grid;
+    gap: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .ajas-profile {
+      grid-template-columns: 200px 1fr;
+      grid-template-areas:
+        "photo meta"
+        "bio bio";
+    }
+    .ajas-profile-photo {
+      grid-area: photo;
+    }
+    .ajas-profile-meta {
+      grid-area: meta;
+    }
+    .ajas-profile-bio {
+      grid-area: bio;
+    }
+  }
+  .ajas-profile-photo img {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  .ajas-profile-meta h1 {
+    margin: 0 0 0.35em;
+    font-size: 1.6rem;
+  }
+  .ajas-profile-cred,
+  .ajas-profile-role {
+    margin: 0.15em 0;
+    color: #475569;
+  }
+  .ajas-profile-back {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+  }
+</style>

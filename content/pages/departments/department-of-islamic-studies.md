@@ -6,34 +6,53 @@ type: page
 image: "/assets/uploads/2024/05/Frame.svg"
 ---
 
-<div class="blog-single content-blog"><div class="container"><div class="row">
-<div class="col-lg-8"><div class="site-content clearfix"><article class="post post-blog-single"><div class="content-blog-single"><div class="content-blog-single-inner"><div class="content-blog-single-wrap migrate-content">
-<h2 id="about">About</h2>
-<p>The Department of Islamic Studies is one of the oldest departments at AJAS College and a vital branch of social sciences. It provides career-oriented education that enhances students’ academic success. The department has three dedicated faculty members, two of whom hold PhDs. With a strong curriculum in Islamic history, theology, and contemporary studies, our graduates consistently achieve high CGPA scores, with university rank holders every year. Through research, seminars, and interactive learning, we prepare students for academic and professional excellence</p>
-<h2 id="vision">Vision</h2>
-<ol><li><strong>Academic Excellence in Islamic Studies</strong>: To be a leading institution in Islamic Studies, recognized as a vital branch of social sciences, fostering deep understanding and critical inquiry.</li><li><strong>Global Understanding and Inclusivity</strong>: To promote Islamic Studies as a social science that bridges cultures and fosters global harmony.</li><li><strong>Integration of Tradition and Modernity</strong>: To harmonize classical Islamic knowledge with contemporary social science approaches and advancements.</li><li><strong>Ethical Leadership</strong>: To nurture graduates who apply Islamic values and social science insights for societal betterment.</li><li><strong>Sustainable Impact</strong>: To inspire progress and sustainability through Islamic Studies as a socially relevant discipline.</li></ol>
-<h2 id="mission">Mission</h2>
-<ul><li><strong>Interdisciplinary Learning</strong>: To provide a curriculum that positions Islamic Studies as a dynamic social science, equipping students with analytical and ethical skills.</li><li><strong>Research and Knowledge</strong>: To advance research that highlights the social science dimensions of Islamic Studies in addressing contemporary challenges.</li><li><strong>Cultural and Social Engagement</strong>: To preserve Islamic heritage while promoting its relevance within the broader context of social sciences.</li><li><strong>Community Collaboration</strong>: To apply Islamic Studies within the framework of social sciences to address societal and environmental issues.</li><li><strong>Empowering Education</strong>: To prepare students for diverse careers by grounding them in Islamic Studies and social science methodologies.</li></ul>
-<img src="/assets/uploads/2024/05/Frame.svg" alt="" class="img-fluid">
-<h2 id="head-of-department">Head Of Department</h2>
-<h2 id="dr-thanveer-t">Dr. Thanveer T</h2>
-<h2 id="ma-islamic-studies-phd">MA Islamic Studies,PHD</h2>
-<p>HoD, Islamic Studies</p>
-<p>Welcome to the Department of Islamic Studies at Ajas College. We take pride in offering an academic environment that strives for excellence in the study of Islamic thought, law, and culture. Our vision is to be a leading institution in Islamic Studies, fostering deep understanding, critical inquiry, and a comprehensive approach to social sciences.</p>
-<p>We aim to bridge cultures and foster global harmony by presenting Islamic Studies as a social science that transcends boundaries. Our commitment to integrating tradition with modernity allows students to engage with both classical Islamic knowledge and contemporary social science advancements.</p>
-<p>We seek to nurture ethical leadership, inspiring graduates to apply Islamic values and social science insights for societal betterment, and create a sustainable impact through their actions.</p>
-<p>Our mission is to provide an interdisciplinary learning experience that equips students with analytical and ethical skills essential for addressing contemporary challenges. We are committed to advancing research that highlights the social science dimensions of Islamic Studies and its relevance to global issues.</p>
-<p>Our department promotes cultural and social engagement, preserving Islamic heritage while emphasizing its relevance in the context of modern social sciences. We collaborate with the community, applying the principles of Islamic Studies to address societal and environmental challenges.</p>
-<p>On behalf of the Department of Islamic Studies, I invite you to join us on a journey of knowledge, growth, and social responsibility, as we work to empower students for diverse careers and impactful futures.</p>
-<p>Head of Department</p>
-<table class="mig-roster"><tbody><tr><td class="rl">Faculty</td><td class="nm">Dr. Anas P Aboobacker</td></tr><tr><td class="rl">MA Islamic Studies,PHD</td><td class="nm">Azharudheen K S</td></tr><tr><td class="rl">MA Islamic Studies,NET</td><td class="nm">Dr. Thanveer T</td></tr><tr><td class="rl">MA Islamic Studies,PHD</td><td class="nm">Gallery</td></tr></tbody></table>
-</div></div></div></article></div></div>
-<div class="col-lg-4"><div class="sidebar-sticky"><div class="sidebar"><div class="widget widget-toc"><h4 class="widget-title"><span>On this page</span></h4><ul class="toc-wrap"><li class="lv2"><a href="#about">About</a></li><li class="lv2"><a href="#vision">Vision</a></li><li class="lv2"><a href="#mission">Mission</a></li><li class="lv2"><a href="#head-of-department">Head Of Department</a></li><li class="lv2"><a href="#dr-thanveer-t">Dr. Thanveer T</a></li><li class="lv2"><a href="#ma-islamic-studies-phd">MA Islamic Studies,PHD</a></li></ul></div><div class="widget widget-categories"><h4 class="widget-title"><span>All Departments</span></h4><ul class="categories-wrap"><li><a href="/departments/arabic/">Department of Arabic</a></li><li><a href="/departments/department-of-commerce/">Department of Commerce &amp; Management Studies</a></li><li><a href="/departments/department-of-computer-application/">Department of Computer Application</a></li><li><a href="/departments/department-of-computer-science/">Department of Computer Science and Artificial Intelligence</a></li><li><a href="/departments/department-of-english/">Department of English</a></li><li><a href="/departments/department-of-food-technology/">Department of Food Technology</a></li><li><a href="/departments/department-of-geography/">Department of Geography</a></li><li><a href="/departments/department-of-islamic-finance/">Department of Islamic Finance</a></li><li><a href="/departments/department-of-islamic-studies/">Department of Islamic Studies</a></li><li><a href="/departments/department-of-languages/">Department of Languages</a></li><li><a href="/departments/department-of-micro-biology/">Department of Microbiology</a></li><li><a href="/departments/department-of-physical-education/">Department of Physical Education</a></li><li><a href="/departments/department-of-psychology/">PG Department of Psychology</a></li><li><a href="/departments/non-core-departments-economics/">Non Core Departments</a></li></ul></div><div class="widget widget-sent"><div class="apply-admission"><div class="apply-admission-wrap type1 bd-type1"><div class="apply-admission-inner">
-<h2 class="title text-center"><span>Apply for Admission</span></h2>
-<div class="caption text-center text-white">FYUGP &amp; PG programmes open</div>
-<div class="mig-cta-btn"><a href="/admission/" class="btn">Apply Now</a></div>
-</div></div></div></div><div class="widget widget-contact-info"><h4 class="widget-title"><span>Contact</span></h4>
-<ul class="mig-contact"><li><i class="fa fa-map-marker"></i> Poopalam, Valambur (P.O), Perinthalmanna, Malappuram, Kerala 679325</li>
-<li><i class="fa fa-phone"></i> <a href="tel:+917994188918">+91 7994 188918</a></li>
-<li><i class="fa fa-envelope"></i> <a href="mailto:mail@ajascollege.ac.in">mail@ajascollege.ac.in</a></li></ul></div></div></div></div>
-</div></div></div>
+## About
+
+The Department of Islamic Studies is one of the oldest departments at AJAS College and a vital branch of social sciences. It provides career-oriented education that enhances students’ academic success. The department has three dedicated faculty members, two of whom hold PhDs. With a strong curriculum in Islamic history, theology, and contemporary studies, our graduates consistently achieve high CGPA scores, with university rank holders every year. Through research, seminars, and interactive learning, we prepare students for academic and professional excellence
+
+## Vision
+
+1. **Academic Excellence in Islamic Studies**: To be a leading institution in Islamic Studies, recognized as a vital branch of social sciences, fostering deep understanding and critical inquiry.
+2. **Global Understanding and Inclusivity**: To promote Islamic Studies as a social science that bridges cultures and fosters global harmony.
+3. **Integration of Tradition and Modernity**: To harmonize classical Islamic knowledge with contemporary social science approaches and advancements.
+4. **Ethical Leadership**: To nurture graduates who apply Islamic values and social science insights for societal betterment.
+5. **Sustainable Impact**: To inspire progress and sustainability through Islamic Studies as a socially relevant discipline.
+
+## Mission
+
+- **Interdisciplinary Learning**: To provide a curriculum that positions Islamic Studies as a dynamic social science, equipping students with analytical and ethical skills.
+- **Research and Knowledge**: To advance research that highlights the social science dimensions of Islamic Studies in addressing contemporary challenges.
+- **Cultural and Social Engagement**: To preserve Islamic heritage while promoting its relevance within the broader context of social sciences.
+- **Community Collaboration**: To apply Islamic Studies within the framework of social sciences to address societal and environmental issues.
+- **Empowering Education**: To prepare students for diverse careers by grounding them in Islamic Studies and social science methodologies.
+
+![](/assets/uploads/2024/05/Frame.svg)
+
+## Head Of Department
+
+## Dr. Thanveer T
+
+## MA Islamic Studies,PHD
+
+HoD, Islamic Studies
+
+Welcome to the Department of Islamic Studies at Ajas College. We take pride in offering an academic environment that strives for excellence in the study of Islamic thought, law, and culture. Our vision is to be a leading institution in Islamic Studies, fostering deep understanding, critical inquiry, and a comprehensive approach to social sciences.
+
+We aim to bridge cultures and foster global harmony by presenting Islamic Studies as a social science that transcends boundaries. Our commitment to integrating tradition with modernity allows students to engage with both classical Islamic knowledge and contemporary social science advancements.
+
+We seek to nurture ethical leadership, inspiring graduates to apply Islamic values and social science insights for societal betterment, and create a sustainable impact through their actions.
+
+Our mission is to provide an interdisciplinary learning experience that equips students with analytical and ethical skills essential for addressing contemporary challenges. We are committed to advancing research that highlights the social science dimensions of Islamic Studies and its relevance to global issues.
+
+Our department promotes cultural and social engagement, preserving Islamic heritage while emphasizing its relevance in the context of modern social sciences. We collaborate with the community, applying the principles of Islamic Studies to address societal and environmental challenges.
+
+On behalf of the Department of Islamic Studies, I invite you to join us on a journey of knowledge, growth, and social responsibility, as we work to empower students for diverse careers and impactful futures.
+
+Head of Department
+
+|  |  |
+| --- | --- |
+| Faculty | Dr. Anas P Aboobacker |
+| MA Islamic Studies,PHD | Azharudheen K S |
+| MA Islamic Studies,NET | Dr. Thanveer T |
+| MA Islamic Studies,PHD | Gallery |

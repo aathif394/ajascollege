@@ -1,0 +1,86 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const faculty = (await getCollection("faculty", ({ data }) => !data.draft)).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title),
+);
+---
+
+<BaseLayout
+  title="Faculties"
+  description="Teaching faculty at Al Jamia Arts & Science College."
+  pageTitle="Faculties"
+>
+  <div class="flat-team blog-single content-blog">
+    <div class="container">
+      <p class="listing-intro">
+        Our teaching community brings together scholars and practitioners across the arts, sciences,
+        commerce and computing — mentoring students well beyond the syllabus.
+      </p>
+      <div class="row">
+        {
+          faculty.map((f) => (
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+              <div class="team-box-layout-h1 ajas-faculty-card">
+                <div class="item-img">
+                  <a href={f.data.permalink}>
+                    {f.data.image ? (
+                      <img src={f.data.image} alt={f.data.title} />
+                    ) : (
+                      <div class="ajas-faculty-placeholder" />
+                    )}
+                  </a>
+                </div>
+                <div class="item-content">
+                  <h3 class="item-title">
+                    <a href={f.data.permalink}>{f.data.name || f.data.title}</a>
+                  </h3>
+                  {f.data.role && <p class="item-designation">{f.data.role}</p>}
+                  {f.data.credentials && <p class="item-meta">{f.data.credentials}</p>}
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      <p class="ajas-cms-hint">
+        Staff: add or edit people under <strong>Faculty</strong> in the CMS. This list updates
+        automatically.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .ajas-faculty-card {
+    margin-bottom: 28px;
+  }
+  .ajas-faculty-card .item-img img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  .ajas-faculty-placeholder {
+    height: 220px;
+    background: #e5e7eb;
+  }
+  .ajas-faculty-card .item-content {
+    padding: 12px 4px 8px;
+  }
+  .ajas-faculty-card .item-title {
+    font-size: 1rem;
+    margin: 0 0 4px;
+  }
+  .ajas-faculty-card .item-designation,
+  .ajas-faculty-card .item-meta {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #64748b;
+  }
+  .ajas-cms-hint {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #64748b;
+  }
+</style>
