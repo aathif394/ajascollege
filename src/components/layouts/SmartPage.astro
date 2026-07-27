@@ -1,0 +1,559 @@
+---
+/**
+ * Content-aware page layout — not a wall of text.
+ * Sections → cards, tables → fact grids, programmes → programme cards.
+ */
+import {
+  splitSections,
+  parseProgrammes,
+  looksLikeAdmission,
+  looksLikeVision,
+  type FactRow,
+  type ContentSection,
+} from "../../lib/parseContent";
+
+interface Props {
+  title: string;
+  body: string;
+  permalink: string;
+  image?: string;
+}
+
+const { title, body, permalink, image } = Astro.props;
+
+const isAdmission = looksLikeAdmission(body, permalink);
+const isVision = looksLikeVision(body, title);
+const parsed = splitSections(body);
+const programmes = isAdmission ? parseProgrammes(body) : null;
+
+// Stats strip from intro facts (overview)
+const statKeys = [
+  "year of established",
+  "year of establishment",
+  "no of programs",
+  "affiliated university",
+  "status of college",
+  "financial category",
+  "ugc recognition",
+];
+const highlightStats = parsed.introFacts.filter((f) =>
+  statKeys.some((k) => f.label.toLowerCase().includes(k.replace("year of establishment", "year"))),
+);
+
+function FactGrid({ rows, compact = false }: { rows: FactRow[]; compact?: boolean }) {
+  return null as any; // placeholder — use HTML below
+}
+---
+
+<div class="smart-page">
+  {/* ——— Vision & Mission: two equal panels ——— */}
+  {
+    isVision && (
+      <div class="sp-vision">
+        {parsed.introImages[0] && (
+          <figure class="sp-vision-img">
+            <img src={parsed.introImages[0]} alt="" />
+          </figure>
+        )}
+        {!parsed.introImages[0] && image && (
+          <figure class="sp-vision-img">
+            <img src={image} alt="" />
+          </figure>
+        )}
+        <div class="sp-vision-grid">
+          {parsed.sections.map((s) => (
+            <section class="sp-vision-card" id={s.id}>
+              <h2>{s.title}</h2>
+              {s.images.map((src) => (
+                <img src={src} alt="" class="sp-inline-img" />
+              ))}
+              <div class="sp-html" set:html={s.bodyHtml} />
+            </section>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  {/* ——— Admission: programme cards ——— */}
+  {
+    isAdmission && programmes && (
+      <div class="sp-admission">
+        {programmes.leadHtml && (
+          <div class="sp-lead sp-html" set:html={programmes.leadHtml} />
+        )}
+        <div class="sp-prog-grid">
+          {programmes.programmes.map((p) => (
+            <article class="sp-prog-card">
+              <h3>{p.title}</h3>
+              <ul class="sp-prog-meta">
+                {p.duration && (
+                  <li>
+                    <span>Duration</span>
+                    <strong>{p.duration}</strong>
+                  </li>
+                )}
+                {p.fee && (
+                  <li>
+                    <span>Fee</span>
+                    <strong>{p.fee}</strong>
+                  </li>
+                )}
+                {p.intake && (
+                  <li>
+                    <span>Intake</span>
+                    <strong>{p.intake}</strong>
+                  </li>
+                )}
+              </ul>
+              {p.complementary && (
+                <p class="sp-prog-comp">
+                  <em>Complementary:</em> {p.complementary}
+                </p>
+              )}
+              {p.eligibility && (
+                <div class="sp-prog-elig">
+                  <strong>Eligibility</strong>
+                  <p>{p.eligibility}</p>
+                </div>
+              )}
+              {p.extraHtml && <div class="sp-html" set:html={p.extraHtml} />}
+            </article>
+          ))}
+        </div>
+        {programmes.tailHtml && (
+          <div class="sp-tail sp-html" set:html={programmes.tailHtml} />
+        )}
+      </div>
+    )
+  }
+
+  {/* ——— Default / overview: hero + facts + section cards ——— */}
+  {
+    !isVision && !isAdmission && (
+      <div class="sp-default">
+        {(image || parsed.introImages[0]) && (
+          <figure class="sp-hero-fig">
+            <img src={image || parsed.introImages[0]} alt="" />
+          </figure>
+        )}
+
+        {highlightStats.length > 0 && (
+          <div class="sp-stats">
+            {highlightStats.slice(0, 6).map((s) => (
+              <div class="sp-stat">
+                <span class="sp-stat-val">{s.value}</span>
+                <span class="sp-stat-lbl">{s.label}</span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <div class={`sp-top ${parsed.introFacts.length ? "has-facts" : ""}`}>
+          {(parsed.introHtml || parsed.introMd) && (
+            <div class="sp-lead-card">
+              <h2 class="sp-kicker">{title}</h2>
+              <div class="sp-html" set:html={parsed.introHtml} />
+            </div>
+          )}
+          {parsed.introFacts.length > 0 && (
+            <aside class="sp-fact-sheet">
+              <h3>At a glance</h3>
+              <dl>
+                {parsed.introFacts.map((r) => (
+                  <div class="sp-fact-row">
+                    <dt>{r.label}</dt>
+                    <dd>{r.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </aside>
+          )}
+        </div>
+
+        {parsed.sections.length > 0 && (
+          <div class="sp-sections">
+            {parsed.sections.map((s: ContentSection, i: number) => (
+              <section
+                class:list={["sp-section", i % 2 === 1 && "sp-section-alt"]}
+                id={s.id}
+              >
+                <div class="sp-section-head">
+                  <span class="sp-section-num">{String(i + 1).padStart(2, "0")}</span>
+                  <h2>{s.title}</h2>
+                </div>
+                {s.images.length > 0 && (
+                  <div class="sp-section-gallery">
+                    {s.images.map((src) => (
+                      <img src={src} alt="" />
+                    ))}
+                  </div>
+                )}
+                {s.facts.length > 0 && (
+                  <dl class="sp-mini-facts">
+                    {s.facts.map((r) => (
+                      <div class="sp-fact-row">
+                        <dt>{r.label}</dt>
+                        <dd>{r.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                )}
+                {s.bodyHtml && <div class="sp-html" set:html={s.bodyHtml} />}
+              </section>
+            ))}
+          </div>
+        )}
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .smart-page {
+    padding: 0 0 64px;
+    background: #f0f3f8;
+  }
+
+  /* —— shared HTML inside sections —— */
+  .sp-html :global(p) {
+    margin: 0 0 0.95em;
+    line-height: 1.75;
+    color: #2c3e50;
+  }
+  .sp-html :global(p:last-child) {
+    margin-bottom: 0;
+  }
+  .sp-html :global(ul),
+  .sp-html :global(ol) {
+    margin: 0 0 1em;
+    padding-left: 1.25em;
+  }
+  .sp-html :global(img) {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+    border-radius: 8px;
+  }
+  .sp-html :global(a) {
+    color: #3f4c99;
+    font-weight: 500;
+  }
+
+  /* —— Vision —— */
+  .sp-vision {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 16px 0;
+  }
+  .sp-vision-img {
+    margin: 0 0 24px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 32px rgba(24, 50, 81, 0.08);
+    display: flex;
+    justify-content: center;
+  }
+  .sp-vision-img img {
+    max-width: min(100%, 420px);
+    height: auto;
+    object-fit: contain;
+  }
+  .sp-vision-grid {
+    display: grid;
+    gap: 20px;
+  }
+  @media (min-width: 800px) {
+    .sp-vision-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .sp-vision-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 26px 32px;
+    box-shadow: 0 10px 32px rgba(24, 50, 81, 0.08);
+    border-top: 4px solid #ff5f60;
+  }
+  .sp-vision-card:nth-child(2) {
+    border-top-color: #3f4c99;
+  }
+  .sp-vision-card h2 {
+    margin: 0 0 1rem;
+    font-size: 1.45rem;
+    color: #183251;
+  }
+  .sp-inline-img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 0 1rem;
+    border-radius: 8px;
+  }
+
+  /* —— Admission programmes —— */
+  .sp-admission {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 28px 16px 0;
+  }
+  .sp-prog-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 700px) {
+    .sp-prog-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 1000px) {
+    .sp-prog-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  .sp-prog-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 22px 20px 24px;
+    box-shadow: 0 8px 28px rgba(24, 50, 81, 0.08);
+    border-top: 3px solid #183251;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sp-prog-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #183251;
+    line-height: 1.3;
+  }
+  .sp-prog-meta {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+  .sp-prog-meta li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 10px;
+    background: #f4f6fa;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+  .sp-prog-meta span {
+    color: #64748b;
+  }
+  .sp-prog-meta strong {
+    color: #183251;
+    text-align: right;
+  }
+  .sp-prog-elig {
+    font-size: 0.88rem;
+    color: #475569;
+    border-top: 1px solid #eef2f7;
+    padding-top: 10px;
+  }
+  .sp-prog-elig strong {
+    display: block;
+    color: #3f4c99;
+    margin-bottom: 4px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .sp-prog-comp {
+    font-size: 0.88rem;
+    color: #5c6578;
+    margin: 0;
+  }
+  .sp-lead,
+  .sp-tail {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(24, 50, 81, 0.06);
+  }
+  .sp-tail {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  /* —— Default / overview —— */
+  .sp-default {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 16px 0;
+  }
+  .sp-hero-fig {
+    margin: 0 0 22px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 10px 32px rgba(24, 50, 81, 0.08);
+    display: flex;
+    justify-content: center;
+  }
+  .sp-hero-fig img {
+    max-width: 100%;
+    max-height: 420px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+  .sp-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  @media (min-width: 700px) {
+    .sp-stats {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .sp-stat {
+    background: #183251;
+    color: #fff;
+    border-radius: 12px;
+    padding: 18px 14px;
+    text-align: center;
+  }
+  .sp-stat:nth-child(2) {
+    background: #3f4c99;
+  }
+  .sp-stat:nth-child(3) {
+    background: #7a1f2b;
+  }
+  .sp-stat:nth-child(4) {
+    background: #1e3a6e;
+  }
+  .sp-stat-val {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 6px;
+  }
+  .sp-stat-lbl {
+    display: block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.85;
+  }
+  .sp-top {
+    display: grid;
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+  @media (min-width: 900px) {
+    .sp-top.has-facts {
+      grid-template-columns: 1.35fr 1fr;
+      align-items: start;
+    }
+  }
+  .sp-lead-card,
+  .sp-fact-sheet,
+  .sp-section {
+    background: #fff;
+    border-radius: 12px;
+    padding: 26px 24px 28px;
+    box-shadow: 0 10px 32px rgba(24, 50, 81, 0.07);
+  }
+  .sp-kicker {
+    margin: 0 0 0.85rem;
+    font-size: 1.35rem;
+    color: #183251;
+    border-left: 4px solid #ff5f60;
+    padding-left: 12px;
+  }
+  .sp-fact-sheet h3 {
+    margin: 0 0 14px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #3f4c99;
+  }
+  .sp-fact-sheet dl,
+  .sp-mini-facts {
+    margin: 0;
+  }
+  .sp-fact-row {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eef2f7;
+  }
+  .sp-fact-row:last-child {
+    border-bottom: 0;
+  }
+  .sp-fact-row dt {
+    margin: 0;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #64748b;
+  }
+  .sp-fact-row dd {
+    margin: 0;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #183251;
+    text-align: right;
+  }
+  .sp-sections {
+    display: grid;
+    gap: 16px;
+  }
+  .sp-section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .sp-section-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ff5f60;
+    letter-spacing: 0.06em;
+  }
+  .sp-section h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #183251;
+  }
+  .sp-section-alt {
+    border-top: 3px solid #3f4c99;
+  }
+  .sp-section:not(.sp-section-alt) {
+    border-top: 3px solid #ff5f60;
+  }
+  .sp-section-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+    justify-content: center;
+  }
+  .sp-section-gallery img {
+    max-width: min(100%, 360px);
+    max-height: 320px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #f4f6fa;
+  }
+  .sp-mini-facts {
+    margin-bottom: 12px;
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 4px 14px;
+  }
+</style>

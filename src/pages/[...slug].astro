@@ -3,6 +3,7 @@ import { render } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArticleShell from "../components/ArticleShell.astro";
 import EntityArticle from "../components/EntityArticle.astro";
+import SmartPage from "../components/layouts/SmartPage.astro";
 import {
   getAllEntries,
   normalizePermalink,
@@ -39,15 +40,15 @@ const isProfile = collection === "faculty" || t === "profile";
 const isNews = collection === "news";
 const isEvent = collection === "events";
 const isEntity = isNews || isEvent;
+// Structured info pages (not listings, not pure HTML leftovers)
+const isSmartPage =
+  collection === "pages" &&
+  !isProfile &&
+  t !== "listing" &&
+  t !== "home" &&
+  typeof (entry as { body?: string }).body === "string";
 
-const wide =
-  t === "listing" ||
-  perm === "/faculties/" ||
-  perm === "/departments/" ||
-  perm === "/college-news/" ||
-  perm === "/event/" ||
-  perm === "/labs/" ||
-  perm === "/clubs--cells/";
+const body = ((entry as { body?: string }).body || "").trim();
 
 const image = "image" in entry.data ? entry.data.image : undefined;
 const role = "role" in entry.data ? entry.data.role : undefined;
@@ -119,8 +120,15 @@ if (isNews) {
           </div>
         </div>
       </ArticleShell>
+    ) : isSmartPage && body ? (
+      <SmartPage
+        title={entry.data.title}
+        body={body}
+        permalink={perm}
+        image={image}
+      />
     ) : (
-      <ArticleShell wide={wide} variant={wide ? "listing" : "info"}>
+      <ArticleShell wide={t === "listing"} variant={t === "listing" ? "listing" : "info"}>
         <Content />
       </ArticleShell>
     )
