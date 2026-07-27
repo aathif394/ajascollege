@@ -15,72 +15,85 @@ const faculty = (await getCollection("faculty", ({ data }) => !data.draft)).sort
   <div class="flat-team blog-single content-blog">
     <div class="container">
       <p class="listing-intro">
-        Our teaching community brings together scholars and practitioners across the arts, sciences,
-        commerce and computing — mentoring students well beyond the syllabus.
+        Scholars and practitioners across arts, science, commerce and computing — mentoring students
+        beyond the syllabus.
       </p>
       <div class="row">
         {
           faculty.map((f) => (
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <div class="team-box-layout-h1 ajas-faculty-card">
-                <div class="item-img">
-                  <a href={f.data.permalink}>
-                    {f.data.image ? (
-                      <img src={f.data.image} alt={f.data.title} />
-                    ) : (
-                      <div class="ajas-faculty-placeholder" />
-                    )}
-                  </a>
+              <a class="ajas-faculty-card" href={f.data.permalink}>
+                <div class="ajas-faculty-photo">
+                  {f.data.image ? (
+                    <img src={f.data.image} alt={f.data.title} loading="lazy" />
+                  ) : (
+                    <div class="ajas-faculty-placeholder" />
+                  )}
                 </div>
-                <div class="item-content">
-                  <h3 class="item-title">
-                    <a href={f.data.permalink}>{f.data.name || f.data.title}</a>
-                  </h3>
-                  {f.data.role && <p class="item-designation">{f.data.role}</p>}
-                  {f.data.credentials && <p class="item-meta">{f.data.credentials}</p>}
+                <div class="ajas-faculty-body">
+                  <h3>{f.data.name || f.data.title}</h3>
+                  {f.data.role && <p class="role">{f.data.role}</p>}
+                  {f.data.credentials && <p class="cred">{f.data.credentials}</p>}
                 </div>
-              </div>
+              </a>
             </div>
           ))
         }
       </div>
-      <p class="ajas-cms-hint">
-        Staff: add or edit people under <strong>Faculty</strong> in the CMS. This list updates
-        automatically.
-      </p>
     </div>
   </div>
 </BaseLayout>
 
 <style>
-  .ajas-faculty-card {
-    margin-bottom: 28px;
+  .listing-intro {
+    max-width: 40rem;
+    margin: 0 0 1.75rem;
+    color: #5c6578;
+    font-size: 1.05rem;
+    line-height: 1.55;
   }
-  .ajas-faculty-card .item-img img {
+  .ajas-faculty-card {
+    display: block;
+    margin-bottom: 28px;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 22px rgba(24, 50, 81, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .ajas-faculty-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(24, 50, 81, 0.14);
+  }
+  .ajas-faculty-photo img,
+  .ajas-faculty-placeholder {
     width: 100%;
     height: 220px;
     object-fit: cover;
+    background: #e8eef4;
+    display: block;
   }
-  .ajas-faculty-placeholder {
-    height: 220px;
-    background: #e5e7eb;
+  .ajas-faculty-body {
+    padding: 14px 14px 16px;
   }
-  .ajas-faculty-card .item-content {
-    padding: 12px 4px 8px;
-  }
-  .ajas-faculty-card .item-title {
-    font-size: 1rem;
+  .ajas-faculty-body h3 {
     margin: 0 0 4px;
+    font-size: 1rem;
+    color: #183251;
+    font-weight: 600;
+    line-height: 1.3;
   }
-  .ajas-faculty-card .item-designation,
-  .ajas-faculty-card .item-meta {
+  .ajas-faculty-body .role {
     margin: 0;
     font-size: 0.85rem;
-    color: #64748b;
+    color: #3f4c99;
+    font-weight: 500;
   }
-  .ajas-cms-hint {
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
+  .ajas-faculty-body .cred {
+    margin: 4px 0 0;
+    font-size: 0.8rem;
     color: #64748b;
   }
 </style>

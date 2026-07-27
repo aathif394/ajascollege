@@ -173,6 +173,47 @@ collections:
             media_folder: public/assets/uploads
             public_folder: /assets/uploads
 
+
+  - name: navigation
+    label: "5b · Main menu"
+    description: "Edit menu labels and links (pages or PDFs). Remove a link by deleting the item. Nested children = dropdown."
+    files:
+      - name: main_menu
+        label: Main navigation
+        file: content/settings/navigation.json
+        fields:
+          - label: Main menu
+            name: main
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: "Link (page path or PDF URL)", name: href, widget: string, required: false, hint: "e.g. /admission/ or /assets/uploads/….pdf" }
+              - label: Sub-items
+                name: children
+                widget: list
+                required: false
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Link, name: href, widget: string, required: false }
+                  - label: Nested sub-items
+                    name: children
+                    widget: list
+                    required: false
+                    summary: "{{fields.label}}"
+                    fields:
+                      - { label: Label, name: label, widget: string }
+                      - { label: Link, name: href, widget: string, required: false }
+                      - label: Nested sub-items
+                        name: children
+                        widget: list
+                        required: false
+                        summary: "{{fields.label}}"
+                        fields:
+                          - { label: Label, name: label, widget: string }
+                          - { label: Link, name: href, widget: string, required: false }
+
   - name: home
     label: "6 · Homepage hero"
     description: Hero text, CTAs, stats, principal blurb.

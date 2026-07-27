@@ -107,3 +107,22 @@
   }
 })();
 </script>
+<script>
+(function(){
+  function done(){
+    document.documentElement.classList.add('is-loaded');
+    document.body && document.body.classList.add('is-loaded');
+    var o = document.getElementById('loading-overlay');
+    if (o) {
+      o.style.opacity = '0';
+      o.style.visibility = 'hidden';
+      o.style.pointerEvents = 'none';
+      setTimeout(function(){ o.style.display = 'none'; }, 200);
+    }
+  }
+  if (document.readyState === 'complete') done();
+  else window.addEventListener('load', function(){ setTimeout(done, 80); });
+  // Failsafe: never block interaction more than 600ms
+  setTimeout(done, 600);
+})();
+</script>

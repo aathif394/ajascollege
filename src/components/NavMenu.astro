@@ -1,0 +1,40 @@
+---
+export type NavItem = {
+  label: string;
+  href?: string;
+  children?: NavItem[];
+};
+
+interface Props {
+  items: NavItem[];
+  depth?: number;
+}
+
+const { items, depth = 0 } = Astro.props;
+const ulClass = depth === 0 ? "menu" : "sub-menu";
+---
+
+<ul class={ulClass}>
+  {
+    items.map((item) => {
+      const hasKids = !!(item.children && item.children.length);
+      const href = item.href || "#";
+      const external =
+        href.startsWith("http") ||
+        href.endsWith(".pdf") ||
+        href.includes("/assets/uploads/");
+      return (
+        <li class={hasKids ? "menu-item has-sub" : undefined}>
+          <a
+            href={href}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noopener" : undefined}
+          >
+            {item.label}
+          </a>
+          {hasKids && <Astro.self items={item.children!} depth={depth + 1} />}
+        </li>
+      );
+    })
+  }
+</ul>

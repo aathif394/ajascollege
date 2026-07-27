@@ -1,0 +1,176 @@
+---
+/**
+ * Professional layout for news / event detail pages.
+ */
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  kind: "news" | "event" | "page";
+  title: string;
+  date?: Date | string;
+  image?: string;
+  backHref: string;
+  backLabel: string;
+}
+
+const { kind, title, date, image, backHref, backLabel } = Astro.props;
+
+const dateObj = date ? new Date(date) : null;
+const dateLabel =
+  dateObj && !Number.isNaN(+dateObj)
+    ? dateObj.toLocaleDateString("en-IN", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    : null;
+
+const kindLabel = kind === "news" ? "News" : kind === "event" ? "Event" : "Page";
+---
+
+<article class="ajas-entity">
+  {
+    image && (
+      <div class="ajas-entity-hero">
+        <img src={image} alt="" />
+        <div class="ajas-entity-hero-shade" />
+      </div>
+    )
+  }
+
+  <div class="ajas-entity-panel">
+    <div class="ajas-entity-meta">
+      <span class="ajas-entity-kind">{kindLabel}</span>
+      {dateLabel && <time datetime={dateObj!.toISOString()}>{dateLabel}</time>}
+    </div>
+    <h1 class="ajas-entity-title">{title}</h1>
+    <div class="ajas-entity-body ajas-prose">
+      <slot />
+    </div>
+    <footer class="ajas-entity-foot">
+      <a class="ajas-entity-back" href={backHref}>← {backLabel}</a>
+      <div class="ajas-entity-more">
+        <a href="/admission/">Admissions</a>
+        <a href="/contact/">Contact</a>
+        <a href="/notices/">Notices</a>
+      </div>
+    </footer>
+  </div>
+</article>
+
+<style>
+  .ajas-entity {
+    max-width: 860px;
+    margin: 0 auto 48px;
+    padding: 0 16px;
+  }
+  .ajas-entity-hero {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: -48px;
+    box-shadow: 0 16px 40px rgba(24, 50, 81, 0.18);
+  }
+  .ajas-entity-hero img {
+    display: block;
+    width: 100%;
+    height: clamp(200px, 38vw, 360px);
+    object-fit: cover;
+  }
+  .ajas-entity-hero-shade {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 40%;
+    background: linear-gradient(transparent, rgba(24, 50, 81, 0.35));
+    pointer-events: none;
+  }
+  .ajas-entity-panel {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    border-radius: 10px;
+    padding: 28px 28px 32px;
+    margin: 0 12px;
+    box-shadow: 0 12px 40px rgba(24, 50, 81, 0.1);
+    border-top: 4px solid #ff5f60;
+  }
+  @media (min-width: 768px) {
+    .ajas-entity-panel {
+      margin: 0 24px;
+      padding: 36px 40px 40px;
+    }
+  }
+  .ajas-entity-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+    margin-bottom: 12px;
+    font-size: 13px;
+  }
+  .ajas-entity-kind {
+    display: inline-block;
+    background: #183251;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .ajas-entity-meta time {
+    color: #64748b;
+  }
+  .ajas-entity-title {
+    margin: 0 0 1rem;
+    font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+    line-height: 1.25;
+    color: #183251;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .ajas-entity-body :global(h1) {
+    display: none; /* title already shown */
+  }
+  .ajas-entity-body :global(> p:first-child img:only-child),
+  .ajas-entity-body :global(> p:first-of-type:has(img:only-child)) {
+    display: none; /* hero already shows primary image */
+  }
+  /* hide duplicate leading image if first block is only an image */
+  .ajas-entity-body :global(> p:first-child > img:only-child) {
+    display: none;
+  }
+  .ajas-entity-foot {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #e8eef4;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ajas-entity-back {
+    font-weight: 600;
+    color: #3f4c99;
+    text-decoration: none;
+  }
+  .ajas-entity-back:hover {
+    color: #ff5f60;
+  }
+  .ajas-entity-more {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 14px;
+  }
+  .ajas-entity-more a {
+    color: #64748b;
+    text-decoration: none;
+  }
+  .ajas-entity-more a:hover {
+    color: #183251;
+  }
+</style>

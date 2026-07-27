@@ -2,6 +2,7 @@
 import { render } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArticleShell from "../components/ArticleShell.astro";
+import EntityArticle from "../components/EntityArticle.astro";
 import {
   getAllEntries,
   normalizePermalink,
@@ -32,8 +33,13 @@ const { Content } = await render(entry);
 
 const crumbs: { label: string; href?: string }[] = [{ label: "Home", href: "/" }];
 const perm = normalizePermalink(entry.data.permalink);
+const collection = entry.collection;
 const t = "type" in entry.data ? (entry.data as { type?: string }).type : "page";
-const isProfile = t === "profile" || ("role" in entry.data && !!entry.data.role);
+const isProfile = collection === "faculty" || t === "profile";
+const isNews = collection === "news";
+const isEvent = collection === "events";
+const isEntity = isNews || isEvent;
+
 const wide =
   t === "listing" ||
   perm === "/faculties/" ||
@@ -47,12 +53,13 @@ const image = "image" in entry.data ? entry.data.image : undefined;
 const role = "role" in entry.data ? entry.data.role : undefined;
 const credentials = "credentials" in entry.data ? entry.data.credentials : undefined;
 const displayName =
-  "name" in entry.data && entry.data.name ? entry.data.name : entry.data.title;
+  "name" in entry.data && entry.data.name ? String(entry.data.name) : entry.data.title;
+const date = "date" in entry.data ? entry.data.date : undefined;
 
-if (perm.startsWith("/college-news/") && perm !== "/college-news/") {
+if (isNews) {
   crumbs.push({ label: "News", href: "/college-news/" });
   crumbs.push({ label: entry.data.title });
-} else if (perm.startsWith("/event/") && perm !== "/event/") {
+} else if (isEvent) {
   crumbs.push({ label: "Events", href: "/event/" });
   crumbs.push({ label: entry.data.title });
 } else if (perm.startsWith("/faculties/") && perm !== "/faculties/") {
@@ -79,9 +86,22 @@ if (perm.startsWith("/college-news/") && perm !== "/college-news/") {
   pageTitle={entry.data.title}
   breadcrumbs={crumbs}
 >
-  <ArticleShell wide={wide}>
-    {
-      isProfile ? (
+  {
+    isEntity ? (
+      <div class="ajas-entity-wrap">
+        <EntityArticle
+          kind={isNews ? "news" : "event"}
+          title={entry.data.title}
+          date={date as Date | undefined}
+          image={image}
+          backHref={isNews ? "/college-news/" : "/event/"}
+          backLabel={isNews ? "All news" : "All events"}
+        >
+          <Content />
+        </EntityArticle>
+      </div>
+    ) : isProfile ? (
+      <ArticleShell wide={false}>
         <div class="ajas-profile">
           {image && (
             <div class="ajas-profile-photo">
@@ -93,21 +113,27 @@ if (perm.startsWith("/college-news/") && perm !== "/college-news/") {
             {credentials && <p class="ajas-profile-cred">{credentials}</p>}
             {role && <p class="ajas-profile-role">{role}</p>}
             <a class="ajas-profile-back" href="/faculties/">
-              ← Back to all faculty
+              ← All faculty
             </a>
           </div>
-          <div class="ajas-profile-bio">
+          <div class="ajas-profile-bio ajas-prose">
             <Content />
           </div>
         </div>
-      ) : (
+      </ArticleShell>
+    ) : (
+      <ArticleShell wide={wide}>
         <Content />
-      )
-    }
-  </ArticleShell>
+      </ArticleShell>
+    )
+  }
 </BaseLayout>
 
 <style>
+  .ajas-entity-wrap {
+    padding: 28px 0 20px;
+    background: linear-gradient(180deg, #eef2f7 0%, #f8fafc 40%, #fff 100%);
+  }
   .ajas-profile {
     display: grid;
     gap: 1.25rem;
@@ -132,21 +158,33 @@ if (perm.startsWith("/college-news/") && perm !== "/college-news/") {
   .ajas-profile-photo img {
     width: 100%;
     max-width: 220px;
-    border-radius: 8px;
+    border-radius: 10px;
     object-fit: cover;
+    box-shadow: 0 8px 24px rgba(24, 50, 81, 0.12);
   }
   .ajas-profile-meta h1 {
     margin: 0 0 0.35em;
     font-size: 1.6rem;
+    color: #183251;
   }
   .ajas-profile-cred,
   .ajas-profile-role {
     margin: 0.15em 0;
     color: #475569;
   }
+  .ajas-profile-role {
+    font-weight: 600;
+    color: #3f4c99;
+  }
   .ajas-profile-back {
     display: inline-block;
-    margin-top: 0.75rem;
+    margin-top: 0.85rem;
     font-size: 0.9rem;
+    font-weight: 600;
+    color: #3f4c99;
+    text-decoration: none;
+  }
+  .ajas-profile-back:hover {
+    color: #ff5f60;
   }
 </style>

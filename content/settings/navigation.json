@@ -1,0 +1,468 @@
+{
+  "main": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "/",
+      "children": [
+        {
+          "label": "Vision & Mission",
+          "href": "/vision-mission/"
+        },
+        {
+          "label": "College profile",
+          "href": "/",
+          "children": [
+            {
+              "label": "Overview",
+              "href": "/overview/"
+            },
+            {
+              "label": "Core Values",
+              "href": "/core-values/"
+            }
+          ]
+        },
+        {
+          "label": "Administration",
+          "href": "/",
+          "children": [
+            {
+              "label": "Principal",
+              "href": "/principal/"
+            },
+            {
+              "label": "Vice Principal",
+              "href": "/vice-principal/"
+            },
+            {
+              "label": "Administrative Staff",
+              "href": "/administrative-staff/"
+            },
+            {
+              "label": "College Council",
+              "href": "/college-council/"
+            },
+            {
+              "label": "Non-Teaching Staffs",
+              "href": "/non-teaching-staffs/"
+            }
+          ]
+        },
+        {
+          "label": "College Committees",
+          "href": "/college-committees/",
+          "children": [
+            {
+              "label": "Finance Committee",
+              "href": "/finance-committee-2/"
+            }
+          ]
+        },
+        {
+          "label": "Oraganogram",
+          "href": "/assets/uploads/2024/07/Organogram.pdf"
+        },
+        {
+          "label": "Policy Documents",
+          "href": "/policy-documents/"
+        },
+        {
+          "label": "Add-On/ Certificate Courses",
+          "href": "/add-on-certificate-courses/"
+        },
+        {
+          "label": "Mandatory Disclosure",
+          "href": "/",
+          "children": [
+            {
+              "label": "Affiliation",
+              "href": "/assets/uploads/2024/06/CPA-2023-24.pdf"
+            },
+            {
+              "label": "RTI Declaration",
+              "href": "/assets/uploads/2024/06/RTI-1.pdf"
+            },
+            {
+              "label": "Minority Certificate",
+              "href": "/assets/uploads/2025/02/Minority-Certificate.pdf"
+            },
+            {
+              "label": "ISO Certificate",
+              "href": "/assets/uploads/2025/03/ISO-Certificate-2.pdf"
+            },
+            {
+              "label": "ISO Surveillance Certificate",
+              "href": "/assets/uploads/2025/02/ISO-Certificate.pdf"
+            },
+            {
+              "label": "NOC",
+              "href": "/assets/uploads/2025/02/NOC.pdf"
+            },
+            {
+              "label": "2(F)",
+              "href": "/assets/uploads/2025/02/2f.pdf"
+            },
+            {
+              "label": "CPA 2024-25",
+              "href": "/assets/uploads/2025/02/CPA-2024-25.pdf"
+            }
+          ]
+        },
+        {
+          "label": "Recognitions",
+          "href": "/recognitions/"
+        },
+        {
+          "label": "Sister Institutions",
+          "href": "/sister-institutions/"
+        }
+      ]
+    },
+    {
+      "label": "College",
+      "href": "/",
+      "children": [
+        {
+          "label": "Code of Conduct",
+          "href": "/",
+          "children": [
+            {
+              "label": "Principal",
+              "href": "/code-of-conduct-principal/"
+            },
+            {
+              "label": "Student",
+              "href": "/code-of-cunduct-student/"
+            },
+            {
+              "label": "Teachers",
+              "href": "/code-of-conduct-teachers/"
+            },
+            {
+              "label": "Non Teaching Staffs",
+              "href": "/code-of-cunduct-non-teaching-staffs/"
+            },
+            {
+              "label": "UGC Guidelines",
+              "href": "/assets/uploads/2024/06/UGC-Workload-and-Code-Ethics-Regulation-for-College-Teachers-and-Non-Teaching-Staff_20210107101751.pdf"
+            }
+          ]
+        },
+        {
+          "label": "Alumni",
+          "href": "/alumnae/"
+        },
+        {
+          "label": "Institutional Distictivness",
+          "href": "/institutional-distictivness/"
+        },
+        {
+          "label": "Best Practice",
+          "href": "/",
+          "children": [
+            {
+              "label": "Best Practice 1 – HOPE",
+              "href": "/best-practice-1-hope/"
+            },
+            {
+              "label": "Best Practice 2 – STORY SEEDS",
+              "href": "/best-practice-2-story-seeds/"
+            }
+          ]
+        },
+        {
+          "label": "Infrastructure",
+          "href": "/",
+          "children": [
+            {
+              "label": "State Off The Art Facilities",
+              "href": "/state-off-the-art-facilities/"
+            },
+            {
+              "label": "Facilities",
+              "href": "/",
+              "children": [
+                {
+                  "label": "Seminar Hall",
+                  "href": "/seminar-hall/"
+                },
+                {
+                  "label": "Library",
+                  "href": "/library/"
+                },
+                {
+                  "label": "Labs",
+                  "href": "/",
+                  "children": [
+                    {
+                      "label": "Computer Lab",
+                      "href": "/labs/computer-lab/"
+                    },
+                    {
+                      "label": "Psychology Lab",
+                      "href": "/labs/psychology-lab/"
+                    },
+                    {
+                      "label": "Geography Lab",
+                      "href": "/labs/geography-lab/"
+                    },
+                    {
+                      "label": "Micro Biology Lab",
+                      "href": "/labs/micro-biology-lab/"
+                    },
+                    {
+                      "label": "Physics Lab",
+                      "href": "/labs/physics-lab/"
+                    },
+                    {
+                      "label": "Food Technology Lab",
+                      "href": "/labs/food-technology-lab/"
+                    },
+                    {
+                      "label": "Artificial Intelligence Lab",
+                      "href": "/labs/artificial-intelligence-lab/"
+                    }
+                  ]
+                },
+                {
+                  "label": "Boy’s Hostel",
+                  "href": "/boys-hostel/"
+                },
+                {
+                  "label": "Girl’s Hostel",
+                  "href": "/girls-hostel/"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Up Coming Project",
+          "href": "/up-coming-project/"
+        },
+        {
+          "label": "Fee Details",
+          "href": "/assets/uploads/2025/02/SF-FEE-Addndm.pdf"
+        }
+      ]
+    },
+    {
+      "label": "Academics",
+      "href": "/",
+      "children": [
+        {
+          "label": "Academic Council",
+          "href": "/academic-council/"
+        },
+        {
+          "label": "Departments",
+          "href": "/departments/"
+        },
+        {
+          "label": "Faculties",
+          "href": "/faculties/"
+        },
+        {
+          "label": "Programe Offered",
+          "href": "/programe-offered/"
+        },
+        {
+          "label": "Academic Calender",
+          "href": "/academic-calender/"
+        },
+        {
+          "label": "Learning Outcomes",
+          "href": "/",
+          "children": [
+            {
+              "label": "Programme Outcomes",
+              "href": "/programme-specific-outcomes/"
+            },
+            {
+              "label": "Course Outcomes",
+              "href": "/assets/uploads/2024/07/Course-Outcomes.pdf"
+            }
+          ]
+        },
+        {
+          "label": "Examinations",
+          "href": "/examinations/",
+          "children": [
+            {
+              "label": "Internal Examinations",
+              "href": "/internal-examinations/"
+            }
+          ]
+        },
+        {
+          "label": "Syllabus",
+          "href": "/syllabus/"
+        },
+        {
+          "label": "Time Table",
+          "href": "/time-table/"
+        },
+        {
+          "label": "Keltron",
+          "href": "/keltron/"
+        },
+        {
+          "label": "G-Tec",
+          "href": "/g-tec/"
+        },
+        {
+          "label": "NPTEL Swayam",
+          "href": "/nptel-swayam/"
+        },
+        {
+          "label": "ASAP",
+          "href": "/asap/"
+        },
+        {
+          "label": "Research and Publications",
+          "href": "/research-and-publications/"
+        },
+        {
+          "label": "Patent",
+          "href": "/patent/"
+        },
+        {
+          "label": "Toppers List",
+          "href": "/assets/uploads/2025/03/Toppers-List.pdf"
+        }
+      ]
+    },
+    {
+      "label": "IQAC",
+      "href": "/",
+      "children": [
+        {
+          "label": "About IQAC",
+          "href": "/iqac/"
+        },
+        {
+          "label": "IQAC Composition",
+          "href": "/iqac-composition/"
+        },
+        {
+          "label": "IQAC Minutes and Reports",
+          "href": "/iqac-minutes-and-reports/"
+        },
+        {
+          "label": "IIQA",
+          "href": "/assets/uploads/2025/02/AL_JAMIA_ARTS_AND_SCIENCE_COLLEGE_PERINTHALMANNA_iiqa-25-06-2024.pdf"
+        },
+        {
+          "label": "Feedback",
+          "href": "/feedback/"
+        },
+        {
+          "label": "Strategic Plan",
+          "href": "/assets/uploads/2024/07/strategic-plan.pdf"
+        },
+        {
+          "label": "Perspective Plan",
+          "href": "/assets/uploads/2024/07/perspective-plan.pdf"
+        },
+        {
+          "label": "SSR",
+          "href": "/assets/uploads/2025/02/SSR.pdf"
+        }
+      ]
+    },
+    {
+      "label": "Events",
+      "href": "/",
+      "children": [
+        {
+          "label": "Skill enhancement programs",
+          "href": "/skill-enhancement-programs/"
+        },
+        {
+          "label": "Events",
+          "href": "/event/"
+        },
+        {
+          "label": "Extension and Outreach Programmes",
+          "href": "/extension-and-outreach-programmes/"
+        }
+      ]
+    },
+    {
+      "label": "News",
+      "href": "/college-news/"
+    },
+    {
+      "label": "Notices",
+      "href": "/notices/",
+      "children": [
+        {
+          "label": "All notices & downloads",
+          "href": "/notices/"
+        },
+        {
+          "label": "Fees & prospectus",
+          "href": "/fees/"
+        },
+        {
+          "label": "Programmes (CMS)",
+          "href": "/programmes/"
+        }
+      ]
+    },
+    {
+      "label": "NIRF",
+      "href": "/",
+      "children": [
+        {
+          "label": "NIRF 2025",
+          "href": "/assets/uploads/2025/02/NIRF-2025.pdf"
+        }
+      ]
+    },
+    {
+      "label": "AISHE",
+      "href": "/",
+      "children": [
+        {
+          "label": "AISHE 2023-2024",
+          "href": "/assets/uploads/2025/02/AISHE-2023-2024.pdf"
+        },
+        {
+          "label": "AISHE Certificate 2023-24",
+          "href": "/assets/uploads/2025/02/AISHE-Certificate-2023-24.pdf"
+        },
+        {
+          "label": "AISHE 2022-2023",
+          "href": "/assets/uploads/2025/02/AISHE-2022-2023.pdf"
+        },
+        {
+          "label": "AISHE Certificate 2022-23",
+          "href": "/assets/uploads/2025/02/AISHE-Certificate-2022-23.pdf"
+        }
+      ]
+    },
+    {
+      "label": "AICTE",
+      "href": "/",
+      "children": [
+        {
+          "label": "AICTE 2025-26",
+          "href": "/assets/uploads/2025/02/AICTE-2025-26.pdf"
+        },
+        {
+          "label": "AICTE 2024-25",
+          "href": "/assets/uploads/2025/02/AICTE-2024-25.pdf"
+        },
+        {
+          "label": "IIC Certificate",
+          "href": "/assets/uploads/2025/02/ICC-Certificate.pdf"
+        }
+      ]
+    }
+  ]
+}

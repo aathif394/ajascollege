@@ -1012,3 +1012,28 @@ html{scroll-behavior:smooth;}
     .post-blog .entry-title{overflow-wrap:anywhere;}
     .action-tile .tile-title,.pc-name,.profile-name{overflow-wrap:anywhere;}
 }
+
+/* ============================================================
+   Performance: snappier page load & reveal (AJAS polish)
+   ============================================================ */
+#loading-overlay{
+  transition:opacity .18s ease,visibility .18s ease !important;
+}
+#loading-overlay .loader{
+  animation-duration:.7s !important;
+}
+/* main.js uses delay(500).fadeOut('slow') — force hide early via CSS once body ready */
+body.is-loaded #loading-overlay,
+html.is-loaded #loading-overlay{
+  opacity:0 !important;
+  visibility:hidden !important;
+  pointer-events:none !important;
+  transition:opacity .15s ease,visibility .15s ease !important;
+}
+.has-reveal .reveal{
+  transition:opacity .35s cubic-bezier(.2,.7,.3,1),transform .35s cubic-bezier(.2,.7,.3,1) !important;
+}
+.has-reveal .rv-up{transform:translateY(16px) !important;}
+.has-reveal .rv-left{transform:translateX(-16px) !important;}
+.has-reveal .rv-right{transform:translateX(16px) !important;}
+.has-reveal .rv-zoom{transform:scale(.97) !important;}

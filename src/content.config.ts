@@ -83,7 +83,7 @@ const fees = defineCollection({
 
 /** Site-wide settings (contact, admission banner, key PDFs) */
 const settings = defineCollection({
-  loader: glob({ pattern: "**/*.{json,yml,yaml}", base: "./content/settings" }),
+  loader: glob({ pattern: "site.json", base: "./content/settings" }),
   schema: z.object({
     college_name: z.string(),
     short_name: z.string().optional(),

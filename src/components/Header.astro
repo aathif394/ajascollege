@@ -1,6 +1,8 @@
 ---
-import headerHtml from "../partials/header.html?raw";
 import { getSiteSettings } from "../lib/site";
+import NavMenu from "./NavMenu.astro";
+import type { NavItem } from "./NavMenu.astro";
+import navigation from "../../content/settings/navigation.json";
 
 interface Props {
   variant?: "home" | "inner";
@@ -10,40 +12,111 @@ const { variant = "inner" } = Astro.props;
 const isHome = variant === "home";
 const site = await getSiteSettings();
 
-// Inject live contact + admission from Site settings (CMS)
-let html = headerHtml;
 const phoneDisplay = site.phone_display || site.phone;
-const phoneHref = site.phone.startsWith("+") || site.phone.startsWith("0")
-  ? `tel:${site.phone.replace(/\s/g, "")}`
-  : `tel:${site.phone}`;
-
-html = html.replace(
-  /href="tel:[^"]*"[^>]*>[^<]*/g,
-  `href="${phoneHref}">${phoneDisplay}`,
-);
-html = html.replace(
-  /href="mailto:[^"]*"[^>]*>[^<]*/g,
-  `href="mailto:${site.email}">${site.email}`,
-);
-if (site.logo) {
-  html = html.replace(
-    /src="\/assets\/uploads\/2024\/01\/AJAS-Website-Heading-Last\.svg"/,
-    `src="${site.logo}"`,
-  );
-}
+const phoneHref = `tel:${String(site.phone).replace(/\s/g, "")}`;
+const logo = site.logo || "/assets/uploads/2024/01/AJAS-Website-Heading-Last.svg";
+const menu = (navigation as { main: NavItem[] }).main;
 ---
 
 {
   isHome ? (
     <div class="wrap-header">
       <div class="flat-header flat-header-style2 ajas-home-header">
-        <Fragment set:html={html} />
+        <div class="top-bar clearfix">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-5 col-md-6 col-sm-12">
+                <ul class="information">
+                  <li class="phone lt-sp003">
+                    <i class="fa fa-phone" aria-hidden="true" />{" "}
+                    <a href={phoneHref}>{phoneDisplay}</a>
+                  </li>
+                  <li class="email">
+                    <i class="fa fa-envelope" aria-hidden="true" />{" "}
+                    <a href={`mailto:${site.email}`}>{site.email}</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-7 col-md-6 col-sm-12">
+                <ul class="nav-sing top-utility">
+                  <li><a href="/alumnae/">Alumni</a></li>
+                  <li><a href="/placement-cell/">Placement Cell</a></li>
+                  <li><a href="/student-life/">Students Corner</a></li>
+                  <li><a href="/payments/">Payments</a></li>
+                  <li><a href="/career/">Career</a></li>
+                  <li><a href="/contact/">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <header class="header header-blog menu-bar hv-menu-type2">
+          <div class="container">
+            <div class="menu-bar-wrap clearfix">
+              <div id="logo" class="logo">
+                <a href="/">
+                  <img src={logo} alt={site.college_name || "AJAS College"} />
+                </a>
+              </div>
+              <div class="mobile-button"><span /></div>
+              <div class="header-menu">
+                <nav id="main-nav" class="main-nav">
+                  <NavMenu items={menu} />
+                </nav>
+              </div>
+            </div>
+          </div>
+        </header>
       </div>
     </div>
   ) : (
     <div class="bg-header">
       <div class="flat-header-blog">
-        <Fragment set:html={html} />
+        <div class="top-bar clearfix">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-5 col-md-6 col-sm-12">
+                <ul class="information">
+                  <li class="phone lt-sp003">
+                    <i class="fa fa-phone" aria-hidden="true" />{" "}
+                    <a href={phoneHref}>{phoneDisplay}</a>
+                  </li>
+                  <li class="email">
+                    <i class="fa fa-envelope" aria-hidden="true" />{" "}
+                    <a href={`mailto:${site.email}`}>{site.email}</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-7 col-md-6 col-sm-12">
+                <ul class="nav-sing top-utility">
+                  <li><a href="/alumnae/">Alumni</a></li>
+                  <li><a href="/placement-cell/">Placement Cell</a></li>
+                  <li><a href="/student-life/">Students Corner</a></li>
+                  <li><a href="/payments/">Payments</a></li>
+                  <li><a href="/career/">Career</a></li>
+                  <li><a href="/contact/">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <header class="header header-blog menu-bar hv-menu-type2">
+          <div class="container">
+            <div class="menu-bar-wrap clearfix">
+              <div id="logo" class="logo">
+                <a href="/">
+                  <img src={logo} alt={site.college_name || "AJAS College"} />
+                </a>
+              </div>
+              <div class="mobile-button"><span /></div>
+              <div class="header-menu">
+                <nav id="main-nav" class="main-nav">
+                  <NavMenu items={menu} />
+                </nav>
+              </div>
+            </div>
+          </div>
+        </header>
         <slot name="page-title" />
       </div>
     </div>
