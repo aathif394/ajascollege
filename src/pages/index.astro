@@ -1,13 +1,20 @@
 ---
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
+import { marked } from "marked";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { optimizeHtmlImages } from "../lib/cmsImage";
 
 const pages = await getCollection("pages", ({ data }) => data.permalink === "/");
 const home = pages[0];
 if (!home) {
   throw new Error("Missing content/pages/home.md with permalink: /");
 }
-const { Content } = await render(home);
+
+const raw = ((home as { body?: string }).body || "").trim();
+// Home is mostly HTML; marked still normalizes markdown fragments safely.
+const parsed = raw ? ((await marked.parse(raw, { async: false })) as string) : "";
+// Card preset suits department/news/event thumbs on the homepage
+const html = parsed ? await optimizeHtmlImages(parsed, "card") : "";
 ---
 
 <BaseLayout
@@ -15,5 +22,5 @@ const { Content } = await render(home);
   description={home.data.description}
   variant="home"
 >
-  <Content />
+  <Fragment set:html={html} />
 </BaseLayout>

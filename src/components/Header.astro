@@ -3,6 +3,7 @@ import { getSiteSettings } from "../lib/site";
 import NavMenu from "./NavMenu.astro";
 import type { NavItem } from "./NavMenu.astro";
 import navigation from "../../content/settings/navigation.json";
+import CmsImage from "./CmsImage.astro";
 
 interface Props {
   variant?: "home" | "inner";
@@ -16,6 +17,8 @@ const phoneDisplay = site.phone_display || site.phone;
 const phoneHref = `tel:${String(site.phone).replace(/\s/g, "")}`;
 const logo = site.logo || "/assets/uploads/2024/01/AJAS-Website-Heading-Last.svg";
 const menu = (navigation as { main: NavItem[] }).main;
+// SVG logos stay in public/ (not optimized by Sharp); raster logos use CmsImage.
+const logoIsRaster = /\.(jpe?g|png|webp|gif|avif)$/i.test(logo);
 ---
 
 {
@@ -55,7 +58,26 @@ const menu = (navigation as { main: NavItem[] }).main;
             <div class="menu-bar-wrap clearfix">
               <div id="logo" class="logo">
                 <a href="/">
-                  <img src={logo} alt={site.college_name || "AJAS College"} />
+                  {logoIsRaster ? (
+                    <CmsImage
+                      src={logo}
+                      alt={site.college_name || "AJAS College"}
+                      preset="logo"
+                      fit="contain"
+                      loading="eager"
+                      fetchpriority="high"
+                    />
+                  ) : (
+                    <img
+                      src={logo}
+                      alt={site.college_name || "AJAS College"}
+                      width="220"
+                      height="48"
+                      loading="eager"
+                      decoding="async"
+                      fetchpriority="high"
+                    />
+                  )}
                 </a>
               </div>
               <div class="mobile-button"><span /></div>
@@ -105,7 +127,26 @@ const menu = (navigation as { main: NavItem[] }).main;
             <div class="menu-bar-wrap clearfix">
               <div id="logo" class="logo">
                 <a href="/">
-                  <img src={logo} alt={site.college_name || "AJAS College"} />
+                  {logoIsRaster ? (
+                    <CmsImage
+                      src={logo}
+                      alt={site.college_name || "AJAS College"}
+                      preset="logo"
+                      fit="contain"
+                      loading="eager"
+                      fetchpriority="high"
+                    />
+                  ) : (
+                    <img
+                      src={logo}
+                      alt={site.college_name || "AJAS College"}
+                      width="220"
+                      height="48"
+                      loading="eager"
+                      decoding="async"
+                      fetchpriority="high"
+                    />
+                  )}
                 </a>
               </div>
               <div class="mobile-button"><span /></div>

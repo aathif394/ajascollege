@@ -1,9 +1,12 @@
 ---
 import footerHtml from "../partials/footer.html?raw";
 import siteScripts from "../partials/site-scripts.html?raw";
+import { optimizeHtmlImages } from "../lib/cmsImage";
+
+const footer = await optimizeHtmlImages(footerHtml, "logo");
 ---
 
-<Fragment set:html={footerHtml} />
+<Fragment set:html={footer} />
 
 <script is:inline src="/javascript/jquery.min.js"></script>
 <script is:inline src="/javascript/plugins.js"></script>

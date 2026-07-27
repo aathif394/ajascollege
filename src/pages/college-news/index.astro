@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import CmsImage from "../../components/CmsImage.astro";
 
 const news = (await getCollection("news", ({ data }) => !data.draft)).sort((a, b) => {
   const da = a.data.date ? +new Date(a.data.date) : 0;
@@ -26,7 +27,7 @@ const news = (await getCollection("news", ({ data }) => !data.draft)).sort((a, b
               <article class="ajas-card">
                 <a class="ajas-card-media" href={n.data.permalink}>
                   {n.data.image ? (
-                    <img src={n.data.image} alt="" loading="lazy" />
+                    <CmsImage src={n.data.image} alt="" preset="card" fit="contain" />
                   ) : (
                     <div class="ajas-card-ph" />
                   )}

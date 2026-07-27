@@ -14,7 +14,9 @@ backend:
   base_url: https://ajas-cms-auth.aathif394.workers.dev
   auth_endpoint: auth
 
-media_folder: public/assets/uploads
+# Images live under src/ so Astro can optimize (Sharp → webp/srcset) at build time.
+# public_folder is still the path stored in content (/assets/uploads/...).
+media_folder: src/assets/uploads
 public_folder: /assets/uploads
 
 site_url: https://ajascollege.pages.dev
@@ -111,7 +113,7 @@ collections:
       - label: PDF / file
         name: file
         widget: file
-        media_folder: public/assets/uploads
+        media_folder: src/assets/uploads
         public_folder: /assets/uploads
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: "Notes (optional)", name: body, widget: markdown, required: false, hint: "Optional. Prefer title + PDF fields for notices." }
@@ -135,7 +137,7 @@ collections:
       - label: PDF file
         name: file
         widget: file
-        media_folder: public/assets/uploads
+        media_folder: src/assets/uploads
         public_folder: /assets/uploads
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: "Notes (optional)", name: body, widget: markdown, required: false }
@@ -164,13 +166,13 @@ collections:
             name: fee_pdf
             widget: file
             required: false
-            media_folder: public/assets/uploads
+            media_folder: src/assets/uploads
             public_folder: /assets/uploads
           - label: Prospectus PDF
             name: prospectus_pdf
             widget: file
             required: false
-            media_folder: public/assets/uploads
+            media_folder: src/assets/uploads
             public_folder: /assets/uploads
 
 

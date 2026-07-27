@@ -1,7 +1,10 @@
 ---
 /**
- * News / event detail — full posters (no crop), single unified card.
+ * News / event detail — optimized poster + body images (Astro Image / getImage).
  */
+import CmsImage from "./CmsImage.astro";
+import { optimizeHtmlImages } from "../lib/cmsImage";
+
 interface Props {
   kind: "news" | "event" | "page";
   title: string;
@@ -9,9 +12,11 @@ interface Props {
   image?: string;
   backHref: string;
   backLabel: string;
+  /** Pre-rendered HTML body (already markdown-parsed). Will optimize <img> tags. */
+  bodyHtml?: string;
 }
 
-const { kind, title, date, image, backHref, backLabel } = Astro.props;
+const { kind, title, date, image, backHref, backLabel, bodyHtml = "" } = Astro.props;
 
 const dateObj = date ? new Date(date) : null;
 const dateLabel =
@@ -25,6 +30,7 @@ const dateLabel =
     : null;
 
 const kindLabel = kind === "news" ? "News" : kind === "event" ? "Event" : "Page";
+const optimizedBody = bodyHtml ? await optimizeHtmlImages(bodyHtml, "poster") : "";
 ---
 
 <article class="ajas-entity" data-kind={kind}>
@@ -32,7 +38,7 @@ const kindLabel = kind === "news" ? "News" : kind === "event" ? "Event" : "Page"
     {
       image && (
         <figure class="ajas-entity-poster">
-          <img src={image} alt={title} />
+          <CmsImage src={image} alt={title} preset="poster" fit="contain" loading="eager" />
         </figure>
       )
     }
@@ -44,7 +50,7 @@ const kindLabel = kind === "news" ? "News" : kind === "event" ? "Event" : "Page"
       </div>
       <h1 class="ajas-entity-title">{title}</h1>
       <div class="ajas-entity-body ajas-prose">
-        <slot />
+        {optimizedBody ? <Fragment set:html={optimizedBody} /> : <slot />}
       </div>
       <footer class="ajas-entity-foot">
         <a class="ajas-entity-back" href={backHref}>← {backLabel}</a>
@@ -62,7 +68,6 @@ const kindLabel = kind === "news" ? "News" : kind === "event" ? "Event" : "Page"
     padding: 28px 16px 56px;
     background: linear-gradient(180deg, #eef2f7 0%, #f7f9fc 50%, #fff 100%);
   }
-  /* One card only — poster + body share the same surface */
   .ajas-entity-card {
     max-width: 920px;
     margin: 0 auto;
@@ -80,7 +85,7 @@ const kindLabel = kind === "news" ? "News" : kind === "event" ? "Event" : "Page"
     align-items: center;
     justify-content: center;
   }
-  .ajas-entity-poster img {
+  .ajas-entity-poster :global(img) {
     display: block;
     width: auto;
     max-width: 100%;
@@ -136,9 +141,6 @@ const kindLabel = kind === "news" ? "News" : kind === "event" ? "Event" : "Page"
   .ajas-entity-body :global(> p:first-child:has(> img:only-child)) {
     display: none;
   }
-  .ajas-entity-body :global(> p:first-child > img:only-child) {
-    display: none;
-  }
   .ajas-entity-body :global(img) {
     max-width: 100%;
     height: auto;
@@ -146,7 +148,6 @@ const kindLabel = kind === "news" ? "News" : kind === "event" ? "Event" : "Page"
     border-radius: 6px;
     margin: 1em auto;
     display: block;
-    box-shadow: 0 6px 20px rgba(24, 50, 81, 0.08);
   }
   .ajas-entity-foot {
     margin-top: 2rem;

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import CmsImage from "../../components/CmsImage.astro";
 
 const faculty = (await getCollection("faculty", ({ data }) => !data.draft)).sort((a, b) =>
   a.data.title.localeCompare(b.data.title),
@@ -25,7 +26,13 @@ const faculty = (await getCollection("faculty", ({ data }) => !data.draft)).sort
               <a class="ajas-faculty-card" href={f.data.permalink}>
                 <div class="ajas-faculty-photo">
                   {f.data.image ? (
-                    <img src={f.data.image} alt={f.data.title} loading="lazy" />
+                    <CmsImage
+                      src={f.data.image}
+                      alt={f.data.title}
+                      preset="avatar"
+                      fit="cover"
+                      width={400}
+                    />
                   ) : (
                     <div class="ajas-faculty-placeholder" />
                   )}

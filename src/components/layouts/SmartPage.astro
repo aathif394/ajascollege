@@ -11,6 +11,8 @@ import {
   type FactRow,
   type ContentSection,
 } from "../../lib/parseContent";
+import { optimizeHtmlImages } from "../../lib/cmsImage";
+import CmsImage from "../CmsImage.astro";
 
 interface Props {
   title: string;
@@ -64,6 +66,21 @@ const statsForStrip =
   highlightStats.length >= 2
     ? highlightStats.slice(0, 4)
     : introFacts.filter((f) => f.label && f.value).slice(0, 4);
+
+// Optimize any remaining inline images in HTML fragments
+introHtml = introHtml ? await optimizeHtmlImages(introHtml, "inline") : introHtml;
+sections = await Promise.all(
+  sections.map(async (s) => ({
+    ...s,
+    bodyHtml: s.bodyHtml ? await optimizeHtmlImages(s.bodyHtml, "inline") : s.bodyHtml,
+  })),
+);
+const progLead = programmes?.leadHtml
+  ? await optimizeHtmlImages(programmes.leadHtml, "inline")
+  : programmes?.leadHtml;
+const progTail = programmes?.tailHtml
+  ? await optimizeHtmlImages(programmes.tailHtml, "inline")
+  : programmes?.tailHtml;
 ---
 
 <div class="smart-page">
@@ -81,7 +98,7 @@ const statsForStrip =
               <section class="sp-vision-card" id={s.id}>
                 {imgSrc && (
                   <figure class="sp-vision-card-fig">
-                    <img src={imgSrc} alt={s.title} />
+                    <CmsImage src={imgSrc} alt={s.title} preset="inline" fit="contain" />
                   </figure>
                 )}
                 <div class="sp-vision-card-body">
@@ -100,8 +117,8 @@ const statsForStrip =
   {
     isAdmission && programmes && (
       <div class="sp-admission">
-        {programmes.leadHtml && (
-          <div class="sp-lead sp-html" set:html={programmes.leadHtml} />
+        {progLead && (
+          <div class="sp-lead sp-html" set:html={progLead} />
         )}
         <div class="sp-prog-grid">
           {programmes.programmes.map((p) => (
@@ -142,8 +159,8 @@ const statsForStrip =
             </article>
           ))}
         </div>
-        {programmes.tailHtml && (
-          <div class="sp-tail sp-html" set:html={programmes.tailHtml} />
+        {progTail && (
+          <div class="sp-tail sp-html" set:html={progTail} />
         )}
       </div>
     )
@@ -155,7 +172,13 @@ const statsForStrip =
       <div class="sp-default">
         {(image || introImages[0]) && (
           <figure class="sp-hero-fig">
-            <img src={image || introImages[0]} alt="" />
+            <CmsImage
+              src={image || introImages[0]}
+              alt=""
+              preset="hero"
+              fit="contain"
+              loading="eager"
+            />
           </figure>
         )}
 
@@ -206,7 +229,7 @@ const statsForStrip =
                 {s.images.length > 0 && (
                   <div class="sp-section-gallery">
                     {s.images.map((src) => (
-                      <img src={src} alt="" />
+                      <CmsImage src={src} alt="" preset="inline" fit="contain" />
                     ))}
                   </div>
                 )}

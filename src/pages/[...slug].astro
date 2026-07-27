@@ -1,9 +1,12 @@
 ---
 import { render } from "astro:content";
+import { marked } from "marked";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArticleShell from "../components/ArticleShell.astro";
 import EntityArticle from "../components/EntityArticle.astro";
 import SmartPage from "../components/layouts/SmartPage.astro";
+import CmsImage from "../components/CmsImage.astro";
+import { optimizeHtmlImages } from "../lib/cmsImage";
 import {
   getAllEntries,
   normalizePermalink,
@@ -57,6 +60,12 @@ const displayName =
   "name" in entry.data && entry.data.name ? String(entry.data.name) : entry.data.title;
 const date = "date" in entry.data ? entry.data.date : undefined;
 
+/** Markdown/HTML body with CMS images rewritten to optimized webp */
+const bodyHtmlRaw = body
+  ? ((await marked.parse(body, { async: false })) as string)
+  : "";
+const bodyHtml = bodyHtmlRaw ? await optimizeHtmlImages(bodyHtmlRaw, "inline") : "";
+
 if (isNews) {
   crumbs.push({ label: "News", href: "/college-news/" });
   crumbs.push({ label: entry.data.title });
@@ -96,16 +105,22 @@ if (isNews) {
         image={image}
         backHref={isNews ? "/college-news/" : "/event/"}
         backLabel={isNews ? "All news" : "All events"}
-      >
-        <Content />
-      </EntityArticle>
+        bodyHtml={bodyHtml}
+      />
     ) : isProfile ? (
       <div class="ajas-profile-wrap">
         <article class="ajas-profile-card">
           <div class="ajas-profile">
             {image && (
               <div class="ajas-profile-photo">
-                <img src={image} alt={displayName} />
+                <CmsImage
+                  src={image}
+                  alt={displayName}
+                  preset="avatar"
+                  fit="cover"
+                  width={400}
+                  loading="eager"
+                />
               </div>
             )}
             <div class="ajas-profile-meta">
@@ -116,10 +131,8 @@ if (isNews) {
                 ← All faculty
               </a>
             </div>
-            {body && (
-              <div class="ajas-profile-bio ajas-prose">
-                <Content />
-              </div>
+            {bodyHtml && (
+              <div class="ajas-profile-bio ajas-prose" set:html={bodyHtml} />
             )}
           </div>
         </article>
@@ -131,6 +144,10 @@ if (isNews) {
         permalink={perm}
         image={image}
       />
+    ) : bodyHtml ? (
+      <ArticleShell wide={t === "listing"} variant={t === "listing" ? "listing" : "info"}>
+        <Fragment set:html={bodyHtml} />
+      </ArticleShell>
     ) : (
       <ArticleShell wide={t === "listing"} variant={t === "listing" ? "listing" : "info"}>
         <Content />
