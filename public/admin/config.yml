@@ -1,26 +1,24 @@
 # yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
 #
-# Sveltia CMS — day-to-day college editing (WordPress-like collections)
-# UI is Sveltia. `pnpm run cms` runs decap-server only as a local file bridge.
-#
-# Production login: GitHub OAuth (college staff use an editor GitHub account).
-# Local login: local_backend + `pnpm run cms` (no OAuth).
+# Sveltia CMS — production (GitHub: aathif394/ajascollege)
+# Local: run `pnpm run cms` (decap-server is only a local file bridge).
+# Production login: GitHub OAuth via Netlify shared client (default) OR
+#   base_url Worker once OAuth app secrets are configured.
 
 local_backend: true
 
 backend:
   name: github
-  repo: YOUR_GITHUB_ORG/ajascollege
+  repo: aathif394/ajascollege
   branch: main
-  # After deploying sveltia-cms-auth Worker, set:
-  # base_url: https://ajas-cms-auth.<your-subdomain>.workers.dev
+  # Custom OAuth proxy (optional — enable after setting GITHUB_CLIENT_ID/SECRET on Worker)
+  # base_url: https://ajas-cms-auth.aathif394.workers.dev
 
 media_folder: public/assets/uploads/cms
 public_folder: /assets/uploads/cms
 
 site_url: https://ajascollege.pages.dev
 display_url: https://ajascollege.pages.dev
-# Production deploy: https://ajascollege.pages.dev  (Cloudflare Pages project: ajascollege)
 logo_url: /assets/uploads/2024/01/AJAS-Website-Heading-Last.svg
 
 slug:
@@ -28,9 +26,7 @@ slug:
   clean_accents: true
   sanitize_replacement: "-"
 
-# ── Collections ordered by day-to-day frequency ─────────────────────────────
 collections:
-  # 1) NEWS — daily/weekly
   - name: news
     label: "1 · News"
     label_singular: News item
@@ -48,20 +44,13 @@ collections:
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Description (SEO), name: description, widget: text, required: false }
-      - {
-          label: Permalink,
-          name: permalink,
-          widget: string,
-          hint: "/college-news/your-slug/",
-          pattern: ["^/college-news/.+/$", "Must be /college-news/slug/"],
-        }
+      - { label: Permalink, name: permalink, widget: string, hint: "/college-news/your-slug/", pattern: ["^/college-news/.+/$", "Must be /college-news/slug/"] }
       - { label: Type, name: type, widget: hidden, default: article }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Date, name: date, widget: datetime, required: false }
       - { label: Featured image, name: image, widget: image, required: false }
       - { label: Body, name: body, widget: markdown }
 
-  # 2) EVENTS
   - name: events
     label: "2 · Events"
     label_singular: Event
@@ -79,20 +68,13 @@ collections:
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Description (SEO), name: description, widget: text, required: false }
-      - {
-          label: Permalink,
-          name: permalink,
-          widget: string,
-          hint: "/event/your-slug/",
-          pattern: ["^/event/.+/$", "Must be /event/slug/"],
-        }
+      - { label: Permalink, name: permalink, widget: string, hint: "/event/your-slug/", pattern: ["^/event/.+/$", "Must be /event/slug/"] }
       - { label: Type, name: type, widget: hidden, default: article }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Date, name: date, widget: datetime, required: false }
       - { label: Featured image, name: image, widget: image, required: false }
       - { label: Body, name: body, widget: markdown }
 
-  # 3) NOTICES / PDFS
   - name: notices
     label: "3 · Notices & downloads"
     label_singular: Notice
@@ -110,40 +92,28 @@ collections:
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: text, required: false }
-      - {
-          label: Permalink,
-          name: permalink,
-          widget: string,
-          hint: "/notices/your-slug/",
-        }
-      - {
-          label: Category,
-          name: category,
-          widget: select,
-          options:
-            [
-              { label: General, value: general },
-              { label: Admission, value: admission },
-              { label: Academic, value: academic },
-              { label: Compliance (NIRF/AISHE/AICTE), value: compliance },
-              { label: IQAC, value: iqac },
-              { label: Mandatory disclosure, value: mandatory },
-              { label: Administration, value: admin },
-            ],
-          default: general,
-        }
+      - { label: Permalink, name: permalink, widget: string, hint: "/notices/your-slug/" }
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - { label: General, value: general }
+          - { label: Admission, value: admission }
+          - { label: Academic, value: academic }
+          - { label: Compliance (NIRF/AISHE/AICTE), value: compliance }
+          - { label: IQAC, value: iqac }
+          - { label: Mandatory disclosure, value: mandatory }
+          - { label: Administration, value: admin }
+        default: general
       - { label: Date, name: date, widget: datetime, required: false }
-      - {
-          label: PDF / file,
-          name: file,
-          widget: file,
-          media_folder: /public/assets/uploads/cms,
-          public_folder: /assets/uploads/cms,
-        }
+      - label: PDF / file
+        name: file
+        widget: file
+        media_folder: /public/assets/uploads/cms
+        public_folder: /assets/uploads/cms
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Notes (optional body), name: body, widget: markdown, required: false }
 
-  # 4) FEES
   - name: fees
     label: "4 · Fees & prospectus"
     label_singular: Fee document
@@ -160,20 +130,17 @@ collections:
       - { label: Description, name: description, widget: text, required: false }
       - { label: Permalink, name: permalink, widget: string, hint: "/fees/your-slug/" }
       - { label: Date, name: date, widget: datetime, required: false }
-      - {
-          label: PDF file,
-          name: file,
-          widget: file,
-          media_folder: /public/assets/uploads/cms,
-          public_folder: /assets/uploads/cms,
-        }
+      - label: PDF file
+        name: file
+        widget: file
+        media_folder: /public/assets/uploads/cms
+        public_folder: /assets/uploads/cms
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Notes, name: body, widget: markdown, required: false }
 
-  # 5) ADMISSION / SITE SETTINGS
   - name: settings
     label: "5 · Site settings"
-    description: Phone, email, admission open flag, default fee PDF — edit like WP options.
+    description: Phone, email, admission open flag, default fee PDF.
     files:
       - name: site
         label: College contact & admission
@@ -187,36 +154,26 @@ collections:
           - { label: Email, name: email, widget: string }
           - { label: Address, name: address, widget: text }
           - { label: Logo, name: logo, widget: image, required: false }
-          - {
-              label: Admissions open?,
-              name: admission_open,
-              widget: boolean,
-              default: true,
-            }
+          - { label: Admissions open?, name: admission_open, widget: boolean, default: true }
           - { label: Admission button label, name: admission_label, widget: string, required: false }
           - { label: Admission URL, name: admission_url, widget: string, required: false }
           - { label: Admission note, name: admission_note, widget: string, required: false }
-          - {
-              label: Default fee PDF,
-              name: fee_pdf,
-              widget: file,
-              required: false,
-              media_folder: /public/assets/uploads/cms,
-              public_folder: /assets/uploads/cms,
-            }
-          - {
-              label: Prospectus PDF,
-              name: prospectus_pdf,
-              widget: file,
-              required: false,
-              media_folder: /public/assets/uploads/cms,
-              public_folder: /assets/uploads/cms,
-            }
+          - label: Default fee PDF
+            name: fee_pdf
+            widget: file
+            required: false
+            media_folder: /public/assets/uploads/cms
+            public_folder: /assets/uploads/cms
+          - label: Prospectus PDF
+            name: prospectus_pdf
+            widget: file
+            required: false
+            media_folder: /public/assets/uploads/cms
+            public_folder: /assets/uploads/cms
 
-  # 6) HOMEPAGE HERO
   - name: home
     label: "6 · Homepage hero"
-    description: Hero text, CTAs, stats, principal blurb (no HTML required).
+    description: Hero text, CTAs, stats, principal blurb.
     files:
       - name: homepage
         label: Homepage
@@ -229,12 +186,10 @@ collections:
           - { label: Primary button URL, name: hero_cta_primary_url, widget: string }
           - { label: Secondary button label, name: hero_cta_secondary_label, widget: string }
           - { label: Secondary button URL, name: hero_cta_secondary_url, widget: string }
-          - {
-              label: Hero images,
-              name: hero_images,
-              widget: list,
-              field: { label: Image, name: image, widget: image },
-            }
+          - label: Hero images
+            name: hero_images
+            widget: list
+            field: { label: Image, name: image, widget: image }
           - { label: Stat — departments, name: stat_departments, widget: string, required: false }
           - { label: Stat — UG programmes, name: stat_ug, widget: string, required: false }
           - { label: Stat — PG programmes, name: stat_pg, widget: string, required: false }
@@ -243,7 +198,6 @@ collections:
           - { label: Principal photo, name: principal_photo, widget: image, required: false }
           - { label: Principal excerpt, name: principal_excerpt, widget: text, required: false }
 
-  # 7) PROGRAMMES
   - name: programmes
     label: "7 · Programmes"
     label_singular: Programme
@@ -260,26 +214,17 @@ collections:
       default: { field: order, direction: ascending }
     fields:
       - { label: Programme name, name: title, widget: string }
-      - {
-          label: Level,
-          name: level,
-          widget: select,
-          options:
-            [
-              { label: UG (Honours), value: ug },
-              { label: PG, value: pg },
-              { label: Certificate, value: certificate },
-              { label: Other, value: other },
-            ],
-          default: ug,
-        }
+      - label: Level
+        name: level
+        widget: select
+        options:
+          - { label: UG (Honours), value: ug }
+          - { label: PG, value: pg }
+          - { label: Certificate, value: certificate }
+          - { label: Other, value: other }
+        default: ug
       - { label: Sort order, name: order, widget: number, default: 0, value_type: int }
-      - {
-          label: Permalink,
-          name: permalink,
-          widget: string,
-          hint: "/programmes/your-slug/",
-        }
+      - { label: Permalink, name: permalink, widget: string, hint: "/programmes/your-slug/" }
       - { label: Department, name: department, widget: string, required: false }
       - { label: Duration, name: duration, widget: string, required: false }
       - { label: Seats, name: seats, widget: string, required: false }
@@ -287,7 +232,6 @@ collections:
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Details, name: body, widget: markdown }
 
-  # 8) FACULTY
   - name: faculty
     label: "8 · Faculty"
     label_singular: Faculty member
@@ -305,22 +249,16 @@ collections:
       - { label: Role, name: role, widget: string, required: false }
       - { label: Credentials, name: credentials, widget: string, required: false }
       - { label: Description (SEO), name: description, widget: text, required: false }
-      - {
-          label: Permalink,
-          name: permalink,
-          widget: string,
-          hint: "/faculties/your-slug/",
-        }
+      - { label: Permalink, name: permalink, widget: string, hint: "/faculties/your-slug/" }
       - { label: Type, name: type, widget: hidden, default: profile }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Photo, name: image, widget: image, required: false }
       - { label: Bio / body, name: body, widget: markdown }
 
-  # 9) ALL OTHER PAGES (less frequent)
   - name: pages
     label: "9 · Other pages"
     label_singular: Page
-    description: About, IQAC, labs, clubs, static info pages (less frequent edits).
+    description: About, IQAC, labs, clubs, static info pages.
     folder: content/pages
     create: true
     delete: true
@@ -335,27 +273,15 @@ collections:
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Description (SEO), name: description, widget: text, required: false }
-      - {
-          label: Permalink,
-          name: permalink,
-          widget: string,
-          hint: "e.g. /vision-mission/ or / for home body archive",
-        }
-      - {
-          label: Page type,
-          name: type,
-          widget: select,
-          options: [home, page, listing, profile, article],
-          default: page,
-        }
+      - { label: Permalink, name: permalink, widget: string }
+      - label: Page type
+        name: type
+        widget: select
+        options: [home, page, listing, profile, article]
+        default: page
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Featured image, name: image, widget: image, required: false }
       - { label: Name (profiles), name: name, widget: string, required: false }
       - { label: Role (profiles), name: role, widget: string, required: false }
       - { label: Credentials, name: credentials, widget: string, required: false }
-      - {
-          label: Body,
-          name: body,
-          widget: markdown,
-          hint: "Migrated Edukin HTML is OK. Prefer simple headings and paragraphs for new content.",
-        }
+      - { label: Body, name: body, widget: markdown }
