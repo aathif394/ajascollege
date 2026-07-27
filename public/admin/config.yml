@@ -2,8 +2,7 @@
 #
 # Sveltia CMS — production (GitHub: aathif394/ajascollege)
 # Local: run `pnpm run cms` (decap-server is only a local file bridge).
-# Production login: GitHub OAuth via Netlify shared client (default) OR
-#   base_url Worker once OAuth app secrets are configured.
+# Production: Sign in with GitHub → Cloudflare Worker (NO Netlify).
 
 local_backend: true
 
@@ -11,15 +10,17 @@ backend:
   name: github
   repo: aathif394/ajascollege
   branch: main
-  # Custom OAuth proxy (optional — enable after setting GITHUB_CLIENT_ID/SECRET on Worker)
-  # base_url: https://ajas-cms-auth.aathif394.workers.dev
+  # Custom auth Worker — password form, then GitHub token (never api.netlify.com)
+  base_url: https://ajas-cms-auth.aathif394.workers.dev
+  auth_endpoint: auth
 
 media_folder: public/assets/uploads/cms
 public_folder: /assets/uploads/cms
 
 site_url: https://ajascollege.pages.dev
 display_url: https://ajascollege.pages.dev
-logo_url: /assets/uploads/2024/01/AJAS-Website-Heading-Last.svg
+# Small favicon — full college wordmark was huge on the login screen
+logo_url: /favicon.svg
 
 slug:
   encoding: ascii

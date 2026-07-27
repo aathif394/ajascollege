@@ -32,3 +32,6 @@ _archive/
 # wrangler
 .wrangler/
 .dev.vars
+
+.cms-password.local
+cms-auth/.dev.vars
