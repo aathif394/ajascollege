@@ -1,121 +1,102 @@
-# Al Jamia Arts & Science College — website
+# Al Jamia Arts & Science College
 
-**Stack:** Astro (SSG) · **Sveltia CMS** · Cloudflare Pages · Pagefind  
+**Live:** https://ajascollege.pages.dev  
+**CMS:** https://ajascollege.pages.dev/admin/  
+**Repo:** https://github.com/aathif394/ajascollege  
 
-**Live (Cloudflare):** https://ajascollege.pages.dev  
-
-Day-to-day edits happen at **`/admin/`** (Sveltia). Content is Git-backed Markdown/JSON under `content/`.
-
----
-
-## What staff edit (WordPress-like day-to-day)
-
-| CMS section | What it is | Public URL |
-|---|---|---|
-| **1 · News** | Campus news posts | `/college-news/…` |
-| **2 · Events** | Events | `/event/…` |
-| **3 · Notices & downloads** | Circulars, NIRF, RTI, IQAC PDFs | `/notices/` |
-| **4 · Fees & prospectus** | Fee / prospectus PDFs | `/fees/` |
-| **5 · Site settings** | Phone, email, admission open, default fee PDF | site-wide |
-| **6 · Homepage hero** | Hero text, CTAs, stats, principal blurb | `/` (settings layer) |
-| **7 · Programmes** | UG/PG course list | `/programmes/` |
-| **8 · Faculty** | Faculty bios | `/faculties/…` |
-| **9 · Other pages** | About, IQAC, labs, clubs, static pages | various |
-
-Also: admission strip (top of site) reads from **Site settings**.
+Stack: **Astro** · **Sveltia CMS** · **Cloudflare Pages** · **Pagefind**
 
 ---
 
-## Commands
+## Day-to-day editing (like WordPress sections)
+
+Open **https://ajascollege.pages.dev/admin/** → Login with **GitHub** (`aathif394` or any collaborator with write access).
+
+| # | Section | What staff change |
+|---|---------|-------------------|
+| 1 | News | Campus news |
+| 2 | Events | Events |
+| 3 | Notices & downloads | Circulars / PDFs |
+| 4 | Fees & prospectus | Fee PDFs |
+| 5 | Site settings | Phone, email, admission open |
+| 6 | Homepage hero | Hero text / CTAs |
+| 7 | Programmes | UG/PG list |
+| 8 | Faculty | Faculty bios |
+| 9 | Other pages | About, IQAC, labs, … |
+
+After publish, GitHub Action rebuilds and deploys to Cloudflare Pages automatically.
+
+---
+
+## URLs
+
+| What | URL |
+|------|-----|
+| Site | https://ajascollege.pages.dev |
+| Admin | https://ajascollege.pages.dev/admin/ |
+| Notices | https://ajascollege.pages.dev/notices/ |
+| Fees | https://ajascollege.pages.dev/fees/ |
+| Programmes | https://ajascollege.pages.dev/programmes/ |
+| Auth worker (optional OAuth proxy) | https://ajas-cms-auth.aathif394.workers.dev |
+
+---
+
+## Local development
 
 ```bash
-cd ajascollege-new
-pnpm install   # or npm install
-pnpm dev       # http://localhost:4321
+git clone https://github.com/aathif394/ajascollege.git
+cd ajascollege
+npm install
+npm run dev          # http://localhost:4321
 
-# Local CMS (no GitHub needed):
-# terminal 1:
-pnpm dev
-# terminal 2:
-pnpm run cms   # starts decap-server — LOCAL FILE BRIDGE only
-# open http://localhost:4321/admin/
+# Local CMS (no GitHub OAuth):
+npm run cms          # starts decap-server — local file bridge only
+# then http://localhost:4321/admin/
 ```
 
-### Why the terminal says “Decap”
-
-`pnpm run cms` runs **`decap-server`**, a small local proxy so Sveltia can write files on disk without OAuth.  
-**The admin UI is Sveltia**, not Decap. Production does not use Decap Identity.
-
-| Piece | Role |
-|---|---|
-| Sveltia CMS (`/admin`) | Editor UI in the browser |
-| `decap-server` | Local-only file API (`pnpm run cms`) |
-| GitHub OAuth | Production login + commits |
+`npm run cms` may print “Decap” — that is only the local proxy. The UI is **Sveltia**.
 
 ---
 
-## Deploy (Cloudflare Pages)
+## Deploy
 
-Already deployed once via:
+- **Automatic:** push to `main` → GitHub Action → Cloudflare Pages  
+- **Manual:** `npm run deploy`
 
-```bash
-pnpm run build
-npx wrangler pages deploy dist --project-name ajascollege --branch main
-```
+Secrets (already set on the repo):
 
-Or: `pnpm run deploy`
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
 
-| Setting | Value |
-|---|---|
-| Project | `ajascollege` |
-| URL | https://ajascollege.pages.dev |
-| Build output | `dist` |
-| Account | linked Wrangler OAuth |
-
-Custom domain later: Cloudflare dashboard → Pages → `ajascollege` → Custom domains → `ajascollege.ac.in`.
+> If CI deploys fail after months, re-run `wrangler login` and refresh the `CLOUDFLARE_API_TOKEN` secret (token is from Wrangler OAuth).
 
 ---
 
-## Production CMS login (honest constraints)
+## Production CMS login notes
 
-Sveltia is **Git-based**. There is **no WordPress-style username/password** built into Sveltia.
+Sveltia uses **GitHub** (not username/password like WordPress).
 
-### What works in production
+1. Open `/admin/`
+2. **Login with GitHub**
+3. Authorize access to `aathif394/ajascollege`
+4. Edit → Publish → wait for the deploy Action
 
-1. **GitHub OAuth (recommended)**  
-   - Set `backend.repo` in `public/admin/config.yml` to your real `org/repo`.  
-   - Deploy [sveltia-cms-auth](https://github.com/sveltia/sveltia-cms-auth) as a Cloudflare Worker and set `base_url`.  
-   - Staff get a **shared editor GitHub account** (they only open `/admin`, never the repo).  
-   - Saves = git commits → rebuild/redeploy (connect Git integration or run `wrangler pages deploy` in CI).
+Invite staff: GitHub → repo **Settings → Collaborators** → write access. They only need GitHub for the CMS login, not to use git.
 
-2. **Local only**  
-   - `local_backend: true` + `pnpm run cms` — good for IT staff on a laptop, not for remote college staff on the public URL.
+Optional custom OAuth proxy Worker is deployed as `ajas-cms-auth`. To use it instead of the default Netlify OAuth client:
 
-3. **True email/password without GitHub**  
-   - Not available with pure Sveltia on Cloudflare Pages.  
-   - Would need Netlify Identity + Git Gateway, or a different CMS (Payload/Directus/Strapi) with its own users.
-
-Until the GitHub repo + OAuth worker are connected, **use local CMS** for edits, then redeploy.
+1. Create a GitHub OAuth App: https://github.com/settings/applications/new  
+   - Callback: `https://ajas-cms-auth.aathif394.workers.dev/callback`
+2. Set Worker secrets: `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`
+3. Uncomment `base_url` in `public/admin/config.yml`
 
 ---
 
 ## Project layout
 
 ```
-content/
-  news/ events/ notices/ fees/ programmes/ faculty/
-  pages/          # static pages
-  settings/site.json
-  home/homepage.json
-public/admin/     # Sveltia
-public/assets/    # media + Edukin CSS/JS
-src/              # layouts, components, routes
+content/     # CMS-editable Markdown + JSON
+public/      # assets + /admin
+src/         # Astro layouts & routes
+.github/workflows/deploy.yml
 ```
-
-Agents/developers edit files in the repo. Staff use `/admin` once OAuth is wired.
-
----
-
-## Search
-
-Pagefind indexes every build (`pnpm run build`). Floating search button / ⌘K on the site.
