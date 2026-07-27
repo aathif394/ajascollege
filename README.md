@@ -112,3 +112,14 @@ public/      # assets + /admin
 src/         # Astro layouts & routes
 .github/workflows/deploy.yml
 ```
+
+---
+
+## Moving the stack to the college team
+
+Full transfer runbook (GitHub + Cloudflare Pages + Workers + Sveltia + secrets):
+
+- **[docs/HANDOFF-TO-COLLEGE.md](docs/HANDOFF-TO-COLLEGE.md)** — step-by-step ownership transfer  
+- **[docs/HANDOFF-CHECKLIST.md](docs/HANDOFF-CHECKLIST.md)** — printable tick list  
+- **`scripts/retarget-ownership.sh`** — rewrite `config.yml` URLs after you know the new org/worker/site  
+
