@@ -149,12 +149,12 @@ collections:
           - { label: College name, name: college_name, widget: string }
           - { label: Short name, name: short_name, widget: string, required: false }
           - { label: Tagline, name: tagline, widget: string, required: false }
-          - { label: Phone (tel: link), name: phone, widget: string }
+          - { label: "Phone (tel: link)", name: phone, widget: string }
           - { label: Phone (display), name: phone_display, widget: string, required: false }
           - { label: Email, name: email, widget: string }
           - { label: Address, name: address, widget: text }
           - { label: Logo, name: logo, widget: image, required: false }
-          - { label: Admissions open?, name: admission_open, widget: boolean, default: true }
+          - { label: "Admissions open?", name: admission_open, widget: boolean, default: true }
           - { label: Admission button label, name: admission_label, widget: string, required: false }
           - { label: Admission URL, name: admission_url, widget: string, required: false }
           - { label: Admission note, name: admission_note, widget: string, required: false }
@@ -190,10 +190,10 @@ collections:
             name: hero_images
             widget: list
             field: { label: Image, name: image, widget: image }
-          - { label: Stat — departments, name: stat_departments, widget: string, required: false }
-          - { label: Stat — UG programmes, name: stat_ug, widget: string, required: false }
-          - { label: Stat — PG programmes, name: stat_pg, widget: string, required: false }
-          - { label: Stat — established, name: stat_established, widget: string, required: false }
+          - { label: "Stat — departments", name: stat_departments, widget: string, required: false }
+          - { label: "Stat — UG programmes", name: stat_ug, widget: string, required: false }
+          - { label: "Stat — PG programmes", name: stat_pg, widget: string, required: false }
+          - { label: "Stat — established", name: stat_established, widget: string, required: false }
           - { label: Principal name, name: principal_name, widget: string, required: false }
           - { label: Principal photo, name: principal_photo, widget: image, required: false }
           - { label: Principal excerpt, name: principal_excerpt, widget: text, required: false }
