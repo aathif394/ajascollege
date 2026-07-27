@@ -1,5 +1,8 @@
 ---
-/** Floating search trigger + Pagefind panel host */
+/**
+ * Site search (Pagefind).
+ * Sits above Edukin #scroll-top so the two FABs don't stack on top of each other.
+ */
 ---
 
 <button
@@ -7,82 +10,297 @@
   class="ajas-search-trigger"
   id="ajas-search-open"
   aria-label="Search the site"
-  title="Search"
+  title="Search (Ctrl/⌘ K)"
 >
   <i class="fa fa-search" aria-hidden="true"></i>
 </button>
 
 <div class="ajas-search-modal" id="ajas-search-modal" hidden>
-  <div class="ajas-search-backdrop" data-close></div>
-  <div class="ajas-search-panel" role="dialog" aria-modal="true" aria-label="Site search">
-    <button type="button" class="ajas-search-close" data-close aria-label="Close search">
-      <i class="fa fa-times" aria-hidden="true"></i>
-    </button>
-    <div id="search"></div>
+  <div class="ajas-search-backdrop" data-close tabindex="-1"></div>
+  <div
+    class="ajas-search-panel"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Site search"
+  >
+    <header class="ajas-search-head">
+      <div class="ajas-search-brand">
+        <span class="ajas-search-brand-mark"></span>
+        <div>
+          <strong>Search</strong>
+          <span>Al Jamia Arts &amp; Science College</span>
+        </div>
+      </div>
+      <button type="button" class="ajas-search-close" data-close aria-label="Close search">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </button>
+    </header>
+    <div class="ajas-search-body">
+      <div id="search"></div>
+    </div>
   </div>
 </div>
 
 <style is:global>
+  /* ========== FAB stack: search above Edukin #scroll-top ========== */
+  /* Edukin #scroll-top is bottom:23px, height 35px */
   .ajas-search-trigger {
     position: fixed;
     right: 18px;
-    bottom: 22px;
+    bottom: 72px; /* clears #scroll-top */
     z-index: 9990;
     width: 48px;
     height: 48px;
     border: 0;
-    border-radius: 999px;
-    background: #ff5f60;
+    border-radius: 50%;
+    background: #183251;
     color: #fff;
-    box-shadow: 0 8px 24px rgba(24, 50, 81, 0.28);
+    box-shadow: 0 8px 22px rgba(24, 50, 81, 0.35);
     cursor: pointer;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.15s ease;
   }
   .ajas-search-trigger:hover {
-    background: #3f4c99;
+    background: #7a1f2b;
+    transform: translateY(-1px);
   }
+  .ajas-search-trigger:focus-visible {
+    outline: 2px solid #c4a35a;
+    outline-offset: 3px;
+  }
+
+  /* Keep go-top aligned under search, themed navy */
+  #scroll-top {
+    right: 24px !important;
+    bottom: 22px !important;
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    border-radius: 50% !important;
+    background: #3f4c99 !important;
+    z-index: 9980 !important;
+    overflow: hidden;
+  }
+  #scroll-top:hover {
+    background: #7a1f2b !important;
+  }
+
+  /* ========== Modal shell ========== */
   .ajas-search-modal[hidden] {
     display: none !important;
   }
   .ajas-search-modal {
     position: fixed;
     inset: 0;
-    z-index: 9999;
-    display: grid;
-    place-items: start center;
-    padding: 12vh 16px 16px;
+    z-index: 10000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: max(8vh, 24px) 16px 24px;
+    box-sizing: border-box;
+    overflow: hidden;
   }
   .ajas-search-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(9, 24, 42, 0.55);
+    background: rgba(9, 24, 42, 0.62);
+    backdrop-filter: blur(2px);
   }
   .ajas-search-panel {
     position: relative;
-    width: min(720px, 100%);
+    z-index: 1;
+    width: min(640px, 100%);
+    max-height: min(80vh, 720px);
+    display: flex;
+    flex-direction: column;
     background: #fff;
     border-radius: 12px;
-    padding: 28px 20px 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+    overflow: hidden;
+    border-top: 4px solid #7a1f2b;
+  }
+  .ajas-search-head {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    background: linear-gradient(90deg, #183251 0%, #1e3a6e 55%, #7a1f2b 160%);
+    color: #fff;
+  }
+  .ajas-search-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+  .ajas-search-brand-mark {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #c4a35a;
+    flex-shrink: 0;
+  }
+  .ajas-search-brand strong {
+    display: block;
+    font-family: Rubik, system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .ajas-search-brand span {
+    display: block;
+    font-size: 11px;
+    opacity: 0.8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 42vw;
   }
   .ajas-search-close {
-    position: absolute;
-    top: 10px;
-    right: 12px;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
     border: 0;
-    background: transparent;
-    font-size: 18px;
-    color: #183251;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
     cursor: pointer;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
-  /* Pagefind defaults sit better with Edukin */
+  .ajas-search-close:hover {
+    background: rgba(255, 255, 255, 0.22);
+  }
+
+  /* Scrollable results region */
+  .ajas-search-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 14px 16px 20px;
+  }
+
+  /* ========== Pagefind UI theming (override defaults) ========== */
+  .ajas-search-panel .pagefind-ui {
+    --pagefind-ui-scale: 0.92;
+    --pagefind-ui-primary: #183251;
+    --pagefind-ui-text: #2c3e50;
+    --pagefind-ui-background: #ffffff;
+    --pagefind-ui-border: #dbe3ee;
+    --pagefind-ui-tag: #e8eef8;
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 8px;
+    --pagefind-ui-font: Rubik, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  .ajas-search-panel .pagefind-ui__form {
+    margin: 0 0 12px !important;
+  }
   .ajas-search-panel .pagefind-ui__search-input {
     font-family: Rubik, system-ui, sans-serif !important;
+    font-size: 16px !important;
+    border: 2px solid #dbe3ee !important;
     border-radius: 8px !important;
+    padding: 12px 14px 12px 40px !important;
+    height: auto !important;
+    background: #f8fafc !important;
+    color: #183251 !important;
+    box-shadow: none !important;
   }
-  .ajas-search-panel .pagefind-ui__result-title {
+  .ajas-search-panel .pagefind-ui__search-input:focus {
+    border-color: #7a1f2b !important;
+    outline: none !important;
+    background: #fff !important;
+  }
+  .ajas-search-panel .pagefind-ui__search-clear {
     font-family: Rubik, system-ui, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    color: #7a1f2b !important;
+    background: #f7eef0 !important;
+    border: 1px solid #e8cfd4 !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    right: 10px !important;
+    height: auto !important;
+  }
+  .ajas-search-panel .pagefind-ui__drawer {
+    margin-top: 4px !important;
+    /* Drawer lives inside our scroll container — don't grow forever */
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  .ajas-search-panel .pagefind-ui__results-area {
+    margin-top: 8px !important;
+  }
+  .ajas-search-panel .pagefind-ui__message {
+    font-family: Rubik, system-ui, sans-serif !important;
+    color: #5c6578 !important;
+    font-size: 13px !important;
+    padding: 4px 2px 10px !important;
+  }
+  .ajas-search-panel .pagefind-ui__result {
+    border-top: 1px solid #eef2f7 !important;
+    padding: 12px 4px !important;
+  }
+  .ajas-search-panel .pagefind-ui__result-link {
+    font-family: Rubik, system-ui, sans-serif !important;
+    font-weight: 600 !important;
+    color: #183251 !important;
+    font-size: 15px !important;
+  }
+  .ajas-search-panel .pagefind-ui__result-link:hover {
+    color: #7a1f2b !important;
+  }
+  .ajas-search-panel .pagefind-ui__result-excerpt {
+    font-family: Rubik, system-ui, sans-serif !important;
+    color: #5c6578 !important;
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+  .ajas-search-panel .pagefind-ui__result-nested .pagefind-ui__result-link {
+    color: #1e3a6e !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+  }
+  .ajas-search-panel .pagefind-ui mark {
+    background: #fde8ec !important;
+    color: #7a1f2b !important;
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+  /* Hide Pagefind's default huge brand block if any */
+  .ajas-search-panel .pagefind-ui__suppressed {
+    display: none !important;
+  }
+
+  @media (max-width: 520px) {
+    .ajas-search-trigger {
+      right: 14px;
+      bottom: 68px;
+      width: 44px;
+      height: 44px;
+    }
+    .ajas-search-panel {
+      max-height: 85vh;
+    }
+    .ajas-search-modal {
+      padding: 12px 10px 16px;
+      align-items: stretch;
+    }
   }
 </style>
 
@@ -91,23 +309,28 @@
     var openBtn = document.getElementById("ajas-search-open");
     var modal = document.getElementById("ajas-search-modal");
     if (!openBtn || !modal) return;
+
     function open() {
       modal.hidden = false;
-      var input = modal.querySelector("input");
-      if (input) setTimeout(function () { input.focus(); }, 50);
+      document.documentElement.style.overflow = "hidden";
+      var input = modal.querySelector(".pagefind-ui__search-input, input");
+      if (input) setTimeout(function () { input.focus(); }, 60);
     }
     function close() {
       modal.hidden = true;
+      document.documentElement.style.overflow = "";
     }
+
     openBtn.addEventListener("click", open);
     modal.querySelectorAll("[data-close]").forEach(function (el) {
       el.addEventListener("click", close);
     });
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") close();
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+      if (e.key === "Escape" && !modal.hidden) close();
+      if ((e.metaKey || e.ctrlKey) && (e.key === "k" || e.key === "K")) {
         e.preventDefault();
-        open();
+        if (modal.hidden) open();
+        else close();
       }
     });
   })();

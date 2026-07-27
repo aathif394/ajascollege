@@ -1,51 +1,86 @@
 /**
- * Preview pane styles — approximate live Edukin / AJAS page look (Option C).
- * Loaded into Sveltia’s entry preview via CMS.registerPreviewStyle.
+ * CMS entry preview — match public site (Edukin + AJAS migrate layer).
+ * Loaded via CMS.registerPreviewStyle("/admin/preview.css")
  */
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --ajas-navy: #183251;
+  --ajas-indigo: #3f4c99;
+  --ajas-coral: #ff5f60;
+  --ajas-maroon: #7a1f2b;
+  --ajas-blue: #1e3a6e;
+  --ajas-text: #2c3e50;
+  --ajas-muted: #5c6578;
+  --ajas-bg: #f4f6f9;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background: #f5f7fa;
-  font-family: "Rubik", system-ui, -apple-system, "Segoe UI", sans-serif;
-  color: #2c3e50;
-  font-size: 16px;
+  background: var(--ajas-bg);
+  font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
   line-height: 1.7;
+  color: var(--ajas-text);
+  letter-spacing: -0.01em;
 }
 
-/* Outer frame like inner page content column */
+/* Fake page chrome: banner + content column like public inner pages */
 body {
-  padding: 24px 16px 48px;
+  min-height: 100%;
+  padding: 0 0 40px;
 }
 
+/* Banner strip (like .bg-header + breadcrumbs title) */
 body::before {
-  content: "Al Jamia Arts & Science College · live-style preview";
+  content: "Preview · Al Jamia Arts & Science College";
   display: block;
-  max-width: 720px;
-  margin: 0 auto 16px;
-  padding: 8px 12px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  padding: 28px 20px 36px;
+  background:
+    linear-gradient(rgba(24, 50, 81, 0.88), rgba(24, 50, 81, 0.88)),
+    #183251;
   color: #fff;
-  background: linear-gradient(90deg, #7a1f2b, #1e3a6e);
-  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0;
 }
 
-/* Main prose card */
-body > div,
-.frame-content,
-[data-slate-editor],
-.cms-preview-content {
-  max-width: 720px;
-  margin: 0 auto;
+/* Content card = migrate-content / article column */
+body > * {
+  max-width: 780px;
+  margin: -18px auto 0;
   background: #fff;
-  padding: 28px 32px 40px;
-  border-radius: 8px;
-  box-shadow: 0 8px 28px rgba(24, 50, 81, 0.08);
-  border-top: 4px solid #7a1f2b;
+  padding: 32px 36px 48px;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(24, 50, 81, 0.12);
+  position: relative;
+  z-index: 1;
+}
+
+/* When preview root is a single wrapper */
+.frame-content,
+[class*="preview"],
+.cms-preview {
+  max-width: 780px;
+  margin: -18px auto 0 !important;
+  background: #fff;
+  padding: 32px 36px 48px;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(24, 50, 81, 0.12);
 }
 
 h1,
@@ -54,101 +89,129 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Rubik", system-ui, sans-serif;
-  color: #183251;
+  font-family: "Rubik", sans-serif;
   font-weight: 600;
-  line-height: 1.25;
+  color: var(--ajas-navy);
+  line-height: 1.3;
+  letter-spacing: -0.35px;
   margin: 1.35em 0 0.5em;
-  letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: 1.75rem;
+  font-size: 1.85rem;
   margin-top: 0;
-  color: #7a1f2b;
+  color: var(--ajas-navy);
+  padding-bottom: 0.4em;
+  border-bottom: 3px solid var(--ajas-coral);
+  display: inline-block;
+  width: 100%;
 }
 
 h2 {
   font-size: 1.35rem;
-  border-bottom: 2px solid #e8eef8;
-  padding-bottom: 0.35em;
+  color: var(--ajas-navy);
+  border-left: 4px solid var(--ajas-coral);
+  padding-left: 12px;
+  margin-top: 1.6em;
 }
 
 h3 {
   font-size: 1.15rem;
-  color: #1e3a6e;
+  color: var(--ajas-indigo);
 }
 
 p {
   margin: 0 0 1em;
+  color: var(--ajas-text);
 }
 
 a {
-  color: #2c4f94;
+  color: var(--ajas-indigo);
   text-decoration: none;
   border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
-
 a:hover {
-  color: #7a1f2b;
-  border-bottom-color: #7a1f2b;
+  color: var(--ajas-coral);
+  border-bottom-color: var(--ajas-coral);
 }
 
 ul,
 ol {
-  margin: 0 0 1em;
-  padding-left: 1.35em;
+  margin: 0 0 1.1em;
+  padding-left: 1.4em;
 }
-
 li {
-  margin: 0.3em 0;
+  margin: 0.35em 0;
 }
 
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 6px;
-  margin: 0.75em 0 1.25em;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  display: block;
+  margin: 1em 0 1.4em;
+  border-radius: 2px;
+  box-shadow: 0 6px 20px rgba(24, 50, 81, 0.1);
 }
 
 blockquote {
-  margin: 1em 0;
-  padding: 0.65em 1em;
-  border-left: 4px solid #7a1f2b;
-  background: #f7eef0;
-  color: #5c1620;
+  margin: 1.2em 0;
+  padding: 0.75em 1.1em;
+  border-left: 4px solid var(--ajas-coral);
+  background: #fff5f5;
+  color: var(--ajas-muted);
+  font-style: italic;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1em 0;
+  margin: 1.2em 0;
   font-size: 0.95rem;
 }
-
 th,
 td {
-  border: 1px solid #e5e7eb;
-  padding: 0.5em 0.75em;
+  border: 1px solid #e2e8f0;
+  padding: 0.55em 0.8em;
   text-align: left;
 }
-
 th {
-  background: #e8eef8;
-  color: #1e3a6e;
+  background: var(--ajas-navy);
+  color: #fff;
   font-weight: 600;
 }
-
-code {
-  font-size: 0.9em;
-  background: #f1f5f9;
-  padding: 0.1em 0.35em;
-  border-radius: 3px;
+tr:nth-child(even) td {
+  background: #f8fafc;
 }
 
 hr {
   border: 0;
-  border-top: 1px solid #e5e7eb;
-  margin: 1.5em 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--ajas-coral), var(--ajas-indigo));
+  margin: 2em 0;
+  opacity: 0.5;
+}
+
+code {
+  font-size: 0.88em;
+  background: #f1f5f9;
+  padding: 0.12em 0.4em;
+  border-radius: 3px;
+  color: var(--ajas-maroon);
+}
+
+strong {
+  color: var(--ajas-navy);
+  font-weight: 600;
+}
+
+/* Meta-ish first lines */
+body > p:first-of-type {
+  font-size: 1.02rem;
+}
+
+/* Soften huge first images */
+body > p:first-child > img:first-child,
+body > p:first-of-type > img:only-child {
+  margin-top: 0;
 }
