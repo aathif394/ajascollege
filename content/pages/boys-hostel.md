@@ -1,9 +1,12 @@
 ---
-title: "Boy's Hostel"
-description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
+title: Boys Hostel
+description: Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut.
 permalink: /boys-hostel/
 type: page
-image: "/assets/uploads/2025/01/WhatsApp-Image-2025-01-28-at-8.03.35-PM.jpeg"
+image: /assets/uploads/2025/01/WhatsApp-Image-2025-01-28-at-8.03.35-PM.jpeg
+name: ''
+role: ''
+credentials: ''
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">
