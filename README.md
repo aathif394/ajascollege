@@ -72,23 +72,35 @@ Secrets (already set on the repo):
 
 ---
 
-## Production CMS login notes
+## Production CMS login (no Netlify)
 
-Sveltia uses **GitHub** (not username/password like WordPress).
+Sveltia does **not** use Netlify. Sign-in goes through our Cloudflare Worker:
 
-1. Open `/admin/`
-2. **Login with GitHub**
-3. Authorize access to `aathif394/ajascollege`
-4. Edit → Publish → wait for the deploy Action
+**https://ajas-cms-auth.aathif394.workers.dev**
 
-Invite staff: GitHub → repo **Settings → Collaborators** → write access. They only need GitHub for the CMS login, not to use git.
+1. Open https://ajascollege.pages.dev/admin/
+2. Click **Sign In with GitHub**
+3. A popup asks for the **CMS password** (not your GitHub password)
+4. On success you’re in — edit → Publish → GitHub Action redeploys
 
-Optional custom OAuth proxy Worker is deployed as `ajas-cms-auth`. To use it instead of the default Netlify OAuth client:
+Password is stored only as a Worker secret + local file (not in git):
 
-1. Create a GitHub OAuth App: https://github.com/settings/applications/new  
-   - Callback: `https://ajas-cms-auth.aathif394.workers.dev/callback`
-2. Set Worker secrets: `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`
-3. Uncomment `base_url` in `public/admin/config.yml`
+```text
+ajascollege-new/.cms-password.local
+```
+
+Change it anytime:
+
+```bash
+cd cms-auth
+printf 'your-new-password' | npx wrangler secret put CMS_PASSWORD --config wrangler.toml
+```
+
+Refresh the GitHub token secret if staff lose write access after `gh` re-login:
+
+```bash
+printf '%s' "$(gh auth token)" | npx wrangler secret put GITHUB_TOKEN --config wrangler.toml
+```
 
 ---
 
