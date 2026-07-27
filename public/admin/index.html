@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Content Manager | Al Jamia Arts &amp; Science College</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        background: #f4f6f8;
+      }
+      .ajas-cms-note {
+        max-width: 40rem;
+        margin: 2rem auto;
+        padding: 1rem 1.25rem;
+        background: #fff8e6;
+        border: 1px solid #f0d78c;
+        border-radius: 8px;
+        font-size: 14px;
+        line-height: 1.45;
+        color: #333;
+      }
+      .ajas-cms-note code {
+        background: #f0f0f0;
+        padding: 0.1em 0.35em;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div class="ajas-cms-note">
+        JavaScript is required for the content manager (Sveltia CMS).
+      </div>
+    </noscript>
+    <!--
+      Sveltia CMS = the admin UI (this page).
+      `pnpm run cms` starts decap-server only as a LOCAL file proxy — that is why
+      the terminal may say “Decap”. Production uses GitHub OAuth, not Decap Identity.
+    -->
+    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SearchModal from "../components/SearchModal.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  variant?: "home" | "inner";
+  pageTitle?: string;
+  breadcrumbs?: { label: string; href?: string }[];
+}
+
+const {
+  title,
+  description = "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut.",
+  variant = "inner",
+  pageTitle,
+  breadcrumbs = [],
+} = Astro.props;
+
+const fullTitle =
+  title === "Home"
+    ? "Home | Al Jamia Arts & Science College"
+    : `${title} | Al Jamia Arts & Science College`;
+
+const crumbs =
+  breadcrumbs.length > 0
+    ? breadcrumbs
+    : pageTitle
+      ? [
+          { label: "Home", href: "/" },
+          { label: pageTitle },
+        ]
+      : [];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="/icon/favicon.ico" />
+    <link rel="stylesheet" href="/stylesheet/bootstrap.css" />
+    <link rel="stylesheet" href="/stylesheet/font-awesome.css" />
+    <link rel="stylesheet" href="/stylesheet/themify-icons.css" />
+    <link rel="stylesheet" href="/stylesheet/animate.css" />
+    <link rel="stylesheet" href="/stylesheet/style.css" />
+    <link rel="stylesheet" href="/stylesheet/shortcodes.css" />
+    <link rel="stylesheet" href="/stylesheet/jquery-fancybox.css" />
+    <link rel="stylesheet" href="/stylesheet/responsive.css" />
+    <link rel="stylesheet" href="/stylesheet/flexslider.css" />
+    <link rel="stylesheet" href="/stylesheet/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/stylesheet/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/stylesheet/jquery.mCustomScrollbar.min.css" />
+    <link rel="stylesheet" href="/assets/migrate.css" />
+  </head>
+  <body>
+    <div id="loading-overlay"><div class="loader"></div></div>
+
+    {
+      variant === "home" ? (
+        <Header variant="home" />
+      ) : (
+        <Header variant="inner">
+          <Fragment slot="page-title">
+            {pageTitle && (
+              <div class="page-title page-title-blog">
+                <div class="page-title-inner">
+                  <div class="breadcrumbs breadcrumbs-blog text-left">
+                    <div class="container">
+                      <div class="breadcrumbs-wrap">
+                        <ul class="breadcrumbs-inner">
+                          {crumbs.map((c, i) => (
+                            <li class={i === crumbs.length - 1 ? "active" : undefined}>
+                              {c.href && i < crumbs.length - 1 ? (
+                                <a href={c.href}>{c.label}</a>
+                              ) : (
+                                c.label
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                        <div class="title">{pageTitle}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </Fragment>
+        </Header>
+      )
+    }
+
+    {/* Pagefind indexes only main content, not chrome */}
+    <main data-pagefind-body>
+      <slot />
+    </main>
+
+    <Footer />
+    <SearchModal />
+  </body>
+</html>

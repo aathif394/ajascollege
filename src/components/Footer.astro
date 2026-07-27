@@ -1,0 +1,37 @@
+---
+import footerHtml from "../partials/footer.html?raw";
+import siteScripts from "../partials/site-scripts.html?raw";
+---
+
+<Fragment set:html={footerHtml} />
+
+<script is:inline src="/javascript/jquery.min.js"></script>
+<script is:inline src="/javascript/plugins.js"></script>
+<script is:inline src="/javascript/jquery-countTo.js"></script>
+<script is:inline src="/javascript/jquery-ui.js"></script>
+<script is:inline src="/javascript/jquery-fancybox.js"></script>
+<script is:inline src="/javascript/flex-slider.min.js"></script>
+<script is:inline src="/javascript/scroll-img.js"></script>
+<script is:inline src="/javascript/owl.carousel.min.js"></script>
+<script is:inline src="/javascript/jquery.mCustomScrollbar.concat.min.js"></script>
+<script is:inline src="/javascript/parallax.js"></script>
+<script is:inline src="/javascript/jquery-isotope.js"></script>
+<script is:inline src="/javascript/equalize.min.js"></script>
+<script is:inline src="/javascript/main.js"></script>
+<Fragment set:html={siteScripts} />
+
+{/* Pagefind UI — indexes built on `npm run build` */}
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+<script is:inline src="/pagefind/pagefind-ui.js"></script>
+<script is:inline>
+  window.addEventListener("DOMContentLoaded", () => {
+    const el = document.querySelector("#search");
+    if (!el || typeof PagefindUI === "undefined") return;
+    new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      showImages: false,
+      resetStyles: false,
+    });
+  });
+</script>

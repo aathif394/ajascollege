@@ -1,0 +1,28 @@
+{
+  "name": "ajascollege",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Al Jamia Arts & Science College — Astro + Sveltia CMS + Cloudflare Pages + Pagefind",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview",
+    "astro": "astro",
+    "cms": "npx decap-server",
+    "cms:local": "npx decap-server",
+    "extract": "python3 scripts/extract-content.py",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name ajascollege",
+    "cf:preview": "npm run build && wrangler pages dev dist"
+  },
+  "dependencies": {
+    "astro": "^7.1.4"
+  },
+  "devDependencies": {
+    "pagefind": "^1.3.0",
+    "wrangler": "^4.20.0"
+  }
+}

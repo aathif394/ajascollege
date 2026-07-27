@@ -1,0 +1,99 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const notices = (await getCollection("notices", ({ data }) => !data.draft)).sort((a, b) => {
+  const da = a.data.date ? +new Date(a.data.date) : 0;
+  const db = b.data.date ? +new Date(b.data.date) : 0;
+  return db - da;
+});
+
+const byCat = new Map<string, typeof notices>();
+for (const n of notices) {
+  const c = n.data.category || "general";
+  if (!byCat.has(c)) byCat.set(c, []);
+  byCat.get(c)!.push(n);
+}
+
+const labels: Record<string, string> = {
+  admission: "Admission",
+  academic: "Academic",
+  compliance: "NIRF / AISHE / AICTE",
+  iqac: "IQAC",
+  mandatory: "Mandatory disclosure",
+  admin: "Administration",
+  general: "General notices",
+};
+---
+
+<BaseLayout
+  title="Notices & Downloads"
+  description="Circulars, compliance reports and downloadable documents — Al Jamia Arts & Science College."
+  pageTitle="Notices & Downloads"
+>
+  <div class="blog-single content-blog narrow-page">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="site-content clearfix">
+            <article class="post post-blog-single">
+              <div class="content-blog-single-wrap migrate-content" data-pagefind-body>
+                <p class="listing-intro">
+                  Day-to-day circulars and official PDFs. Staff: add or update items in the CMS under
+                  <strong>Notices &amp; downloads</strong>.
+                </p>
+
+                {
+                  [...byCat.entries()].map(([cat, items]) => (
+                    <section class="ajas-notice-group">
+                      <h2>{labels[cat] || cat}</h2>
+                      <table class="mig-roster ajas-notice-table">
+                        <thead>
+                          <tr>
+                            <th>Document</th>
+                            <th>Date</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {items.map((n) => (
+                            <tr>
+                              <td class="nm">{n.data.title}</td>
+                              <td class="rl">
+                                {n.data.date
+                                  ? new Date(n.data.date).toLocaleDateString("en-IN", {
+                                      year: "numeric",
+                                      month: "short",
+                                      day: "numeric",
+                                    })
+                                  : "—"}
+                              </td>
+                              <td>
+                                <a href={n.data.file} target="_blank" rel="noopener">
+                                  Download PDF
+                                </a>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </section>
+                  ))
+                }
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .ajas-notice-group {
+    margin-bottom: 2rem;
+  }
+  .ajas-notice-table {
+    width: 100%;
+  }
+</style>

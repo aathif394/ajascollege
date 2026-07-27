@@ -1,0 +1,91 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const programmes = (await getCollection("programmes", ({ data }) => !data.draft)).sort(
+  (a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title),
+);
+const ug = programmes.filter((p) => p.data.level === "ug");
+const pg = programmes.filter((p) => p.data.level === "pg");
+const other = programmes.filter((p) => !["ug", "pg"].includes(p.data.level));
+---
+
+<BaseLayout
+  title="Programmes Offered"
+  description="UG (Honours) and PG programmes at Al Jamia Arts & Science College."
+  pageTitle="Programmes Offered"
+>
+  <div class="blog-single content-blog narrow-page">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="site-content clearfix">
+            <article class="post post-blog-single">
+              <div class="content-blog-single-wrap migrate-content" data-pagefind-body>
+                <p class="listing-intro">
+                  Edit this list in the CMS under <strong>Programmes</strong>. Affiliated to the
+                  University of Calicut.
+                </p>
+
+                <h2>UG (Honours) Programmes</h2>
+                <ul class="ajas-cms-list">
+                  {
+                    ug.map((p) => (
+                      <li>
+                        <a href={p.data.permalink}>{p.data.title}</a>
+                      </li>
+                    ))
+                  }
+                </ul>
+
+                <h2>PG Programmes</h2>
+                <ul class="ajas-cms-list">
+                  {
+                    pg.map((p) => (
+                      <li>
+                        <a href={p.data.permalink}>{p.data.title}</a>
+                      </li>
+                    ))
+                  }
+                </ul>
+
+                {
+                  other.length > 0 && (
+                    <>
+                      <h2>Other</h2>
+                      <ul class="ajas-cms-list">
+                        {other.map((p) => (
+                          <li>
+                            <a href={p.data.permalink}>{p.data.title}</a>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )
+                }
+
+                <p>
+                  <a class="flat-button" href="/programe-offered/">View classic programmes page</a>
+                  {" · "}
+                  <a class="flat-button" href="/admission/">Admissions</a>
+                  {" · "}
+                  <a class="flat-button" href="/fees/">Fees &amp; prospectus</a>
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .ajas-cms-list {
+    margin: 0 0 1.5rem;
+    padding-left: 1.25rem;
+  }
+  .ajas-cms-list li {
+    margin: 0.35rem 0;
+  }
+</style>

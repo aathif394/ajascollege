@@ -1,0 +1,4 @@
+# Cloudflare Pages redirects
+# Keep legacy WP shortlinks out; clean slugs are the source of truth.
+
+# Optional: force trailing slash is handled by Astro trailingSlash: always

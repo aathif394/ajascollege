@@ -1,0 +1,75 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const programmes = await getCollection("programmes", ({ data }) => !data.draft);
+  return programmes.map((entry) => ({
+    params: { slug: entry.id.replace(/\.md$/, "") },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const levelLabel =
+  entry.data.level === "ug"
+    ? "UG (Honours)"
+    : entry.data.level === "pg"
+      ? "PG"
+      : entry.data.level;
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  pageTitle={entry.data.title}
+  breadcrumbs={[
+    { label: "Home", href: "/" },
+    { label: "Programmes", href: "/programmes/" },
+    { label: entry.data.title },
+  ]}
+>
+  <div class="blog-single content-blog narrow-page">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="site-content clearfix">
+            <article class="post post-blog-single">
+              <div class="content-blog-single-wrap migrate-content" data-pagefind-body>
+                <p><strong>Level:</strong> {levelLabel}</p>
+                {
+                  entry.data.department && (
+                    <p>
+                      <strong>Department:</strong> {entry.data.department}
+                    </p>
+                  )
+                }
+                {
+                  entry.data.duration && (
+                    <p>
+                      <strong>Duration:</strong> {entry.data.duration}
+                    </p>
+                  )
+                }
+                {
+                  entry.data.seats && (
+                    <p>
+                      <strong>Seats:</strong> {entry.data.seats}
+                    </p>
+                  )
+                }
+                <Content />
+                <p>
+                  <a href="/programmes/">← All programmes</a>
+                  {" · "}
+                  <a href="/admission/">Apply</a>
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

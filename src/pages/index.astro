@@ -1,0 +1,19 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pages = await getCollection("pages", ({ data }) => data.permalink === "/");
+const home = pages[0];
+if (!home) {
+  throw new Error("Missing content/pages/home.md with permalink: /");
+}
+const { Content } = await render(home);
+---
+
+<BaseLayout
+  title={home.data.title}
+  description={home.data.description}
+  variant="home"
+>
+  <Content />
+</BaseLayout>

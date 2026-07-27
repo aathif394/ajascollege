@@ -1,0 +1,109 @@
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || reduce) { document.documentElement.classList.add('no-reveal'); }
+  else {
+    document.documentElement.classList.add('has-reveal');
+    // [selector, motion variant] — variants are defined in migrate.css
+    var groups = [
+      ['.title-section, .listing-intro, .accred-label',            'up'],
+      ['.action-tile',                                             'up'],
+      ['.accred-row li',                                           'fade'],
+      ['.videobox, .profile-photo',                                'left'],
+      ['.content-introduce, .profile-head',                        'right'],
+      ['.prog-columns > div, .prog-cards > div',                   'up'],
+      ['.flat-courses .course, .team-box-layout-h1, .post-blog',   'up'],
+      ['.flat-imagebox, .iconbox-benefit .iconbox',                'up'],
+      ['.content-event',                                           'left'],
+      ['.images-list .img-event',                                  'zoom'],
+      ['.ajas-success .textbox-about',                             'left'],
+      ['.iconbox-about .iconbox',                                  'zoom'],
+      ['.wrap-link-left',                                          'left'],
+      ['.wrap-link-right, .info-quick-link li',                    'right'],
+      ['.mig-clubs > div, .gal-item, .page-chip',                  'up'],
+      ['.people-card',                                             'up'],
+      ['.site-content, .profile-card, .profile-bio',               'up'],
+      ['.sidebar .widget',                                         'right']
+      // the footer deliberately does not animate — it is chrome, not content
+    ];
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, {rootMargin:'0px 0px -7% 0px', threshold:0.05});
+    var seen = new WeakSet();
+    groups.forEach(function(g){
+      var i = 0;
+      document.querySelectorAll(g[0]).forEach(function(el){
+        if (seen.has(el)) return;
+        seen.add(el);
+        el.classList.add('reveal', 'rv-' + g[1]);
+        el.style.transitionDelay = ((i++ % 4) * 80) + 'ms';
+        io.observe(el);
+      });
+    });
+    // counters restart cleanly when their tile animates in
+    var nums = document.querySelectorAll('.numb-count');
+    if (nums.length && window.jQuery && jQuery.fn.countTo){
+      var cio = new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if (!e.isIntersecting) return;
+          cio.unobserve(e.target);
+          jQuery(e.target).countTo({
+            from: 0, to: parseInt(e.target.getAttribute('data-to'), 10) || 0,
+            speed: 1800, refreshInterval: 40
+          });
+        });
+      }, {threshold:0.5});
+      nums.forEach(function(n){ cio.observe(n); });
+    }
+  }
+  // On the home page the sticky bar engages ~130px down, which is exactly
+  // where the hero headline still is — so it clipped the kicker. Hold the
+  // sticky state back until the hero has genuinely scrolled away.
+  // The theme adds .header-sticky ~130px down — right where the hero kicker
+  // still is, so the bar clipped it. Removing the class here loses a race with
+  // the theme's own scroll handler, so flag it on <body> and let CSS neutralise
+  // the sticky state instead. Class order can't matter to CSS.
+  var hero = document.querySelector('.ajas-hero');
+  var wrap = document.querySelector('.wrap-header');
+  if (hero){
+    var gate = function(){
+      // Revolution absolutely positions its wrapper, so the section's own rect
+      // reports top 0; add the header block explicitly instead.
+      var head = wrap ? wrap.offsetHeight : 0;
+      var release = head + hero.getBoundingClientRect().height - 80;
+      document.body.classList.toggle('hero-hold', window.pageYOffset < release);
+    };
+    window.addEventListener('scroll', gate, {passive:true});
+    window.addEventListener('resize', gate);
+    window.addEventListener('load', gate);
+    gate();
+  }
+
+  // highlight the current section in the "On this page" nav
+  var links = document.querySelectorAll('.widget-toc a');
+  if (links.length){
+    var targets = [];
+    links.forEach(function(a){
+      var t = document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+      if (t) targets.push({a:a, t:t});
+    });
+    var onScroll = function(){
+      var y = window.pageYOffset + 140, cur = null;
+      targets.forEach(function(o){ if (o.t.offsetTop <= y) cur = o; });
+      links.forEach(function(a){ a.parentNode.classList.remove('active'); });
+      if (cur) cur.a.parentNode.classList.add('active');
+    };
+    window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+    links.forEach(function(a){
+      a.addEventListener('click', function(e){
+        var t = document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+        if (!t) return;
+        e.preventDefault();
+        window.scrollTo({top: t.offsetTop - 110, behavior: reduce ? 'auto' : 'smooth'});
+      });
+    });
+  }
+})();
+</script>

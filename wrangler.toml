@@ -1,0 +1,4 @@
+# Cloudflare Pages — used by `wrangler pages dev` / Pages CI
+name = "ajascollege"
+compatibility_date = "2026-07-01"
+pages_build_output_dir = "dist"

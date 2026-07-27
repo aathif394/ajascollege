@@ -1,0 +1,21 @@
+# Cloudflare Pages headers
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/admin/*
+  X-Robots-Tag: noindex
+  Cache-Control: no-cache
+
+/pagefind/*
+  Cache-Control: public, max-age=604800
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/stylesheet/*
+  Cache-Control: public, max-age=604800
+
+/javascript/*
+  Cache-Control: public, max-age=604800

@@ -1,0 +1,114 @@
+---
+/** Floating search trigger + Pagefind panel host */
+---
+
+<button
+  type="button"
+  class="ajas-search-trigger"
+  id="ajas-search-open"
+  aria-label="Search the site"
+  title="Search"
+>
+  <i class="fa fa-search" aria-hidden="true"></i>
+</button>
+
+<div class="ajas-search-modal" id="ajas-search-modal" hidden>
+  <div class="ajas-search-backdrop" data-close></div>
+  <div class="ajas-search-panel" role="dialog" aria-modal="true" aria-label="Site search">
+    <button type="button" class="ajas-search-close" data-close aria-label="Close search">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+    <div id="search"></div>
+  </div>
+</div>
+
+<style is:global>
+  .ajas-search-trigger {
+    position: fixed;
+    right: 18px;
+    bottom: 22px;
+    z-index: 9990;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 999px;
+    background: #ff5f60;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(24, 50, 81, 0.28);
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+  }
+  .ajas-search-trigger:hover {
+    background: #3f4c99;
+  }
+  .ajas-search-modal[hidden] {
+    display: none !important;
+  }
+  .ajas-search-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: start center;
+    padding: 12vh 16px 16px;
+  }
+  .ajas-search-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(9, 24, 42, 0.55);
+  }
+  .ajas-search-panel {
+    position: relative;
+    width: min(720px, 100%);
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 20px 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  }
+  .ajas-search-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    border: 0;
+    background: transparent;
+    font-size: 18px;
+    color: #183251;
+    cursor: pointer;
+  }
+  /* Pagefind defaults sit better with Edukin */
+  .ajas-search-panel .pagefind-ui__search-input {
+    font-family: Rubik, system-ui, sans-serif !important;
+    border-radius: 8px !important;
+  }
+  .ajas-search-panel .pagefind-ui__result-title {
+    font-family: Rubik, system-ui, sans-serif !important;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var openBtn = document.getElementById("ajas-search-open");
+    var modal = document.getElementById("ajas-search-modal");
+    if (!openBtn || !modal) return;
+    function open() {
+      modal.hidden = false;
+      var input = modal.querySelector("input");
+      if (input) setTimeout(function () { input.focus(); }, 50);
+    }
+    function close() {
+      modal.hidden = true;
+    }
+    openBtn.addEventListener("click", open);
+    modal.querySelectorAll("[data-close]").forEach(function (el) {
+      el.addEventListener("click", close);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") close();
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        open();
+      }
+    });
+  })();
+</script>

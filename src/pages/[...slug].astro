@@ -1,0 +1,66 @@
+---
+import { render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  getAllEntries,
+  normalizePermalink,
+  routeFromPermalink,
+  type AnyEntry,
+} from "../lib/content";
+
+export async function getStaticPaths() {
+  const all = await getAllEntries();
+  return all
+    .filter((e) => normalizePermalink(e.data.permalink) !== "/")
+    .map((entry) => {
+      const route = routeFromPermalink(entry.data.permalink);
+      const slug = route.replace(/^\//, "");
+      return {
+        params: { slug },
+        props: { entry },
+      };
+    });
+}
+
+interface Props {
+  entry: AnyEntry;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const crumbs: { label: string; href?: string }[] = [{ label: "Home", href: "/" }];
+const perm = normalizePermalink(entry.data.permalink);
+
+if (perm.startsWith("/college-news/") && perm !== "/college-news/") {
+  crumbs.push({ label: "News", href: "/college-news/" });
+  crumbs.push({ label: entry.data.title });
+} else if (perm.startsWith("/event/") && perm !== "/event/") {
+  crumbs.push({ label: "Events", href: "/event/" });
+  crumbs.push({ label: entry.data.title });
+} else if (perm.startsWith("/faculties/") && perm !== "/faculties/") {
+  crumbs.push({ label: "Faculties", href: "/faculties/" });
+  crumbs.push({ label: entry.data.title });
+} else if (perm.startsWith("/departments/") && perm !== "/departments/") {
+  crumbs.push({ label: "Departments", href: "/departments/" });
+  crumbs.push({ label: entry.data.title });
+} else if (perm.startsWith("/labs/") && perm !== "/labs/") {
+  crumbs.push({ label: "Labs", href: "/labs/" });
+  crumbs.push({ label: entry.data.title });
+} else if (perm.startsWith("/clubs--cells/") && perm !== "/clubs--cells/") {
+  crumbs.push({ label: "Clubs & Cells", href: "/clubs--cells/" });
+  crumbs.push({ label: entry.data.title });
+} else {
+  crumbs.push({ label: entry.data.title });
+}
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  variant="inner"
+  pageTitle={entry.data.title}
+  breadcrumbs={crumbs}
+>
+  <Content />
+</BaseLayout>

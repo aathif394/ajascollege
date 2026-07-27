@@ -1,0 +1,88 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getSiteSettings } from "../../lib/site";
+
+const fees = (await getCollection("fees", ({ data }) => !data.draft)).sort((a, b) => {
+  const da = a.data.date ? +new Date(a.data.date) : 0;
+  const db = b.data.date ? +new Date(b.data.date) : 0;
+  return db - da;
+});
+const site = await getSiteSettings();
+---
+
+<BaseLayout
+  title="Fees & Prospectus"
+  description="Fee structure and prospectus downloads — Al Jamia Arts & Science College."
+  pageTitle="Fees & Prospectus"
+>
+  <div class="blog-single content-blog narrow-page">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="site-content clearfix">
+            <article class="post post-blog-single">
+              <div class="content-blog-single-wrap migrate-content" data-pagefind-body>
+                <p class="listing-intro">
+                  Upload or replace fee PDFs in the CMS under <strong>Fees &amp; prospectus</strong>.
+                  Update the default fee link in <strong>Site settings</strong>.
+                </p>
+
+                {
+                  site.fee_pdf && (
+                    <p>
+                      <a class="flat-button" href={site.fee_pdf} target="_blank" rel="noopener">
+                        Current fee structure (quick link)
+                      </a>
+                    </p>
+                  )
+                }
+
+                <table class="mig-roster">
+                  <thead>
+                    <tr>
+                      <th>Document</th>
+                      <th>Date</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {
+                      fees.map((f) => (
+                        <tr>
+                          <td class="nm">{f.data.title}</td>
+                          <td class="rl">
+                            {f.data.date
+                              ? new Date(f.data.date).toLocaleDateString("en-IN", {
+                                  year: "numeric",
+                                  month: "short",
+                                  day: "numeric",
+                                })
+                              : "—"}
+                          </td>
+                          <td>
+                            <a href={f.data.file} target="_blank" rel="noopener">
+                              Download
+                            </a>
+                          </td>
+                        </tr>
+                      ))
+                    }
+                  </tbody>
+                </table>
+
+                <p>
+                  <a href="/payments/">Bank / payment details</a>
+                  {" · "}
+                  <a href="/scholorship/">Scholarships</a>
+                  {" · "}
+                  <a href="/admission/">Admissions</a>
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
