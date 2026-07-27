@@ -1,0 +1,154 @@
+/**
+ * Preview pane styles — approximate live Edukin / AJAS page look (Option C).
+ * Loaded into Sveltia’s entry preview via CMS.registerPreviewStyle.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+  font-family: "Rubik", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #2c3e50;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Outer frame like inner page content column */
+body {
+  padding: 24px 16px 48px;
+}
+
+body::before {
+  content: "Al Jamia Arts & Science College · live-style preview";
+  display: block;
+  max-width: 720px;
+  margin: 0 auto 16px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: linear-gradient(90deg, #7a1f2b, #1e3a6e);
+  border-radius: 6px;
+}
+
+/* Main prose card */
+body > div,
+.frame-content,
+[data-slate-editor],
+.cms-preview-content {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 28px 32px 40px;
+  border-radius: 8px;
+  box-shadow: 0 8px 28px rgba(24, 50, 81, 0.08);
+  border-top: 4px solid #7a1f2b;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Rubik", system-ui, sans-serif;
+  color: #183251;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 1.35em 0 0.5em;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin-top: 0;
+  color: #7a1f2b;
+}
+
+h2 {
+  font-size: 1.35rem;
+  border-bottom: 2px solid #e8eef8;
+  padding-bottom: 0.35em;
+}
+
+h3 {
+  font-size: 1.15rem;
+  color: #1e3a6e;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: #2c4f94;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  color: #7a1f2b;
+  border-bottom-color: #7a1f2b;
+}
+
+ul,
+ol {
+  margin: 0 0 1em;
+  padding-left: 1.35em;
+}
+
+li {
+  margin: 0.3em 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 0.75em 0 1.25em;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+blockquote {
+  margin: 1em 0;
+  padding: 0.65em 1em;
+  border-left: 4px solid #7a1f2b;
+  background: #f7eef0;
+  color: #5c1620;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+
+th {
+  background: #e8eef8;
+  color: #1e3a6e;
+  font-weight: 600;
+}
+
+code {
+  font-size: 0.9em;
+  background: #f1f5f9;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  margin: 1.5em 0;
+}
