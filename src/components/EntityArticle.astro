@@ -1,9 +1,7 @@
 ---
 /**
- * Professional layout for news / event detail pages.
+ * News / event detail — full posters (no crop), clean article body.
  */
-import type { CollectionEntry } from "astro:content";
-
 interface Props {
   kind: "news" | "event" | "page";
   title: string;
@@ -29,76 +27,82 @@ const dateLabel =
 const kindLabel = kind === "news" ? "News" : kind === "event" ? "Event" : "Page";
 ---
 
-<article class="ajas-entity">
-  {
-    image && (
-      <div class="ajas-entity-hero">
-        <img src={image} alt="" />
-        <div class="ajas-entity-hero-shade" />
-      </div>
-    )
-  }
+<article class="ajas-entity" data-kind={kind}>
+  <div class="ajas-entity-inner">
+    {
+      image && (
+        <figure class="ajas-entity-poster">
+          <img src={image} alt={title} />
+        </figure>
+      )
+    }
 
-  <div class="ajas-entity-panel">
-    <div class="ajas-entity-meta">
-      <span class="ajas-entity-kind">{kindLabel}</span>
-      {dateLabel && <time datetime={dateObj!.toISOString()}>{dateLabel}</time>}
-    </div>
-    <h1 class="ajas-entity-title">{title}</h1>
-    <div class="ajas-entity-body ajas-prose">
-      <slot />
-    </div>
-    <footer class="ajas-entity-foot">
-      <a class="ajas-entity-back" href={backHref}>← {backLabel}</a>
-      <div class="ajas-entity-more">
-        <a href="/admission/">Admissions</a>
-        <a href="/contact/">Contact</a>
-        <a href="/notices/">Notices</a>
+    <div class="ajas-entity-panel">
+      <div class="ajas-entity-meta">
+        <span class="ajas-entity-kind">{kindLabel}</span>
+        {dateLabel && <time datetime={dateObj!.toISOString()}>{dateLabel}</time>}
       </div>
-    </footer>
+      <h1 class="ajas-entity-title">{title}</h1>
+      <div class="ajas-entity-body ajas-prose">
+        <slot />
+      </div>
+      <footer class="ajas-entity-foot">
+        <a class="ajas-entity-back" href={backHref}>← {backLabel}</a>
+        <div class="ajas-entity-more">
+          <a href="/admission/">Admissions</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </footer>
+    </div>
   </div>
 </article>
 
 <style>
   .ajas-entity {
-    max-width: 860px;
-    margin: 0 auto 48px;
-    padding: 0 16px;
+    padding: 28px 16px 56px;
+    background: linear-gradient(180deg, #eef2f7 0%, #f7f9fc 50%, #fff 100%);
   }
-  .ajas-entity-hero {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: -48px;
-    box-shadow: 0 16px 40px rgba(24, 50, 81, 0.18);
+  .ajas-entity-inner {
+    max-width: 920px;
+    margin: 0 auto;
+    display: grid;
+    gap: 28px;
   }
-  .ajas-entity-hero img {
+  /* Full poster — never crop. Portrait or landscape both show completely. */
+  .ajas-entity-poster {
+    margin: 0;
+    padding: 16px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 36px rgba(24, 50, 81, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ajas-entity-poster img {
     display: block;
-    width: 100%;
-    height: clamp(200px, 38vw, 360px);
-    object-fit: cover;
-  }
-  .ajas-entity-hero-shade {
-    position: absolute;
-    inset: auto 0 0 0;
-    height: 40%;
-    background: linear-gradient(transparent, rgba(24, 50, 81, 0.35));
-    pointer-events: none;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: min(78vh, 900px);
+    object-fit: contain;
+    border-radius: 4px;
   }
   .ajas-entity-panel {
-    position: relative;
-    z-index: 1;
     background: #fff;
-    border-radius: 10px;
-    padding: 28px 28px 32px;
-    margin: 0 12px;
-    box-shadow: 0 12px 40px rgba(24, 50, 81, 0.1);
+    border-radius: 12px;
+    padding: 28px 24px 32px;
+    box-shadow: 0 10px 32px rgba(24, 50, 81, 0.08);
     border-top: 4px solid #ff5f60;
   }
   @media (min-width: 768px) {
     .ajas-entity-panel {
-      margin: 0 24px;
       padding: 36px 40px 40px;
+    }
+    /* Side-by-side only when poster is present: poster left, story right on wide screens
+       if poster is landscape-friendly — keep stacked for full poster readability */
+    .ajas-entity-inner {
+      gap: 32px;
     }
   }
   .ajas-entity-meta {
@@ -124,23 +128,32 @@ const kindLabel = kind === "news" ? "News" : kind === "event" ? "Event" : "Page"
     color: #64748b;
   }
   .ajas-entity-title {
-    margin: 0 0 1rem;
-    font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+    margin: 0 0 1.15rem;
+    font-size: clamp(1.4rem, 2.5vw, 1.85rem);
     line-height: 1.25;
     color: #183251;
     font-weight: 600;
     letter-spacing: -0.02em;
   }
-  .ajas-entity-body :global(h1) {
-    display: none; /* title already shown */
+  /* Title already shown — hide duplicate H1 from markdown */
+  .ajas-entity-body :global(h1:first-child) {
+    display: none;
   }
-  .ajas-entity-body :global(> p:first-child img:only-child),
-  .ajas-entity-body :global(> p:first-of-type:has(img:only-child)) {
-    display: none; /* hero already shows primary image */
+  /* Hide first body image if it matches the poster (common migrate pattern) */
+  .ajas-entity-body :global(> p:first-child:has(> img:only-child)) {
+    display: none;
   }
-  /* hide duplicate leading image if first block is only an image */
   .ajas-entity-body :global(> p:first-child > img:only-child) {
     display: none;
+  }
+  .ajas-entity-body :global(img) {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    margin: 1em auto;
+    display: block;
+    box-shadow: 0 6px 20px rgba(24, 50, 81, 0.08);
   }
   .ajas-entity-foot {
     margin-top: 2rem;

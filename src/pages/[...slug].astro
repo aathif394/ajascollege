@@ -88,20 +88,18 @@ if (isNews) {
 >
   {
     isEntity ? (
-      <div class="ajas-entity-wrap">
-        <EntityArticle
-          kind={isNews ? "news" : "event"}
-          title={entry.data.title}
-          date={date as Date | undefined}
-          image={image}
-          backHref={isNews ? "/college-news/" : "/event/"}
-          backLabel={isNews ? "All news" : "All events"}
-        >
-          <Content />
-        </EntityArticle>
-      </div>
+      <EntityArticle
+        kind={isNews ? "news" : "event"}
+        title={entry.data.title}
+        date={date as Date | undefined}
+        image={image}
+        backHref={isNews ? "/college-news/" : "/event/"}
+        backLabel={isNews ? "All news" : "All events"}
+      >
+        <Content />
+      </EntityArticle>
     ) : isProfile ? (
-      <ArticleShell wide={false}>
+      <ArticleShell wide={false} variant="profile">
         <div class="ajas-profile">
           {image && (
             <div class="ajas-profile-photo">
@@ -116,13 +114,13 @@ if (isNews) {
               ← All faculty
             </a>
           </div>
-          <div class="ajas-profile-bio ajas-prose">
+          <div class="ajas-profile-bio">
             <Content />
           </div>
         </div>
       </ArticleShell>
     ) : (
-      <ArticleShell wide={wide}>
+      <ArticleShell wide={wide} variant={wide ? "listing" : "info"}>
         <Content />
       </ArticleShell>
     )
@@ -130,10 +128,6 @@ if (isNews) {
 </BaseLayout>
 
 <style>
-  .ajas-entity-wrap {
-    padding: 28px 0 20px;
-    background: linear-gradient(180deg, #eef2f7 0%, #f8fafc 40%, #fff 100%);
-  }
   .ajas-profile {
     display: grid;
     gap: 1.25rem;
