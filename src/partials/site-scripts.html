@@ -117,12 +117,19 @@
       o.style.opacity = '0';
       o.style.visibility = 'hidden';
       o.style.pointerEvents = 'none';
-      setTimeout(function(){ o.style.display = 'none'; }, 200);
+      // Keep display:block + fixed so removing it never shifts layout
+      setTimeout(function(){
+        if (o) { o.style.display = 'none'; }
+      }, 150);
     }
   }
-  if (document.readyState === 'complete') done();
-  else window.addEventListener('load', function(){ setTimeout(done, 80); });
-  // Failsafe: never block interaction more than 600ms
-  setTimeout(done, 600);
+  // Hide overlay as soon as DOM is ready — don't wait for all images (LCP)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function(){ setTimeout(done, 40); });
+  } else {
+    setTimeout(done, 40);
+  }
+  // Failsafe
+  setTimeout(done, 400);
 })();
 </script>

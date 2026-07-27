@@ -512,16 +512,26 @@ body.hero-hold .header-sticky #main-nav>ul.menu>li>a{font-size:14px;}
 .partner-clients .iconbox-style1{position:relative;z-index:5;}
 
 /* ---------- hero (static markup, CSS-only cross-fade) ---------- */
-.ajas-hero{position:relative;overflow:hidden;background:#0c1e34;padding:120px 0 104px;}
+/* min-height reserves space so LCP/text paint does not shift when bg images load */
+.ajas-hero{
+    position:relative;overflow:hidden;background:#0c1e34;padding:120px 0 104px;
+    min-height:min(78vh,640px);}
 .hero-media{position:absolute;left:0;top:0;right:0;bottom:0;z-index:0;}
 .hero-layer{
     position:absolute;left:0;top:0;right:0;bottom:0;background-size:cover;background-position:center 42%;
-    opacity:0;animation:heroFade 21s infinite;}
-.hero-layer.hl1{animation-delay:0s;}
+    opacity:0;animation:heroFade 21s infinite;
+    will-change:opacity;/* opacity-only animation → no CLS */}
+/* First frame visible immediately (no blank → flash CLS) */
+.hero-layer.hl1{opacity:1;animation-delay:0s;}
 .hero-layer.hl2{animation-delay:7s;}
 .hero-layer.hl3{animation-delay:14s;}
 @keyframes heroFade{
     0%{opacity:0}   4%{opacity:1}   30%{opacity:1}   36%{opacity:0}   100%{opacity:0}
+}
+/* hl1 starts visible; animation still runs from delay 0 */
+.hero-layer.hl1{animation-name:heroFadeFirst;}
+@keyframes heroFadeFirst{
+    0%{opacity:1}   30%{opacity:1}   36%{opacity:0}   100%{opacity:0}
 }
 .hero-scrim{
     position:absolute;left:0;top:0;right:0;bottom:0;
@@ -1022,19 +1032,30 @@ html{scroll-behavior:smooth;}
 /* ============================================================
    Performance: snappier page load & reveal (AJAS polish)
    ============================================================ */
+/* Overlay is position:fixed in theme CSS — never take document flow space */
 #loading-overlay{
-  transition:opacity .18s ease,visibility .18s ease !important;
+  position:fixed !important;
+  inset:0 !important;
+  z-index:99999 !important;
+  transition:opacity .15s ease,visibility .15s ease !important;
+  contain:strict;
 }
 #loading-overlay .loader{
-  animation-duration:.7s !important;
+  animation-duration:.55s !important;
 }
-/* main.js uses delay(500).fadeOut('slow') — force hide early via CSS once body ready */
+/* Hide ASAP — long overlay fade was a soft LCP delay, not CLS, but still snappy */
 body.is-loaded #loading-overlay,
 html.is-loaded #loading-overlay{
   opacity:0 !important;
   visibility:hidden !important;
   pointer-events:none !important;
-  transition:opacity .15s ease,visibility .15s ease !important;
+  transition:opacity .12s ease,visibility .12s ease !important;
+}
+/* Prefer reduced-motion: skip reveal transforms that can look like shift */
+@media (prefers-reduced-motion:reduce){
+  .has-reveal .reveal{opacity:1 !important;transform:none !important;transition:none !important;}
+  .has-reveal .rv-up,.has-reveal .rv-left,.has-reveal .rv-right,.has-reveal .rv-zoom{
+    transform:none !important;}
 }
 .has-reveal .reveal{
   transition:opacity .35s cubic-bezier(.2,.7,.3,1),transform .35s cubic-bezier(.2,.7,.3,1) !important;
@@ -1078,39 +1099,60 @@ html.is-loaded #loading-overlay{
 }
 #footer .widget-title{color:#fff !important;}
 
-/* Touch targets ≥ 44×44 CSS px */
+/* Touch targets ≥ 44×44 — pad without expanding document flow of top bar */
 .top-utility a,
 .nav-sing a,
-.bottom-nav a,
-.widget-social-media a,
-.flat-course .enroll a,
-.flat-course .links a,
-.ajas-card-more,
+.bottom-nav a{
+    min-height:44px;
+    display:inline-flex;
+    align-items:center;
+    padding:10px 8px;
+    box-sizing:border-box;
+}
+.widget-social-media a{
+    width:44px;
+    height:44px;
+    min-width:44px;
+    min-height:44px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    box-sizing:border-box;
+}
 .mobile-button{
     min-height:44px;
     min-width:44px;
     display:inline-flex;
     align-items:center;
     justify-content:center;
+}
+/* Card CTAs: min size without huge reflow — keep text wrapping inside card */
+.flat-course .links a,
+.flat-course .enroll a,
+.ajas-card-more{
+    min-height:44px;
+    display:inline-flex;
+    align-items:center;
     padding:10px 12px;
     box-sizing:border-box;
-}
-.widget-social-media a{
-    width:44px;
-    height:44px;
-    border-radius:50%;
-}
-.flat-course .links a{
-    padding:10px 16px;
-    line-height:1.2;
-    text-align:center;
+    line-height:1.25;
 }
 .flat-course .enroll a{
-    padding:10px 14px;
     white-space:normal;
     text-align:left;
     height:auto;
-    min-height:44px;
+}
+/* Long “Read more about …” labels: clamp visual height, keep full accessible name */
+.flat-course .enroll a,
+.ajas-card-more{
+    max-width:100%;
+}
+.flat-course .links a{
+    /* overlay “View …” can be long — keep on image overlay */
+    max-width:90%;
+    text-align:center;
+    font-size:13px;
 }
 
 /* Page banner title as real heading */
