@@ -71,15 +71,16 @@ header,
   border-image: linear-gradient(90deg, var(--ajas-maroon), var(--ajas-blue)) 1;
 }
 
-/* Constrain CMS logo so wordmarks don't explode */
+/* Official AJAS heading SVG — keep readable but not huge in CMS chrome */
 header img,
 [class*="logo"] img,
 img[alt*="logo" i],
 img[src*="logo" i],
 img[src*="AJAS" i],
-img[src*="Heading" i] {
-  max-height: 36px !important;
-  max-width: 200px !important;
+img[src*="Heading" i],
+img[src*="AJAS-Website-Heading" i] {
+  max-height: 44px !important;
+  max-width: 260px !important;
   width: auto !important;
   height: auto !important;
   object-fit: contain !important;

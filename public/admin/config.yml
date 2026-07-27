@@ -19,10 +19,8 @@ public_folder: /assets/uploads
 
 site_url: https://ajascollege.pages.dev
 display_url: https://ajascollege.pages.dev
-# UI logo (header). Absolute path so it resolves on /admin/
-# 230×65 college mark — brand.css caps height so it stays small in the chrome
-logo_url: https://ajascollege.pages.dev/assets/uploads/2024/08/logo.jpg
-# Optional longer label in some UI surfaces
+# UI logo (header) — official AJAS wordmark (height capped in brand.css)
+logo_url: https://ajascollege.pages.dev/assets/uploads/2024/01/AJAS-Website-Heading-Last.svg
 logo_link: https://ajascollege.pages.dev/
 
 slug:
