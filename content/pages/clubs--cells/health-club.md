@@ -3,6 +3,7 @@ title: Health Club
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/health-club/
 type: page
+image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">

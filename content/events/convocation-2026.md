@@ -3,6 +3,7 @@ title: CONVOCATION 2026
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /event/convocation-2026/
 type: article
+image: "/assets/uploads/2026/05/WhatsApp-Image-2026-05-04-at-10.36.26-AM.jpeg"
 ---
 
 <div class="blog-single content-blog"><div class="container"><div class="row">

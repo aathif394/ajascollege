@@ -14,8 +14,8 @@ backend:
   base_url: https://ajas-cms-auth.aathif394.workers.dev
   auth_endpoint: auth
 
-media_folder: public/assets/uploads/cms
-public_folder: /assets/uploads/cms
+media_folder: public/assets/uploads
+public_folder: /assets/uploads
 
 site_url: https://ajascollege.pages.dev
 display_url: https://ajascollege.pages.dev
@@ -44,12 +44,12 @@ collections:
       default: { field: date, direction: descending }
     fields:
       - { label: Title, name: title, widget: string }
+      - { label: Featured image, name: image, widget: image, required: false, choose_url: true }
       - { label: Description (SEO), name: description, widget: text, required: false }
       - { label: Permalink, name: permalink, widget: string, hint: "/college-news/your-slug/", pattern: ["^/college-news/.+/$", "Must be /college-news/slug/"] }
       - { label: Type, name: type, widget: hidden, default: article }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Date, name: date, widget: datetime, required: false }
-      - { label: Featured image, name: image, widget: image, required: false }
       - { label: Body, name: body, widget: markdown }
 
   - name: events
@@ -68,12 +68,12 @@ collections:
       default: { field: date, direction: descending }
     fields:
       - { label: Title, name: title, widget: string }
+      - { label: Featured image, name: image, widget: image, required: false, choose_url: true }
       - { label: Description (SEO), name: description, widget: text, required: false }
       - { label: Permalink, name: permalink, widget: string, hint: "/event/your-slug/", pattern: ["^/event/.+/$", "Must be /event/slug/"] }
       - { label: Type, name: type, widget: hidden, default: article }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Date, name: date, widget: datetime, required: false }
-      - { label: Featured image, name: image, widget: image, required: false }
       - { label: Body, name: body, widget: markdown }
 
   - name: notices
@@ -110,8 +110,8 @@ collections:
       - label: PDF / file
         name: file
         widget: file
-        media_folder: /public/assets/uploads/cms
-        public_folder: /assets/uploads/cms
+        media_folder: public/assets/uploads
+        public_folder: /assets/uploads
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Notes (optional body), name: body, widget: markdown, required: false }
 
@@ -134,8 +134,8 @@ collections:
       - label: PDF file
         name: file
         widget: file
-        media_folder: /public/assets/uploads/cms
-        public_folder: /assets/uploads/cms
+        media_folder: public/assets/uploads
+        public_folder: /assets/uploads
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Notes, name: body, widget: markdown, required: false }
 
@@ -154,7 +154,7 @@ collections:
           - { label: Phone (display), name: phone_display, widget: string, required: false }
           - { label: Email, name: email, widget: string }
           - { label: Address, name: address, widget: text }
-          - { label: Logo, name: logo, widget: image, required: false }
+          - { label: Logo, name: logo, widget: image, required: false, choose_url: true }
           - { label: "Admissions open?", name: admission_open, widget: boolean, default: true }
           - { label: Admission button label, name: admission_label, widget: string, required: false }
           - { label: Admission URL, name: admission_url, widget: string, required: false }
@@ -163,14 +163,14 @@ collections:
             name: fee_pdf
             widget: file
             required: false
-            media_folder: /public/assets/uploads/cms
-            public_folder: /assets/uploads/cms
+            media_folder: public/assets/uploads
+            public_folder: /assets/uploads
           - label: Prospectus PDF
             name: prospectus_pdf
             widget: file
             required: false
-            media_folder: /public/assets/uploads/cms
-            public_folder: /assets/uploads/cms
+            media_folder: public/assets/uploads
+            public_folder: /assets/uploads
 
   - name: home
     label: "6 · Homepage hero"
@@ -196,7 +196,7 @@ collections:
           - { label: "Stat — PG programmes", name: stat_pg, widget: string, required: false }
           - { label: "Stat — established", name: stat_established, widget: string, required: false }
           - { label: Principal name, name: principal_name, widget: string, required: false }
-          - { label: Principal photo, name: principal_photo, widget: image, required: false }
+          - { label: Principal photo, name: principal_photo, widget: image, required: false, choose_url: true }
           - { label: Principal excerpt, name: principal_excerpt, widget: text, required: false }
 
   - name: programmes
@@ -246,6 +246,7 @@ collections:
     summary: "{{title}} — {{role}}"
     fields:
       - { label: Full name (title), name: title, widget: string }
+      - { label: Photo, name: image, widget: image, required: false, choose_url: true }
       - { label: Display name, name: name, widget: string, required: false }
       - { label: Role, name: role, widget: string, required: false }
       - { label: Credentials, name: credentials, widget: string, required: false }
@@ -253,7 +254,6 @@ collections:
       - { label: Permalink, name: permalink, widget: string, hint: "/faculties/your-slug/" }
       - { label: Type, name: type, widget: hidden, default: profile }
       - { label: Draft, name: draft, widget: boolean, default: false }
-      - { label: Photo, name: image, widget: image, required: false }
       - { label: Bio / body, name: body, widget: markdown }
 
   - name: pages
@@ -281,7 +281,7 @@ collections:
         options: [home, page, listing, profile, article]
         default: page
       - { label: Draft, name: draft, widget: boolean, default: false }
-      - { label: Featured image, name: image, widget: image, required: false }
+      - { label: Featured image, name: image, widget: image, required: false, choose_url: true }
       - { label: Name (profiles), name: name, widget: string, required: false }
       - { label: Role (profiles), name: role, widget: string, required: false }
       - { label: Credentials, name: credentials, widget: string, required: false }

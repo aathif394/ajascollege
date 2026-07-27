@@ -3,6 +3,7 @@ title: Innovation and Entrepreneurship Development Centre (IEDC)
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/innovation-and-entrepreneurship-development-centre/
 type: page
+image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">

@@ -3,6 +3,7 @@ title: Outreach Awareness Programme by  Department of Microbiology
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /event/outreach-awareness-programme/
 type: article
+image: "/assets/uploads/2026/06/WhatsApp-Image-2026-06-16-at-2.35.53-PM.jpeg"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">

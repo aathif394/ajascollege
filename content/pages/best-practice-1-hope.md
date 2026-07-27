@@ -3,6 +3,7 @@ title: Best Practice 1 - HOPE
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /best-practice-1-hope/
 type: page
+image: "/assets/uploads/2024/08/WhatsApp-Image-2024-08-08-at-1.20.00-PM-e1723111013230.jpeg"
 ---
 
 <div class="blog-single content-blog"><div class="container"><div class="row">

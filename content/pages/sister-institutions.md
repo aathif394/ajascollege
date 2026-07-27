@@ -3,6 +3,7 @@ title: Sister Institutions
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /sister-institutions/
 type: page
+image: "/assets/uploads/2024/03/wic-logo_transparent.webp"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">

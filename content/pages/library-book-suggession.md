@@ -3,6 +3,7 @@ title: Library Book Suggession
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /library-book-suggession/
 type: page
+image: "/assets/uploads/2024/01/ajascollege_cover.jpeg"
 ---
 
 <div class="blog-single content-blog"><div class="container"><div class="row">

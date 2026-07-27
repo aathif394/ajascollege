@@ -3,6 +3,7 @@ title: NSS
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /nss/
 type: page
+image: "/assets/uploads/2024/06/nss1.png"
 ---
 
 <div class="blog-single content-blog"><div class="container"><div class="row">

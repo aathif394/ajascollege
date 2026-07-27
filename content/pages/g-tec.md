@@ -3,6 +3,7 @@ title: G-Tec
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /g-tec/
 type: page
+image: "/assets/uploads/2025/04/foreign.png"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">

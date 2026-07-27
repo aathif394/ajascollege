@@ -3,6 +3,7 @@ title: Department of Physical Education
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /departments/department-of-physical-education/
 type: page
+image: "/assets/uploads/2024/05/Frame.svg"
 ---
 
 <div class="blog-single content-blog"><div class="container"><div class="row">

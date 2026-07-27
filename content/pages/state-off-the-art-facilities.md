@@ -3,6 +3,7 @@ title: State Off The Art Facilities
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /state-off-the-art-facilities/
 type: page
+image: "/assets/uploads/2025/03/WhatsApp-Image-2025-03-17-at-4.01.35-PM.jpeg"
 ---
 
 <div class="blog-single content-blog"><div class="container">

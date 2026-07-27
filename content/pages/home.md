@@ -3,6 +3,7 @@ title: Home
 description: Al Jamia Arts and Science College, Perinthalmanna — established 2010, affiliated to the University of Calicut. UG (Honours) and PG programmes in Arts, Science, Commerce and Computing.
 permalink: /
 type: home
+image: "/assets/uploads/2025/05/University-Logo.jpg"
 ---
 
 <section class="ajas-hero">

@@ -3,6 +3,7 @@ title: Feedback
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /feedback/
 type: page
+image: "/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg"
 ---
 
 <div class="blog-single content-blog"><div class="container"><div class="row">

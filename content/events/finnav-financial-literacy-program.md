@@ -3,6 +3,7 @@ title: FinNav - Financial Literacy Program
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /event/finnav-financial-literacy-program/
 type: article
+image: "/assets/uploads/2026/06/WhatsApp-Image-2026-06-17-at-3.09.59-PM.jpeg"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">

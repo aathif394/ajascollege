@@ -3,6 +3,7 @@ title: Register a Complaint
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /register-a-complaint/
 type: page
+image: "/assets/uploads/2025/10/IMG_5516.jpg"
 ---
 
 <div class="blog-single content-blog"><div class="container"><div class="row">

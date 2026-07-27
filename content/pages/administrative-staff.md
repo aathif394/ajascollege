@@ -3,6 +3,7 @@ title: Administrative Staff
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /administrative-staff/
 type: page
+image: "/assets/uploads/2025/01/1000368261.jpg"
 ---
 
 <div class="blog-single content-blog wide-page roster-page"><div class="container"><div class="migrate-content"><div class="row people-grid"><div class="col-lg-3 col-md-4 col-sm-6 col-6"><div class="people-card">

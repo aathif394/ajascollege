@@ -3,6 +3,7 @@ title: Micro Biology Lab
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /labs/micro-biology-lab/
 type: page
+image: "/assets/uploads/2024/05/IMG-20240430-WA0048-scaled.jpg"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">

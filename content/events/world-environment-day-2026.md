@@ -3,6 +3,7 @@ title: Bio Bloom Planting Ceremony World Environment Day 2026
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /event/world-environment-day-2026/
 type: article
+image: "/assets/uploads/2026/06/WhatsApp-Image-2026-06-05-at-11.20.03-AM.jpeg"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">

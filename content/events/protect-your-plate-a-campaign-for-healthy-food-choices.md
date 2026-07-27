@@ -3,6 +3,7 @@ title: PROTECT YOUR PLATE - A Campaign for Healthy Food Choices
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /event/protect-your-plate-a-campaign-for-healthy-food-choices/
 type: article
+image: "/assets/uploads/2026/06/WhatsApp-Image-2026-06-11-at-9.02.15-PM.jpeg"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">

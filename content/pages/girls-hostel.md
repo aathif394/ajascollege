@@ -3,6 +3,7 @@ title: "Girl's Hostel"
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /girls-hostel/
 type: page
+image: "/assets/uploads/2025/01/WhatsApp-Image-2025-01-29-at-11.55.16-AM.jpeg"
 ---
 
 <div class="blog-single content-blog wide-page roster-page"><div class="container"><div class="migrate-content"><div class="row people-grid"><div class="col-lg-3 col-md-4 col-sm-6 col-6"><div class="people-card">

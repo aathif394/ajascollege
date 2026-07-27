@@ -3,6 +3,7 @@ title: Payments
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /payments/
 type: page
+image: "/assets/uploads/2025/07/Medium_sticker_55976568_037348011920038_page-0001.jpg"
 ---
 
 <div class="blog-single content-blog"><div class="container"><div class="row">

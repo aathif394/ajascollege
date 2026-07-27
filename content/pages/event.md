@@ -3,6 +3,7 @@ title: Events
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /event/
 type: listing
+image: "/assets/uploads/2026/06/WhatsApp-Image-2026-06-24-at-9.48.25-AM.jpeg"
 ---
 
 <div class="blog-bl content-blog blog-single"><div class="container">

@@ -3,6 +3,7 @@ title: Seminar Hall
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /seminar-hall/
 type: page
+image: "/assets/uploads/2024/05/Seminar-Hall.jpg"
 ---
 
 <div class="blog-single content-blog"><div class="container">

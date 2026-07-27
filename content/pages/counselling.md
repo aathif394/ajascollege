@@ -3,6 +3,7 @@ title: Counselling Centre
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /counselling/
 type: page
+image: "/assets/uploads/2024/04/WhatsApp-Image-2024-04-27-at-17.35.36_10f5a386-768x578.jpg"
 ---
 
 <div class="blog-single content-blog"><div class="container"><div class="row">

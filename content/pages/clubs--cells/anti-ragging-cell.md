@@ -3,6 +3,7 @@ title: Anti-Ragging Cell
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/anti-ragging-cell/
 type: page
+image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 <div class="blog-single content-blog"><div class="container"><div class="row">

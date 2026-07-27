@@ -3,6 +3,7 @@ title: Geography Lab
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /labs/geography-lab/
 type: page
+image: "/assets/uploads/2024/05/IMG-20240430-WA0022-1-scaled.jpg"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">

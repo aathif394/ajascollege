@@ -3,6 +3,7 @@ title: FYUGP COMPASS By Department of Food Technology
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /event/fyugp-compass-by-department-of-food-technology/
 type: article
+image: "/assets/uploads/2026/06/WhatsApp-Image-2026-06-24-at-9.48.25-AM.jpeg"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">

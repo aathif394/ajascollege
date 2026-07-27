@@ -3,6 +3,7 @@ title: Time Table
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /time-table/
 type: page
+image: "/assets/uploads/2024/01/ajascollege_cover.jpeg"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">

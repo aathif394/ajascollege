@@ -3,6 +3,7 @@ title: Counselling Desk Reviews
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /counselling-desk-reviews/
 type: page
+image: "/assets/uploads/2026/04/WhatsApp-Image-2026-04-08-at-11.07.24-AM-240x300.jpeg"
 ---
 
 <div class="blog-single content-blog"><div class="container"><div class="row">

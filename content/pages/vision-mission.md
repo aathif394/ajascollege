@@ -3,6 +3,7 @@ title: "Vision & Mission"
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /vision-mission/
 type: page
+image: "/assets/uploads/2024/06/vision-1024x1022.png"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">

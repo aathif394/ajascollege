@@ -3,6 +3,7 @@ title: Finance Committee
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /finance-committee-2/
 type: page
+image: "/assets/uploads/2025/10/IMG_5516.jpg"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">

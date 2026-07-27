@@ -3,6 +3,7 @@ title: Food Technology Lab
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /labs/food-technology-lab/
 type: page
+image: "/assets/uploads/2024/05/4-scaled.jpg"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">

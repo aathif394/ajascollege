@@ -3,6 +3,7 @@ title: NPTEL Swayam
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /nptel-swayam/
 type: page
+image: "/assets/uploads/2025/04/foreign.png"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">

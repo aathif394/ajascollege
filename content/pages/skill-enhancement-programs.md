@@ -3,6 +3,7 @@ title: Skill enhancement programs
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /skill-enhancement-programs/
 type: page
+image: "/assets/uploads/2026/06/WhatsApp-Image-2026-06-24-at-9.48.25-AM.jpeg"
 ---
 
 <div class="blog-single content-blog narrow-page"><div class="container">
