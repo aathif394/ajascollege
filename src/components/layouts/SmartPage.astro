@@ -26,23 +26,44 @@ const isVision = looksLikeVision(body, title);
 const parsed = splitSections(body);
 const programmes = isAdmission ? parseProgrammes(body) : null;
 
-// Stats strip from intro facts (overview)
+// If page starts with ## Title (no loose intro), pull facts from first section to the top
+let introHtml = parsed.introHtml;
+let introFacts = [...parsed.introFacts];
+let sections = [...parsed.sections];
+let introImages = [...parsed.introImages];
+
+if (!introHtml && !introFacts.length && sections.length > 0) {
+  const first = sections[0];
+  if (first.facts.length >= 3) {
+    introFacts = first.facts;
+    introHtml = first.bodyHtml;
+    introImages = [...introImages, ...first.images];
+    sections = sections.slice(1);
+  }
+}
+
 const statKeys = [
   "year of established",
   "year of establishment",
+  "established",
   "no of programs",
+  "programs",
   "affiliated university",
   "status of college",
   "financial category",
   "ugc recognition",
+  "place",
+  "state",
 ];
-const highlightStats = parsed.introFacts.filter((f) =>
-  statKeys.some((k) => f.label.toLowerCase().includes(k.replace("year of establishment", "year"))),
-);
-
-function FactGrid({ rows, compact = false }: { rows: FactRow[]; compact?: boolean }) {
-  return null as any; // placeholder — use HTML below
-}
+const highlightStats = introFacts.filter((f) => {
+  const l = f.label.toLowerCase();
+  return statKeys.some((k) => l.includes(k));
+});
+// Prefer a short highlight set for the stat strip
+const statsForStrip =
+  highlightStats.length >= 2
+    ? highlightStats.slice(0, 4)
+    : introFacts.filter((f) => f.label && f.value).slice(0, 4);
 ---
 
 <div class="smart-page">
@@ -132,15 +153,15 @@ function FactGrid({ rows, compact = false }: { rows: FactRow[]; compact?: boolea
   {
     !isVision && !isAdmission && (
       <div class="sp-default">
-        {(image || parsed.introImages[0]) && (
+        {(image || introImages[0]) && (
           <figure class="sp-hero-fig">
-            <img src={image || parsed.introImages[0]} alt="" />
+            <img src={image || introImages[0]} alt="" />
           </figure>
         )}
 
-        {highlightStats.length > 0 && (
+        {statsForStrip.length > 0 && (
           <div class="sp-stats">
-            {highlightStats.slice(0, 6).map((s) => (
+            {statsForStrip.map((s) => (
               <div class="sp-stat">
                 <span class="sp-stat-val">{s.value}</span>
                 <span class="sp-stat-lbl">{s.label}</span>
@@ -149,18 +170,18 @@ function FactGrid({ rows, compact = false }: { rows: FactRow[]; compact?: boolea
           </div>
         )}
 
-        <div class={`sp-top ${parsed.introFacts.length ? "has-facts" : ""}`}>
-          {(parsed.introHtml || parsed.introMd) && (
+        <div class={`sp-top ${introFacts.length ? "has-facts" : ""}`}>
+          {introHtml && (
             <div class="sp-lead-card">
               <h2 class="sp-kicker">{title}</h2>
-              <div class="sp-html" set:html={parsed.introHtml} />
+              <div class="sp-html" set:html={introHtml} />
             </div>
           )}
-          {parsed.introFacts.length > 0 && (
+          {introFacts.length > 0 && (
             <aside class="sp-fact-sheet">
               <h3>At a glance</h3>
               <dl>
-                {parsed.introFacts.map((r) => (
+                {introFacts.map((r) => (
                   <div class="sp-fact-row">
                     <dt>{r.label}</dt>
                     <dd>{r.value}</dd>
@@ -171,9 +192,9 @@ function FactGrid({ rows, compact = false }: { rows: FactRow[]; compact?: boolea
           )}
         </div>
 
-        {parsed.sections.length > 0 && (
+        {sections.length > 0 && (
           <div class="sp-sections">
-            {parsed.sections.map((s: ContentSection, i: number) => (
+            {sections.map((s: ContentSection, i: number) => (
               <section
                 class:list={["sp-section", i % 2 === 1 && "sp-section-alt"]}
                 id={s.id}
