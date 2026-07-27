@@ -45,8 +45,13 @@ const news = (await getCollection("news", ({ data }) => !data.draft)).sort((a, b
                   <h2>
                     <a href={n.data.permalink}>{n.data.title}</a>
                   </h2>
-                  <a class="ajas-card-more" href={n.data.permalink}>
-                    Read more <i class="fa fa-long-arrow-right" aria-hidden="true" />
+                  <a
+                    class="ajas-card-more"
+                    href={n.data.permalink}
+                    aria-label={`Read more about ${n.data.title}`}
+                  >
+                    Read more about {n.data.title}{" "}
+                    <i class="fa fa-long-arrow-right" aria-hidden="true" />
                   </a>
                 </div>
               </article>

@@ -1,8 +1,6 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
 /* ============================================================
-   Typeface: Rubik replaces the theme's Poppins everywhere except
-   the icon fonts, which must keep their own family to render.
+   Typeface: Rubik (loaded once from BaseLayout <link>, not @import)
+   replaces the theme's Poppins everywhere except icon fonts.
    ============================================================ */
 body,button,input,select,textarea,
 h1,h2,h3,h4,h5,h6,p,a,li,span,div,td,th,label,blockquote,figcaption,
@@ -1045,3 +1043,94 @@ html.is-loaded #loading-overlay{
 .has-reveal .rv-left{transform:translateX(-16px) !important;}
 .has-reveal .rv-right{transform:translateX(16px) !important;}
 .has-reveal .rv-zoom{transform:scale(.97) !important;}
+
+/* ============================================================
+   Accessibility & Lighthouse fixes (contrast, touch, headings)
+   ============================================================ */
+
+/* Contrast: muted greys were ~#8a8a8a on white (~3.5:1). Aim ≥4.5:1. */
+.migrate-content,
+.listing-intro,
+.prog-note,
+.mig-clubs .chip-note,
+.team-box-layout-h1 .item-content .item-subtitle,
+.pc-note,
+.mig-roster td.nm,
+.pg-role,
+.ajas-programmes .listing-intro{
+    color:#5c6578 !important;
+}
+.ajas-testi-role,
+.post-blog .entry-date,
+.ajas-post-date{
+    color:#5a6575 !important;
+}
+.mig-contact li,
+.mig-contact li a,
+.widget-nav-menu a{
+    color:#d7dde8;
+}
+/* Footer widgets: light text on dark needs higher contrast */
+#footer .widget-nav-menu a,
+#footer .footer-address,
+#footer .footer-address a{
+    color:rgba(255,255,255,.88) !important;
+}
+#footer .widget-title{color:#fff !important;}
+
+/* Touch targets ≥ 44×44 CSS px */
+.top-utility a,
+.nav-sing a,
+.bottom-nav a,
+.widget-social-media a,
+.flat-course .enroll a,
+.flat-course .links a,
+.ajas-card-more,
+.mobile-button{
+    min-height:44px;
+    min-width:44px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 12px;
+    box-sizing:border-box;
+}
+.widget-social-media a{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+}
+.flat-course .links a{
+    padding:10px 16px;
+    line-height:1.2;
+    text-align:center;
+}
+.flat-course .enroll a{
+    padding:10px 14px;
+    white-space:normal;
+    text-align:left;
+    height:auto;
+    min-height:44px;
+}
+
+/* Page banner title as real heading */
+.breadcrumbs-wrap .title{
+    font-size:clamp(1.5rem,2.5vw,2rem);
+    margin:8px 0 0;
+    line-height:1.25;
+    font-weight:600;
+    color:#fff;
+}
+/* Department cards: h3.course-title under section h2 */
+.flat-course h3.course-title{
+    font-size:18px;
+    line-height:1.4;
+    margin:0 0 8px;
+}
+.flat-course h3.course-title a{color:#183251;}
+.flat-course h3.course-title a:hover{color:#ff5f60;}
+
+/* Avoid double h1 look if body still has h1 matching page title */
+.ajas-prose > h1:first-child{
+    /* keep content h1 if present; banner is also h1 — acceptable single-page dual rare */
+}

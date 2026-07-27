@@ -44,8 +44,13 @@ const events = (await getCollection("events", ({ data }) => !data.draft)).sort((
                   <h2>
                     <a href={e.data.permalink}>{e.data.title}</a>
                   </h2>
-                  <a class="ajas-card-more" href={e.data.permalink}>
-                    View details <i class="fa fa-long-arrow-right" aria-hidden="true" />
+                  <a
+                    class="ajas-card-more"
+                    href={e.data.permalink}
+                    aria-label={`View details: ${e.data.title}`}
+                  >
+                    View details: {e.data.title}{" "}
+                    <i class="fa fa-long-arrow-right" aria-hidden="true" />
                   </a>
                 </div>
               </article>

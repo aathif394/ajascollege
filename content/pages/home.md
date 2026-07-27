@@ -71,7 +71,7 @@ recognised by the Government of Kerala.</p>
 <div class="container">
 <div class="title-section text-center">
 <p class="sub-title lt-sp17">What you can study here</p>
-<div class="flat-title medium">Programmes offered</div>
+<h2 class="flat-title medium">Programmes offered</h2>
 </div>
 <p class="listing-intro">Our students are guaranteed an exceptional educational experience through a diverse range of regular degree and postgraduate courses.</p>
 <div class="row prog-columns">
@@ -89,73 +89,73 @@ are listed on the programmes page.</p>
 <div class="text-center pd-top15"><a href="/programmes/" class="btn-box-shadow">All programmes &amp; eligibility</a></div>
 <div class="title-section text-center pd-top60">
 <p class="sub-title lt-sp17">Explore</p>
-<div class="flat-title medium">Our departments</div>
+<h2 class="flat-title medium">Our departments</h2>
 </div>
 <div class="flat-courses clearfix"><div class="row"><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
 <div class="flat-course">
 <div class="featured-post post-media"><div class="entry-image pic"><img src="/assets/uploads/2024/06/arabic-.jpg" alt="Department of Arabic">
 <div class="hover-effect"></div>
-<div class="links"><a href="/departments/arabic/">View</a></div>
+<div class="links"><a href="/departments/arabic/" aria-label="View Department of Arabic">View Department of Arabic</a></div>
 </div></div>
 <div class="course-content clearfix"><div class="wrap-course-content">
-<h4><a href="/departments/arabic/">Department of Arabic</a></h4>
+<h3 class="course-title"><a href="/departments/arabic/">Department of Arabic</a></h3>
 <p>Established in 2019, the Department of Arabic at Al Jamia Arts and Science College stands as a ideal of excellence in Arabic language a…</p>
-<div class="author-info"><div class="enroll"><a href="/departments/arabic/">Read more</a></div></div>
+<div class="author-info"><div class="enroll"><a href="/departments/arabic/" aria-label="Read more about Department of Arabic">Read more about Department of Arabic</a></div></div>
 </div></div>
 </div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
 <div class="flat-course">
 <div class="featured-post post-media"><div class="entry-image pic"><img src="/assets/uploads/2024/05/Departmentofcommerce-scaled.jpg" alt="Department of Commerce &amp; Management Studies">
 <div class="hover-effect"></div>
-<div class="links"><a href="/departments/department-of-commerce/">View</a></div>
+<div class="links"><a href="/departments/department-of-commerce/" aria-label="View Department of Commerce and Management Studies">View Department of Commerce and Management Studies</a></div>
 </div></div>
 <div class="course-content clearfix"><div class="wrap-course-content">
-<h4><a href="/departments/department-of-commerce/">Department of Commerce &amp; Management Studies</a></h4>
+<h3 class="course-title"><a href="/departments/department-of-commerce/">Department of Commerce &amp; Management Studies</a></h3>
 <p>The Department of Commerce and Management Studies at Al Jamia Arts and Science College, Perinthalmanna, is a vibrant centre of learning…</p>
-<div class="author-info"><div class="enroll"><a href="/departments/department-of-commerce/">Read more</a></div></div>
+<div class="author-info"><div class="enroll"><a href="/departments/department-of-commerce/" aria-label="Read more about Department of Commerce and Management Studies">Read more about Department of Commerce and Management Studies</a></div></div>
 </div></div>
 </div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
 <div class="flat-course">
 <div class="featured-post post-media"><div class="entry-image pic"><img src="/assets/uploads/2024/06/12064780_4884421.jpg" alt="Department of Computer Application">
 <div class="hover-effect"></div>
-<div class="links"><a href="/departments/department-of-computer-application/">View</a></div>
+<div class="links"><a href="/departments/department-of-computer-application/" aria-label="View Department of Computer Application">View Department of Computer Application</a></div>
 </div></div>
 <div class="course-content clearfix"><div class="wrap-course-content">
-<h4><a href="/departments/department-of-computer-application/">Department of Computer Application</a></h4>
+<h3 class="course-title"><a href="/departments/department-of-computer-application/">Department of Computer Application</a></h3>
 <p>Established in the year 2010, the Department of Computer Applications is committed to provide quality education to aspiring graduates. …</p>
-<div class="author-info"><div class="enroll"><a href="/departments/department-of-computer-application/">Read more</a></div></div>
+<div class="author-info"><div class="enroll"><a href="/departments/department-of-computer-application/" aria-label="Read more about Department of Computer Application">Read more about Department of Computer Application</a></div></div>
 </div></div>
 </div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
 <div class="flat-course">
 <div class="featured-post post-media"><div class="entry-image pic"><img src="/assets/uploads/2024/05/innovative-futuristic-classroom-students-min-scaled.jpg" alt="Department of Computer Science and Artificial Intelligence">
 <div class="hover-effect"></div>
-<div class="links"><a href="/departments/department-of-computer-science/">View</a></div>
+<div class="links"><a href="/departments/department-of-computer-science/" aria-label="View Department of Computer Science and Artificial Intelligence">View Department of Computer Science and Artificial Intelligence</a></div>
 </div></div>
 <div class="course-content clearfix"><div class="wrap-course-content">
-<h4><a href="/departments/department-of-computer-science/">Department of Computer Science and Artificial Intelligence</a></h4>
+<h3 class="course-title"><a href="/departments/department-of-computer-science/">Department of Computer Science and Artificial Intelligence</a></h3>
 <p>In 2015 BSc Computer Science Programme introduced by department. The Department of Computer Science is committed to provide quality edu…</p>
-<div class="author-info"><div class="enroll"><a href="/departments/department-of-computer-science/">Read more</a></div></div>
+<div class="author-info"><div class="enroll"><a href="/departments/department-of-computer-science/" aria-label="Read more about Department of Computer Science and Artificial Intelligence">Read more about Department of Computer Science and Artificial Intelligence</a></div></div>
 </div></div>
 </div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
 <div class="flat-course">
 <div class="featured-post post-media"><div class="entry-image pic"><img src="/assets/uploads/2024/05/english-books-stacks-table-working-space-min-scaled.jpg" alt="Department of English">
 <div class="hover-effect"></div>
-<div class="links"><a href="/departments/department-of-english/">View</a></div>
+<div class="links"><a href="/departments/department-of-english/" aria-label="View Department of English">View Department of English</a></div>
 </div></div>
 <div class="course-content clearfix"><div class="wrap-course-content">
-<h4><a href="/departments/department-of-english/">Department of English</a></h4>
+<h3 class="course-title"><a href="/departments/department-of-english/">Department of English</a></h3>
 <p>The Department Established in the Year 2010 along with the; inception of the college.B.A English Language and Literatue course was star…</p>
-<div class="author-info"><div class="enroll"><a href="/departments/department-of-english/">Read more</a></div></div>
+<div class="author-info"><div class="enroll"><a href="/departments/department-of-english/" aria-label="Read more about Department of English">Read more about Department of English</a></div></div>
 </div></div>
 </div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
 <div class="flat-course">
 <div class="featured-post post-media"><div class="entry-image pic"><img src="/assets/uploads/2024/05/empty-microbiology-laboratory-with-nobody-it-prepared-genetic-mutation-test-min-scaled.jpg" alt="Department of Food Technology">
 <div class="hover-effect"></div>
-<div class="links"><a href="/departments/department-of-food-technology/">View</a></div>
+<div class="links"><a href="/departments/department-of-food-technology/" aria-label="View Department of Food Technology">View Department of Food Technology</a></div>
 </div></div>
 <div class="course-content clearfix"><div class="wrap-course-content">
-<h4><a href="/departments/department-of-food-technology/">Department of Food Technology</a></h4>
+<h3 class="course-title"><a href="/departments/department-of-food-technology/">Department of Food Technology</a></h3>
 <p>Established in the year 2018. The Department of Food Technology is committed to provide quality education to aspiring graduates. At pre…</p>
-<div class="author-info"><div class="enroll"><a href="/departments/department-of-food-technology/">Read more</a></div></div>
+<div class="author-info"><div class="enroll"><a href="/departments/department-of-food-technology/" aria-label="Read more about Department of Food Technology">Read more about Department of Food Technology</a></div></div>
 </div></div>
 </div></div></div></div>
 <div class="text-center pd-top15"><a href="/departments/" class="btn bg-clff5f60 ajas-apply-btn">View all departments</a></div>

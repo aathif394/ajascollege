@@ -1,19 +1,30 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
 
 // Static site → Cloudflare Pages (no adapter needed for pure SSG).
 // Images: built-in Sharp service optimizes files under src/assets/ (not public/).
-// https://docs.astro.build/en/guides/images/
+// Sitemap: regenerated on every `astro build` from all routes.
+// When custom domain is live, set site to https://ajascollege.ac.in
 export default defineConfig({
-  site: "https://ajascollege.ac.in",
+  site: "https://ajascollege.pages.dev",
   trailingSlash: "always",
   build: {
     format: "directory",
-    // Keep hashed assets cacheable forever
     assets: "_astro",
   },
+  integrations: [
+    sitemap({
+      // Skip CMS chrome and private-ish paths
+      filter: (page) =>
+        !page.includes("/admin") &&
+        !page.includes("/pagefind"),
+      changefreq: "weekly",
+      priority: 0.7,
+      lastmod: new Date(),
+    }),
+  ],
   image: {
-    // Global responsive defaults for <Image /> / Markdown local images
     layout: "constrained",
     responsiveStyles: true,
     service: {
@@ -24,12 +35,10 @@ export default defineConfig({
     },
   },
   markdown: {
-    // Preserve migrated Edukin HTML inside .md bodies
     syntaxHighlight: false,
   },
   vite: {
     server: {
-      // Decap/Sveltia local_backend talks to port 8081
       proxy: {},
     },
   },
