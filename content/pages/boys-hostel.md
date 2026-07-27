@@ -13,7 +13,7 @@ credentials: ''
 <div class="row justify-content-center"><div class="col-lg-9">
 <div class="site-content clearfix"><article class="post post-blog-single">
 <div class="content-blog-single"><div class="content-blog-single-inner">
-<div class="content-blog-single-wrap migrate-content"><h1>Boy’s Hostel</h1>
+<div class="content-blog-single-wrap migrate-content"><h1>Boys Hostel</h1>
 <p>The Al Jamia Arts and Science College Hostel is a cornerstone of student life, offering a welcoming, secure, and supportive environment for all residents. Located within the picturesque and tranquil campus of Al Jamia College, our hostel serves as a home away from home, designed to meet the diverse needs of students.</p>
 <h2 id="warden">Warden</h2>
 <img src="/assets/uploads/2025/01/WhatsApp-Image-2025-01-28-at-8.03.35-PM.jpeg" alt="" class="img-fluid">
