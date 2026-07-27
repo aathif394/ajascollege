@@ -640,6 +640,14 @@ body.hero-hold .header-sticky #main-nav>ul.menu>li>a{font-size:14px;}
 .pd-top60{padding-top:60px;}
 .pd-top30{padding-top:30px;}
 .ajas-programmes .listing-intro{margin-bottom:44px;}
+/* CTA between programme columns and department grid — stay above cards */
+.ajas-programmes .prog-columns{position:relative;z-index:1;margin-bottom:8px;}
+.ajas-programmes .pd-top15{
+    position:relative;z-index:6;margin-top:28px;margin-bottom:8px;clear:both;}
+.ajas-programmes .pd-top15 .btn-box-shadow{
+    position:relative;z-index:6;display:inline-block;}
+.ajas-programmes .title-section.pd-top60{position:relative;z-index:1;}
+.ajas-programmes .flat-courses{position:relative;z-index:1;}
 .ajas-news{padding:90px 0 100px;background:#f7f9fc;}
 .ajas-success{padding:96px 0 90px;}
 .ajas-events .content-event-list{margin-top:10px;}

@@ -267,8 +267,8 @@
           "href": "/faculties/"
         },
         {
-          "label": "Programe Offered",
-          "href": "/programe-offered/"
+          "label": "Programmes Offered",
+          "href": "/programmes/"
         },
         {
           "label": "Academic Calender",
@@ -407,10 +407,6 @@
         {
           "label": "Fees & prospectus",
           "href": "/fees/"
-        },
-        {
-          "label": "Programmes (CMS)",
-          "href": "/programmes/"
         }
       ]
     },

@@ -30,7 +30,7 @@ recognised by the Government of Kerala.</p>
 <span class="tile-ico"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
 <span class="tile-body"><span class="tile-title">Admissions 2026 – 27</span><span class="tile-sub">FYUGP &amp; PG programmes are open</span></span>
 <span class="tile-cta">Apply now <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
-</a></div><div class="col-lg-4 col-md-4 col-sm-12"><a class="action-tile tile-navy" href="/programe-offered/">
+</a></div><div class="col-lg-4 col-md-4 col-sm-12"><a class="action-tile tile-navy" href="/programmes/">
 <span class="tile-ico"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
 <span class="tile-body"><span class="tile-title">Programmes</span><span class="tile-sub">11 UG Honours &amp; 3 PG degrees</span></span>
 <span class="tile-cta">Explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
@@ -86,7 +86,7 @@ are listed on the programmes page.</p>
 </div>
 </div>
 </div>
-<div class="text-center pd-top15"><a href="/programe-offered/" class="btn-box-shadow">All programmes &amp; eligibility</a></div>
+<div class="text-center pd-top15"><a href="/programmes/" class="btn-box-shadow">All programmes &amp; eligibility</a></div>
 <div class="title-section text-center pd-top60">
 <p class="sub-title lt-sp17">Explore</p>
 <div class="flat-title medium">Our departments</div>

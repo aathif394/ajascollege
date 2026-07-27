@@ -67,30 +67,30 @@ const statsForStrip =
 ---
 
 <div class="smart-page">
-  {/* ——— Vision & Mission: two equal panels ——— */}
+  {/* ——— Vision & Mission: two equal panels (image + text each) ——— */}
   {
     isVision && (
       <div class="sp-vision">
-        {parsed.introImages[0] && (
-          <figure class="sp-vision-img">
-            <img src={parsed.introImages[0]} alt="" />
-          </figure>
-        )}
-        {!parsed.introImages[0] && image && (
-          <figure class="sp-vision-img">
-            <img src={image} alt="" />
-          </figure>
-        )}
         <div class="sp-vision-grid">
-          {parsed.sections.map((s) => (
-            <section class="sp-vision-card" id={s.id}>
-              <h2>{s.title}</h2>
-              {s.images.map((src) => (
-                <img src={src} alt="" class="sp-inline-img" />
-              ))}
-              <div class="sp-html" set:html={s.bodyHtml} />
-            </section>
-          ))}
+          {parsed.sections.map((s, i) => {
+            const imgSrc =
+              s.images[0] ||
+              (i === 0 ? image || parsed.introImages[0] : undefined) ||
+              (i === 1 ? parsed.introImages[1] : undefined);
+            return (
+              <section class="sp-vision-card" id={s.id}>
+                {imgSrc && (
+                  <figure class="sp-vision-card-fig">
+                    <img src={imgSrc} alt={s.title} />
+                  </figure>
+                )}
+                <div class="sp-vision-card-body">
+                  <h2>{s.title}</h2>
+                  <div class="sp-html" set:html={s.bodyHtml} />
+                </div>
+              </section>
+            );
+          })}
         </div>
       </div>
     )
@@ -262,29 +262,16 @@ const statsForStrip =
     font-weight: 500;
   }
 
-  /* —— Vision —— */
+  /* —— Vision: balanced two columns, each image + text —— */
   .sp-vision {
     max-width: 1100px;
     margin: 0 auto;
     padding: 28px 16px 0;
   }
-  .sp-vision-img {
-    margin: 0 0 24px;
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 10px 32px rgba(24, 50, 81, 0.08);
-    display: flex;
-    justify-content: center;
-  }
-  .sp-vision-img img {
-    max-width: min(100%, 420px);
-    height: auto;
-    object-fit: contain;
-  }
   .sp-vision-grid {
     display: grid;
-    gap: 20px;
+    gap: 22px;
+    align-items: stretch;
   }
   @media (min-width: 800px) {
     .sp-vision-grid {
@@ -294,23 +281,48 @@ const statsForStrip =
   .sp-vision-card {
     background: #fff;
     border-radius: 12px;
-    padding: 28px 26px 32px;
     box-shadow: 0 10px 32px rgba(24, 50, 81, 0.08);
     border-top: 4px solid #ff5f60;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
   }
   .sp-vision-card:nth-child(2) {
     border-top-color: #3f4c99;
   }
+  .sp-vision-card-fig {
+    margin: 0;
+    padding: 20px 20px 0;
+    background: #f7f9fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+  }
+  .sp-vision-card-fig img {
+    max-width: 100%;
+    max-height: 280px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  .sp-vision-card-body {
+    padding: 22px 26px 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
   .sp-vision-card h2 {
-    margin: 0 0 1rem;
+    margin: 0 0 0.85rem;
     font-size: 1.45rem;
     color: #183251;
   }
-  .sp-inline-img {
-    max-width: 100%;
-    height: auto;
-    margin: 0 0 1rem;
-    border-radius: 8px;
+  .sp-vision-card .sp-html {
+    flex: 1;
+    font-size: 1.05rem;
+    line-height: 1.7;
   }
 
   /* —— Admission programmes —— */

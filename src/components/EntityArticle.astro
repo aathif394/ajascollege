@@ -1,6 +1,6 @@
 ---
 /**
- * News / event detail — full posters (no crop), clean article body.
+ * News / event detail — full posters (no crop), single unified card.
  */
 interface Props {
   kind: "news" | "event" | "page";
@@ -28,7 +28,7 @@ const kindLabel = kind === "news" ? "News" : kind === "event" ? "Event" : "Page"
 ---
 
 <article class="ajas-entity" data-kind={kind}>
-  <div class="ajas-entity-inner">
+  <div class="ajas-entity-card">
     {
       image && (
         <figure class="ajas-entity-poster">
@@ -62,19 +62,20 @@ const kindLabel = kind === "news" ? "News" : kind === "event" ? "Event" : "Page"
     padding: 28px 16px 56px;
     background: linear-gradient(180deg, #eef2f7 0%, #f7f9fc 50%, #fff 100%);
   }
-  .ajas-entity-inner {
+  /* One card only — poster + body share the same surface */
+  .ajas-entity-card {
     max-width: 920px;
     margin: 0 auto;
-    display: grid;
-    gap: 28px;
-  }
-  /* Full poster — never crop. Portrait or landscape both show completely. */
-  .ajas-entity-poster {
-    margin: 0;
-    padding: 16px;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 12px 36px rgba(24, 50, 81, 0.1);
+    border-top: 4px solid #ff5f60;
+    overflow: hidden;
+  }
+  .ajas-entity-poster {
+    margin: 0;
+    padding: 20px 20px 0;
+    background: #f4f6fa;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,25 +85,19 @@ const kindLabel = kind === "news" ? "News" : kind === "event" ? "Event" : "Page"
     width: auto;
     max-width: 100%;
     height: auto;
-    max-height: min(78vh, 900px);
+    max-height: min(72vh, 820px);
     object-fit: contain;
     border-radius: 4px;
   }
   .ajas-entity-panel {
-    background: #fff;
-    border-radius: 12px;
     padding: 28px 24px 32px;
-    box-shadow: 0 10px 32px rgba(24, 50, 81, 0.08);
-    border-top: 4px solid #ff5f60;
   }
   @media (min-width: 768px) {
     .ajas-entity-panel {
-      padding: 36px 40px 40px;
+      padding: 32px 40px 40px;
     }
-    /* Side-by-side only when poster is present: poster left, story right on wide screens
-       if poster is landscape-friendly — keep stacked for full poster readability */
-    .ajas-entity-inner {
-      gap: 32px;
+    .ajas-entity-poster {
+      padding: 28px 28px 0;
     }
   }
   .ajas-entity-meta {
@@ -135,11 +130,9 @@ const kindLabel = kind === "news" ? "News" : kind === "event" ? "Event" : "Page"
     font-weight: 600;
     letter-spacing: -0.02em;
   }
-  /* Title already shown — hide duplicate H1 from markdown */
   .ajas-entity-body :global(h1:first-child) {
     display: none;
   }
-  /* Hide first body image if it matches the poster (common migrate pattern) */
   .ajas-entity-body :global(> p:first-child:has(> img:only-child)) {
     display: none;
   }

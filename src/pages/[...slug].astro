@@ -100,26 +100,30 @@ if (isNews) {
         <Content />
       </EntityArticle>
     ) : isProfile ? (
-      <ArticleShell wide={false} variant="profile">
-        <div class="ajas-profile">
-          {image && (
-            <div class="ajas-profile-photo">
-              <img src={image} alt={displayName} />
+      <div class="ajas-profile-wrap">
+        <article class="ajas-profile-card">
+          <div class="ajas-profile">
+            {image && (
+              <div class="ajas-profile-photo">
+                <img src={image} alt={displayName} />
+              </div>
+            )}
+            <div class="ajas-profile-meta">
+              <h1>{displayName}</h1>
+              {credentials && <p class="ajas-profile-cred">{credentials}</p>}
+              {role && <p class="ajas-profile-role">{role}</p>}
+              <a class="ajas-profile-back" href="/faculties/">
+                ← All faculty
+              </a>
             </div>
-          )}
-          <div class="ajas-profile-meta">
-            <h1>{displayName}</h1>
-            {credentials && <p class="ajas-profile-cred">{credentials}</p>}
-            {role && <p class="ajas-profile-role">{role}</p>}
-            <a class="ajas-profile-back" href="/faculties/">
-              ← All faculty
-            </a>
+            {body && (
+              <div class="ajas-profile-bio ajas-prose">
+                <Content />
+              </div>
+            )}
           </div>
-          <div class="ajas-profile-bio">
-            <Content />
-          </div>
-        </div>
-      </ArticleShell>
+        </article>
+      </div>
     ) : isSmartPage && body ? (
       <SmartPage
         title={entry.data.title}
@@ -136,6 +140,25 @@ if (isNews) {
 </BaseLayout>
 
 <style>
+  /* Single profile card — no nested ArticleShell */
+  .ajas-profile-wrap {
+    padding: 28px 16px 56px;
+    background: linear-gradient(180deg, #f0f3f8 0%, #f8fafc 35%, #fff 100%);
+  }
+  .ajas-profile-card {
+    max-width: 820px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 24px 32px;
+    box-shadow: 0 10px 36px rgba(24, 50, 81, 0.08);
+    border-top: 4px solid #183251;
+  }
+  @media (min-width: 768px) {
+    .ajas-profile-card {
+      padding: 36px 40px 40px;
+    }
+  }
   .ajas-profile {
     display: grid;
     gap: 1.25rem;
@@ -146,23 +169,30 @@ if (isNews) {
       grid-template-areas:
         "photo meta"
         "bio bio";
+      column-gap: 1.75rem;
     }
     .ajas-profile-photo {
       grid-area: photo;
     }
     .ajas-profile-meta {
       grid-area: meta;
+      align-self: center;
     }
     .ajas-profile-bio {
       grid-area: bio;
+      margin-top: 0.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid #e8eef4;
     }
   }
   .ajas-profile-photo img {
     width: 100%;
     max-width: 220px;
+    aspect-ratio: 3 / 4;
     border-radius: 10px;
     object-fit: cover;
-    box-shadow: 0 8px 24px rgba(24, 50, 81, 0.12);
+    object-position: center top;
+    display: block;
   }
   .ajas-profile-meta h1 {
     margin: 0 0 0.35em;

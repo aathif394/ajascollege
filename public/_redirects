@@ -2,3 +2,7 @@
 # Keep legacy WP shortlinks out; clean slugs are the source of truth.
 
 # Optional: force trailing slash is handled by Astro trailingSlash: always
+
+# Retired duplicate — real data lives under /programmes/
+/programe-offered /programmes/ 301
+/programe-offered/ /programmes/ 301
