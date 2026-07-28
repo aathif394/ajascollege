@@ -1,9 +1,12 @@
 ---
-title: State Off The Art Facilities
-description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
-permalink: /state-off-the-art-facilities/
+title: State Of The Art Facilities
+description: Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut.
+permalink: /state-of-the-art-facilities/
 type: page
-image: "/assets/uploads/2025/03/WhatsApp-Image-2025-03-17-at-4.01.35-PM.jpeg"
+image: /assets/uploads/2025/03/WhatsApp-Image-2025-03-17-at-4.01.35-PM.jpeg
+name: ''
+role: ''
+credentials: ''
 ---
 
 Modern Laboratories Mushroom Unit Mini Weather Station Digital Display Panels Herbal Garden Gymnasium Badminton Court Football Ground Artificial Intelligence Lab Interactive Panels Library Digital Library Cafeteria Amphitheatre Cricket Net Generator Water Cooler New Product Development Zone (NPD) Conference Room Seminar Hall Yoga Centre Geographic Information System (GIS) Water Purifiers Napkin Vending Machine Digital Classroom Boy's Hostel Girl's Hostel Public Address System Fire and Safety Measures UPS Incinerators College Greenery
