@@ -179,8 +179,8 @@
           "href": "/",
           "children": [
             {
-              "label": "State Off The Art Facilities",
-              "href": "/state-off-the-art-facilities/"
+              "label": "State Of The Art Facilities",
+              "href": "/state-of-the-art-facilities/"
             },
             {
               "label": "Facilities",
@@ -199,32 +199,32 @@
                   "href": "/",
                   "children": [
                     {
-                      "label": "Computer Lab",
-                      "href": "/labs/computer-lab/"
+                      "href": "/labs/computer-lab/",
+                      "label": "Computer Lab"
                     },
                     {
-                      "label": "Psychology Lab",
-                      "href": "/labs/psychology-lab/"
+                      "href": "/labs/psychology-lab/",
+                      "label": "Psychology Lab"
                     },
                     {
-                      "label": "Geography Lab",
-                      "href": "/labs/geography-lab/"
+                      "href": "/labs/geography-lab/",
+                      "label": "Geography Lab"
                     },
                     {
-                      "label": "Micro Biology Lab",
-                      "href": "/labs/micro-biology-lab/"
+                      "href": "/labs/micro-biology-lab/",
+                      "label": "Micro Biology Lab"
                     },
                     {
-                      "label": "Physics Lab",
-                      "href": "/labs/physics-lab/"
+                      "href": "/labs/physics-lab/",
+                      "label": "Physics Lab"
                     },
                     {
-                      "label": "Food Technology Lab",
-                      "href": "/labs/food-technology-lab/"
+                      "href": "/labs/food-technology-lab/",
+                      "label": "Food Technology Lab"
                     },
                     {
-                      "label": "Artificial Intelligence Lab",
-                      "href": "/labs/artificial-intelligence-lab/"
+                      "href": "/labs/artificial-intelligence-lab/",
+                      "label": "Artificial Intelligence Lab"
                     }
                   ]
                 },
