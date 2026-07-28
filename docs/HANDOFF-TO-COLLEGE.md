@@ -145,7 +145,11 @@ Note the new URL: `https://ajascollege.pages.dev` (or `https://ajascollege-<hash
 ### GitHub Actions deploy secrets (college repo)
 
 1. College Cloudflare → **My Profile → API Tokens → Create Token**  
-   Template: **Edit Cloudflare Workers** (or custom with Account → Cloudflare Pages → Edit, Account → Account Settings → Read).
+   Custom token (recommended permissions):
+   - **Account** → **Cloudflare Pages** → **Edit**
+   - **Account** → **Account Settings** → **Read** (optional, for verify)
+   - Account resources: include the college account  
+   Template “Edit Cloudflare Workers” alone is often **not enough** for Pages.
 2. In college GitHub repo → **Settings → Secrets and variables → Actions**:
    - `CLOUDFLARE_API_TOKEN` = token from step 1  
    - `CLOUDFLARE_ACCOUNT_ID` = college Account ID  
@@ -156,6 +160,22 @@ command: pages deploy dist --project-name ajascollege --branch main
 ```
 
 4. Test: push a small commit to `main` → **Actions** tab should go green → site updates.
+
+#### If Actions fails with `Authentication error` / `Invalid access token [code: 9109]`
+
+This is **not** a CMS or content bug. The GitHub secret is expired, revoked, or missing Pages permission.
+
+1. Cloudflare → **My Profile → API Tokens** → create a **new** token (Pages Edit).  
+2. GitHub repo → **Settings → Secrets → Actions** → update `CLOUDFLARE_API_TOKEN`.  
+3. **Actions** → re-run the failed workflow (or push any commit).  
+4. Local emergency deploy (while secrets are fixed):
+
+```bash
+npm ci && npm run build
+npx wrangler pages deploy dist --project-name ajascollege --branch main
+```
+
+CMS “Publish” only pushes to GitHub. Deploy always needs a valid Cloudflare token in Actions.
 
 ---
 
