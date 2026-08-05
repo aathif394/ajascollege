@@ -3,7 +3,6 @@ title: COUNSELING CELL
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/counseling-cell/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About
@@ -19,7 +18,6 @@ image: "/assets/uploads/2024/05/Frame-1.svg"
 - Organize programmes on mental health and life skills.
 - Support the Jeevani Project and premarital counselling initiatives for youth well-being.
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -33,4 +31,3 @@ To foster the holistic development and mental well-being of students by providin
 - Offer crisis intervention and support for students in distress.
 - Foster a positive and inclusive campus environment.
 
-![](/assets/uploads/2024/05/Frame.svg)

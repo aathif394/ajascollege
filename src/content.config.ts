@@ -14,6 +14,9 @@ const entrySchema = z.object({
   name: z.string().optional(),
   role: z.string().optional(),
   credentials: z.string().optional(),
+  attachments: z
+    .array(z.object({ label: z.string(), file: z.string() }))
+    .optional(),
 });
 
 const pages = defineCollection({

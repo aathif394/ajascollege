@@ -3,7 +3,6 @@ title: "Women's Cell"
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/womens-cell/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 # Women’s Cell
@@ -32,7 +31,6 @@ Well-being: We prioritize the physical, emotional, and mental health of women on
 
 Continuous Growth: We promote lifelong learning and self-improvement among women.
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -46,7 +44,6 @@ To create an inclusive and empowering environment that nurtures the intellectual
 - Raise awareness on women’s rights, gender justice, and inclusion
 - Foster collaboration for women’s holistic growth and leadership
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Activities
 

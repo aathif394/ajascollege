@@ -3,7 +3,6 @@ title: Anti-Narcotics Cell
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/anti-narcotics-cell/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About
@@ -16,7 +15,6 @@ The motto of the Anti-Narcotics Cell is to educate and empower our students to l
 
 The main objective of the Anti-Narcotics Cell is to raise awareness among students about the harmful effects of drugs and to encourage them to participate in prevention activities. The cell works to equip students with knowledge and life skills, empowering them to resist peer pressure and lead by example. It seeks to develop leadership abilities in organizing awareness campaigns and outreach programmes. The Cell also aims to promote a healthy, secure, and supportive atmosphere for academic and personal growth. By participating, students enhance their sense of social responsibility, improve their decision-making skills, and boost their mental health and confidence
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -26,7 +24,6 @@ To foster a drug-free campus where students can thrive academically, physically,
 
 The mission of the Anti-Narcotics Cell is to promote a drug-free campus by educating students about the dangers of substance abuse through awareness programs, counseling, and preventive initiatives. By fostering responsibility, supporting those at risk, and encouraging positive peer influence, the cell strives to create a healthy and vigilant college community
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Club Coordinator :
 

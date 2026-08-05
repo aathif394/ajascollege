@@ -10,7 +10,7 @@ image: "/assets/uploads/2025/05/University-Logo.jpg"
 <div class="hero-media"><span class="hero-layer hl1" style="background-image:url(/assets/uploads/2024/01/P1222323-building-2048x1154-1.webp)"></span><span class="hero-layer hl2" style="background-image:url(/assets/uploads/2025/03/WhatsApp-Image-2025-03-17-at-3.27.45-PM.jpeg)"></span><span class="hero-layer hl3" style="background-image:url(/assets/uploads/2025/03/WhatsApp-Image-2025-03-17-at-4.16.10-PM.jpeg)"></span><span class="hero-scrim"></span></div>
 <div class="container"><div class="hero-inner">
 <p class="hero-kicker">Since 2010 &middot; Perinthalmanna, Kerala</p>
-<h1 class="hero-title">Value-based education,<br>rooted in Kerala.</h1>
+<h1 class="hero-title">Empowering Global Citizens<br>with Timeless Values.</h1>
 <p class="hero-text">Al Jamia Arts and Science College moulds students into professionally competent,
 socially responsible and morally sound citizens &mdash; affiliated to the University of Calicut and
 recognised by the Government of Kerala.</p>
@@ -34,10 +34,10 @@ recognised by the Government of Kerala.</p>
 <span class="tile-ico"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
 <span class="tile-body"><span class="tile-title">Programmes</span><span class="tile-sub">11 UG Honours &amp; 3 PG degrees</span></span>
 <span class="tile-cta">Explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
-</a></div><div class="col-lg-4 col-md-4 col-sm-12"><a class="action-tile tile-light" href="/assets/uploads/2025/02/SF-FEE-Addndm.pdf" target="_blank" rel="noopener">
+</a></div><div class="col-lg-4 col-md-4 col-sm-12"><a class="action-tile tile-light" href="/prospectus-2026-27/">
 <span class="tile-ico"><i class="fa fa-file-text-o" aria-hidden="true"></i></span>
-<span class="tile-body"><span class="tile-title">Prospectus &amp; fees</span><span class="tile-sub">Download the fee structure</span></span>
-<span class="tile-cta">Download <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+<span class="tile-body"><span class="tile-title">Prospectus &amp; fees</span><span class="tile-sub">Programmes, fees &amp; admission info</span></span>
+<span class="tile-cta">View prospectus <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
 </a></div></div></div>
 </section><!-- quick actions -->
 <section class="partner-clients ajas-accred">
@@ -100,7 +100,6 @@ are listed on the programmes page.</p>
 <div class="course-content clearfix"><div class="wrap-course-content">
 <h3 class="course-title"><a href="/departments/arabic/">Department of Arabic</a></h3>
 <p>Established in 2019, the Department of Arabic at Al Jamia Arts and Science College stands as a ideal of excellence in Arabic language a…</p>
-<div class="author-info"><div class="enroll"><a href="/departments/arabic/" aria-label="Read more about Department of Arabic">Read more about Department of Arabic</a></div></div>
 </div></div>
 </div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
 <div class="flat-course">
@@ -111,7 +110,6 @@ are listed on the programmes page.</p>
 <div class="course-content clearfix"><div class="wrap-course-content">
 <h3 class="course-title"><a href="/departments/department-of-commerce/">Department of Commerce &amp; Management Studies</a></h3>
 <p>The Department of Commerce and Management Studies at Al Jamia Arts and Science College, Perinthalmanna, is a vibrant centre of learning…</p>
-<div class="author-info"><div class="enroll"><a href="/departments/department-of-commerce/" aria-label="Read more about Department of Commerce and Management Studies">Read more about Department of Commerce and Management Studies</a></div></div>
 </div></div>
 </div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
 <div class="flat-course">
@@ -122,7 +120,6 @@ are listed on the programmes page.</p>
 <div class="course-content clearfix"><div class="wrap-course-content">
 <h3 class="course-title"><a href="/departments/department-of-computer-application/">Department of Computer Application</a></h3>
 <p>Established in the year 2010, the Department of Computer Applications is committed to provide quality education to aspiring graduates. …</p>
-<div class="author-info"><div class="enroll"><a href="/departments/department-of-computer-application/" aria-label="Read more about Department of Computer Application">Read more about Department of Computer Application</a></div></div>
 </div></div>
 </div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
 <div class="flat-course">
@@ -133,7 +130,6 @@ are listed on the programmes page.</p>
 <div class="course-content clearfix"><div class="wrap-course-content">
 <h3 class="course-title"><a href="/departments/department-of-computer-science/">Department of Computer Science and Artificial Intelligence</a></h3>
 <p>In 2015 BSc Computer Science Programme introduced by department. The Department of Computer Science is committed to provide quality edu…</p>
-<div class="author-info"><div class="enroll"><a href="/departments/department-of-computer-science/" aria-label="Read more about Department of Computer Science and Artificial Intelligence">Read more about Department of Computer Science and Artificial Intelligence</a></div></div>
 </div></div>
 </div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
 <div class="flat-course">
@@ -144,7 +140,6 @@ are listed on the programmes page.</p>
 <div class="course-content clearfix"><div class="wrap-course-content">
 <h3 class="course-title"><a href="/departments/department-of-english/">Department of English</a></h3>
 <p>The Department Established in the Year 2010 along with the; inception of the college.B.A English Language and Literatue course was star…</p>
-<div class="author-info"><div class="enroll"><a href="/departments/department-of-english/" aria-label="Read more about Department of English">Read more about Department of English</a></div></div>
 </div></div>
 </div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
 <div class="flat-course">
@@ -155,7 +150,6 @@ are listed on the programmes page.</p>
 <div class="course-content clearfix"><div class="wrap-course-content">
 <h3 class="course-title"><a href="/departments/department-of-food-technology/">Department of Food Technology</a></h3>
 <p>Established in the year 2018. The Department of Food Technology is committed to provide quality education to aspiring graduates. At pre…</p>
-<div class="author-info"><div class="enroll"><a href="/departments/department-of-food-technology/" aria-label="Read more about Department of Food Technology">Read more about Department of Food Technology</a></div></div>
 </div></div>
 </div></div></div></div>
 <div class="text-center pd-top15"><a href="/departments/" class="btn bg-clff5f60 ajas-apply-btn">View all departments</a></div>
@@ -218,20 +212,11 @@ are listed on the programmes page.</p>
 </div></div></div></div>
 </div></div>
 <div class="col-benefit-right">
-<div class="apply-admission bg-apply-type1">
-<div class="apply-admission-wrap type3 bd-type2"><div class="apply-admission-inner">
-<h2 class="title text-center"><span>Apply for admission</span></h2>
-</div></div>
-<div class="form-apply"><div class="section-overlay183251"></div>
-<form action="#" class="apply-now" onsubmit="return false;">
-<ul>
-<li><input type="text" placeholder="Name"></li>
-<li><input type="email" placeholder="Email"></li>
-<li><input type="tel" placeholder="Phone"></li>
-</ul>
-<div class="btn-50 hv-border text-center"><a href="/admission/" class="btn bg-clff5f60">Apply now</a></div>
-</form>
-</div>
+<div class="ajas-apply-cta">
+<h2>Apply for admission</h2>
+<p>Merit and management seats are open for 2026&ndash;27 across every UG Honours and PG programme.</p>
+<a href="/admission/" class="ajas-apply-cta-btn">Start your application <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+<a href="/prospectus-2026-27/" class="ajas-apply-cta-link">View programmes &amp; fees</a>
 </div>
 </div>
 </div>

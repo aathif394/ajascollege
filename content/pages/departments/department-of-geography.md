@@ -3,7 +3,6 @@ title: Department of Geography
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /departments/department-of-geography/
 type: page
-image: "/assets/uploads/2024/05/Frame.svg"
 ---
 
 ## About
@@ -18,7 +17,6 @@ This programme in particular will impart knowledge in conventional and recent co
 
 The mission of a geography department is to advance knowledge and understanding of the Earth’s physical and human environments through research, education, and outreach.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Head Of Department
 
@@ -46,4 +44,3 @@ Head of Department
 | --- | --- |
 | Faculty | Yazeena Pharveen M |
 | MSc Geography | Mohammed Abdul Ganiyy A P |
-| MSc Geography,NET | Gallery |

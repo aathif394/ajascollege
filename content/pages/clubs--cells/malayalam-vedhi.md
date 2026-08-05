@@ -3,7 +3,6 @@ title: MALAYALAM VEDHI
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/malayalam-vedhi/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About
@@ -20,7 +19,6 @@ cultural festivals related to Kerala traditions.
 pride in regional heritage.
 -Helps enhance language skills
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -30,7 +28,6 @@ To preserve, promote, and celebrate the richness of the Malayalam language, lite
 
 The mission of Malayalam Vedhi is to inspire a deep appreciation and love for the Malayalam language and its rich literary heritage. The club seeks to create a vibrant platform for students to express their creativity through writing, reading, and cultural activities conducted in Malayalam. It aims to nurture linguistic pride, promote the beauty of native expression, and preserve the cultural essence of Kerala while encouraging innovative engagement with the language in modern contexts.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Club Coordinator :
 

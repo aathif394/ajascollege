@@ -1,0 +1,137 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getChildPages } from "../../lib/pageListing";
+
+const depts = await getChildPages("/departments/");
+
+const iconFor = (title: string) => {
+  const t = title.toLowerCase();
+  if (t.includes("computer application")) return "fa-laptop";
+  if (t.includes("computer science")) return "fa-desktop";
+  if (t.includes("arabic")) return "fa-language";
+  if (t.includes("commerce")) return "fa-briefcase";
+  if (t.includes("geography")) return "fa-globe";
+  if (t.includes("islamic finance")) return "fa-university";
+  if (t.includes("english")) return "fa-book";
+  if (t.includes("food technology")) return "fa-cutlery";
+  if (t.includes("physical education")) return "fa-futbol-o";
+  if (t.includes("microbiology") || t.includes("micro biology")) return "fa-flask";
+  if (t.includes("languages")) return "fa-comments";
+  if (t.includes("islamic studies")) return "fa-moon-o";
+  if (t.includes("economics") || t.includes("non core")) return "fa-line-chart";
+  if (t.includes("psychology")) return "fa-lightbulb-o";
+  return "fa-graduation-cap";
+};
+---
+
+<BaseLayout
+  title="Departments"
+  description="Fourteen departments offering UG (Honours) and PG programmes affiliated to the University of Calicut."
+  pageTitle="Departments"
+>
+  <div class="ajas-listing">
+    <div class="container">
+      <p class="listing-intro">
+        Fourteen departments offering UG (Honours) and PG programmes affiliated to the University
+        of Calicut.
+      </p>
+      <div class="dept-grid">
+        {
+          depts.map((d) => (
+            <a class="dept-card" href={d.permalink}>
+              <span class="dept-ico">
+                <i class={`fa ${iconFor(d.title)}`} aria-hidden="true" />
+              </span>
+              <h2>{d.title}</h2>
+              {d.blurb && <p>{d.blurb}</p>}
+              <span class="dept-more">
+                Explore department <i class="fa fa-long-arrow-right" aria-hidden="true" />
+              </span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .ajas-listing {
+    padding: 40px 0 64px;
+    background: #f6f8fb;
+    min-height: 40vh;
+  }
+  .listing-intro {
+    max-width: 40rem;
+    margin: 0 0 30px;
+    color: #4b5b70;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  .dept-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) {
+    .dept-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 1000px) {
+    .dept-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .dept-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    box-shadow: 0 8px 26px rgba(24, 50, 81, 0.08);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .dept-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(24, 50, 81, 0.14);
+  }
+  .dept-ico {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #183251, #3f4c99);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  .dept-card h2 {
+    margin: 0 0 8px;
+    font-size: 1.08rem;
+    color: #183251;
+    line-height: 1.35;
+  }
+  .dept-card p {
+    margin: 0 0 16px;
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.6;
+    flex: 1;
+  }
+  .dept-more {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ff5f60;
+  }
+  .dept-more i {
+    margin-left: 4px;
+    transition: transform 0.2s;
+  }
+  .dept-card:hover .dept-more i {
+    transform: translateX(4px);
+  }
+</style>

@@ -3,7 +3,6 @@ title: Department of Computer Application
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /departments/department-of-computer-application/
 type: page
-image: "/assets/uploads/2024/05/Frame.svg"
 ---
 
 ## About
@@ -18,7 +17,6 @@ To be a centre of excellence in computer applications education, fostering innov
 
 Provide quality education in computer applications and equip students with essential technical and professional skills. It aims to prepare students for the IT industry through practical learning and industry exposure. The department encourages innovation, research, and ethical responsibility among learners. Its goal is to produce competent and socially responsible computer professionals ready to meet global challenges.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Head Of Department
 
@@ -32,4 +30,3 @@ Head of Department
 | --- | --- |
 | Faculty | Anfa Shareef |
 | MCA | Mohammed Shihabudheen A P |
-| MSc Mathematics | Gallery |

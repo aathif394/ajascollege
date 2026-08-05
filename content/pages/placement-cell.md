@@ -3,7 +3,6 @@ title: Placement Cell
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /placement-cell/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About Placement Cell
@@ -20,7 +19,6 @@ The Placement Cell organizes career guidance programs for all the students start
 4. To strengthen linkages between the institution and industry for better placement opportunities.
 5. To ensure the highest possible placement rate for all eligible students.
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -30,7 +28,6 @@ To facilitate holistic student development by enhancing employability and ensuri
 
 To equip students with professional competencies, communication skills, and industry-relevant knowledge through continuous training, career guidance, and placement support.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 |  |  |
 | --- | --- |

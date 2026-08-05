@@ -1,0 +1,66 @@
+---
+interface Props {
+  items: { label: string; file: string }[];
+}
+const { items } = Astro.props;
+---
+
+<div class="ajas-attachments">
+  <h3>Downloads</h3>
+  <ul>
+    {
+      items.map((a) => (
+        <li>
+          <a href={a.file} target="_blank" rel="noopener">
+            <i class="fa fa-file-pdf-o" aria-hidden="true" />
+            <span>{a.label}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .ajas-attachments {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e8eef4;
+  }
+  .ajas-attachments h3 {
+    margin: 0 0 0.85rem;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #3f4c99;
+    font-family: inherit;
+  }
+  .ajas-attachments ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 8px;
+  }
+  .ajas-attachments a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: #f4f6fa;
+    border-radius: 8px;
+    color: #183251;
+    font-weight: 500;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .ajas-attachments a:hover {
+    background: #eef1fb;
+    color: #ff5f60;
+  }
+  .ajas-attachments a i {
+    color: #ff5f60;
+    font-size: 1rem;
+  }
+</style>

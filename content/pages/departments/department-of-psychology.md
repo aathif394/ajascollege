@@ -3,7 +3,6 @@ title: PG Department of Psychology
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /departments/department-of-psychology/
 type: page
-image: "/assets/uploads/2024/05/Frame.svg"
 ---
 
 ## About
@@ -18,7 +17,6 @@ The vision of Psychology Department involve envisioning a community of students 
 
 The mission of Psychology Department involves fostering a comprehensive understanding of psychological principles, promoting critical thinking skills, and preparing students for careers or further studies in psychology. It aims to provide a supportive learning environment, facilitate research opportunities, and cultivate ethical and culturally sensitive practitioners in the field.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Head Of Department
 
@@ -29,4 +27,3 @@ Head of Department
 |  |  |
 | --- | --- |
 | Faculty | Bisni Lidiya N A |
-| MA Applied Psychology , NET | Gallery |

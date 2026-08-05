@@ -3,7 +3,6 @@ title: Students Initiative in Palliative Club
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/students-initiative-in-palliative-club/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About
@@ -14,7 +13,14 @@ The Students’ Initiative in Palliative (SIP) Club is a student-driven movement
 
 ## Objectives
 
-1.To promote awareness among students about the importance and philosophy of palliative care. 2.To instill empathy, compassion, and a sense of social responsibility in young minds. 3.To encourage student participation in community outreach and patient support activities. 4.To collaborate with palliative care institutions and experts for knowledge sharing and training. 5.To organize seminars, workshops, and awareness campaigns on health, care, and emotional well-being. 6.To provide emotional and moral support to patients and families through volunteer initiatives. 7.To create a culture of kindness and humanitarian service within the campus community. 8.To inspire lifelong commitment to social care and human values among students. ![](/assets/uploads/2024/05/Frame-1.svg)
+1. To promote awareness among students about the importance and philosophy of palliative care.
+2. To instill empathy, compassion, and a sense of social responsibility in young minds.
+3. To encourage student participation in community outreach and patient support activities.
+4. To collaborate with palliative care institutions and experts for knowledge sharing and training.
+5. To organize seminars, workshops, and awareness campaigns on health, care, and emotional well-being.
+6. To provide emotional and moral support to patients and families through volunteer initiatives.
+7. To create a culture of kindness and humanitarian service within the campus community.
+8. To inspire lifelong commitment to social care and human values among students.
 
 ## Vision
 
@@ -24,7 +30,6 @@ The Students’ Initiative in Palliative Club envisions cultivating a compassion
 
 The mission of the Students’ Initiative in Palliative Club is to empower students with knowledge, sensitivity, and skills to actively contribute to palliative care through education, volunteering, and outreach programs. The club seeks to organize awareness campaigns, training sessions, and collaborative activities with healthcare and palliative institutions to extend holistic care to patients and their families. Through continuous engagement, it aims to instill empathy, community spirit, and a lifelong commitment to compassionate service.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Club Coordinator :
 

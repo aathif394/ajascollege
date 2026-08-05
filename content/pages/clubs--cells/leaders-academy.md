@@ -3,7 +3,6 @@ title: "Leader's Academy"
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/leaders-academy/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 # Leader’s Academy
@@ -22,7 +21,6 @@ To promote a culture of innovation and creativity among students.
 To cultivate a sense of social responsibility and community engagement.
 To support students in their personal and professional development through mentorship and guidance.
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -38,7 +36,6 @@ To encourage innovation, self-awareness, and emotional intelligence as foundatio
 
 To empower students to become proactive leaders who make a difference within and beyond the campus community.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Club Coordinator :
 

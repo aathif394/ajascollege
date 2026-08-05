@@ -236,9 +236,29 @@ export function looksLikeAdmission(body: string, permalink: string): boolean {
   );
 }
 
-export function looksLikeVision(body: string, title: string): boolean {
-  return (
-    /vision/i.test(title) ||
-    (/## Vision/i.test(body) && /## Mission/i.test(body))
+/**
+ * Only the dedicated Vision & Mission page should get the 2-panel layout.
+ * Matching on "has a Vision heading and a Mission heading" false-positives on
+ * every department/club/cell page (they almost all have their own Vision +
+ * Mission subsections among several other sections) and wrecks them — see
+ * incident where placement-cell/department pages rendered as two giant
+ * cartoon panels with every other section (tables, galleries) silently
+ * dropped. Scope this to pages that are ONLY Vision + Mission.
+ */
+export function looksLikeVision(body: string, title: string, permalink?: string): boolean {
+  if (permalink && normalizeForVisionCheck(permalink) === "/vision-mission/") return true;
+  if (!/vision/i.test(title)) return false;
+  const headings = (body.match(/^##\s+(.+)$/gm) || []).map((h) =>
+    h.replace(/^##\s+/, "").trim().toLowerCase(),
   );
+  return (
+    headings.length > 0 &&
+    headings.length <= 2 &&
+    headings.every((h) => h === "vision" || h === "mission")
+  );
+}
+
+function normalizeForVisionCheck(p: string): string {
+  const s = p.startsWith("/") ? p : `/${p}`;
+  return s.endsWith("/") ? s : `${s}/`;
 }

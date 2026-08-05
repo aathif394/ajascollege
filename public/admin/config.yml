@@ -330,3 +330,16 @@ collections:
       - { label: Role (profiles), name: role, widget: string, required: false }
       - { label: Credentials, name: credentials, widget: string, required: false }
       - { label: "Page content (visual editor)", name: body, widget: markdown, hint: "Edit like Word — headings, bold, lists, images. Never paste HTML code." }
+      - label: "Downloads / attachments (optional)"
+        name: attachments
+        widget: list
+        required: false
+        summary: "{{fields.label}}"
+        hint: "Shows as a download list at the bottom of the page. Use for PDFs, forms, brochures — anything besides the main content."
+        fields:
+          - { label: Link text, name: label, widget: string }
+          - label: File
+            name: file
+            widget: file
+            media_folder: src/assets/uploads
+            public_folder: /assets/uploads

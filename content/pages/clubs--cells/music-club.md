@@ -3,7 +3,6 @@ title: Music Club
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/music-club/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About
@@ -14,7 +13,6 @@ The Music Club of Al – Jamia Arts & Science College, Poopalam is a vibrant and
 
 The music club is vibrant community where rhythm meets passion, and creativity finds its voice. our club brings together students who share a love for music in all its forms. The music club offers a space to learn, collaborate, and express themselves freely.
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -24,7 +22,6 @@ To create a thriving musical culture on campus that celebrates diversity, innova
 
 To inspire and nurture the musical talents within the college community by providing opportunities for learning, performance, and creative collaboration. We strive to build an inclusive environment where students can explore different genres, refine their skills, and share their musical journeys with others.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Club Coordinator :
 

@@ -3,7 +3,6 @@ title: Department of Microbiology
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /departments/department-of-micro-biology/
 type: page
-image: "/assets/uploads/2024/05/Frame.svg"
 ---
 
 ## About
@@ -16,7 +15,7 @@ To inspire and empower students with a transformative education in microbiology,
 
 ## Mission
 
-Provide a strong and engaging curriculum that combines theory, practical skills and research to prepare students for careers in microbiology. Encourage curiosity and creativity by involving students in research and exploring new developments in microbiology. Raise awareness about the role of Microbiology in solving global challenges and inspire students to make ethical and meaningful contributions to society. ![](/assets/uploads/2024/05/Frame.svg)
+Provide a strong and engaging curriculum that combines theory, practical skills and research to prepare students for careers in microbiology. Encourage curiosity and creativity by involving students in research and exploring new developments in microbiology. Raise awareness about the role of Microbiology in solving global challenges and inspire students to make ethical and meaningful contributions to society.
 
 ## Head Of Department
 
@@ -30,4 +29,3 @@ Head of Department
 | --- | --- |
 | Faculty | Dr. Thahiya Naushad |
 | PHD, MSc Applied Microbiology, NET | Aiswarya Rajan |
-| MSc Micro Biology | Gallery |

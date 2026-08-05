@@ -15,7 +15,7 @@ Twenty-five student clubs and statutory cells — arts, sports, coding, literary
 
 National Service Scheme units running camps, outreach drives and community service throughout the year.
 
-[Career & Placements](/career-and-placements/)
+[Career & Placements](/placement-cell/)
 
 Training, aptitude coaching and recruitment drives coordinated by the placement cell.
 

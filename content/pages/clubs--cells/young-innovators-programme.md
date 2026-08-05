@@ -3,7 +3,6 @@ title: Young Innovators Programme
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/young-innovators-programme/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About
@@ -12,7 +11,6 @@ image: "/assets/uploads/2024/05/Frame-1.svg"
 
 The Young Innovators Programme (YIP) is a flagship initiative of the Government of Kerala designed to promote innovation and entrepreneurship among students at various levels of education. The programme aims to identify creative minds, nurture their ideas, and transform them into tangible solutions that address real-world challenges. Through a structured framework of mentoring, training, and exposure, YIP provides students with opportunities to explore their potential, collaborate with experts, and contribute meaningfully to society through innovation.
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -30,7 +28,6 @@ To cultivate an ecosystem of innovation and creativity within the institution by
 
 5. To integrate innovation-driven learning into the academic environment, thereby nurturing responsible, skilled, and future-ready citizens.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Club Coordinator :
 

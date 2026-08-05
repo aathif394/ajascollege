@@ -6,6 +6,7 @@ import ArticleShell from "../components/ArticleShell.astro";
 import EntityArticle from "../components/EntityArticle.astro";
 import SmartPage from "../components/layouts/SmartPage.astro";
 import CmsImage from "../components/CmsImage.astro";
+import AttachmentList from "../components/AttachmentList.astro";
 import { optimizeHtmlImages } from "../lib/cmsImage";
 import {
   getAllEntries,
@@ -59,6 +60,8 @@ const credentials = "credentials" in entry.data ? entry.data.credentials : undef
 const displayName =
   "name" in entry.data && entry.data.name ? String(entry.data.name) : entry.data.title;
 const date = "date" in entry.data ? entry.data.date : undefined;
+const attachments =
+  "attachments" in entry.data ? entry.data.attachments : undefined;
 
 /** Markdown/HTML body with CMS images rewritten to optimized webp */
 const bodyHtmlRaw = body
@@ -143,14 +146,21 @@ if (isNews) {
         body={body}
         permalink={perm}
         image={image}
+        attachments={attachments}
       />
     ) : bodyHtml ? (
       <ArticleShell wide={t === "listing"} variant={t === "listing" ? "listing" : "info"}>
         <Fragment set:html={bodyHtml} />
+        {attachments && attachments.length > 0 && (
+          <AttachmentList items={attachments} />
+        )}
       </ArticleShell>
     ) : (
       <ArticleShell wide={t === "listing"} variant={t === "listing" ? "listing" : "info"}>
         <Content />
+        {attachments && attachments.length > 0 && (
+          <AttachmentList items={attachments} />
+        )}
       </ArticleShell>
     )
   }
@@ -169,7 +179,6 @@ if (isNews) {
     border-radius: 12px;
     padding: 28px 24px 32px;
     box-shadow: 0 10px 36px rgba(24, 50, 81, 0.08);
-    border-top: 4px solid #183251;
   }
   @media (min-width: 768px) {
     .ajas-profile-card {

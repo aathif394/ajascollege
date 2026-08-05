@@ -47,40 +47,11 @@ National Service Scheme popularly known as NSS, the scheme was launched in Gandh
 
 ## Reports
 
-## NSS Report
-
-## 2024-2025
-
-[Download](/assets/downloads/bb20d7fd153a83d61ee201c438fc491b370a18aa.pdf)
-
-## NSS Report
-
-## 2023-2024
-
-[Download](/assets/downloads/b5b5638cef408174da735830b5f73f0c26987031.pdf)
-
-## NSS Report
-
-## 2022-2023
-
-[Download](/assets/downloads/8f8976b4e867a3603bb368b1f5cfba4787570d8d.pdf)
-
-## NSS Report
-
-## 2021-2022
-
-[Download](/assets/downloads/1f142fe82844ab09d2b18b70737469b2ce8fed60.pdf)
-
-## NSS Report
-
-## 2020-2021
-
-[Download](/assets/downloads/5d15e5ce335fcbeed2422a8d6f96e3f264d13023.pdf)
-
-## NSS Report
-
-## 2019-2020
-
-[Download](/assets/downloads/1d5d2ca2fd42b3fb542e32f0638c22b8ac9ecc4d.pdf)
-
-## Gallery
+| Year | Report |
+| --- | --- |
+| 2024-2025 | [Download](/assets/downloads/bb20d7fd153a83d61ee201c438fc491b370a18aa.pdf) |
+| 2023-2024 | [Download](/assets/downloads/b5b5638cef408174da735830b5f73f0c26987031.pdf) |
+| 2022-2023 | [Download](/assets/downloads/8f8976b4e867a3603bb368b1f5cfba4787570d8d.pdf) |
+| 2021-2022 | [Download](/assets/downloads/1f142fe82844ab09d2b18b70737469b2ce8fed60.pdf) |
+| 2020-2021 | [Download](/assets/downloads/5d15e5ce335fcbeed2422a8d6f96e3f264d13023.pdf) |
+| 2019-2020 | [Download](/assets/downloads/1d5d2ca2fd42b3fb542e32f0638c22b8ac9ecc4d.pdf) |

@@ -3,7 +3,6 @@ title: SC/ST Cell
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/sc-st-cell/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About
@@ -12,7 +11,6 @@ image: "/assets/uploads/2024/05/Frame-1.svg"
 
 The SC/ST Cell at Al Jamia Arts and science College was constituted in accordance with guidelines issued by the UGC and Government of Kerala. The Cell is committed to ensuring equal educational opportunities, safeguarding rights, and promoting the welfare of students from Scheduled Castes and Scheduled Tribes communities within the institution. Its objective are to  ensure SC/ST enrolment and retention in various programs ,  Facilitate access to scholarships and financial assistance offered by Central/State/UGC bodies and Conduct orientation and remedial coaching for SC/ST students to bridge learning gaps.
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -53,7 +51,6 @@ o Create support networks and peer groups to help SC/ST students connect,
 share experiences, and support each other in their academic and personal
 journeys.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Club Coordinator :
 

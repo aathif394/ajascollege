@@ -1,0 +1,149 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CmsImage from "../../components/CmsImage.astro";
+import { getChildPages } from "../../lib/pageListing";
+
+const labs = await getChildPages("/labs/");
+---
+
+<BaseLayout
+  title="Laboratories"
+  description="Practical teaching laboratories supporting the science, computing and psychology programmes."
+  pageTitle="Laboratories"
+>
+  <div class="ajas-listing">
+    <div class="container">
+      <p class="listing-intro">
+        Practical teaching laboratories supporting the science, computing and psychology
+        programmes.
+      </p>
+      <div class="ajas-grid">
+        {
+          labs.map((l) => (
+            <article class="ajas-card">
+              <a class="ajas-card-media" href={l.permalink}>
+                {l.image ? (
+                  <CmsImage src={l.image} alt="" preset="card" fit="cover" />
+                ) : (
+                  <div class="ajas-card-ph" />
+                )}
+              </a>
+              <div class="ajas-card-body">
+                <h2>
+                  <a href={l.permalink}>{l.title}</a>
+                </h2>
+                {l.blurb && <p>{l.blurb}</p>}
+                <a class="ajas-card-more" href={l.permalink} aria-label={`View ${l.title}`}>
+                  View lab <i class="fa fa-long-arrow-right" aria-hidden="true" />
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .ajas-listing {
+    padding: 40px 0 64px;
+    background: #f6f8fb;
+    min-height: 40vh;
+  }
+  .listing-intro {
+    max-width: 40rem;
+    margin: 0 0 30px;
+    color: #4b5b70;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  .ajas-grid {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) {
+    .ajas-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 1000px) {
+    .ajas-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .ajas-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 26px rgba(24, 50, 81, 0.09);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .ajas-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(24, 50, 81, 0.14);
+  }
+  .ajas-card-media {
+    position: relative;
+    display: block;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #eef2f7;
+  }
+  .ajas-card-media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .ajas-card:hover .ajas-card-media :global(img) {
+    transform: scale(1.05);
+  }
+  .ajas-card-ph {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #183251, #3f4c99);
+  }
+  .ajas-card-body {
+    padding: 16px 18px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .ajas-card-body h2 {
+    font-size: 1.05rem;
+    margin: 0 0 8px;
+    line-height: 1.4;
+  }
+  .ajas-card-body h2 a {
+    color: #183251;
+    text-decoration: none;
+  }
+  .ajas-card-body h2 a:hover {
+    color: #ff5f60;
+  }
+  .ajas-card-body p {
+    margin: 0 0 14px;
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.6;
+    flex: 1;
+  }
+  .ajas-card-more {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ff5f60;
+    text-decoration: none;
+  }
+  .ajas-card-more i {
+    margin-left: 4px;
+    transition: transform 0.2s;
+  }
+  .ajas-card:hover .ajas-card-more i {
+    transform: translateX(4px);
+  }
+</style>

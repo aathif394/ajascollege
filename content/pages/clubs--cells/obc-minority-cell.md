@@ -3,7 +3,6 @@ title: OBC /Minority Cell
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/obc-minority-cell/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About
@@ -32,7 +31,6 @@ The Other Backward Class (OBC) Cell of Al Jamia College is established in accord
 1. Awareness and Inclusivity: Organize awareness programs, workshops, and seminars to promote inclusivity and educate the campus community about OBC policies and benefits.
 2. Engagement with Student Groups: Encourage the formation and participation of OBC student associations. Involve these groups in feedback, representation, and policy improvement processes to strengthen inclusivity within the campus.
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -61,7 +59,6 @@ Empower OBC and minority students through leadership development programs, skill
 7. Building Community and Support Networks:
 Create support networks and peer groups to help students from OBC and minority communities connect, share experiences, and support each other in  their academic and personal journeys.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Club Coordinator :
 

@@ -3,7 +3,6 @@ title: Anti-Ragging Cell
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/anti-ragging-cell/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About
@@ -14,7 +13,6 @@ Any disorderly conduct whether by words spoken or written by an act which has th
 
 It shall consider the recommendations of the anti-ragging squad and take appropriate decisions, including spelling out suitable punishments to those found guilty. If any incident of ragging comes to the notice of the authority, the student concerned shall be given the liberty to explain. If the explanation is not found satisfactory, the authority would take strict action including expulsion.
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -34,7 +32,6 @@ To ensure a campus free from ragging and harassment, fostering an environment of
 6. Training and Capacity Building:
    Training faculty members and student volunteers to identify, prevent, and address instances of ragging, enhancing their capacity to handle such situations sensitively and effectively
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Club Coordinator :
 

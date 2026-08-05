@@ -3,7 +3,6 @@ title: Department of Computer Science and Artificial Intelligence
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /departments/department-of-computer-science/
 type: page
-image: "/assets/uploads/2024/05/Frame.svg"
 ---
 
 ## About
@@ -18,7 +17,6 @@ To be a centre of excellence in computer science and artificial intelligence edu
 
 The mission of the Department of Computer Science and Artificial Intelligence is to provide quality education in computing, programming, data science, and emerging AI technologies. It aims to equip students with strong analytical, problem-solving, and professional skills through hands-on learning, research, and industry engagement. The department encourages innovation, entrepreneurship, and ethical responsibility in the application of technology. Its goal is to produce competent, creative, and socially responsible professionals ready to shape the future of intelligent systems.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Head Of Department
 
@@ -32,4 +30,3 @@ Head of Department
 | --- | --- |
 | Faculty | Shameela Nellipparamban |
 | MSc Computer Science, NET | Jasira M K |
-| MCA,NET | Gallery |

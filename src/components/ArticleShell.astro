@@ -43,15 +43,11 @@ const outer = wide
     border-radius: 12px;
     padding: 28px 22px 36px;
     box-shadow: 0 10px 36px rgba(24, 50, 81, 0.08);
-    border-top: 4px solid #183251;
   }
   @media (min-width: 768px) {
     .ajas-page-card {
       padding: 40px 44px 48px;
     }
-  }
-  .ajas-page-shell.is-wide .ajas-page-card {
-    border-top-color: #3f4c99;
   }
 
   /* ——— Prose designed for college content ——— */
@@ -112,7 +108,7 @@ const outer = wide
     box-shadow: 0 8px 28px rgba(24, 50, 81, 0.1);
     background: #f8fafc;
   }
-  /* Figure-style: image + caption if present */
+  /* Figure-style: single lead image + caption */
   .ajas-prose p:has(> img:only-child) {
     text-align: center;
     background: #f4f6fa;
@@ -123,6 +119,30 @@ const outer = wide
   .ajas-prose p:has(> img:only-child) img {
     margin: 0 auto;
     box-shadow: 0 6px 20px rgba(24, 50, 81, 0.1);
+  }
+  /* Photo galleries: 2+ consecutive image-only paragraphs lay out as a grid tile,
+     not a stack of full-width boxes one after another. */
+  .ajas-prose p:has(> img:only-child):has(+ p:has(> img:only-child)),
+  .ajas-prose p:has(> img:only-child) + p:has(> img:only-child) {
+    display: inline-block;
+    width: calc(33.333% - 10px);
+    box-sizing: border-box;
+    vertical-align: top;
+    margin: 0 10px 10px 0;
+    padding: 8px;
+  }
+  .ajas-prose p:has(> img:only-child):has(+ p:has(> img:only-child)) img,
+  .ajas-prose p:has(> img:only-child) + p:has(> img:only-child) img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    margin: 0;
+  }
+  @media (max-width: 640px) {
+    .ajas-prose p:has(> img:only-child):has(+ p:has(> img:only-child)),
+    .ajas-prose p:has(> img:only-child) + p:has(> img:only-child) {
+      width: calc(50% - 8px);
+    }
   }
   .ajas-prose a {
     color: #3f4c99;

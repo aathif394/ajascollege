@@ -46,47 +46,50 @@
   /* Edukin #scroll-top is bottom:23px, height 35px */
   .ajas-search-trigger {
     position: fixed;
-    right: 18px;
-    bottom: 72px; /* clears #scroll-top */
+    right: 20px;
+    bottom: 78px; /* clears #scroll-top */
     z-index: 9990;
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     border: 0;
     border-radius: 50%;
-    background: #183251;
+    background: linear-gradient(150deg, #183251, #3f4c99);
     color: #fff;
-    box-shadow: 0 8px 22px rgba(24, 50, 81, 0.35);
+    box-shadow: 0 10px 26px rgba(24, 50, 81, 0.32);
     cursor: pointer;
     font-size: 17px;
     line-height: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s ease, transform 0.15s ease;
+    transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.3, 1), box-shadow 0.2s ease;
   }
   .ajas-search-trigger:hover {
-    background: #7a1f2b;
-    transform: translateY(-1px);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 14px 32px rgba(24, 50, 81, 0.4);
   }
   .ajas-search-trigger:focus-visible {
     outline: 2px solid #c4a35a;
     outline-offset: 3px;
   }
 
-  /* Keep go-top aligned under search, themed navy */
+  /* Keep go-top aligned under search, coral so the pair reads as one stack */
   #scroll-top {
-    right: 24px !important;
+    right: 25px !important;
     bottom: 22px !important;
-    width: 40px !important;
-    height: 40px !important;
-    line-height: 40px !important;
+    width: 42px !important;
+    height: 42px !important;
+    line-height: 42px !important;
     border-radius: 50% !important;
-    background: #3f4c99 !important;
+    background: linear-gradient(150deg, #ff5f60, #e6484f) !important;
+    box-shadow: 0 8px 20px rgba(230, 72, 79, 0.35) !important;
     z-index: 9980 !important;
     overflow: hidden;
+    transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.3, 1) !important;
   }
   #scroll-top:hover {
-    background: #7a1f2b !important;
+    background: linear-gradient(150deg, #ff5f60, #e6484f) !important;
+    transform: translateY(-2px) scale(1.05);
   }
 
   /* ========== Modal shell ========== */
@@ -118,10 +121,9 @@
     display: flex;
     flex-direction: column;
     background: #fff;
-    border-radius: 12px;
+    border-radius: 16px;
     box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
     overflow: hidden;
-    border-top: 4px solid #7a1f2b;
   }
   .ajas-search-head {
     flex: 0 0 auto;

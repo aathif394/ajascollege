@@ -3,7 +3,6 @@ title: Arts Club
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/arts-club/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About
@@ -20,7 +19,6 @@ The Arts Club is committed to promoting art as a means of intellectual and perso
 
 By organizing cultural programs, training sessions, and exhibitions, the Arts Club seeks to enhance aesthetic awareness and encourage students to appreciate both traditional and modern artistic expressions. It strives to create an inclusive environment where creativity transcends barriers of discipline, language, and background. The club also represents the institution in regional, intercollegiate, and university-level events, showcasing the collective artistic excellence of its members. In essence, the Arts Club functions as a bridge between education and expression, enabling students to engage meaningfully with culture, community, and creativity.
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -34,7 +32,6 @@ The mission of the Arts Club is to cultivate a nurturing and inspiring atmospher
 
 Through continuous artistic engagement, the Arts Club promotes collaboration, innovation, and aesthetic sensitivity among students. It recognizes art as a language of emotion and intellect—one that enhances confidence, empathy, and perspective. By organizing artistic initiatives and cultural celebrations, the club endeavors to make creativity an integral part of campus life, shaping students into thoughtful individuals who express themselves with authenticity and grace.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Club Coordinator :
 

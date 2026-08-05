@@ -3,7 +3,6 @@ title: TOURISM CLUB
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/tourism-club/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About
@@ -22,7 +21,6 @@ The primary objective of the Tourism Club is to cultivate an informed and respon
 
 Through workshops, heritage walks, exhibitions, and educational trips, the club strives to enhance students’ practical knowledge and appreciation of the world around them. It emphasizes experiential learning by linking theoretical understanding with real-world exposure. The Tourism Club also plays an instrumental role in promoting domestic and international tourism awareness, supporting initiatives that conserve heritage sites, protect the environment, and empower local communities. In essence, it aims to develop a generation of students who are not only knowledgeable about tourism but are also committed to preserving cultural identity and promoting sustainable travel.
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -36,7 +34,6 @@ The mission of the Tourism Club is to inspire and educate students to become res
 
 By organizing awareness programs, destination visits, seminars, and collaborative events, the Tourism Club seeks to develop the intellectual curiosity, adaptability, and ethical understanding required for success in the field of tourism. It aspires to create opportunities for students to engage in community-based tourism initiatives that contribute positively to society while enhancing their academic and professional competencies. Through its activities, the club strives to make tourism not merely a subject of study but a medium of learning, connection, and transformation.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Club Coordinator :
 

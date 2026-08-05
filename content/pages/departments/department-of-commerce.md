@@ -3,7 +3,6 @@ title: "Department of Commerce & Management Studies"
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /departments/department-of-commerce/
 type: page
-image: "/assets/uploads/2024/05/Frame.svg"
 ---
 
 ## About
@@ -23,7 +22,6 @@ The Department envisions empowering students with knowledge, skills, and values 
 4. **To encourage research, creativity, and critical thinking** that promote innovation and problem-solving skills among students.
 5. **To prepare globally competent graduates** capable of adapting to dynamic business environments and contributing to national and global development.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Head Of Department
 
@@ -43,4 +41,3 @@ Head of Department
 | Mcom, NET | Farisa Abdul Azees |
 | PhD , Mcom, NET | Rahees C |
 | Mcom | Anitha P |
-| Mcom | Gallery |

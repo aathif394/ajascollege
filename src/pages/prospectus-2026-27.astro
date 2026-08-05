@@ -1,0 +1,811 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CmsImage from "../components/CmsImage.astro";
+
+const pdfHref = "/assets/uploads/2026/05/AJAS-Prospectus-26-27_20260513_192943_0000.pdf";
+
+const glance = [
+  { label: "Established", value: "2010" },
+  { label: "Affiliated University", value: "University of Calicut" },
+  { label: "NAAC Grade", value: "B++" },
+  { label: "Campus", value: "50 acres, eco-friendly" },
+  { label: "Status", value: "Minority institution (NCMEI)" },
+  { label: "Certification", value: "ISO 9001:2015" },
+];
+
+const committee = [
+  { name: "Dr. Abdulssalam Ahmed", role: "Chairman" },
+  { name: "Mr. Sharafudheen AT", role: "Secretary" },
+  { name: "Dr. Moideenkutty AB", role: "Executive Member" },
+  { name: "Dr. Mohammed Ali (Koottil)", role: "Executive Member" },
+  { name: "Dr. Mohammed Shahin Thayyil", role: "Executive Member" },
+  { name: "Dr. Mohammed Bedeeuzzamaan", role: "Executive Member" },
+  { name: "Dr. Sabique MK", role: "Executive Member" },
+  { name: "Dr. Sadique PK", role: "Executive Member" },
+  { name: "Dr. Nahas Mala", role: "Executive Member" },
+  { name: "Dr. Abdul Basith PP", role: "Executive Member" },
+  { name: "Dr. ZA Ashraf", role: "Executive Member" },
+  { name: "Sulaiman Oorakam", role: "Executive Member" },
+  { name: "Yusuf KP Pallikkooth", role: "Executive Member" },
+  { name: "Ummer M Pooppalam", role: "Executive Member" },
+  { name: "Atheeq A", role: "Executive Member" },
+  { name: "Ishaqali KV", role: "Executive Member" },
+];
+
+const ugProgrammes = [
+  { name: "B.Sc Computer Science", eligibility: "+2 or equivalent with Mathematics/Computer Science/Computer Application/IT/Informatics/Additional Mathematics as one of the subjects", fee: "21,000" },
+  { name: "B.Sc Artificial Intelligence", eligibility: "+2 or equivalent with Mathematics/Computer Science/Computer Application/IT/Informatics/Additional Mathematics as one of the subjects", fee: "26,880" },
+  { name: "Bachelors of Computer Application (BCA)", eligibility: "+2 or equivalent with Mathematics/Computer Science/Computer Application/IT/Informatics/Additional Mathematics as one of the subjects", fee: "21,000" },
+  { name: "B.Sc Microbiology", eligibility: "+2 or equivalent with Physics, Chemistry and Biology", fee: "21,840" },
+  { name: "B.Sc Food Technology", eligibility: "+2 or equivalent with Science and Mathematics", fee: "21,840" },
+  { name: "B.Sc Psychology", eligibility: "+2 or equivalent with 45% marks", fee: "12,600" },
+  { name: "B.Sc Geography", eligibility: "+2 or equivalent", fee: "12,600" },
+  { name: "B.Com (Computer Application)", eligibility: "+2 or equivalent with at least one commerce subject; non-commerce +2 with ≥45% also eligible", fee: "12,600" },
+  { name: "BBA (Finance)", eligibility: "+2 or equivalent with not less than 45% marks", fee: "10,080" },
+  { name: "BA English Language and Literature", eligibility: "+2 or equivalent", fee: "10,080" },
+  { name: "BA Islamic Studies", eligibility: "+2 or equivalent", fee: "10,080" },
+];
+
+const pgProgrammes = [
+  { name: "M.Sc Psychology", eligibility: "BA/BA (Honours)/B.Sc with Psychology core", fee: "25,200" },
+  { name: "MA Islamic Finance", eligibility: "Any UG degree with at least 50% CGPA", fee: "21,000" },
+  { name: "MA Arabic Language and Literature", eligibility: "BA Arabic/Afsalul Ulama/Double main with Arabic/BA Functional Arabic/BA/B.Sc with Arabic as common course, ≥50% CGPA", fee: "21,000" },
+];
+
+const addOnCourses = [
+  "Fundamental Digital Literacy and Data Skills (ASAP)",
+  "Human Behaviour (SWAYAM)",
+  "Certificate in Content Writing and Proof Reading (Keltron)",
+  "Cyber Security (Keltron)",
+  "Data Analytics (Keltron)",
+  "SAP-FICO (G-Tech)",
+  "Business Analytics (ASAP)",
+  "Certificate Program in Cell Culture and Virology Techniques (ASAP)",
+  "Strategic Food Industrial Innovations",
+  "Food Product Development and Research Approach",
+];
+
+const infrastructure = [
+  { icon: "fa-book", title: "Library", text: "A well-curated collection of academic books, journals, reference materials and digital resources, in a quiet, student-friendly reading environment." },
+  { icon: "fa-microchip", title: "AI Lab", text: "Modern computing facilities for hands-on learning in AI, machine learning and data analytics, with practical exposure to emerging technologies." },
+  { icon: "fa-desktop", title: "ICT Classrooms", text: "Smart classrooms with digital presentations, multimedia resources and online learning tools for interactive, technology-driven teaching." },
+  { icon: "fa-users", title: "Conference Hall", text: "A dedicated space for academic meetings, discussions and administrative sessions." },
+  { icon: "fa-microphone", title: "Seminar Hall", text: "Seating for 200, hosting academic programs, workshops, conferences and guest lectures." },
+  { icon: "fa-flag", title: "Amphitheatre", text: "A spacious venue for cultural events, student activities and institutional gatherings." },
+  { icon: "fa-futbol-o", title: "Sports Ground", text: "Supports outdoor sports, training sessions and intercollegiate competitions." },
+  { icon: "fa-flask", title: "Science Laboratories", text: "Well-maintained labs for practical exposure, research activities and skill development across disciplines." },
+];
+
+const managementSteps = [
+  "Application submitted directly at the college office, and also through the link on the college website.",
+  "Admission granted only to candidates who secure the cut-off marks fixed by the management, subject to university and government norms.",
+  "Document verification: SSLC & Plus Two certificates, Transfer Certificate, Conduct Certificate, 2 copies of SSLC/Plus Two certificates, ID proof, 2 passport photos, University CAP Registration Printout.",
+  "Management application form must carry the signature of an authorized Management Committee member.",
+  "All prescribed admission and tuition fees remitted within the stipulated time.",
+];
+
+const meritSteps = [
+  "Application through the university's centralized admission process/allotment system; college application via the website link is mandatory.",
+  "Admission granted only to candidates who satisfy eligibility conditions prescribed by the university and government.",
+  "University publishes the rank list and allotment based on merit and reservation norms.",
+  "Candidates who receive allotment must report to the college within the time mentioned in the allotment memo.",
+  "Document verification: SSLC & Plus Two certificates, Transfer Certificate, Conduct Certificate, Community/Income certificates (if applicable), Allotment memo, ID proof, passport photos.",
+  "All prescribed admission and tuition fees remitted within the stipulated time.",
+];
+
+const sections = [
+  { id: "about", label: "About" },
+  { id: "vision", label: "Vision & Mission" },
+  { id: "committee", label: "Committee" },
+  { id: "programmes", label: "Programmes & Fees" },
+  { id: "add-on", label: "Add-On Courses" },
+  { id: "infrastructure", label: "Infrastructure" },
+  { id: "flagship", label: "Flagship" },
+  { id: "admission", label: "Admission" },
+];
+---
+
+<BaseLayout
+  title="Prospectus 2026–27"
+  description="Al Jamia Arts and Science College prospectus 2026–27 — programmes, fees, admission process, infrastructure and flagship initiatives."
+  variant="inner"
+  pageTitle="Prospectus 2026–27"
+>
+  <div class="pros">
+    <div class="pros-hero">
+      <div class="container">
+        <div class="pros-hero-grid">
+          <div class="pros-hero-fig">
+            <CmsImage
+              src="/assets/uploads/2024/01/P1222323-building-2048x1154-1.webp"
+              alt="Al Jamia Arts and Science College campus"
+              preset="hero"
+              fit="cover"
+              loading="eager"
+            />
+          </div>
+          <div class="pros-hero-body">
+            <p class="pros-eyebrow">Prospectus 2026–27</p>
+            <h1>Al Jamia Arts and Science College</h1>
+            <p class="pros-tag">"Learn Beyond Limits, Lead Beyond Borders"</p>
+            <p class="pros-lead">
+              Affiliated to the University of Calicut · Accredited NAAC B++ · Recognised by UGC
+              under 2(f) · ISO 9001:2015 certified
+            </p>
+            <div class="pros-hero-cta">
+              <a class="pros-btn pros-btn-primary" href={pdfHref} target="_blank" rel="noopener">
+                <i class="fa fa-download" aria-hidden="true" /> Download PDF
+              </a>
+              <a class="pros-btn pros-btn-ghost" href="/admission/">Apply for admission</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="pros-jump" aria-label="Section jump links">
+      <div class="container pros-jump-row">
+        {sections.map((s) => <a href={`#${s.id}`}>{s.label}</a>)}
+      </div>
+    </nav>
+
+    <div class="container">
+      <section id="about" class="pros-section">
+        <div class="pros-about-grid">
+          <div class="pros-prose">
+            <h2>About Us</h2>
+            <p>
+              Al Jamia Arts and Science College stands as a center of academic excellence,
+              innovation, and holistic development. Established in 2010, the institution is
+              affiliated with the University of Calicut, recognized by the Government, and
+              approved by AICTE. Accredited with a NAAC B++ Grade and certified under ISO
+              9001:2015, the college upholds high standards in teaching, learning, and
+              institutional practices. Nestled within a serene 50-acre eco-friendly campus and
+              honored with an 'A Grade' by the Haritha Keralam Mission, Al Jamia provides a
+              nurturing and inclusive environment that promotes both intellectual growth and
+              environmental consciousness.
+            </p>
+            <p>
+              The National Commission for Minority Educational Institutions, Government of India,
+              has granted minority status to the institution. Strategically located near
+              Perinthalmanna town along the Nilambur–highway Road, the college offers a serene and
+              accessible setting. As a fully residential campus, Al Jamia provides well-maintained
+              hostel facilities for both girls and boys, ensuring a safe, disciplined and
+              value-based living environment.
+            </p>
+          </div>
+          <dl class="pros-glance">
+            <h3>At a glance</h3>
+            {glance.map((g) => (
+              <div class="pros-glance-row">
+                <dt>{g.label}</dt>
+                <dd>{g.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      <section id="vision" class="pros-section pros-section-alt">
+        <h2 class="pros-section-title">Vision &amp; Mission</h2>
+        <div class="pros-vm-grid">
+          <div class="pros-vm-card">
+            <span class="pros-vm-kicker">Vision</span>
+            <p>
+              To provide value based education to enrich, enlighten and empower the young
+              generation to become the leaders of the future.
+            </p>
+          </div>
+          <div class="pros-vm-card pros-vm-card-b">
+            <span class="pros-vm-kicker">Mission</span>
+            <p>
+              To emerge as an academic institution for modern arts and science education, setting
+              a standard for the finest in the world.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="committee" class="pros-section">
+        <h2 class="pros-section-title">Management Committee</h2>
+        <div class="pros-committee-grid">
+          {committee.map((m) => (
+            <div class="pros-member">
+              <span class="pros-member-name">{m.name}</span>
+              <span class="pros-member-role">{m.role}</span>
+            </div>
+          ))}
+        </div>
+        <p class="pros-note">
+          Read a message from the Chairman on the <a href="/chairman-message/">Management Message</a> page.
+        </p>
+      </section>
+
+      <section id="programmes" class="pros-section pros-section-alt">
+        <h2 class="pros-section-title">Academic Programmes &amp; Fees</h2>
+        <p class="pros-lead-p">
+          From the academic year 2024–2025, the college has adopted the Four-Year Undergraduate
+          Programme (FYUGP) introduced by the University of Calicut. Undergraduate programmes are
+          structured for completion within three or four years; postgraduate programmes run two
+          years. The semester tuition fee is the same for students admitted under both merit and
+          management categories.
+        </p>
+
+        <h3 class="pros-subhead">Undergraduate Honours Programmes</h3>
+        <div class="pros-prog-grid">
+          {ugProgrammes.map((p) => (
+            <article class="pros-prog-card">
+              <h4>{p.name}</h4>
+              <p class="pros-prog-elig">{p.eligibility}</p>
+              <div class="pros-prog-fee">
+                <span>Fee / semester</span>
+                <strong>₹{p.fee}</strong>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <h3 class="pros-subhead">Postgraduate Programmes</h3>
+        <div class="pros-prog-grid">
+          {pgProgrammes.map((p) => (
+            <article class="pros-prog-card">
+              <h4>{p.name}</h4>
+              <p class="pros-prog-elig">{p.eligibility}</p>
+              <div class="pros-prog-fee">
+                <span>Fee / semester</span>
+                <strong>₹{p.fee}</strong>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="add-on" class="pros-section">
+        <h2 class="pros-section-title">Add-On / Certificate Courses</h2>
+        <p class="pros-lead-p">
+          Offered through Government-approved agencies — Keltron, ASAP, SWAYAM, IHRD and others.
+        </p>
+        <div class="pros-chips">
+          {addOnCourses.map((c) => <span class="pros-chip">{c}</span>)}
+        </div>
+      </section>
+
+      <section id="infrastructure" class="pros-section pros-section-alt">
+        <h2 class="pros-section-title">Infrastructure</h2>
+        <div class="pros-infra-grid">
+          {infrastructure.map((f) => (
+            <div class="pros-infra-card">
+              <span class="pros-infra-ico"><i class={`fa ${f.icon}`} aria-hidden="true" /></span>
+              <div>
+                <h4>{f.title}</h4>
+                <p>{f.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="flagship" class="pros-section">
+        <h2 class="pros-section-title">Our Flagship Programmes</h2>
+        <div class="pros-vm-grid">
+          <div class="pros-vm-card">
+            <span class="pros-vm-kicker">Leaders' Academy</span>
+            <p>
+              An exclusive training initiative for selected students to develop leadership
+              abilities, communication skills, personality enhancement and a global perspective —
+              preparing them for future professional and social leadership roles.
+            </p>
+          </div>
+          <div class="pros-vm-card pros-vm-card-b">
+            <span class="pros-vm-kicker">Competex</span>
+            <p>
+              A specialized coaching programme preparing students for competitive examinations —
+              Kerala PSC, NET, JRF, Civil Services, and other national-level examinations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="admission" class="pros-section pros-section-alt">
+        <h2 class="pros-section-title">Admission Process</h2>
+        <div class="pros-admit-grid">
+          <div class="pros-admit-col">
+            <h3 class="pros-subhead">Management Admission</h3>
+            <ol class="pros-steps">
+              {managementSteps.map((s) => <li>{s}</li>)}
+            </ol>
+          </div>
+          <div class="pros-admit-col">
+            <h3 class="pros-subhead">Merit Admission</h3>
+            <ol class="pros-steps">
+              {meritSteps.map((s) => <li>{s}</li>)}
+            </ol>
+          </div>
+        </div>
+        <p class="pros-note">
+          Under both routes, admission is complete only after document verification, fee payment,
+          and the Principal's signature/approval — followed by university registration or
+          confirmation. Classes commence strictly as per the schedule issued by the university.
+        </p>
+      </section>
+
+      <div class="pros-download-cta">
+        <div>
+          <h3>Need the full document?</h3>
+          <p>Download the complete prospectus as a PDF to save or print.</p>
+        </div>
+        <a class="pros-btn pros-btn-primary" href={pdfHref} target="_blank" rel="noopener">
+          <i class="fa fa-download" aria-hidden="true" /> Download Prospectus 2026–27
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .pros {
+    background: #f6f8fb;
+    padding-bottom: 64px;
+  }
+
+  /* ---------- hero ---------- */
+  .pros-hero {
+    background: #183251;
+  }
+  .pros-hero-grid {
+    display: grid;
+    gap: 0;
+  }
+  @media (min-width: 900px) {
+    .pros-hero-grid {
+      grid-template-columns: 1.05fr 1fr;
+      align-items: stretch;
+    }
+  }
+  .pros-hero-fig {
+    min-height: 220px;
+    overflow: hidden;
+  }
+  .pros-hero-fig :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .pros-hero-body {
+    padding: 40px 4px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+  }
+  @media (min-width: 900px) {
+    .pros-hero-body {
+      padding: 40px 8px 40px 48px;
+    }
+  }
+  .pros-eyebrow {
+    margin: 0 0 10px;
+    font-size: 12.5px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: #ffbe34;
+    font-weight: 600;
+  }
+  .pros-hero-body h1 {
+    margin: 0 0 8px;
+    font-size: clamp(24px, 3.4vw, 32px);
+    line-height: 1.2;
+  }
+  .pros-tag {
+    margin: 0 0 14px;
+    font-weight: 600;
+    color: #ff9d9e;
+    font-size: 15px;
+  }
+  .pros-lead {
+    margin: 0 0 24px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+  .pros-hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .pros-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 28px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: 0.25s;
+  }
+  .pros-btn-primary {
+    background: #ff5f60;
+    border-color: #ff5f60;
+    color: #fff;
+  }
+  .pros-btn-primary:hover {
+    background: #fff;
+    border-color: #fff;
+    color: #183251;
+  }
+  .pros-btn-ghost {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+  }
+  .pros-btn-ghost:hover {
+    background: #fff;
+    color: #183251;
+    border-color: #fff;
+  }
+
+  /* ---------- jump nav ---------- */
+  .pros-jump {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #fff;
+    border-bottom: 1px solid #e7ecf3;
+    box-shadow: 0 4px 14px rgba(24, 50, 81, 0.06);
+  }
+  .pros-jump-row {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    padding: 10px 16px;
+    scrollbar-width: thin;
+  }
+  .pros-jump-row a {
+    flex: 0 0 auto;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3f4c99;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.2s;
+  }
+  .pros-jump-row a:hover {
+    background: #eef1fb;
+    color: #183251;
+  }
+
+  /* ---------- shared section chrome ---------- */
+  .pros-section {
+    padding: 44px 0;
+    border-bottom: 1px solid #e7ecf3;
+    scroll-margin-top: 56px;
+  }
+  .pros-section:last-of-type {
+    border-bottom: none;
+  }
+  .pros-section-alt {
+    background: #fff;
+    margin: 0 -20px;
+    padding: 44px 20px;
+    border-radius: 14px;
+  }
+  .pros-section-title {
+    margin: 0 0 22px;
+    font-size: 1.5rem;
+    color: #183251;
+    border-left: 4px solid #ff5f60;
+    padding-left: 14px;
+  }
+  .pros-subhead {
+    margin: 30px 0 16px;
+    font-size: 1.1rem;
+    color: #3f4c99;
+  }
+  .pros-subhead:first-of-type {
+    margin-top: 10px;
+  }
+  .pros-lead-p {
+    color: #4b5b70;
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 760px;
+    margin: 0;
+  }
+  .pros-note {
+    margin: 22px 0 0;
+    font-size: 13.5px;
+    color: #6b7a8e;
+    line-height: 1.6;
+  }
+  .pros-note a {
+    color: #3f4c99;
+    font-weight: 600;
+  }
+
+  /* ---------- about + glance ---------- */
+  .pros-about-grid {
+    display: grid;
+    gap: 26px;
+  }
+  @media (min-width: 880px) {
+    .pros-about-grid {
+      grid-template-columns: 1.5fr 1fr;
+      align-items: start;
+    }
+  }
+  .pros-prose h2 {
+    margin: 0 0 16px;
+    font-size: 1.5rem;
+    color: #183251;
+    border-left: 4px solid #ff5f60;
+    padding-left: 14px;
+  }
+  .pros-prose p {
+    color: #4b5b70;
+    font-size: 15px;
+    line-height: 1.75;
+    margin: 0 0 14px;
+  }
+  .pros-glance {
+    background: #fff;
+    border-radius: 14px;
+    padding: 22px 22px 8px;
+    box-shadow: 0 10px 30px rgba(24, 50, 81, 0.07);
+    margin: 0;
+  }
+  .pros-glance h3 {
+    margin: 0 0 14px;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #3f4c99;
+  }
+  .pros-glance-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 11px 0;
+    border-bottom: 1px solid #eef2f7;
+    font-size: 13.5px;
+  }
+  .pros-glance-row:last-child {
+    border-bottom: 0;
+  }
+  .pros-glance-row dt {
+    color: #6b7a8e;
+    font-weight: 600;
+  }
+  .pros-glance-row dd {
+    margin: 0;
+    color: #183251;
+    font-weight: 600;
+    text-align: right;
+  }
+
+  /* ---------- vision/mission + flagship shared card ---------- */
+  .pros-vm-grid {
+    display: grid;
+    gap: 20px;
+  }
+  @media (min-width: 700px) {
+    .pros-vm-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .pros-vm-card {
+    background: linear-gradient(160deg, #183251, #28477a);
+    border-radius: 14px;
+    padding: 26px;
+  }
+  .pros-vm-card-b {
+    background: linear-gradient(160deg, #ff5f60, #e6484f);
+  }
+  .pros-vm-kicker {
+    display: block;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+  }
+  .pros-vm-card p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    font-size: 14.5px;
+  }
+
+  /* ---------- committee ---------- */
+  .pros-committee-grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  .pros-member {
+    background: #f4f6fc;
+    border-radius: 10px;
+    padding: 13px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .pros-member-name {
+    font-weight: 600;
+    color: #183251;
+    font-size: 14px;
+  }
+  .pros-member-role {
+    font-size: 12px;
+    color: #ff5f60;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  /* ---------- programme cards ---------- */
+  .pros-prog-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) {
+    .pros-prog-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 1000px) {
+    .pros-prog-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .pros-prog-card {
+    background: #f4f6fc;
+    border-radius: 12px;
+    padding: 18px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pros-prog-card h4 {
+    margin: 0;
+    font-size: 14.5px;
+    color: #183251;
+    line-height: 1.35;
+  }
+  .pros-prog-elig {
+    margin: 0;
+    font-size: 12.5px;
+    color: #64748b;
+    line-height: 1.55;
+    flex: 1;
+  }
+  .pros-prog-fee {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 10px;
+    border-top: 1px dashed #d7deea;
+  }
+  .pros-prog-fee span {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #8a97a8;
+  }
+  .pros-prog-fee strong {
+    color: #ff5f60;
+    font-size: 15px;
+  }
+
+  /* ---------- add-on chips ---------- */
+  .pros-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .pros-chip {
+    background: #eef1fb;
+    color: #3f4c99;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 16px;
+    border-radius: 20px;
+  }
+
+  /* ---------- infrastructure ---------- */
+  .pros-infra-grid {
+    display: grid;
+    gap: 18px;
+  }
+  @media (min-width: 700px) {
+    .pros-infra-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .pros-infra-card {
+    display: flex;
+    gap: 16px;
+    background: #f4f6fc;
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .pros-infra-ico {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff5f60;
+    font-size: 18px;
+    box-shadow: 0 6px 16px rgba(24, 50, 81, 0.08);
+  }
+  .pros-infra-card h4 {
+    margin: 0 0 6px;
+    font-size: 14.5px;
+    color: #183251;
+  }
+  .pros-infra-card p {
+    margin: 0;
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+  }
+
+  /* ---------- admission ---------- */
+  .pros-admit-grid {
+    display: grid;
+    gap: 26px;
+  }
+  @media (min-width: 800px) {
+    .pros-admit-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .pros-steps {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 12px;
+  }
+  .pros-steps li {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #4b5b70;
+    padding-left: 4px;
+  }
+  .pros-steps li::marker {
+    color: #ff5f60;
+    font-weight: 700;
+  }
+
+  /* ---------- download CTA ---------- */
+  .pros-download-cta {
+    margin-top: 8px;
+    background: linear-gradient(135deg, #183251, #28477a);
+    border-radius: 16px;
+    padding: 30px 28px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: #fff;
+  }
+  .pros-download-cta h3 {
+    margin: 0 0 6px;
+    font-size: 1.15rem;
+  }
+  .pros-download-cta p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13.5px;
+  }
+</style>

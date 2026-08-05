@@ -3,7 +3,6 @@ title: Coding Club
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/coding-club/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About
@@ -26,7 +25,6 @@ To encourage active participation in coding competitions and academic research.
 
 To provide mentorship and networking opportunities to help members achieve their career aspirations in tech.
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -36,7 +34,6 @@ To foster a collaborative and innovative coding community where students engage 
 
 To provide a platform for students to learn and master programming languages and frameworks through hands-on experience.To encourage peer-to-peer learning, boot camps, and community-driven initiatives that enhance problem-solving and coding skills.To collaborate with organizations like Mulearn and ICFOSS to expand opportunities and resources for members.To prepare members for competitive programming, hackathons, and industry-relevant challenges.To cultivate a culture of continuous learning, innovation, and teamwork in technology.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Club Coordinator :
 

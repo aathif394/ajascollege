@@ -1,0 +1,147 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getChildPages } from "../../lib/pageListing";
+
+const clubs = await getChildPages("/clubs--cells/");
+
+const iconFor = (title: string) => {
+  const t = title.toLowerCase();
+  if (t.includes("narcotics")) return "fa-ban";
+  if (t.includes("ragging")) return "fa-shield";
+  if (t.includes("harassment")) return "fa-balance-scale";
+  if (t.includes("arts")) return "fa-paint-brush";
+  if (t.includes("coding")) return "fa-code";
+  if (t.includes("counseling") || t.includes("counselling")) return "fa-comments-o";
+  if (t.includes("debate")) return "fa-microphone";
+  if (t.includes("entrepreneurship") || t.includes("iedc")) return "fa-lightbulb-o";
+  if (t.includes("ethics")) return "fa-gavel";
+  if (t.includes("film")) return "fa-film";
+  if (t.includes("grievance")) return "fa-exclamation-circle";
+  if (t.includes("health")) return "fa-heartbeat";
+  if (t.includes("leader")) return "fa-star";
+  if (t.includes("literar") || t.includes("literacy")) return "fa-book";
+  if (t.includes("malayalam")) return "fa-language";
+  if (t.includes("music")) return "fa-music";
+  if (t.includes("nature")) return "fa-tree";
+  if (t.includes("obc") || t.includes("minority")) return "fa-users";
+  if (t.includes("sc/st") || t.includes("sc-st")) return "fa-users";
+  if (t.includes("sports")) return "fa-futbol-o";
+  if (t.includes("palliative")) return "fa-hand-holding-heart";
+  if (t.includes("tourism")) return "fa-map-signs";
+  if (t.includes("women")) return "fa-venus";
+  if (t.includes("innovators")) return "fa-rocket";
+  return "fa-users";
+};
+---
+
+<BaseLayout
+  title="Clubs & Cells"
+  description="Twenty-five student clubs and statutory cells at Al Jamia Arts & Science College."
+  pageTitle="Clubs & Cells"
+>
+  <div class="ajas-listing">
+    <div class="container">
+      <p class="listing-intro">
+        Statutory cells and student clubs covering arts, sports, coding, literary, nature, health,
+        tourism and campus welfare.
+      </p>
+      <div class="dept-grid">
+        {
+          clubs.map((c) => (
+            <a class="dept-card" href={c.permalink}>
+              <span class="dept-ico">
+                <i class={`fa ${iconFor(c.title)}`} aria-hidden="true" />
+              </span>
+              <h2>{c.title}</h2>
+              {c.blurb && <p>{c.blurb}</p>}
+              <span class="dept-more">
+                Learn more <i class="fa fa-long-arrow-right" aria-hidden="true" />
+              </span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .ajas-listing {
+    padding: 40px 0 64px;
+    background: #f6f8fb;
+    min-height: 40vh;
+  }
+  .listing-intro {
+    max-width: 40rem;
+    margin: 0 0 30px;
+    color: #4b5b70;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  .dept-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) {
+    .dept-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 1000px) {
+    .dept-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .dept-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    box-shadow: 0 8px 26px rgba(24, 50, 81, 0.08);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .dept-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(24, 50, 81, 0.14);
+  }
+  .dept-ico {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #183251, #3f4c99);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  .dept-card h2 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    color: #183251;
+    line-height: 1.35;
+  }
+  .dept-card p {
+    margin: 0 0 16px;
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.6;
+    flex: 1;
+  }
+  .dept-more {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ff5f60;
+  }
+  .dept-more i {
+    margin-left: 4px;
+    transition: transform 0.2s;
+  }
+  .dept-card:hover .dept-more i {
+    transform: translateX(4px);
+  }
+</style>

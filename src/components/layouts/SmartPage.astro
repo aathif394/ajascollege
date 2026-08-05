@@ -13,18 +13,20 @@ import {
 } from "../../lib/parseContent";
 import { optimizeHtmlImages } from "../../lib/cmsImage";
 import CmsImage from "../CmsImage.astro";
+import AttachmentList from "../AttachmentList.astro";
 
 interface Props {
   title: string;
   body: string;
   permalink: string;
   image?: string;
+  attachments?: { label: string; file: string }[];
 }
 
-const { title, body, permalink, image } = Astro.props;
+const { title, body, permalink, image, attachments } = Astro.props;
 
 const isAdmission = looksLikeAdmission(body, permalink);
-const isVision = looksLikeVision(body, title);
+const isVision = looksLikeVision(body, title, permalink);
 const parsed = splitSections(body);
 const programmes = isAdmission ? parseProgrammes(body) : null;
 
@@ -95,11 +97,15 @@ const progTail = programmes?.tailHtml
               (i === 0 ? image || parsed.introImages[0] : undefined) ||
               (i === 1 ? parsed.introImages[1] : undefined);
             return (
-              <section class="sp-vision-card" id={s.id}>
-                {imgSrc && (
+              <section class={`sp-vision-card ${i % 2 === 1 ? "sp-vision-card-b" : ""}`} id={s.id}>
+                {imgSrc ? (
                   <figure class="sp-vision-card-fig">
                     <CmsImage src={imgSrc} alt={s.title} preset="inline" fit="contain" />
                   </figure>
+                ) : (
+                  <span class="sp-vision-card-ico">
+                    <i class={`fa ${i % 2 === 1 ? "fa-bullseye" : "fa-eye"}`} aria-hidden="true" />
+                  </span>
                 )}
                 <div class="sp-vision-card-body">
                   <h2>{s.title}</h2>
@@ -248,6 +254,12 @@ const progTail = programmes?.tailHtml
             ))}
           </div>
         )}
+
+        {attachments && attachments.length > 0 && (
+          <div class="sp-section">
+            <AttachmentList items={attachments} />
+          </div>
+        )}
       </div>
     )
   }
@@ -289,7 +301,7 @@ const progTail = programmes?.tailHtml
   .sp-vision {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 28px 16px 0;
+    padding: 40px 16px 8px;
   }
   .sp-vision-grid {
     display: grid;
@@ -302,22 +314,33 @@ const progTail = programmes?.tailHtml
     }
   }
   .sp-vision-card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 10px 32px rgba(24, 50, 81, 0.08);
-    border-top: 4px solid #ff5f60;
+    background: linear-gradient(160deg, #183251, #28477a);
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(24, 50, 81, 0.16);
     display: flex;
     flex-direction: column;
     overflow: hidden;
     height: 100%;
   }
-  .sp-vision-card:nth-child(2) {
-    border-top-color: #3f4c99;
+  .sp-vision-card-b {
+    background: linear-gradient(160deg, #ff5f60, #e6484f);
+  }
+  .sp-vision-card-ico {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 22px;
+    margin: 28px 0 0 28px;
   }
   .sp-vision-card-fig {
     margin: 0;
     padding: 20px 20px 0;
-    background: #f7f9fc;
+    background: rgba(255, 255, 255, 0.06);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -332,7 +355,7 @@ const progTail = programmes?.tailHtml
     display: block;
   }
   .sp-vision-card-body {
-    padding: 22px 26px 28px;
+    padding: 18px 28px 32px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -340,11 +363,14 @@ const progTail = programmes?.tailHtml
   .sp-vision-card h2 {
     margin: 0 0 0.85rem;
     font-size: 1.45rem;
-    color: #183251;
+    color: #fff;
   }
   .sp-vision-card .sp-html {
     flex: 1;
     font-size: 1.05rem;
+  }
+  .sp-vision-card .sp-html :global(p) {
+    color: rgba(255, 255, 255, 0.88);
     line-height: 1.7;
   }
 
@@ -374,7 +400,6 @@ const progTail = programmes?.tailHtml
     border-radius: 12px;
     padding: 22px 20px 24px;
     box-shadow: 0 8px 28px rgba(24, 50, 81, 0.08);
-    border-top: 3px solid #183251;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -585,10 +610,7 @@ const progTail = programmes?.tailHtml
     color: #183251;
   }
   .sp-section-alt {
-    border-top: 3px solid #3f4c99;
-  }
-  .sp-section:not(.sp-section-alt) {
-    border-top: 3px solid #ff5f60;
+    background: #f7f9fc;
   }
   .sp-section-gallery {
     display: flex;

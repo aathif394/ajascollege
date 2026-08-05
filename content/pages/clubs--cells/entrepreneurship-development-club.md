@@ -3,7 +3,6 @@ title: Entrepreneurship Development Club
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/entrepreneurship-development-club/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About
@@ -22,7 +21,6 @@ By collaborating with industry professionals, successful entrepreneurs, and loca
 - To promote the development of sustainable and socially responsible business ideas that contribute to community and economic growth.
 - To foster a culture of innovation, leadership, and problem-solving within the college, empowering students to become future entrepreneurs and change-makers.
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -32,7 +30,6 @@ To inspire, educate, and empower students to become innovative and responsible e
 
 To foster an entrepreneurial mindset among students by equipping them with essential skills, knowledge, and real-world exposure. The ED Club aims to provide a supportive platform where students can explore innovative ideas, develop viable business ventures, and grow into confident, socially responsible entrepreneurs who contribute meaningfully to society and the economy.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Club Coordinator :
 

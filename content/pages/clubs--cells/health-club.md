@@ -3,7 +3,6 @@ title: Health Club
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/health-club/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About
@@ -16,7 +15,6 @@ The primary objectives of Health Club are to promote physical fitness, enhance m
 
 The aim of the Health Club is to create awareness among students for maintenance of good physical and mental health. Students are sensitized regarding health, nutrition and maintenance of a healthy lifestyle.
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -26,7 +24,6 @@ To develop all aspects of oneself physical, social, mental, spiritual
 
 Increase health awareness by providing health screenings, activities, materials, demonstrations, and information. To develop all aspects of oneself physical, social, mental, spiritual. To develop a wellness awareness within our community
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Activities
 

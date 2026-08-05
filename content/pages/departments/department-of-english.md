@@ -3,7 +3,6 @@ title: Department of English
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /departments/department-of-english/
 type: page
-image: "/assets/uploads/2024/05/Frame.svg"
 ---
 
 ## About
@@ -19,7 +18,6 @@ The vision of the Department of English is to offer students adequate communicat
 The Department aims to cultivate critical thinking, effective communication and cultural understanding through the study of literature ,writing and language.
 The Department empower students with analytical skills, writing proficiency and appreciation for diverse perspectives, preparing them for careers in writing, education, publishing, media and beyond
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Head Of Department
 
@@ -34,4 +32,3 @@ Head of Department
 | Faculty | Roshna Maneri Abbas |
 | MA English , NET | Thasleema A T |
 | MA English , NET | Muhammed Shanif K T |
-| MA Englsh | Gallery |

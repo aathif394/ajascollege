@@ -3,7 +3,6 @@ title: Department of Islamic Studies
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /departments/department-of-islamic-studies/
 type: page
-image: "/assets/uploads/2024/05/Frame.svg"
 ---
 
 ## About
@@ -26,7 +25,6 @@ The Department of Islamic Studies is one of the oldest departments at AJAS Colle
 - **Community Collaboration**: To apply Islamic Studies within the framework of social sciences to address societal and environmental issues.
 - **Empowering Education**: To prepare students for diverse careers by grounding them in Islamic Studies and social science methodologies.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Head Of Department
 
@@ -55,4 +53,3 @@ Head of Department
 | Faculty | Dr. Anas P Aboobacker |
 | MA Islamic Studies,PHD | Azharudheen K S |
 | MA Islamic Studies,NET | Dr. Thanveer T |
-| MA Islamic Studies,PHD | Gallery |

@@ -3,7 +3,6 @@ title: Anti-Sexual Harassment Cell
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/anti-sexual-harassment-cell/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About
@@ -12,7 +11,6 @@ image: "/assets/uploads/2024/05/Frame-1.svg"
 
 Permanent Cell to Combat Sexual Harassment at AJAS College is an institutionally established body dedicated to addressing and preventing incidents of sexual harassment within the college campus. Its primary objective is to provide a safe and supportive environment for all students and staff, ensuring that any reports of sexual harassment are taken seriously and appropriately investigated. The cell is responsible for promoting awareness about sexual harassment, conducting sensitization programs, and implementing preventive measures to create a culture of respect and gender equality throughout the college community.
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -44,7 +42,6 @@ To cultivate a campus environment where every individual feels safe, respected, 
 
 - Training faculty, staff, and student representatives to recognize, prevent, and address incidents of sexual harassment, enhancing their ability to handle such situations effectively and sensitively.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 Permanent Cell to Combat Sexual Harassment at AJAS College is an institutionally established body dedicated to addressing and preventing incidents of sexual harassment within the college campus. Its primary objective is to provide a safe and supportive environment for all students and staff, ensuring that any reports of sexual harassment are taken seriously and appropriately investigated. The cell is responsible for promoting awareness about sexual harassment, conducting sensitization programs, and implementing preventive measures to create a culture of respect and gender equality throughout the college community.
 

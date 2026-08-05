@@ -6,99 +6,21 @@ type: page
 image: "/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg"
 ---
 
-- 2022-23
-- 2021-22
-- 2020-21
-- 2019-20
-- 2018-19
+## Feedback Analysis Reports
 
-2022-23 [![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)](/assets/uploads/2024/07/TEACHERS-FEEDBACK-ANALYSIS-2022-23.pdf)
+| Year | Teacher's | Student's | Alumni | Employer's |
+| --- | --- | --- | --- | --- |
+| 2022-23 | [View](/assets/uploads/2024/07/TEACHERS-FEEDBACK-ANALYSIS-2022-23.pdf) | [View](/assets/uploads/2024/07/STUDENTS-FEEDBACK-ANALYSIS-2022-2023.pdf) | [View](/assets/uploads/2024/07/ALUMNI-FEEDBACK-ANALYSIS-2022-23.pdf) | [View](/assets/uploads/2024/07/EMPLOYERS-FEEDBACK-ANALYSIS-2022-23.pdf) |
+| 2021-22 | [View](/assets/uploads/2024/07/TEACHERS-FEEDBACK-ANALYSIS-21-22.pdf) | [View](/assets/uploads/2024/07/STUDENTS-FEEDBACK-REPORT-2021-22.pdf) | [View](/assets/uploads/2024/07/ALUMNI-FEEDBACK-ANALYSIS-2021-22.pdf) | [View](/assets/uploads/2024/07/EMPLOYERS-FEEDBACK-ANALYSIS-2021-22.pdf) |
+| 2020-21 | [View](/assets/uploads/2024/07/TEACHERS-FEEDBACK-ANALYSIS-2020-21.pdf) | [View](/assets/uploads/2024/07/STUDENTS-FEEDBACK-ANALYSIS-2020-21.pdf) | [View](/assets/uploads/2024/07/ALUMNI-FEEDBACK-ANALYSIS-2020-21.pdf) | [View](/assets/uploads/2024/07/EMPLOYERS-FEEDBACK-ANALYSIS-2020-2021.pdf) |
+| 2019-20 | [View](/assets/uploads/2024/07/TEACHERS-FEEDBACK-ANALYSIS-2019-20.pdf) | [View](/assets/uploads/2024/07/STUDENTS-FEEDBACK-ANALYSIS-2019-20.pdf) | [View](/assets/uploads/2024/07/ALUMNI-FEEDBACK-ANALYSIS-2019-20.pdf) | [View](/assets/uploads/2024/07/EMPLOYERS-FEEDBACK-ANALYSIS-2019-20.pdf) |
+| 2018-19 | [View](/assets/uploads/2024/07/TEACHERS-FEEDBACK-ANALYSIS-2018-19.pdf) | [View](/assets/uploads/2024/07/STUDENTS-FEEDBACK-2018-19-.pdf) | [View](/assets/uploads/2024/07/ALUMNI-FEEDBACK-ANALYSIS-2018-19.pdf) | [View](/assets/uploads/2024/07/EMPLOYERS-FEEDBACK-ANALYSIS-2018-19.pdf) |
 
-## [Teacher's Feedback](/assets/uploads/2024/07/TEACHERS-FEEDBACK-ANALYSIS-2022-23.pdf)
+## Action Taken Reports
 
-![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)
-
-## [Student's Feedback](/assets/uploads/2024/07/STUDENTS-FEEDBACK-ANALYSIS-2022-2023.pdf)
-
-![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)
-
-## [Alumni Feedback](/assets/uploads/2024/07/ALUMNI-FEEDBACK-ANALYSIS-2022-23.pdf)
-
-![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)
-
-## [Employer's Feedback](/assets/uploads/2024/07/EMPLOYERS-FEEDBACK-ANALYSIS-2022-23.pdf)
-
-2021-22 [![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)](/assets/uploads/2024/07/TEACHERS-FEEDBACK-ANALYSIS-21-22.pdf)
-
-## [Teacher's Feedback](/assets/uploads/2024/07/TEACHERS-FEEDBACK-ANALYSIS-21-22.pdf)
-
-![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)
-
-## [Student's Feedback](/assets/uploads/2024/07/STUDENTS-FEEDBACK-REPORT-2021-22.pdf)
-
-![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)
-
-## [Alumni Feedback](/assets/uploads/2024/07/ALUMNI-FEEDBACK-ANALYSIS-2021-22.pdf)
-
-![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)
-
-## [Employer's Feedback](/assets/uploads/2024/07/EMPLOYERS-FEEDBACK-ANALYSIS-2021-22.pdf)
-
-2020-21 [![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)](/assets/uploads/2024/07/TEACHERS-FEEDBACK-ANALYSIS-2020-21.pdf)
-
-## [Teacher's Feedback](/assets/uploads/2024/07/TEACHERS-FEEDBACK-ANALYSIS-2020-21.pdf)
-
-![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)
-
-## [Student's Feedback](/assets/uploads/2024/07/STUDENTS-FEEDBACK-ANALYSIS-2020-21.pdf)
-
-![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)
-
-## [Alumni Feedback](/assets/uploads/2024/07/ALUMNI-FEEDBACK-ANALYSIS-2020-21.pdf)
-
-![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)
-
-## [Employer's Feedback](/assets/uploads/2024/07/EMPLOYERS-FEEDBACK-ANALYSIS-2020-2021.pdf)
-
-2019-20 [![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)](/assets/uploads/2024/07/TEACHERS-FEEDBACK-ANALYSIS-2019-20.pdf)
-
-## [Teacher's Feedback](/assets/uploads/2024/07/TEACHERS-FEEDBACK-ANALYSIS-2019-20.pdf)
-
-![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)
-
-## [Student's Feedback](/assets/uploads/2024/07/STUDENTS-FEEDBACK-ANALYSIS-2019-20.pdf)
-
-![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)
-
-## [Alumni Feedback](/assets/uploads/2024/07/ALUMNI-FEEDBACK-ANALYSIS-2019-20.pdf)
-
-![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)
-
-## [Employer's Feedback](/assets/uploads/2024/07/EMPLOYERS-FEEDBACK-ANALYSIS-2019-20.pdf)
-
-2018-19 [![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)](/assets/uploads/2024/07/TEACHERS-FEEDBACK-ANALYSIS-2018-19.pdf)
-
-## [Teacher's Feedback](/assets/uploads/2024/07/TEACHERS-FEEDBACK-ANALYSIS-2018-19.pdf)
-
-![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)
-
-## [Student's Feedback](/assets/uploads/2024/07/STUDENTS-FEEDBACK-2018-19-.pdf)
-
-![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)
-
-## [Alumni Feedback](/assets/uploads/2024/07/ALUMNI-FEEDBACK-ANALYSIS-2018-19.pdf)
-
-![](/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e1722322981362-1024x1024.jpg)
-
-## [Employer's Feedback](/assets/uploads/2024/07/EMPLOYERS-FEEDBACK-ANALYSIS-2018-19.pdf)
-
-- Action Taken Reports
-- Annual Feedback Analysis Report
-- Communication Letter to Relevant Bodies
-
-|  |  |
+| Document | Link |
 | --- | --- |
-| Action Taken Reports Action Taken Report 2023-24 | [View](/assets/uploads/2025/05/Action-Taken-Report-2023-24.pdf) |
+| Action Taken Report 2023-24 | [View](/assets/uploads/2025/05/Action-Taken-Report-2023-24.pdf) |
 | Alumni Feedback 2022-23 | [View](/assets/uploads/2024/09/Action-Taken-Report-on-Alumni-Feedback-2022-23.pdf) |
 | Employers feedback 2022-23 | [View](/assets/uploads/2024/09/Action-Taken-Report-on-Employers-feedback-2022-23.pdf) |
 | Students Feedback 2022-23 | [View](/assets/uploads/2024/09/Action-taken-Report-on-Students-Feedback-2022-23.pdf) |
@@ -119,7 +41,12 @@ image: "/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e17223229813
 | Employers Feedback 2018-19 | [View](/assets/uploads/2024/09/Action-Taken-Report-on-Employers-Feedback-2018-19.pdf) |
 | Students feedback 2018-19 | [View](/assets/uploads/2024/09/Action-Taken-Report-on-Students-feedback-2018-19.pdf) |
 | Teachers Feedback 2018-2019 | [View](/assets/uploads/2024/09/Action-Taken-Report-on-Teachers-Feedback-2018-19.pdf) |
-| Annual Feedback Analysis Report Students Feedback Analysis Report 2024-25 | [View](/assets/uploads/2025/12/Student-feedback-2024-25.pdf) |
+
+## Annual Feedback Analysis Reports
+
+| Document | Link |
+| --- | --- |
+| Students Feedback Analysis Report 2024-25 | [View](/assets/uploads/2025/12/Student-feedback-2024-25.pdf) |
 | Employers Feedback Analysis Report 2024-25 | [View](/assets/uploads/2025/12/Employers-Feedback-2024-25.pdf) |
 | Alumni Feedback Analysis Report 2024-25 | [View](/assets/uploads/2025/12/ALUMNI-FEEDBACK-2024-25.pdf) |
 | Teachers Feedback Analysis Report 2024-25 | [View](/assets/uploads/2025/12/Teachers-Feedback-2024-25.pdf) |
@@ -141,17 +68,22 @@ image: "/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e17223229813
 | Teachers Feedback Analysis Report 2020-21 | [View](/assets/uploads/2024/09/Teachers-Feedback-Analysis-Report-2020-21.pdf) |
 | Alumni Feedback Analysis Report 2019-20 | [View](/assets/uploads/2024/09/Alumni-Feedback-Analysis-Report-2019-20.pdf) |
 | Employers Feedback Analysis Report 2019-20 | [View](/assets/uploads/2024/09/Employers-Feedback-Analysis-Report-2019-20.pdf) |
-| Student Feedback Analysis Report 2019_20 | [View](/assets/uploads/2024/09/Student-Feedback-Analysis-Report-2019_20.pdf) |
+| Student Feedback Analysis Report 2019-20 | [View](/assets/uploads/2024/09/Student-Feedback-Analysis-Report-2019_20.pdf) |
 | Teachers Feedback Analysis Report 2019-20 | [View](/assets/uploads/2024/09/Teachers-Feedback-Analysis-Report-2019-20.pdf) |
 | Alumni Feedback Analysis Report 2018-19 | [View](/assets/uploads/2024/09/Alumni-Feedback-Analysis-Report-2018-19.pdf) |
 | Employers Feedback Analysis Report 2018-19 | [View](/assets/uploads/2024/09/Employers-Feedback-Analysis-Report-2018-19.pdf) |
 | Students Feedback Analysis Report 2018-19 | [View](/assets/uploads/2024/09/Students-Feedback-Analysis-Report-2018-19.pdf) |
 | Teachers Feedback Analysis Report 2018-19 | [View](/assets/uploads/2024/09/Teachers-Feedback-Analysis-Report-2018-19.pdf) |
-| Communication Letter to Relevant Bodies Letter to Relevent Body 2023-24 | [View](/assets/uploads/2025/05/Letter-to-relevent-Body-2023-24.pdf) |
-| alumni feedback 2022-23 | [View](/assets/uploads/2024/09/Communication-with-relevant-body-on-alumni-feedback.pdf) |
-| employers feedback 2022-23 | [View](/assets/uploads/2024/09/Communication-with-relevant-body-on-employers-feedback.pdf) |
+
+## Communication with Relevant Bodies
+
+| Document | Link |
+| --- | --- |
+| Letter to Relevant Body 2023-24 | [View](/assets/uploads/2025/05/Letter-to-relevent-Body-2023-24.pdf) |
+| Alumni feedback 2022-23 | [View](/assets/uploads/2024/09/Communication-with-relevant-body-on-alumni-feedback.pdf) |
+| Employers feedback 2022-23 | [View](/assets/uploads/2024/09/Communication-with-relevant-body-on-employers-feedback.pdf) |
 | Teachers Feedback 2022-23 | [View](/assets/uploads/2024/09/Communication-with-Relevant-body-on-Teachers-Feedback.pdf) |
-| students feedback 2022-23 | [View](/assets/uploads/2024/09/Communication-with-the-relevant-body-on-students-feedback-.pdf) |
+| Students feedback 2022-23 | [View](/assets/uploads/2024/09/Communication-with-the-relevant-body-on-students-feedback-.pdf) |
 | Alumni Feedback 2021-22 | [View](/assets/uploads/2024/09/Communication-with-the-relevant-body-on-Alumni-Feedback-2021-22.pdf) |
 | Employers feedback 2021-22 | [View](/assets/uploads/2024/09/Communication-with-the-relevant-body-on-Employers-feedback-2021-22.pdf) |
 | Students Feedback 2021-22 | [View](/assets/uploads/2024/09/Communication-with-the-relevant-body-on-Students-Feedback-2021-22.pdf) |
@@ -168,7 +100,3 @@ image: "/assets/uploads/2024/07/pdf-file-on-white-background-H8HF39-e17223229813
 | Teachers Feedback 2018-19 | [View](/assets/uploads/2024/09/Communication-with-the-relevant-body-on-Teachers-Feedback-2018-19.pdf) |
 | Students Feedback 2018-19 | [View](/assets/uploads/2024/09/Communication-with-the-relevant-body-on-Students-Feedback-2018-19.pdf) |
 | Employers Feedback 2018-19 | [View](/assets/uploads/2024/09/Communication-with-the-relevant-body-on-Employers-Feedback-2018-19.pdf) |
-
-This form is a static reproduction of the original. Submissions are not processed — please use the contact details to reach the college.
-
-Submit

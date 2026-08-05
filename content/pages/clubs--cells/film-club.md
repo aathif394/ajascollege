@@ -3,7 +3,6 @@ title: FILM CLUB
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /clubs--cells/film-club/
 type: page
-image: "/assets/uploads/2024/05/Frame-1.svg"
 ---
 
 ## About
@@ -21,7 +20,6 @@ The Film Club at Al Jamia Arts and Science College (AJAS College), like similar 
  To nurture creativity by motivating students to make short films.
  To enhance learning through workshops, seminars, and webinars.
 
-![](/assets/uploads/2024/05/Frame-1.svg)
 
 ## Vision
 
@@ -31,7 +29,6 @@ To cultivate a community of students who appreciate cinema as an art form, a med
 
 The mission of the Film Club is to promote the artistic, cultural, and educational value of cinema by engaging students in film screenings, discussions, and creative projects. The club strives to enhance students’ understanding of film as a reflection of society, inspire visual storytelling skills, and encourage analytical perspectives on cinematic works. Through these activities, the Film Club aims to build a platform where passion for movies meets meaningful dialogue and creative exploration.
 
-![](/assets/uploads/2024/05/Frame.svg)
 
 ## Activities
 

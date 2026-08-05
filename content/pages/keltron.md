@@ -10,52 +10,12 @@ image: "/assets/uploads/2025/04/foreign.png"
 
 ## Courses Offered
 
-Certificate Course In Research Methodology And Data Analytics
+| Course | Batch | Department | Registration |
+| --- | --- | --- | --- |
+| Certificate Course In Research Methodology And Data Analytics | Pg 2nd Year | Psychology | [Register](https://docs.google.com/forms/d/e/1FAIpQLSe4vQPxCxUOIao8d3oJJHTzinaajK9x-0nFvzf6DDwQ0qyHAA/viewform?usp=dialog) |
+| Certificate Course In Language Of Medicine Training | 3rd Year | Psychology | [Register](https://docs.google.com/forms/d/e/1FAIpQLSe4vQPxCxUOIao8d3oJJHTzinaajK9x-0nFvzf6DDwQ0qyHAA/viewform?usp=dialog) |
+| Certificate Course In Language Of Medicine Training | 1 St Year & 3rd Year | Microbiology | [Register](https://docs.google.com/forms/d/e/1FAIpQLSe4vQPxCxUOIao8d3oJJHTzinaajK9x-0nFvzf6DDwQ0qyHAA/viewform?usp=dialog) |
+| Certificate In Content Writing And Proof Reading | 1st Year | English | [Register](https://docs.google.com/forms/d/e/1FAIpQLSe4vQPxCxUOIao8d3oJJHTzinaajK9x-0nFvzf6DDwQ0qyHAA/viewform?usp=dialog) |
+| Foreign Accounting | 2nd Year | Management | [Register](https://docs.google.com/forms/d/e/1FAIpQLSe4vQPxCxUOIao8d3oJJHTzinaajK9x-0nFvzf6DDwQ0qyHAA/viewform?usp=dialog) |
+| Foreign Accounting | 2nd Year | Commerce | [Register](https://docs.google.com/forms/d/e/1FAIpQLSe4vQPxCxUOIao8d3oJJHTzinaajK9x-0nFvzf6DDwQ0qyHAA/viewform?usp=dialog) |
 
-## Batch :
-
-Pg 2nd Year
-
-## Department :
-
-Psychology [Registration Link](https://docs.google.com/forms/d/e/1FAIpQLSe4vQPxCxUOIao8d3oJJHTzinaajK9x-0nFvzf6DDwQ0qyHAA/viewform?usp=dialog)Certificate Course In Language Of Medicine Training
-
-## Batch :
-
-3rd Year
-
-## Department :
-
-Psychology [Registration Link](https://docs.google.com/forms/d/e/1FAIpQLSe4vQPxCxUOIao8d3oJJHTzinaajK9x-0nFvzf6DDwQ0qyHAA/viewform?usp=dialog)Certificate Course In Language Of Medicine Training
-
-## Batch :
-
-1 St Year & 3rd Year
-
-## Department :
-
-Microbiology [Registration Link](https://docs.google.com/forms/d/e/1FAIpQLSe4vQPxCxUOIao8d3oJJHTzinaajK9x-0nFvzf6DDwQ0qyHAA/viewform?usp=dialog)Certificate In Content Writing And Proof Reading
-
-## Batch :
-
-1st Year
-
-## Department :
-
-English [Registration Link](https://docs.google.com/forms/d/e/1FAIpQLSe4vQPxCxUOIao8d3oJJHTzinaajK9x-0nFvzf6DDwQ0qyHAA/viewform?usp=dialog)Foreign Accounting
-
-## Batch :
-
-2nd Year
-
-## Department :
-
-Management [Registration Link](https://docs.google.com/forms/d/e/1FAIpQLSe4vQPxCxUOIao8d3oJJHTzinaajK9x-0nFvzf6DDwQ0qyHAA/viewform?usp=dialog)Foreign Accounting
-
-## Batch :
-
-2nd Year
-
-## Department :
-
-Commerce [Registration Link](https://docs.google.com/forms/d/e/1FAIpQLSe4vQPxCxUOIao8d3oJJHTzinaajK9x-0nFvzf6DDwQ0qyHAA/viewform?usp=dialog)
