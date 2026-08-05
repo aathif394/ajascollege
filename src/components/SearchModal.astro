@@ -1,76 +1,89 @@
 ---
 /**
- * Site search (Pagefind).
- * Sits above Edukin #scroll-top so the two FABs don't stack on top of each other.
+ * Site search — Pagefind Component UI (custom elements), not the deprecated
+ * Default UI (pagefind-ui.js). Assets loaded once in Footer.astro; these
+ * elements auto-upgrade on parse, share the implicit "default" instance, and
+ * need no init script — <pagefind-modal> uses a native <dialog> (Escape +
+ * focus trap for free), and <pagefind-modal-trigger> handles the Ctrl/Cmd+K
+ * shortcut itself.
  */
 ---
 
-<button
-  type="button"
-  class="ajas-search-trigger"
-  id="ajas-search-open"
-  aria-label="Search the site"
-  title="Search (Ctrl/⌘ K)"
->
-  <i class="fa fa-search" aria-hidden="true"></i>
-</button>
+<pagefind-config bundle-path="/pagefind/" preload></pagefind-config>
 
-<div class="ajas-search-modal" id="ajas-search-modal" hidden>
-  <div class="ajas-search-backdrop" data-close tabindex="-1"></div>
-  <div
-    class="ajas-search-panel"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Site search"
-  >
-    <header class="ajas-search-head">
-      <div class="ajas-search-brand">
-        <span class="ajas-search-brand-mark"></span>
-        <div>
-          <strong>Search</strong>
-          <span>Al Jamia Arts &amp; Science College</span>
-        </div>
+<pagefind-modal-trigger
+  class="ajas-search-trigger"
+  placeholder="Search the site"
+  title="Search (Ctrl/⌘ K)"
+  compact
+  hide-shortcut
+></pagefind-modal-trigger>
+
+<pagefind-modal reset-on-close>
+  <pagefind-modal-header>
+    <div class="ajas-search-brand">
+      <span class="ajas-search-brand-mark"></span>
+      <div>
+        <strong>Search</strong>
+        <span>Al Jamia Arts &amp; Science College</span>
       </div>
-      <button type="button" class="ajas-search-close" data-close aria-label="Close search">
-        <i class="fa fa-times" aria-hidden="true"></i>
-      </button>
-    </header>
-    <div class="ajas-search-body">
-      <div id="search"></div>
     </div>
-  </div>
-</div>
+  </pagefind-modal-header>
+  <pagefind-modal-body>
+    <pagefind-input placeholder="Search the site…" autofocus show-sub-results></pagefind-input>
+    <pagefind-summary default-message="Start typing to search the site."></pagefind-summary>
+    <pagefind-results show-images="false"></pagefind-results>
+  </pagefind-modal-body>
+</pagefind-modal>
 
 <style is:global>
-  /* ========== FAB stack: search above Edukin #scroll-top ========== */
-  /* Edukin #scroll-top is bottom:23px, height 35px */
+  /* Custom elements render their raw light-DOM children until the browser
+     upgrades them (customElements.define runs) — without this, "Search /
+     Al Jamia Arts & Science College" sits as plain flowed text wherever
+     <pagefind-modal> lives in the document until/unless the script loads. */
+  pagefind-modal:not(:defined),
+  pagefind-modal-header:not(:defined),
+  pagefind-modal-body:not(:defined),
+  pagefind-input:not(:defined),
+  pagefind-summary:not(:defined),
+  pagefind-results:not(:defined),
+  pagefind-modal-trigger:not(:defined) {
+    display: none;
+  }
+
+  /* ========== FAB: search above Edukin #scroll-top ========== */
   .ajas-search-trigger {
+    display: block;
     position: fixed;
     right: 20px;
     bottom: 78px; /* clears #scroll-top */
     z-index: 9990;
+  }
+  .ajas-search-trigger .pf-trigger-btn {
     width: 50px;
     height: 50px;
     border: 0;
     border-radius: 50%;
     background: linear-gradient(150deg, #183251, #3f4c99);
-    color: #fff;
     box-shadow: 0 10px 26px rgba(24, 50, 81, 0.32);
     cursor: pointer;
-    font-size: 17px;
-    line-height: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.3, 1), box-shadow 0.2s ease;
   }
-  .ajas-search-trigger:hover {
+  .ajas-search-trigger .pf-trigger-btn:hover {
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0 14px 32px rgba(24, 50, 81, 0.4);
   }
-  .ajas-search-trigger:focus-visible {
+  .ajas-search-trigger .pf-trigger-btn:focus-visible {
     outline: 2px solid #c4a35a;
     outline-offset: 3px;
+  }
+  .ajas-search-trigger .pf-trigger-icon {
+    width: 17px;
+    height: 17px;
+    background: #fff;
   }
 
   /* Keep go-top aligned under search, coral so the pair reads as one stack */
@@ -92,44 +105,36 @@
     transform: translateY(-2px) scale(1.05);
   }
 
-  /* ========== Modal shell ========== */
-  .ajas-search-modal[hidden] {
-    display: none !important;
+  /* ========== Pagefind Component UI theming ========== */
+  pagefind-modal {
+    --pf-font: Rubik, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --pf-text: #2c3e50;
+    --pf-text-secondary: #5c6578;
+    --pf-text-muted: #8b96a8;
+    --pf-background: #fff;
+    --pf-border: #dbe3ee;
+    --pf-border-focus: #7a1f2b;
+    --pf-hover: #f7f9fc;
+    --pf-mark: #7a1f2b;
+    --pf-border-radius: 8px;
+    --pf-modal-backdrop: rgba(9, 24, 42, 0.62);
+    --pf-modal-max-width: 640px;
+    --pf-modal-top: max(8vh, 24px);
+    --pf-input-font-size: 16px;
+    --pf-result-title-font-size: 15px;
+    --pf-result-excerpt-font-size: 13px;
+    --pf-summary-font-size: 13px;
   }
-  .ajas-search-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 10000;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding: max(8vh, 24px) 16px 24px;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-  .ajas-search-backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(9, 24, 42, 0.62);
-    backdrop-filter: blur(2px);
-  }
-  .ajas-search-panel {
-    position: relative;
-    z-index: 1;
-    width: min(640px, 100%);
-    max-height: min(80vh, 720px);
-    display: flex;
-    flex-direction: column;
-    background: #fff;
+  dialog.pf-modal {
     border-radius: 16px;
     box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
-    overflow: hidden;
   }
-  .ajas-search-head {
-    flex: 0 0 auto;
+  dialog.pf-modal::backdrop {
+    backdrop-filter: blur(2px);
+  }
+  .pf-modal-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 12px;
     padding: 14px 16px;
     background: linear-gradient(90deg, #183251 0%, #1e3a6e 55%, #7a1f2b 160%);
@@ -164,176 +169,46 @@
     text-overflow: ellipsis;
     max-width: 42vw;
   }
-  .ajas-search-close {
-    flex-shrink: 0;
-    width: 36px;
-    height: 36px;
-    border: 0;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.12);
+  .pf-modal-header .pf-modal-close {
     color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
   }
-  .ajas-search-close:hover {
+  .pf-modal-header .pf-modal-close:hover {
     background: rgba(255, 255, 255, 0.22);
   }
-
-  /* Scrollable results region */
-  .ajas-search-body {
-    flex: 1 1 auto;
-    min-height: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+  .pf-modal-body {
     padding: 14px 16px 20px;
   }
-
-  /* ========== Pagefind UI theming (override defaults) ========== */
-  .ajas-search-panel .pagefind-ui {
-    --pagefind-ui-scale: 0.92;
-    --pagefind-ui-primary: #183251;
-    --pagefind-ui-text: #2c3e50;
-    --pagefind-ui-background: #ffffff;
-    --pagefind-ui-border: #dbe3ee;
-    --pagefind-ui-tag: #e8eef8;
-    --pagefind-ui-border-width: 1px;
-    --pagefind-ui-border-radius: 8px;
-    --pagefind-ui-font: Rubik, system-ui, -apple-system, "Segoe UI", sans-serif;
+  .pf-input {
+    background: #f8fafc;
   }
-  .ajas-search-panel .pagefind-ui__form {
-    margin: 0 0 12px !important;
+  .pf-summary {
+    color: #5c6578;
+    padding: 4px 2px 10px;
   }
-  .ajas-search-panel .pagefind-ui__search-input {
-    font-family: Rubik, system-ui, sans-serif !important;
-    font-size: 16px !important;
-    border: 2px solid #dbe3ee !important;
-    border-radius: 8px !important;
-    padding: 12px 14px 12px 40px !important;
-    height: auto !important;
-    background: #f8fafc !important;
-    color: #183251 !important;
-    box-shadow: none !important;
+  .pf-result-link {
+    font-weight: 600;
   }
-  .ajas-search-panel .pagefind-ui__search-input:focus {
-    border-color: #7a1f2b !important;
-    outline: none !important;
-    background: #fff !important;
+  .pf-result-excerpt {
+    line-height: 1.45;
   }
-  .ajas-search-panel .pagefind-ui__search-clear {
-    font-family: Rubik, system-ui, sans-serif !important;
-    font-size: 12px !important;
-    font-weight: 600 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.04em !important;
-    color: #7a1f2b !important;
-    background: #f7eef0 !important;
-    border: 1px solid #e8cfd4 !important;
-    border-radius: 6px !important;
-    padding: 6px 10px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    right: 10px !important;
-    height: auto !important;
-  }
-  .ajas-search-panel .pagefind-ui__drawer {
-    margin-top: 4px !important;
-    /* Drawer lives inside our scroll container — don't grow forever */
-    max-height: none !important;
-    overflow: visible !important;
-  }
-  .ajas-search-panel .pagefind-ui__results-area {
-    margin-top: 8px !important;
-  }
-  .ajas-search-panel .pagefind-ui__message {
-    font-family: Rubik, system-ui, sans-serif !important;
-    color: #5c6578 !important;
-    font-size: 13px !important;
-    padding: 4px 2px 10px !important;
-  }
-  .ajas-search-panel .pagefind-ui__result {
-    border-top: 1px solid #eef2f7 !important;
-    padding: 12px 4px !important;
-  }
-  .ajas-search-panel .pagefind-ui__result-link {
-    font-family: Rubik, system-ui, sans-serif !important;
-    font-weight: 600 !important;
-    color: #183251 !important;
-    font-size: 15px !important;
-  }
-  .ajas-search-panel .pagefind-ui__result-link:hover {
-    color: #7a1f2b !important;
-  }
-  .ajas-search-panel .pagefind-ui__result-excerpt {
-    font-family: Rubik, system-ui, sans-serif !important;
-    color: #5c6578 !important;
-    font-size: 13px !important;
-    line-height: 1.45 !important;
-  }
-  .ajas-search-panel .pagefind-ui__result-nested .pagefind-ui__result-link {
-    color: #1e3a6e !important;
-    font-weight: 500 !important;
-    font-size: 14px !important;
-  }
-  .ajas-search-panel .pagefind-ui mark {
-    background: #fde8ec !important;
-    color: #7a1f2b !important;
+  .pf-result-excerpt mark {
+    background: #fde8ec;
     padding: 0 2px;
     border-radius: 2px;
-  }
-  /* Hide Pagefind's default huge brand block if any */
-  .ajas-search-panel .pagefind-ui__suppressed {
-    display: none !important;
   }
 
   @media (max-width: 520px) {
     .ajas-search-trigger {
       right: 14px;
       bottom: 68px;
+    }
+    .ajas-search-trigger .pf-trigger-btn {
       width: 44px;
       height: 44px;
     }
-    .ajas-search-panel {
-      max-height: 85vh;
-    }
-    .ajas-search-modal {
-      padding: 12px 10px 16px;
-      align-items: stretch;
+    pagefind-modal {
+      --pf-modal-top: 12px;
     }
   }
 </style>
-
-<script is:inline>
-  (function () {
-    var openBtn = document.getElementById("ajas-search-open");
-    var modal = document.getElementById("ajas-search-modal");
-    if (!openBtn || !modal) return;
-
-    function open() {
-      modal.hidden = false;
-      document.documentElement.style.overflow = "hidden";
-      var input = modal.querySelector(".pagefind-ui__search-input, input");
-      if (input) setTimeout(function () { input.focus(); }, 60);
-    }
-    function close() {
-      modal.hidden = true;
-      document.documentElement.style.overflow = "";
-    }
-
-    openBtn.addEventListener("click", open);
-    modal.querySelectorAll("[data-close]").forEach(function (el) {
-      el.addEventListener("click", close);
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && !modal.hidden) close();
-      if ((e.metaKey || e.ctrlKey) && (e.key === "k" || e.key === "K")) {
-        e.preventDefault();
-        if (modal.hidden) open();
-        else close();
-      }
-    });
-  })();
-</script>

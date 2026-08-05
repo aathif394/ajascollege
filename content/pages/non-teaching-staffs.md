@@ -4,17 +4,15 @@ description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to 
 permalink: /non-teaching-staffs/
 type: page
 image: "/assets/uploads/2025/02/WhatsApp-Image-2025-02-05-at-3.25.12-PM11.jpeg"
+people:
+  - photo: /assets/uploads/2025/02/WhatsApp-Image-2025-02-05-at-3.25.12-PM11.jpeg
+    name: Abdul Rasheed A
+    role: House Keeping Supervisor
 ---
 
-![](/assets/uploads/2025/02/WhatsApp-Image-2025-02-05-at-3.25.12-PM11.jpeg)
-
-## Abdul Rasheed A
-
-## House Keeping Supervisor
-
-## Other Non Teaching Staffs
+## Other Non-Teaching Staff
 
 |  |  |
 | --- | --- |
-| Cleaning Staff | 8 staffs |
-| Security | 2 staffs |
+| Cleaning Staff | 8 staff |
+| Security | 2 staff |

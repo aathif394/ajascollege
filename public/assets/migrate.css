@@ -278,12 +278,7 @@ h1,h2,h3,
 .fac-photo{float:right;width:250px;margin:0 0 24px 30px;}
 .fac-photo img{width:100%;border-radius:6px;box-shadow:0 10px 30px rgba(24,50,81,.16);margin:0;}
 
-/* gallery grid (Edukin ships no gallery component) */
-.gallery-grid{margin-top:6px;}
-.gal-item{margin-bottom:26px;}
-.gal-item a{display:block;border-radius:6px;overflow:hidden;box-shadow:0 6px 22px rgba(24,50,81,.1);}
-.gal-item img{width:100%;height:238px;object-fit:cover;transition:.4s;}
-.gal-item a:hover img{transform:scale(1.07);}
+/* gallery grid — see GallerySection.astro for the actual gal-item styling */
 
 /* ---------- listing cards (Edukin .flat-course, extra bits) ---------- */
 /* equal-height cards: Edukin's demo relies on fixed-length dummy copy */
@@ -360,7 +355,7 @@ h1,h2,h3,
 /* footer additions */
 .logo-footer{margin-bottom:4px;}
 /* footer is a dark background — same white-on-dark treatment as the header */
-.logo-footer img{height:40px;width:auto;max-width:220px;filter:brightness(0) invert(1);}
+.logo-footer img{height:58px;width:auto;max-width:320px;filter:brightness(0) invert(1);}
 #footer .footer-address{color:rgba(255,255,255,.65);font-size:14px;line-height:26px;margin-top:14px;}
 #footer .footer-address li{position:relative;padding-left:26px;margin-bottom:10px;list-style:none;}
 #footer .footer-address li i{position:absolute;left:0;top:5px;color:#ff5f60;}
@@ -510,12 +505,14 @@ h1,h2,h3,
 /* principal photo panel (Edukin's decorative dot art was blank — dropped) */
 .flat-introduce-style1{padding:44px 0 52px;}
 .content-introduce-style1{padding-top:0;}
-.flat-introduce-style1 .container{display:flex;flex-wrap:wrap;align-items:center;}
+.flat-introduce-style1 .container{display:flex;flex-wrap:wrap;align-items:stretch;gap:56px;}
+.content-introduce-style1{display:flex;flex-direction:column;justify-content:center;height:100%;}
 .content-introduce-style1 .content-introduce{width:100%;}
-.flat-introduce-style1 .col-left{display:flex;}
+.flat-introduce-style1 .col-left{display:flex;flex:0 0 auto;width:min(42%,460px);}
+.flat-introduce-style1 .col-right{flex:1 1 420px;min-width:0;}
 .flat-introduce .videobox{position:relative;display:flex;flex:1;}
 .flat-introduce .videobox img{
-    width:100%;aspect-ratio:4/5;max-height:520px;object-fit:cover;object-position:center 15%;
+    width:100%;height:100%;min-height:460px;max-height:640px;object-fit:cover;object-position:center 15%;
     border-radius:12px;box-shadow:0 26px 64px rgba(24,50,81,.24);position:relative;z-index:1;
     display:block;}
 /* offset frame anchored to the photo's own corners, not floating beside it */
@@ -587,6 +584,12 @@ body.hero-hold .header-sticky #main-nav>ul.menu>li>a{font-size:14px;}
 @keyframes heroFadeFirst{
     0%{opacity:1}   30%{opacity:1}   36%{opacity:0}   100%{opacity:0}
 }
+/* video sits above the crossfading image layers (DOM order) but the
+   <source> is optional — if it 404s the layers behind still show, so this
+   degrades gracefully with zero JS. */
+.hero-video{
+    position:absolute;left:0;top:0;right:0;bottom:0;width:100%;height:100%;
+    object-fit:cover;object-position:center 42%;}
 .hero-scrim{
     position:absolute;left:0;top:0;right:0;bottom:0;
     background:linear-gradient(100deg,rgba(9,24,42,.94) 0%,rgba(11,30,52,.86) 42%,rgba(11,30,52,.52) 100%);}
@@ -594,6 +597,11 @@ body.hero-hold .header-sticky #main-nav>ul.menu>li>a{font-size:14px;}
 .hero-inner{max-width:720px;}
 .hero-kicker{
     font-size:13px;letter-spacing:3.2px;text-transform:uppercase;color:#ffbe34;font-weight:600;margin:0 0 20px;}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px;}
+.hero-badge{
+    display:inline-block;padding:7px 16px;border-radius:20px;font-size:12px;font-weight:600;
+    letter-spacing:1.4px;text-transform:uppercase;color:#ffbe34;
+    background:rgba(255,190,52,.12);border:1px solid rgba(255,190,52,.35);}
 .hero-title{
     font-size:56px;line-height:1.1;font-weight:600;color:#fff;margin:0 0 22px;letter-spacing:-1px;}
 .hero-text{font-size:17px;line-height:31px;color:rgba(255,255,255,.8);margin:0 0 34px;max-width:620px;}
@@ -1229,8 +1237,57 @@ html.is-loaded #loading-overlay{
 }
 .flat-course h3.course-title a{color:#183251;}
 .flat-course h3.course-title a:hover{color:#ff5f60;}
+/* per-department programme list under the blurb (doc: Programs Offered grid) */
+.course-programs{
+    margin:10px 0 0 !important;padding-top:10px;border-top:1px solid #eef2f7;
+    font-size:12px !important;font-weight:600;color:#3f4c99;text-transform:uppercase;letter-spacing:.03em;}
 
 /* Avoid double h1 look if body still has h1 matching page title */
 .ajas-prose > h1:first-child{
     /* keep content h1 if present; banner is also h1 — acceptable single-page dual rare */
 }
+
+/* ---------- About the Institution (homepage welcome overview) ---------- */
+.ajas-about{padding:60px 0 8px;background:#fff;}
+.ajas-about .container{max-width:860px;text-align:center;}
+.ajas-about h2{font-size:clamp(1.5rem,2.5vw,2rem);color:#183251;margin:0 0 22px;}
+.ajas-about p{font-size:16.5px;line-height:1.75;color:#475569;margin:0 0 18px;}
+.ajas-about .btn-box-shadow{margin-top:10px;}
+
+/* ---------- Key institutional metrics (animated counter banner) ---------- */
+.ajas-metric-banner{padding:44px 0;margin:44px 0 0;background:linear-gradient(100deg,#0c1e34,#183251 55%,#28477a);}
+.ajas-metric-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 0;list-style:none;margin:0;padding:0;max-width:1100px;margin-left:auto;margin-right:auto;}
+.ajas-metric-row li{flex:1 1 160px;text-align:center;padding:0 20px;border-left:1px solid rgba(255,255,255,.14);list-style:none;}
+.ajas-metric-row li:first-child{border-left:0;}
+.ajas-metric-row strong{display:block;font-size:clamp(1.9rem,4vw,2.6rem);font-weight:700;color:#fff;line-height:1.1;letter-spacing:-.5px;}
+.ajas-metric-row span{display:block;margin-top:8px;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,.65);font-weight:500;}
+@media(max-width:767px){
+    .ajas-metric-row li{flex:1 1 42%;border-left:0;margin-bottom:18px;}
+}
+
+/* ---------- Leadership message panels (Chairman / Principal) ---------- */
+/* Chairman has no photo yet — quote-emblem panel stands in for the videobox
+   so the two leadership sections still read as a matched pair. */
+.ajas-quote-panel{
+    position:relative;flex:1;display:flex;align-items:center;justify-content:center;
+    min-height:340px;border-radius:12px;overflow:hidden;
+    background:linear-gradient(155deg,#183251,#28477a 60%,#7a1f2b 160%);
+    box-shadow:0 26px 64px rgba(24,50,81,.24);padding:40px;}
+.ajas-quote-panel .quote-mark{
+    font-family:Georgia,serif;font-size:120px;line-height:1;color:rgba(255,255,255,.16);
+    position:absolute;top:14px;left:24px;}
+.ajas-quote-panel blockquote{
+    position:relative;z-index:1;margin:0;color:#fff;font-size:19px;line-height:1.6;
+    font-family:'Source Serif 4',Georgia,serif;font-style:italic;text-align:center;}
+
+/* ---------- What makes us different: media footages ---------- */
+.ajas-media{padding:56px 0 64px;background:#f7f9fc;}
+.ajas-media .title-section{margin-bottom:8px;}
+.gallery-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px;}
+.gal-item{display:block;border-radius:8px;overflow:hidden;box-shadow:0 6px 22px rgba(24,50,81,.1);
+    aspect-ratio:4/3;cursor:zoom-in;margin:0;}
+.gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+.gal-item:hover img{transform:scale(1.06);}
+@media(min-width:640px){.gallery-grid{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:900px){.gallery-grid{grid-template-columns:repeat(4,1fr);}}

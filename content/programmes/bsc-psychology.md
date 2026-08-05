@@ -1,6 +1,7 @@
 ---
 title: "BSc. Psychology"
 level: ug
+duration: "4 Years (FYUGP)"
 order: 8
 permalink: /programmes/bsc-psychology/
 draft: false

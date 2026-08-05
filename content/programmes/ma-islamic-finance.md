@@ -1,6 +1,7 @@
 ---
 title: "MA Islamic Finance"
 level: pg
+duration: "2 Years"
 order: 1
 permalink: /programmes/ma-islamic-finance/
 draft: false

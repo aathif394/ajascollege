@@ -1,6 +1,7 @@
 ---
 title: "BSc. Food Technology"
 level: ug
+duration: "4 Years (FYUGP)"
 order: 9
 permalink: /programmes/bsc-food-technology/
 draft: false

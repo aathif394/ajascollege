@@ -1,6 +1,7 @@
 ---
 title: "BA English"
 level: ug
+duration: "4 Years (FYUGP)"
 order: 6
 permalink: /programmes/ba-english/
 draft: false

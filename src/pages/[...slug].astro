@@ -7,6 +7,9 @@ import EntityArticle from "../components/EntityArticle.astro";
 import SmartPage from "../components/layouts/SmartPage.astro";
 import CmsImage from "../components/CmsImage.astro";
 import AttachmentList from "../components/AttachmentList.astro";
+import GallerySection from "../components/GallerySection.astro";
+import PeopleGrid from "../components/PeopleGrid.astro";
+import MenuGrid from "../components/MenuGrid.astro";
 import { optimizeHtmlImages } from "../lib/cmsImage";
 import {
   getAllEntries,
@@ -62,6 +65,9 @@ const displayName =
 const date = "date" in entry.data ? entry.data.date : undefined;
 const attachments =
   "attachments" in entry.data ? entry.data.attachments : undefined;
+const gallery = "gallery" in entry.data ? entry.data.gallery : undefined;
+const people = "people" in entry.data ? entry.data.people : undefined;
+const menuItems = "menu_items" in entry.data ? entry.data.menu_items : undefined;
 
 /** Markdown/HTML body with CMS images rewritten to optimized webp */
 const bodyHtmlRaw = body
@@ -148,7 +154,11 @@ if (isNews) {
         image={image}
         attachments={attachments}
       />
-    ) : bodyHtml ? (
+    ) : !body &&
+      !bodyHtml &&
+      ((gallery && gallery.length > 0) ||
+        (people && people.length > 0) ||
+        (menuItems && menuItems.length > 0)) ? null : bodyHtml ? (
       <ArticleShell wide={t === "listing"} variant={t === "listing" ? "listing" : "info"}>
         <Fragment set:html={bodyHtml} />
         {attachments && attachments.length > 0 && (
@@ -162,6 +172,21 @@ if (isNews) {
           <AttachmentList items={attachments} />
         )}
       </ArticleShell>
+    )
+  }
+  {
+    !isEntity && !isProfile && people && people.length > 0 && (
+      <PeopleGrid people={people} />
+    )
+  }
+  {
+    !isEntity && !isProfile && menuItems && menuItems.length > 0 && (
+      <MenuGrid items={menuItems} />
+    )
+  }
+  {
+    !isEntity && !isProfile && gallery && gallery.length > 0 && (
+      <GallerySection images={gallery} title="Gallery" />
     )
   }
 </BaseLayout>

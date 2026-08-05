@@ -27,6 +27,10 @@
           ]
         },
         {
+          "label": "Advisory Council",
+          "href": "/advisory-council/"
+        },
+        {
           "label": "Administration",
           "href": "/",
           "children": [
@@ -63,7 +67,7 @@
           ]
         },
         {
-          "label": "Oraganogram",
+          "label": "Organogram",
           "href": "/assets/uploads/2024/07/Organogram.pdf"
         },
         {
@@ -157,7 +161,7 @@
           "href": "/alumnae/"
         },
         {
-          "label": "Institutional Distictivness",
+          "label": "Institutional Distinctiveness",
           "href": "/institutional-distictivness/"
         },
         {
@@ -171,6 +175,10 @@
             {
               "label": "Best Practice 2 – STORY SEEDS",
               "href": "/best-practice-2-story-seeds/"
+            },
+            {
+              "label": "Best Practice 3 – Mud Brick Preparation",
+              "href": "/best-practice-3-mud-brick/"
             }
           ]
         },
@@ -227,16 +235,22 @@
                       "label": "Artificial Intelligence Lab"
                     }
                   ]
-                },
-                {
-                  "label": "Boy’s Hostel",
-                  "href": "/boys-hostel/"
-                },
-                {
-                  "label": "Girl’s Hostel",
-                  "href": "/girls-hostel/"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "label": "Hostel Facilities",
+          "href": "/",
+          "children": [
+            {
+              "label": "Boy’s Hostel",
+              "href": "/boys-hostel/"
+            },
+            {
+              "label": "Girl’s Hostel",
+              "href": "/girls-hostel/"
             }
           ]
         },
@@ -267,11 +281,11 @@
           "href": "/faculties/"
         },
         {
-          "label": "Programmes Offered",
+          "label": "Programme Offered",
           "href": "/programmes/"
         },
         {
-          "label": "Academic Calender",
+          "label": "Academic Calendar",
           "href": "/academic-calender/"
         },
         {
@@ -307,20 +321,26 @@
           "href": "/time-table/"
         },
         {
-          "label": "Keltron",
-          "href": "/keltron/"
-        },
-        {
-          "label": "G-Tec",
-          "href": "/g-tec/"
-        },
-        {
-          "label": "NPTEL Swayam",
-          "href": "/nptel-swayam/"
-        },
-        {
-          "label": "ASAP",
-          "href": "/asap/"
+          "label": "Add-On Courses",
+          "href": "/add-on-certificate-courses/",
+          "children": [
+            {
+              "label": "Keltron",
+              "href": "/keltron/"
+            },
+            {
+              "label": "ASAP",
+              "href": "/asap/"
+            },
+            {
+              "label": "G-Tec",
+              "href": "/g-tec/"
+            },
+            {
+              "label": "NPTEL & Swayam",
+              "href": "/nptel-swayam/"
+            }
+          ]
         },
         {
           "label": "Research and Publications",

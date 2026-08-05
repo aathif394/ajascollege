@@ -10,10 +10,12 @@ import {
   looksLikeVision,
   type FactRow,
   type ContentSection,
+  type DataTable as DataTableType,
 } from "../../lib/parseContent";
 import { optimizeHtmlImages } from "../../lib/cmsImage";
 import CmsImage from "../CmsImage.astro";
 import AttachmentList from "../AttachmentList.astro";
+import DataTable from "../DataTable.astro";
 
 interface Props {
   title: string;
@@ -33,41 +35,40 @@ const programmes = isAdmission ? parseProgrammes(body) : null;
 // If page starts with ## Title (no loose intro), pull facts from first section to the top
 let introHtml = parsed.introHtml;
 let introFacts = [...parsed.introFacts];
+let introTables = [...parsed.introTables];
 let sections = [...parsed.sections];
 let introImages = [...parsed.introImages];
 
-if (!introHtml && !introFacts.length && sections.length > 0) {
+if (!introHtml && !introFacts.length && !introTables.length && sections.length > 0) {
   const first = sections[0];
-  if (first.facts.length >= 3) {
+  if (first.facts.length >= 2) {
     introFacts = first.facts;
+    introTables = first.tables;
     introHtml = first.bodyHtml;
     introImages = [...introImages, ...first.images];
     sections = sections.slice(1);
   }
 }
 
+// Deliberately narrow: only labels whose value is reliably a short number
+// (a year, a count) belong in a big colored stat tile. Descriptive facts
+// like "Place", "State" or "Affiliated university" read fine in the fact
+// sheet but look broken blown up as a tile ("Poopalam, Perinthalmanna" in
+// giant digits-style type) — same failure mode as the sentence-length
+// stat tiles this heuristic originally existed to prevent.
 const statKeys = [
   "year of established",
   "year of establishment",
   "established",
   "no of programs",
-  "programs",
-  "affiliated university",
-  "status of college",
-  "financial category",
-  "ugc recognition",
-  "place",
-  "state",
+  "no. of programs",
+  "number of programs",
 ];
 const highlightStats = introFacts.filter((f) => {
   const l = f.label.toLowerCase();
-  return statKeys.some((k) => l.includes(k));
+  return statKeys.some((k) => l.includes(k)) && f.value.length <= 20;
 });
-// Prefer a short highlight set for the stat strip
-const statsForStrip =
-  highlightStats.length >= 2
-    ? highlightStats.slice(0, 4)
-    : introFacts.filter((f) => f.label && f.value).slice(0, 4);
+const statsForStrip = highlightStats.length >= 2 ? highlightStats.slice(0, 4) : [];
 
 // Optimize any remaining inline images in HTML fragments
 introHtml = introHtml ? await optimizeHtmlImages(introHtml, "inline") : introHtml;
@@ -221,6 +222,14 @@ const progTail = programmes?.tailHtml
           )}
         </div>
 
+        {introTables.length > 0 && (
+          <div class="sp-tables">
+            {introTables.map((t) => (
+              <DataTable table={t} />
+            ))}
+          </div>
+        )}
+
         {sections.length > 0 && (
           <div class="sp-sections">
             {sections.map((s: ContentSection, i: number) => (
@@ -249,6 +258,8 @@ const progTail = programmes?.tailHtml
                     ))}
                   </dl>
                 )}
+                {s.tables.length > 0 &&
+                  s.tables.map((t) => <DataTable table={t} />)}
                 {s.bodyHtml && <div class="sp-html" set:html={s.bodyHtml} />}
               </section>
             ))}
@@ -587,6 +598,9 @@ const progTail = programmes?.tailHtml
     font-weight: 500;
     color: #183251;
     text-align: right;
+  }
+  .sp-tables {
+    margin-bottom: 22px;
   }
   .sp-sections {
     display: grid;

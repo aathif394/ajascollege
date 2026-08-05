@@ -1,6 +1,7 @@
 ---
 title: "BSc. Geography"
 level: ug
+duration: "4 Years (FYUGP)"
 order: 7
 permalink: /programmes/bsc-geography/
 draft: false

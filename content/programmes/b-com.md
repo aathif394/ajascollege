@@ -1,6 +1,7 @@
 ---
 title: "B Com"
 level: ug
+duration: "4 Years (FYUGP)"
 order: 1
 permalink: /programmes/b-com/
 draft: false

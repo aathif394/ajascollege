@@ -1,6 +1,7 @@
 ---
 title: "BBA"
 level: ug
+duration: "4 Years (FYUGP)"
 order: 2
 permalink: /programmes/bba/
 draft: false

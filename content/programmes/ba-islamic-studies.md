@@ -1,6 +1,7 @@
 ---
 title: "BA Islamic Studies"
 level: ug
+duration: "4 Years (FYUGP)"
 order: 5
 permalink: /programmes/ba-islamic-studies/
 draft: false

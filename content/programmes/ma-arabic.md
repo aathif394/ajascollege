@@ -1,6 +1,7 @@
 ---
 title: "MA Arabic"
 level: pg
+duration: "2 Years"
 order: 3
 permalink: /programmes/ma-arabic/
 draft: false

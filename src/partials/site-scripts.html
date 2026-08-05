@@ -1,6 +1,10 @@
 <script>
 (function(){
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) {
+    var heroVideo = document.querySelector('.hero-video');
+    if (heroVideo) { heroVideo.pause(); heroVideo.removeAttribute('autoplay'); }
+  }
   if (!('IntersectionObserver' in window) || reduce) { document.documentElement.classList.add('no-reveal'); }
   else {
     document.documentElement.classList.add('has-reveal');
@@ -104,6 +108,11 @@
         window.scrollTo({top: t.offsetTop - 110, behavior: reduce ? 'auto' : 'smooth'});
       });
     });
+  }
+  // Photo galleries (GallerySection.astro) open in a lightbox — fancyBox v2,
+  // grouped/next-prev via the shared rel="" attribute on each .gal-item
+  if (window.jQuery && jQuery.fn.fancybox) {
+    jQuery('.gal-item').fancybox({ openEffect: 'fade', closeEffect: 'fade', helpers: { title: { type: 'inside' } } });
   }
 })();
 </script>

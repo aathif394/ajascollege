@@ -17,6 +17,26 @@ const entrySchema = z.object({
   attachments: z
     .array(z.object({ label: z.string(), file: z.string() }))
     .optional(),
+  gallery: z.array(z.string()).optional(),
+  people: z
+    .array(
+      z.object({
+        photo: z.string().optional(),
+        name: z.string(),
+        role: z.string().optional(),
+        phone: z.string().optional(),
+      }),
+    )
+    .optional(),
+  menu_items: z
+    .array(
+      z.object({
+        title: z.string(),
+        href: z.string().optional(),
+        description: z.string().optional(),
+      }),
+    )
+    .optional(),
 });
 
 const pages = defineCollection({

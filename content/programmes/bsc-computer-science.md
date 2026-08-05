@@ -1,6 +1,7 @@
 ---
 title: "BSc. Computer science"
 level: ug
+duration: "4 Years (FYUGP)"
 order: 10
 permalink: /programmes/bsc-computer-science/
 draft: false

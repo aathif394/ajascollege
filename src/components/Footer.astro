@@ -23,18 +23,7 @@ const footer = await optimizeHtmlImages(footerHtml, "logo");
 <script is:inline src="/javascript/main.js"></script>
 <Fragment set:html={siteScripts} />
 
-{/* Pagefind UI — indexes built on `npm run build` */}
-<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
-<script is:inline src="/pagefind/pagefind-ui.js"></script>
-<script is:inline>
-  window.addEventListener("DOMContentLoaded", () => {
-    const el = document.querySelector("#search");
-    if (!el || typeof PagefindUI === "undefined") return;
-    new PagefindUI({
-      element: "#search",
-      showSubResults: true,
-      showImages: false,
-      resetStyles: false,
-    });
-  });
-</script>
+{/* Pagefind Component UI — indexes built on `npm run build`. Custom elements
+   auto-upgrade on parse, no init script needed (see SearchModal.astro). */}
+<link href="/pagefind/pagefind-component-ui.css" rel="stylesheet" />
+<script is:inline type="module" src="/pagefind/pagefind-component-ui.js"></script>

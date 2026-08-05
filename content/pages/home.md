@@ -7,22 +7,19 @@ image: "/assets/uploads/2025/05/University-Logo.jpg"
 ---
 
 <section class="ajas-hero">
-<div class="hero-media"><span class="hero-layer hl1" style="background-image:url(/assets/uploads/2024/01/P1222323-building-2048x1154-1.webp)"></span><span class="hero-layer hl2" style="background-image:url(/assets/uploads/2025/03/WhatsApp-Image-2025-03-17-at-3.27.45-PM.jpeg)"></span><span class="hero-layer hl3" style="background-image:url(/assets/uploads/2025/03/WhatsApp-Image-2025-03-17-at-4.16.10-PM.jpeg)"></span><span class="hero-scrim"></span></div>
+<div class="hero-media"><span class="hero-layer hl1" style="background-image:url(/assets/uploads/2024/01/P1222323-building-2048x1154-1.webp)"></span><span class="hero-layer hl2" style="background-image:url(/assets/uploads/2025/03/WhatsApp-Image-2025-03-17-at-3.27.45-PM.jpeg)"></span><span class="hero-layer hl3" style="background-image:url(/assets/uploads/2025/03/WhatsApp-Image-2025-03-17-at-4.16.10-PM.jpeg)"></span><video class="hero-video" autoplay muted loop playsinline poster="/assets/uploads/2024/01/P1222323-building-2048x1154-1.webp"><source src="/assets/uploads/hero/campus-loop.mp4" type="video/mp4"></video><span class="hero-scrim"></span></div>
 <div class="container"><div class="hero-inner">
-<p class="hero-kicker">Since 2010 &middot; Perinthalmanna, Kerala</p>
-<h1 class="hero-title">Empowering Global Citizens<br>with Timeless Values.</h1>
-<p class="hero-text">Al Jamia Arts and Science College moulds students into professionally competent,
-socially responsible and morally sound citizens &mdash; affiliated to the University of Calicut and
-recognised by the Government of Kerala.</p>
+<div class="hero-badges"><span class="hero-badge">16 Years of Excellence</span><span class="hero-badge">NAAC B++ Accredited</span></div>
+<h1 class="hero-title">Crafting Careers with Purpose and Responsibility</h1>
 <div class="hero-cta">
-<a href="/admission/" class="hero-btn hero-btn-primary">Apply for admission</a>
-<a href="/overview/" class="hero-btn hero-btn-ghost">Explore the college</a>
+<a href="/programmes/" class="hero-btn hero-btn-primary">Explore Programs</a>
+<a href="/admission/" class="hero-btn hero-btn-ghost">Apply Now</a>
 </div>
 <ul class="hero-facts">
-<li><strong>14</strong><span>Departments</span></li>
-<li><strong>11</strong><span>UG Honours</span></li>
-<li><strong>3</strong><span>PG programmes</span></li>
-<li><strong>2010</strong><span>Established</span></li>
+<li><strong>4000+</strong><span>Students</span></li>
+<li><strong>11</strong><span>UG Programmes</span></li>
+<li><strong>3</strong><span>PG Programmes</span></li>
+<li><strong>14</strong><span>Total Programs</span></li>
 </ul>
 </div></div>
 </section><!-- hero --><section class="ajas-actions">
@@ -45,7 +42,41 @@ recognised by the Government of Kerala.</p>
 <p class="accred-label">Affiliated, recognised &amp; accredited by</p>
 <ul class="accred-row"><li><img src="/assets/uploads/2025/05/University-Logo.jpg" alt="University of Calicut"><span>University of Calicut</span></li><li><img src="/assets/uploads/2024/01/UGC-Logo-e1748242432780.jpg" alt="UGC"><span>UGC</span></li><li><img src="/assets/uploads/2024/01/AICTE-Logo-e1748242290739.jpg" alt="AICTE"><span>AICTE</span></li><li><img src="/assets/uploads/2025/10/Naac-Symbol.jpg" alt="NAAC"><span>NAAC</span></li><li><img src="/assets/uploads/2024/01/ISO-Logo-e1748242407313.jpg" alt="ISO certified"><span>ISO certified</span></li></ul>
 </div>
-</section><!-- accreditation --><section class="flat-introduce flat-introduce-style1 clearfix">
+</section><!-- accreditation --><section class="ajas-about">
+<div class="container">
+<h2 class="flat-title medium">Al Jamia Arts and Science College (AJASC)</h2>
+<p>At AJASC, education goes beyond textbooks and degree certificates. We focus on holistic student development.</p>
+<p>AJASC was founded with a clear, noble purpose: to uplift educationally developing communities by delivering accessible, value-based, and world-class education.</p>
+<a href="/overview/" class="btn-box-shadow">Read More</a>
+</div>
+</section><!-- about --><section class="ajas-metric-banner">
+<div class="container">
+<ul class="ajas-metric-row">
+<li><strong>4000+</strong><span>Students</span></li>
+<li><strong>11</strong><span>UG Programmes</span></li>
+<li><strong>3</strong><span>PG Programmes</span></li>
+<li><strong>14</strong><span>Total Programs</span></li>
+</ul>
+</div>
+</section><!-- metrics --><section class="flat-introduce flat-introduce-style1 clearfix">
+<div class="container">
+<div class="col-left"><div class="ajas-quote-panel">
+<span class="quote-mark" aria-hidden="true">&ldquo;</span>
+<blockquote>Education is not merely a path to acquiring degrees; it is a transformative journey that shapes human character, sharpens intellect, and inspires service to humanity.</blockquote>
+</div></div>
+<div class="col-right"><div class="content-introduce content-introduce-style1">
+<div class="title-section">
+<p class="sub-title lt-sp25">Dr. Abdussalam Ahmed</p>
+<div class="flat-title larger heading-type1">Chairman&rsquo;s message</div>
+</div>
+<div class="content-introduce-inner">
+<p>Welcome to Al Jamia Arts &amp; Science College (AJAS). Our goal is not only to produce professionally competent graduates who succeed in global careers, but also to mould compassionate, conscious citizens who contribute meaningfully to their communities and the nation.</p>
+<p>As you step into the vibrant academic community at AJAS, I invite you to embrace every opportunity to learn, innovate and grow. Together, let us strive for excellence and build a future rooted in knowledge, integrity and service.</p>
+<div class="btn-about"><a href="/chairman-message/" class="btn-box-shadow">Read full message</a></div>
+</div>
+</div></div>
+</div>
+</section><!-- chairman --><section class="flat-introduce flat-introduce-style1 clearfix">
 <div class="container">
 <div class="col-left"><div class="videobox">
 <a href="/principal/"><img src="/assets/uploads/2025/06/WhatsApp-Image-2025-06-12-at-9.46.05-AM.jpeg" alt="Principal, Al Jamia Arts &amp; Science College"></a>
@@ -56,8 +87,7 @@ recognised by the Government of Kerala.</p>
 <div class="flat-title larger heading-type1">Principal&rsquo;s message</div>
 </div>
 <div class="content-introduce-inner">
-<p>It gives me immense pleasure to lead an institution that stands at the confluence of tradition and modernity. At AJASC we firmly believe that education is not merely about academic achievement but about building character, inspiring purpose and transforming lives.</p>
-<p>Guided by our vision &mdash; to provide value-based education to enrich, enlighten and empower the young generation &mdash; we strive to foster an environment where students grow intellectually, morally and socially.</p>
+<p>&ldquo;Education is not merely about academic achievement; it is about building character, inspiring purpose, and transforming lives. At AJAS, we aim to instill in our students the clarity, competence, and values necessary to excel in an ever-evolving world.&rdquo;</p>
 <div class="content-list"><ul>
 <li><span class="text">Established in 2010, affiliated to the University of Calicut.</span></li>
 <li><span class="text">Minority status, recognised by the Government of Kerala.</span></li>
@@ -110,6 +140,7 @@ are listed on the programmes page.</p>
 <div class="course-content clearfix"><div class="wrap-course-content">
 <h3 class="course-title"><a href="/departments/department-of-commerce/">Department of Commerce &amp; Management Studies</a></h3>
 <p>The Department of Commerce and Management Studies at Al Jamia Arts and Science College, Perinthalmanna, is a vibrant centre of learning…</p>
+<p class="course-programs">B.Com Honors &middot; BBA Finance Honors</p>
 </div></div>
 </div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
 <div class="flat-course">
@@ -130,6 +161,7 @@ are listed on the programmes page.</p>
 <div class="course-content clearfix"><div class="wrap-course-content">
 <h3 class="course-title"><a href="/departments/department-of-computer-science/">Department of Computer Science and Artificial Intelligence</a></h3>
 <p>In 2015 BSc Computer Science Programme introduced by department. The Department of Computer Science is committed to provide quality edu…</p>
+<p class="course-programs">B.Sc. Artificial Intelligence Honors &middot; B.Sc. Computer Science Honors &middot; BCA Honors</p>
 </div></div>
 </div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
 <div class="flat-course">
@@ -140,6 +172,7 @@ are listed on the programmes page.</p>
 <div class="course-content clearfix"><div class="wrap-course-content">
 <h3 class="course-title"><a href="/departments/department-of-english/">Department of English</a></h3>
 <p>The Department Established in the Year 2010 along with the; inception of the college.B.A English Language and Literatue course was star…</p>
+<p class="course-programs">BA English Language and Literature</p>
 </div></div>
 </div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
 <div class="flat-course">
@@ -150,11 +183,96 @@ are listed on the programmes page.</p>
 <div class="course-content clearfix"><div class="wrap-course-content">
 <h3 class="course-title"><a href="/departments/department-of-food-technology/">Department of Food Technology</a></h3>
 <p>Established in the year 2018. The Department of Food Technology is committed to provide quality education to aspiring graduates. At pre…</p>
+<p class="course-programs">B.Sc. Food Technology</p>
+</div></div>
+</div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
+<div class="flat-course">
+<div class="featured-post post-media"><div class="entry-image pic"><img src="/assets/uploads/2024/05/IMG-20240430-WA0022-1-scaled.jpg" alt="Department of Geography">
+<div class="hover-effect"></div>
+<div class="links"><a href="/departments/department-of-geography/" aria-label="View Department of Geography">View Department of Geography</a></div>
+</div></div>
+<div class="course-content clearfix"><div class="wrap-course-content">
+<h3 class="course-title"><a href="/departments/department-of-geography/">Department of Geography</a></h3>
+<p>A modern geography programme combining fieldwork, GIS and remote sensing with classroom instruction.</p>
+<p class="course-programs">B.Sc. Geography</p>
+</div></div>
+</div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
+<div class="flat-course">
+<div class="featured-post post-media"><div class="entry-image pic"><img src="/assets/uploads/2024/05/IMG-20240430-WA0048-scaled.jpg" alt="Department of Microbiology">
+<div class="hover-effect"></div>
+<div class="links"><a href="/departments/department-of-micro-biology/" aria-label="View Department of Microbiology">View Department of Microbiology</a></div>
+</div></div>
+<div class="course-content clearfix"><div class="wrap-course-content">
+<h3 class="course-title"><a href="/departments/department-of-micro-biology/">Department of Microbiology</a></h3>
+<p>A well-equipped laboratory facility supporting hands-on training across instrumentation, sterilisation and analysis.</p>
+<p class="course-programs">B.Sc. Microbiology</p>
+</div></div>
+</div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
+<div class="flat-course">
+<div class="featured-post post-media"><div class="entry-image pic"><img src="/assets/uploads/2024/05/IMG-20240430-WA0014-scaled.jpg" alt="PG Department of Psychology">
+<div class="hover-effect"></div>
+<div class="links"><a href="/departments/department-of-psychology/" aria-label="View PG Department of Psychology">View PG Department of Psychology</a></div>
+</div></div>
+<div class="course-content clearfix"><div class="wrap-course-content">
+<h3 class="course-title"><a href="/departments/department-of-psychology/">PG Department of Psychology</a></h3>
+<p>UG and PG psychology, from foundational theory through to applied and clinical practice.</p>
+<p class="course-programs">B.Sc. Psychology &middot; M.Sc. Psychology</p>
+</div></div>
+</div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
+<div class="flat-course">
+<div class="featured-post post-media"><div class="entry-image pic"><img src="/assets/uploads/2024/01/P1222323-building-2048x1154-1.webp" alt="PG Department of Islamic Studies">
+<div class="hover-effect"></div>
+<div class="links"><a href="/departments/department-of-islamic-studies/" aria-label="View PG Department of Islamic Studies">View PG Department of Islamic Studies</a></div>
+</div></div>
+<div class="course-content clearfix"><div class="wrap-course-content">
+<h3 class="course-title"><a href="/departments/department-of-islamic-studies/">PG Department of Islamic Studies</a></h3>
+<p>Islamic Studies Honours and MA Islamic Finance, blending classical scholarship with contemporary application.</p>
+<p class="course-programs">BA Islamic Studies Honors &middot; MA Islamic Finance</p>
+</div></div>
+</div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
+<div class="flat-course">
+<div class="featured-post post-media"><div class="entry-image pic"><img src="/assets/uploads/2024/01/P1222323-building-2048x1154-1.webp" alt="PG Department of Arabic">
+<div class="hover-effect"></div>
+<div class="links"><a href="/departments/arabic/" aria-label="View PG Department of Arabic">View PG Department of Arabic</a></div>
+</div></div>
+<div class="course-content clearfix"><div class="wrap-course-content">
+<h3 class="course-title"><a href="/departments/arabic/">PG Department of Arabic</a></h3>
+<p>MA Arabic builds on the honours programme with advanced language, literature and research training.</p>
+<p class="course-programs">MA Arabic</p>
+</div></div>
+</div></div><div class="course clearfix col-lg-4 col-md-6 col-sm-12">
+<div class="flat-course">
+<div class="featured-post post-media"><div class="entry-image pic"><img src="/assets/uploads/2024/01/P1222323-building-2048x1154-1.webp" alt="Department of Languages">
+<div class="hover-effect"></div>
+<div class="links"><a href="/departments/department-of-languages/" aria-label="View Department of Languages">View Department of Languages</a></div>
+</div></div>
+<div class="course-content clearfix"><div class="wrap-course-content">
+<h3 class="course-title"><a href="/departments/department-of-languages/">Department of Languages</a></h3>
+<p>Language courses prescribed by the University of Calicut curriculum, alongside every UG programme.</p>
+<p class="course-programs">Language courses as prescribed by University curriculum</p>
 </div></div>
 </div></div></div></div>
 <div class="text-center pd-top15"><a href="/departments/" class="btn bg-clff5f60 ajas-apply-btn">View all departments</a></div>
 </div>
-</section><!-- online-courses --><section class="flat-services style1 parallax parallax1 clearfix ajas-services">
+</section><!-- online-courses --><section class="ajas-media">
+<div class="container">
+<div class="title-section text-center">
+<p class="sub-title lt-sp17">What makes us different</p>
+<h2 class="flat-title medium">Campus &amp; event footages</h2>
+</div>
+<div class="gallery-grid">
+<a class="gal-item" href="/assets/uploads/2024/01/P1222323-building-2048x1154-1.webp" rel="ajas-home-media" title="AJAS campus"><img src="/assets/uploads/2024/01/P1222323-building-2048x1154-1.webp" alt="AJAS campus"></a>
+<a class="gal-item" href="/assets/uploads/2025/03/WhatsApp-Image-2025-03-17-at-3.27.45-PM.jpeg" rel="ajas-home-media" title="Campus life"><img src="/assets/uploads/2025/03/WhatsApp-Image-2025-03-17-at-3.27.45-PM.jpeg" alt="Campus life"></a>
+<a class="gal-item" href="/assets/uploads/2025/03/WhatsApp-Image-2025-03-17-at-4.16.10-PM.jpeg" rel="ajas-home-media" title="Campus life"><img src="/assets/uploads/2025/03/WhatsApp-Image-2025-03-17-at-4.16.10-PM.jpeg" alt="Campus life"></a>
+<a class="gal-item" href="/assets/uploads/2024/05/IMG-20240430-WA0040-scaled.jpg" rel="ajas-home-media" title="Computer lab"><img src="/assets/uploads/2024/05/IMG-20240430-WA0040-scaled.jpg" alt="Computer lab"></a>
+<a class="gal-item" href="/assets/uploads/2026/05/WhatsApp-Image-2026-05-04-at-10.36.26-AM.jpeg" rel="ajas-home-media" title="Convocation 2026"><img src="/assets/uploads/2026/05/WhatsApp-Image-2026-05-04-at-10.36.26-AM.jpeg" alt="Convocation 2026"></a>
+<a class="gal-item" href="/assets/uploads/2026/06/WhatsApp-Image-2026-06-09-at-1.48.11-PM.jpeg" rel="ajas-home-media" title="Food Guard event"><img src="/assets/uploads/2026/06/WhatsApp-Image-2026-06-09-at-1.48.11-PM.jpeg" alt="Food Guard event"></a>
+<a class="gal-item" href="/assets/uploads/2026/04/WhatsApp-Image-2026-04-08-at-11.07.24-AM.jpeg" rel="ajas-home-media" title="Graduation ceremony 2026"><img src="/assets/uploads/2026/04/WhatsApp-Image-2026-04-08-at-11.07.24-AM.jpeg" alt="Graduation ceremony 2026"></a>
+<a class="gal-item" href="/assets/uploads/2026/02/WhatsApp-Image-2025-11-19-at-11.53.04-AM-2.jpeg" rel="ajas-home-media" title="BIOCODEZ"><img src="/assets/uploads/2026/02/WhatsApp-Image-2025-11-19-at-11.53.04-AM-2.jpeg" alt="BIOCODEZ"></a>
+</div>
+<div class="text-center pd-top30"><a href="/college-news/" class="btn bg-clff5f60 ajas-apply-btn">More campus news &amp; events</a></div>
+</div>
+</section><!-- media --><section class="flat-services style1 parallax parallax1 clearfix ajas-services">
 <div class="section-overlay"></div>
 <div class="container-fluid"><div class="row"><div class="col-lg-4">
 <div class="services-content-box themesflat-content-box" data-padding="0% 30% 0% 0%" data-mobipadding="0% 0% 0% 0%" data-smobipadding="0% 0% 0% 0%">
@@ -279,7 +397,7 @@ are listed on the programmes page.</p>
 <div class="col-lg-6"><div class="iconbox-about"><div class="iconbox-about-wrap clearfix">
 <div class="list-1">
 <div class="iconbox iconbox-students"><div class="counter"><div class="content-counter">
-<div class="numb-count bg-cl25cf71" data-from="0" data-to="900" data-speed="2000" data-inviewport="yes">900</div>
+<div class="numb-count bg-cl25cf71" data-from="0" data-to="4000" data-speed="2000" data-inviewport="yes">4000</div>
 <div class="name-count">Students</div></div></div></div>
 <div class="iconbox iconbox-teacher"><div class="counter"><div class="content-counter">
 <div class="numb-count bg-clffbe34" data-from="0" data-to="30" data-speed="2000" data-inviewport="yes">30</div>
@@ -287,7 +405,7 @@ are listed on the programmes page.</p>
 </div>
 <div class="list-2">
 <div class="iconbox iconbox-courses"><div class="counter"><div class="content-counter">
-<div class="numb-count bg-cla476b4" data-from="0" data-to="12" data-speed="2000" data-inviewport="yes">12</div>
+<div class="numb-count bg-cla476b4" data-from="0" data-to="14" data-speed="2000" data-inviewport="yes">14</div>
 <div class="name-count">Programmes</div></div></div></div>
 <div class="iconbox iconbox-award"><div class="counter"><div class="content-counter">
 <div class="numb-count bg-clfb6d6d" data-from="0" data-to="12" data-speed="2000" data-inviewport="yes">12</div>
@@ -415,7 +533,7 @@ are listed on the programmes page.</p>
 </div>
 <div class="col-lg-5"><div class="wrap-link-right">
 <div class="heading-rg"><span>Quick Link</span></div>
-<ul class="info-quick-link"><li><i class="fa fa-inr" aria-hidden="true"></i><a href="/assets/uploads/2025/02/SF-FEE-Addndm.pdf" target="_blank">Fee details</a></li><li><i class="fa fa-building-o" aria-hidden="true"></i><a href="/state-off-the-art-facilities/">State-of-the-art facilities</a></li><li><i class="fa fa-graduation-cap" aria-hidden="true"></i><a href="/scholorship/">Scholarships</a></li><li><i class="fa fa-comments-o" aria-hidden="true"></i><a href="/register-a-complaint/">Register a complaint</a></li></ul>
+<ul class="info-quick-link"><li><i class="fa fa-inr" aria-hidden="true"></i><a href="/assets/uploads/2025/02/SF-FEE-Addndm.pdf" target="_blank">Fee details</a></li><li><i class="fa fa-building-o" aria-hidden="true"></i><a href="/state-of-the-art-facilities/">State-of-the-art facilities</a></li><li><i class="fa fa-graduation-cap" aria-hidden="true"></i><a href="/scholorship/">Scholarships</a></li><li><i class="fa fa-comments-o" aria-hidden="true"></i><a href="/register-a-complaint/">Register a complaint</a></li></ul>
 </div></div>
 </div></div>
 </section><!-- quick-link -->

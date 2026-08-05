@@ -1,6 +1,7 @@
 ---
 title: "MSc. Psychology"
 level: pg
+duration: "2 Years"
 order: 2
 permalink: /programmes/msc-psychology/
 draft: false

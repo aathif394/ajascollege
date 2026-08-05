@@ -1,12 +1,16 @@
 ---
-title: "Management Message"
+title: "Chairman's Message"
 description: "A message from the Chairman, Al Jamia Arts & Science College."
 permalink: /chairman-message/
 type: profile
-name: Dr. Abdulssalam Ahmed
+name: Dr. Abdussalam Ahmed
 role: Chairman
 ---
 
-[Placeholder — replace with the Chairman's message. Photo to follow.]
+"Building Knowledge, Character, and Purpose for a Better Tomorrow"
 
-Al Jamia Arts and Science College was founded with a vision to nurture confident, values-driven graduates equipped to lead in a changing world. Every milestone the institution has reached reflects the shared effort of our faculty, students and well-wishers, and we remain committed to building on that foundation in the years ahead.
+> Education is not merely a path to acquiring degrees; it is a transformative journey that shapes human character, sharpens intellect, and inspires service to humanity.
+
+Welcome to Al Jamia Arts & Science College (AJAS). Our goal is not only to produce professionally competent graduates who succeed in global careers, but also to mould compassionate, conscious citizens who contribute meaningfully to their communities and the nation.
+
+As you step into the vibrant academic community at AJAS, I invite you to embrace every opportunity to learn, innovate, and grow. Together, let us strive for excellence and build a future rooted in knowledge, integrity, and service.

@@ -1,6 +1,7 @@
 ---
 title: "BSc. Artificial Intelligence"
 level: ug
+duration: "4 Years (FYUGP)"
 order: 11
 permalink: /programmes/bsc-artificial-intelligence/
 draft: false

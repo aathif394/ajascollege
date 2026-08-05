@@ -3,6 +3,21 @@ title: Placement Cell
 description: "Al Jamia Arts & Science College, Perinthalmanna — affiliated to the University of Calicut."
 permalink: /placement-cell/
 type: page
+image: "/assets/uploads/2024/05/placement1.jpeg-700x700.jpg"
+gallery:
+  - /assets/uploads/2024/05/placement1.jpeg-700x700.jpg
+  - /assets/uploads/2024/05/placement2.jpeg-700x700.jpg
+  - /assets/uploads/2024/05/placement3.jpeg-700x700.jpg
+  - /assets/uploads/2024/05/placement4.jpeg-700x700.jpg
+  - /assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.31.32-PM-700x700.jpeg
+  - /assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.31.31-PM-1-700x700.jpeg
+  - /assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.31.31-PM-700x700.jpeg
+  - /assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.33.44-PM-700x700.jpeg
+  - /assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.33.43-PM-1-700x700.jpeg
+  - /assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.33.43-PM-700x700.jpeg
+  - /assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.32.32-PM-700x700.jpeg
+  - /assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.32.29-PM-1-700x700.jpeg
+  - /assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.32.29-PM-700x700.jpeg
 ---
 
 ## About Placement Cell
@@ -28,25 +43,10 @@ To facilitate holistic student development by enhancing employability and ensuri
 
 To equip students with professional competencies, communication skills, and industry-relevant knowledge through continuous training, career guidance, and placement support.
 
+## Committee
 
-|  |  |
+| Name | Designation |
 | --- | --- |
-| Members | Coordinator |
-| Name : Shaniba K | Designation : Assistant Professor, Department of Food Technology |
-| Other Members | Name : Ayana K P |
-| Designation : Assistant Professor, Department of Computer Application | Name : Jithin V |
-| Designation : Assistant Professor, Department of Microbiology | Gallery |
-
-![](/assets/uploads/2024/05/placement1.jpeg-700x700.jpg)
-![](/assets/uploads/2024/05/placement2.jpeg-700x700.jpg)
-![](/assets/uploads/2024/05/placement3.jpeg-700x700.jpg)
-![](/assets/uploads/2024/05/placement4.jpeg-700x700.jpg)
-![](/assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.31.32-PM-700x700.jpeg)
-![](/assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.31.31-PM-1-700x700.jpeg)
-![](/assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.31.31-PM-700x700.jpeg)
-![](/assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.33.44-PM-700x700.jpeg)
-![](/assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.33.43-PM-1-700x700.jpeg)
-![](/assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.33.43-PM-700x700.jpeg)
-![](/assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.32.32-PM-700x700.jpeg)
-![](/assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.32.29-PM-1-700x700.jpeg)
-![](/assets/uploads/2025/10/WhatsApp-Image-2025-10-29-at-9.32.29-PM-700x700.jpeg)
+| Shaniba K | Coordinator, Assistant Professor, Department of Food Technology |
+| Ayana K P | Member, Assistant Professor, Department of Computer Application |
+| Jithin V | Member, Assistant Professor, Department of Microbiology |

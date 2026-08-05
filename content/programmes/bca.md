@@ -1,6 +1,7 @@
 ---
 title: "BCA"
 level: ug
+duration: "4 Years (FYUGP)"
 order: 3
 permalink: /programmes/bca/
 draft: false

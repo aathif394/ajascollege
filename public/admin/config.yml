@@ -235,10 +235,10 @@ collections:
             name: hero_images
             widget: list
             field: { label: Image, name: image, widget: image }
-          - { label: "Stat — departments", name: stat_departments, widget: string, required: false }
+          - { label: "Stat — students", name: stat_students, widget: string, required: false }
           - { label: "Stat — UG programmes", name: stat_ug, widget: string, required: false }
           - { label: "Stat — PG programmes", name: stat_pg, widget: string, required: false }
-          - { label: "Stat — established", name: stat_established, widget: string, required: false }
+          - { label: "Stat — total programs", name: stat_total_programs, widget: string, required: false }
           - { label: Principal name, name: principal_name, widget: string, required: false }
           - { label: Principal photo, name: principal_photo, widget: image, required: false, choose_url: true }
           - { label: Principal excerpt, name: principal_excerpt, widget: text, required: false }
@@ -324,12 +324,40 @@ collections:
         widget: select
         options: [home, page, listing, profile, article]
         default: page
+        hint: "Templates for new pages — pick a type, then fill only the matching block below (leave the others empty): Page = prose in the content editor below (headings/lists/tables all get styled automatically); Listing = index page, use Menu / index cards; a Staff / committee directory or Photo gallery can be added to ANY page type."
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Featured image, name: image, widget: image, required: false, choose_url: true }
       - { label: Name (profiles), name: name, widget: string, required: false }
       - { label: Role (profiles), name: role, widget: string, required: false }
       - { label: Credentials, name: credentials, widget: string, required: false }
-      - { label: "Page content (visual editor)", name: body, widget: markdown, hint: "Edit like Word — headings, bold, lists, images. Never paste HTML code." }
+      - { label: "Page content (visual editor)", name: body, widget: markdown, required: false, hint: "Edit like Word — headings, bold, lists, tables. Never paste HTML code, and never paste photos or a staff list here — use the dedicated fields below instead, they render as proper grids." }
+      - label: "Staff / committee directory (optional)"
+        name: people
+        widget: list
+        required: false
+        summary: "{{fields.name}} — {{fields.role}}"
+        hint: "Use for any page that's a list of people (staff, committee, wardens). Renders as a photo-card grid — don't list people in the content editor above."
+        fields:
+          - { label: Photo, name: photo, widget: image, required: false }
+          - { label: Name, name: name, widget: string }
+          - { label: Role / designation, name: role, widget: string, required: false }
+          - { label: Phone (optional), name: phone, widget: string, required: false }
+      - label: "Menu / index cards (optional)"
+        name: menu_items
+        widget: list
+        required: false
+        summary: "{{fields.title}}"
+        hint: "Use for a page that's just a menu of links to other pages (e.g. an index/listing page). Renders as a card grid — don't list links in the content editor above."
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Link (page path or URL), name: href, widget: string, required: false }
+          - { label: Description, name: description, widget: text, required: false }
+      - label: "Photo gallery (optional)"
+        name: gallery
+        widget: list
+        required: false
+        hint: "Shows as a proper photo grid (with lightbox) at the bottom of the page — don't paste photo dumps into the content editor above."
+        field: { label: Image, name: image, widget: image }
       - label: "Downloads / attachments (optional)"
         name: attachments
         widget: list

@@ -1,6 +1,8 @@
 import { marked } from "marked";
 
 export type FactRow = { label: string; value: string };
+/** A markdown table too big/irregular to be a compact "at a glance" fact sheet. */
+export type DataTable = { headers: string[]; rows: string[][] };
 export type ContentSection = {
   id: string;
   title: string;
@@ -8,6 +10,7 @@ export type ContentSection = {
   bodyMd: string;
   bodyHtml: string;
   facts: FactRow[];
+  tables: DataTable[];
   images: string[];
   empty: boolean;
 };
@@ -30,32 +33,89 @@ function slugify(s: string): string {
     .slice(0, 60);
 }
 
-function parseMarkdownTable(md: string): FactRow[] {
+function isSeparatorLine(line: string): boolean {
+  return /^\|?\s*:?-{3,}/.test(line);
+}
+
+function splitTableLine(line: string): string[] {
+  return line
+    .replace(/^\|/, "")
+    .replace(/\|$/, "")
+    .split("|")
+    .map((c) => c.trim());
+}
+
+/**
+ * Parses a markdown table keeping every column — the old version collapsed
+ * anything past column 2 into a joined string, silently dropping data on
+ * wider tables (e.g. a 5-column feedback-by-year table lost 3 columns).
+ * Standard shape is header row, separator row, data rows; a blank header
+ * row ("|  |  |", common in these scraped pages) means "no real header".
+ */
+function parseFullTable(md: string): DataTable | null {
   const lines = md
     .trim()
     .split("\n")
     .map((l) => l.trim())
     .filter(Boolean);
-  if (lines.length < 2 || !lines[0].includes("|")) return [];
-  const rows: FactRow[] = [];
-  for (const line of lines) {
-    if (/^\|?\s*:?-{3,}/.test(line)) continue;
-    const cells = line
-      .replace(/^\|/, "")
-      .replace(/\|$/, "")
-      .split("|")
-      .map((c) => c.trim());
-    if (cells.length < 2) continue;
-    // skip empty header rows
-    if (!cells[0] && !cells[1]) continue;
-    if (cells[0] === "" && cells.every((c, i) => i === 0 || !c || c === "---")) continue;
-    rows.push({ label: cells[0] || cells[1], value: cells[1] || cells.slice(1).join(" · ") });
+  if (lines.length < 2 || !lines[0].includes("|")) return null;
+
+  if (isSeparatorLine(lines[1])) {
+    const headerCells = splitTableLine(lines[0]);
+    const hasHeader = headerCells.some((h) => h.length > 0);
+    const rows = lines
+      .slice(2)
+      .filter((l) => !isSeparatorLine(l))
+      .map(splitTableLine)
+      .filter((r) => r.some((c) => c.length > 0));
+    return { headers: hasHeader ? headerCells : [], rows };
   }
-  // drop header-like first row if both are empty-ish or generic
-  if (rows.length && (!rows[0].label || rows[0].label === rows[0].value)) {
-    // keep
+  // No separator row found — malformed table, treat every line as data.
+  const rows = lines
+    .filter((l) => !isSeparatorLine(l))
+    .map(splitTableLine)
+    .filter((r) => r.some((c) => c.length > 0));
+  return { headers: [], rows };
+}
+
+/**
+ * A table only reads well as a 2-column "at a glance" fact sheet when it's
+ * actually small and short — genuine label:value stats, not a 40-row list
+ * of event names or a 5-column report-by-year grid. Everything else should
+ * render as a real table instead of being squeezed into a narrow sidebar.
+ */
+function isCompactTable(t: DataTable): boolean {
+  if (t.rows.length === 0 || t.rows.length > 8) return false;
+  const cols = Math.max(t.headers.length, ...t.rows.map((r) => r.length));
+  if (cols !== 2) return false;
+  const cells = [...t.headers, ...t.rows.flat()];
+  return cells.every((c) => c.length <= 90);
+}
+
+function tableToFacts(t: DataTable): FactRow[] {
+  return t.rows
+    .map((r) => ({ label: r[0] || "", value: r[1] || "" }))
+    .filter((r) => r.label || r.value);
+}
+
+/** Split raw table blocks out of a chunk of markdown into facts (compact
+ * 2-col tables) vs. tables (everything else), plus the text with tables
+ * removed. */
+function extractTables(md: string): { facts: FactRow[]; tables: DataTable[]; rest: string } {
+  const facts: FactRow[] = [];
+  const tables: DataTable[] = [];
+  let rest = md;
+  const blocks = md.match(/(?:^\|.+\|$\n?)+/gm);
+  if (blocks) {
+    for (const block of blocks) {
+      const t = parseFullTable(block);
+      rest = rest.replace(block, "").trim();
+      if (!t || t.rows.length === 0) continue;
+      if (isCompactTable(t)) facts.push(...tableToFacts(t));
+      else tables.push(t);
+    }
   }
-  return rows.filter((r) => r.label || r.value);
+  return { facts, tables, rest };
 }
 
 function extractImages(md: string): string[] {
@@ -81,6 +141,7 @@ export function splitSections(body: string): {
   introHtml: string;
   introImages: string[];
   introFacts: FactRow[];
+  introTables: DataTable[];
   sections: ContentSection[];
 } {
   const text = body.replace(/\r\n/g, "\n").trim();
@@ -94,19 +155,10 @@ export function splitSections(body: string): {
       const nl = part.indexOf("\n");
       const title = part.slice(3, nl === -1 ? undefined : nl).trim();
       const bodyMd = (nl === -1 ? "" : part.slice(nl + 1)).trim();
-      // Collect tables in section
-      const facts: FactRow[] = [];
-      let rest = bodyMd;
-      const tableBlocks = bodyMd.match(/(?:^\|.+\|$\n?)+/gm);
-      if (tableBlocks) {
-        for (const tb of tableBlocks) {
-          facts.push(...parseMarkdownTable(tb));
-          rest = rest.replace(tb, "").trim();
-        }
-      }
+      const { facts, tables, rest } = extractTables(bodyMd);
       const images = extractImages(bodyMd);
-      const textOnly = stripImages(rest).replace(/(?:^\|.+\|$\n?)+/gm, "").trim();
-      const empty = !textOnly && facts.length === 0 && images.length === 0;
+      const textOnly = stripImages(rest).trim();
+      const empty = !textOnly && facts.length === 0 && tables.length === 0 && images.length === 0;
       sections.push({
         id: slugify(title),
         title,
@@ -114,6 +166,7 @@ export function splitSections(body: string): {
         bodyMd: rest,
         bodyHtml: mdToHtml(rest),
         facts,
+        tables,
         images,
         empty,
       });
@@ -122,24 +175,16 @@ export function splitSections(body: string): {
     }
   }
 
-  // Tables in intro
-  const introFacts: FactRow[] = [];
-  let introRest = introMd;
-  const introTables = introMd.match(/(?:^\|.+\|$\n?)+/gm);
-  if (introTables) {
-    for (const tb of introTables) {
-      introFacts.push(...parseMarkdownTable(tb));
-      introRest = introRest.replace(tb, "").trim();
-    }
-  }
+  const { facts: introFacts, tables: introTables, rest: introRest } = extractTables(introMd);
   const introImages = extractImages(introMd);
-  const introHtml = mdToHtml(stripImages(introRest).replace(/(?:^\|.+\|$\n?)+/gm, "").trim());
+  const introHtml = mdToHtml(stripImages(introRest).trim());
 
   return {
     introMd: introRest,
     introHtml,
     introImages,
     introFacts,
+    introTables,
     sections: sections.filter((s) => !s.empty),
   };
 }

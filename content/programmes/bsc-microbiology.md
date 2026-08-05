@@ -1,6 +1,7 @@
 ---
 title: "BSc. Microbiology"
 level: ug
+duration: "4 Years (FYUGP)"
 order: 4
 permalink: /programmes/bsc-microbiology/
 draft: false

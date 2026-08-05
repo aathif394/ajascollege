@@ -33,6 +33,7 @@ const other = programmes.filter((p) => !["ug", "pg"].includes(p.data.level));
                     ug.map((p) => (
                       <li>
                         <a href={p.data.permalink}>{p.data.title}</a>
+                        {p.data.duration && <span class="prog-duration">{p.data.duration}</span>}
                       </li>
                     ))
                   }
@@ -44,6 +45,7 @@ const other = programmes.filter((p) => !["ug", "pg"].includes(p.data.level));
                     pg.map((p) => (
                       <li>
                         <a href={p.data.permalink}>{p.data.title}</a>
+                        {p.data.duration && <span class="prog-duration">{p.data.duration}</span>}
                       </li>
                     ))
                   }
@@ -85,5 +87,13 @@ const other = programmes.filter((p) => !["ug", "pg"].includes(p.data.level));
   }
   .ajas-cms-list li {
     margin: 0.35rem 0;
+  }
+  .prog-duration {
+    margin-left: 0.5rem;
+    font-size: 0.82rem;
+    color: #8b96a8;
+  }
+  .prog-duration::before {
+    content: "· ";
   }
 </style>

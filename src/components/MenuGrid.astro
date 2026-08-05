@@ -1,0 +1,97 @@
+---
+/**
+ * Index/menu page — CMS-editable `menu_items` frontmatter list.
+ * Replaces raw stacked "[Title](href)\n\nDescription" markdown, which
+ * rendered as plain unstyled paragraphs.
+ */
+interface MenuItem {
+  title: string;
+  href?: string;
+  description?: string;
+}
+
+interface Props {
+  items: MenuItem[];
+}
+
+const { items } = Astro.props;
+---
+
+{
+  items && items.length > 0 && (
+    <div class="menu-grid">
+      {items.map((item) => {
+        const Tag = item.href ? "a" : "div";
+        return (
+          <Tag class="menu-grid-card" href={item.href}>
+            <div class="menu-grid-card-body">
+              <h3>{item.title}</h3>
+              {item.description && <p>{item.description}</p>}
+            </div>
+            {item.href && (
+              <span class="menu-grid-card-cta">
+                Explore <i class="fa fa-long-arrow-right" aria-hidden="true" />
+              </span>
+            )}
+          </Tag>
+        );
+      })}
+    </div>
+  )
+}
+
+<style>
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 8px 16px 40px;
+  }
+  .menu-grid-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 24px 20px;
+    box-shadow: 0 8px 26px rgba(24, 50, 81, 0.08);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1), box-shadow 0.25s ease;
+    min-height: 140px;
+  }
+  a.menu-grid-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(24, 50, 81, 0.14);
+  }
+  .menu-grid-card-body h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    color: #183251;
+    line-height: 1.3;
+  }
+  .menu-grid-card-body p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #5c6578;
+  }
+  .menu-grid-card-cta {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #ff5f60;
+  }
+  .menu-grid-card-cta i {
+    margin-left: 4px;
+    transition: transform 0.25s;
+  }
+  a.menu-grid-card:hover .menu-grid-card-cta i {
+    transform: translateX(4px);
+  }
+</style>
